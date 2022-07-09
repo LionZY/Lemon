@@ -69,7 +69,7 @@
 		052025B7287886590059654B /* dot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot.m4a; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0563BAAB2879726600E8FC7B /* dot_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot_strong.m4a; sourceTree = "<group>"; };
-		05D39C0E2876904200CCE136 /* WhenBored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhenBored.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D39C0E2876904200CCE136 /* Board Metro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Board Metro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D39C112876904200CCE136 /* WhenBoredApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenBoredApp.swift; sourceTree = "<group>"; };
 		05D39C132876904200CCE136 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		05D39C152876904300CCE136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		05D39C0F2876904200CCE136 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				05D39C0E2876904200CCE136 /* WhenBored.app */,
+				05D39C0E2876904200CCE136 /* Board Metro.app */,
 				05D39C1E2876904300CCE136 /* WhenBoredTests.xctest */,
 				05D39C282876904300CCE136 /* WhenBoredUITests.xctest */,
 			);
@@ -278,7 +278,7 @@
 				05D39C3C2876906800CCE136 /* ComposableArchitecture */,
 			);
 			productName = WhenBored;
-			productReference = 05D39C0E2876904200CCE136 /* WhenBored.app */;
+			productReference = 05D39C0E2876904200CCE136 /* Board Metro.app */;
 			productType = "com.apple.product-type.application";
 		};
 		05D39C1D2876904300CCE136 /* WhenBoredTests */ = {
@@ -599,7 +599,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.WhenBored;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Board Metro";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -631,7 +631,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.WhenBored;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Board Metro";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
