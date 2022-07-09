@@ -12,8 +12,8 @@ import AudioToolbox
 struct BoredButtonView: View {
     
     let store: Store<BoredButtonState, BoredButtonAction>
-    var dotWidth = 20.0
-    var dotSpace = 20.0
+    var dotWidth = 10.0
+    var dotSpace = 10.0
     
     @State private var presentedCount = false
     @State private var presentedBmp = false
@@ -21,16 +21,19 @@ struct BoredButtonView: View {
     func backgroundColor(_ viewStore: ViewStore<BoredButtonState, BoredButtonAction>) -> Color {
         switch viewStore.state.currentAction {
         case .run:
-            return viewStore.state.isCountDown ? .gray :.red
+            return viewStore.state.isCountDown ? Color(.systemGray5) :.red
         case .stop:
             return .black
         default:
             return .black
         }
     }
-    
-    func currentDotColor(_ viewStore: ViewStore<BoredButtonState, BoredButtonAction>, dotIndex: Int) -> Color {
-        viewStore.state.currentIndex == dotIndex ? .red : .black
+
+    func dotColor(_ viewStore: ViewStore<BoredButtonState, BoredButtonAction>, dotIndex: Int) -> Color {
+        if dotIndex < viewStore.state.count {
+             return viewStore.state.currentIndex == dotIndex ? .red : .black
+        }
+        return Color(.systemGray5)
     }
     
     var body: some View {
@@ -38,6 +41,8 @@ struct BoredButtonView: View {
             HStack {
                 VStack {
                     Spacer()
+                    
+                    // 中间大按钮
                     Button(viewStore.state.title) {
                         if viewStore.state.currentAction == .stop {
                             viewStore.send(.run)
@@ -51,22 +56,32 @@ struct BoredButtonView: View {
                     .font(viewStore.state.isCountDown ? .system(size: 60.0) : .system(.largeTitle))
                     .cornerRadius(100)
                     .shadow(color: .gray, radius: 28.0, x: 0, y: 0)
+                    
                     Spacer()
-                    HStack {
-                        Spacer()
-                        ForEach(0..<viewStore.state.count, id: \.self) { dotIdxStr in
-                            Text("")
-                            .frame(width: dotWidth, height: dotWidth, alignment: .center)
-                            .background(currentDotColor(viewStore, dotIndex: Int(dotIdxStr)))
-                            .cornerRadius(dotWidth/2.0)
-                            Spacer()
-                        }.onReceive(timer) { input in
-                            viewStore.send(.run)
-                        }.onAppear {
-                            viewStore.send(.stop)
+                    
+                    // 波点
+                    VStack {
+                        ForEach(0..<3, id: \.self) { row in
+                            HStack {
+                                ForEach(0..<4, id: \.self) { colum in
+                                    Text("")
+                                        .frame(width: dotWidth, height: dotWidth, alignment: .center)
+                                        .background(dotColor(viewStore, dotIndex: Int(row * 4 + colum)))
+                                        .foregroundColor(.white)
+                                        .cornerRadius(dotWidth/2.0)
+                                }
+                            }
                         }
                     }
+                    .onReceive(timer) { input in
+                        viewStore.send(.run)
+                    }.onAppear {
+                        viewStore.send(.stop)
+                    }
+                    
                     Spacer().frame(maxHeight: 30.0)
+                    
+                    // 参数调节按钮
                     HStack {
                         Button("Count: \(viewStore.state.count)") {
                             presentedCount = true

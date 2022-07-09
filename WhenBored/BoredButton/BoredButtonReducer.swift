@@ -10,14 +10,28 @@ import Combine
 import ComposableArchitecture
 import AVFAudio
 
-var audioPlayer:AVAudioPlayer?
+var dotPlayer:AVAudioPlayer?
 func createPlayerIfNeeded() {
-    if audioPlayer == nil {
+    if dotPlayer == nil {
         let path = Bundle.main.path(forResource: "dot", ofType: "m4a")!
         let url = URL(fileURLWithPath: path)
         do {
-            audioPlayer =  try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.prepareToPlay()
+            dotPlayer =  try AVAudioPlayer(contentsOf: url)
+            dotPlayer?.prepareToPlay()
+        } catch {
+            // can't load file
+        }
+    }
+}
+
+var strongPlayer:AVAudioPlayer?
+func createStrongPlayerIfNeeded() {
+    if strongPlayer == nil {
+        let path = Bundle.main.path(forResource: "dot_strong", ofType: "m4a")!
+        let url = URL(fileURLWithPath: path)
+        do {
+            strongPlayer =  try AVAudioPlayer(contentsOf: url)
+            strongPlayer?.prepareToPlay()
         } catch {
             // can't load file
         }
@@ -25,8 +39,10 @@ func createPlayerIfNeeded() {
 }
 
 func destroy() {
-    audioPlayer?.stop()
-    audioPlayer = nil
+    strongPlayer?.stop()
+    strongPlayer = nil
+    dotPlayer?.stop()
+    dotPlayer = nil
     timer.upstream.connect().cancel()
 }
 
@@ -38,16 +54,22 @@ let BoredButtonReducer = Reducer<BoredButtonState, BoredButtonAction, BoredButto
             state.currentAction = .run
             timer = Timer.publish(every: 60.0 / Double(state.bpm), on: .main, in: .common).autoconnect()
             createPlayerIfNeeded()
+            createStrongPlayerIfNeeded()
         }
         state.jump()
         if state.isCountDown { return .none }
-        audioPlayer?.play()
+        if state.currentIndex == 0 {
+            strongPlayer?.play()
+        } else {
+            dotPlayer?.play()
+        }
         break
     case .stop:
         state.currentAction = .stop
         state.currentIndex = BoredButtonState.startIndex
         timer.upstream.connect().cancel()
-        audioPlayer?.stop()
+        dotPlayer?.stop()
+        strongPlayer?.stop()
         break
     case .updateBpm(let bpm):
         state.bpm = bpm
