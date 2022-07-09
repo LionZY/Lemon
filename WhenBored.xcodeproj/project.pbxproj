@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		052025AC287807350059654B /* BoardButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AB287807350059654B /* BoardButtonAction.swift */; };
-		052025AE287810A40059654B /* BoardButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AD287810A40059654B /* BoardButtonState.swift */; };
-		052025B0287811280059654B /* BoardButtonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AF287811280059654B /* BoardButtonReducer.swift */; };
-		052025B2287811390059654B /* BoardButtonEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B1287811390059654B /* BoardButtonEnv.swift */; };
+		052025AC287807350059654B /* BoredButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AB287807350059654B /* BoredButtonAction.swift */; };
+		052025AE287810A40059654B /* BoredButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AD287810A40059654B /* BoredButtonState.swift */; };
+		052025B0287811280059654B /* BoredButtonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AF287811280059654B /* BoredButtonReducer.swift */; };
+		052025B2287811390059654B /* BoredButtonEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B1287811390059654B /* BoredButtonEnv.swift */; };
 		052025B8287886710059654B /* dot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 052025B7287886590059654B /* dot.m4a */; };
+		0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563BAA128794C3900E8FC7B /* PickerView.swift */; };
 		05D39C122876904200CCE136 /* WhenBoredApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C112876904200CCE136 /* WhenBoredApp.swift */; };
 		05D39C142876904200CCE136 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C132876904200CCE136 /* MainView.swift */; };
 		05D39C162876904300CCE136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D39C152876904300CCE136 /* Assets.xcassets */; };
@@ -20,7 +21,7 @@
 		05D39C2D2876904300CCE136 /* WhenBoredUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2C2876904300CCE136 /* WhenBoredUITests.swift */; };
 		05D39C2F2876904300CCE136 /* WhenBoredUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2E2876904300CCE136 /* WhenBoredUITestsLaunchTests.swift */; };
 		05D39C3D2876906800CCE136 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 05D39C3C2876906800CCE136 /* ComposableArchitecture */; };
-		05D39C512876A28B00CCE136 /* BoardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C502876A28B00CCE136 /* BoardButtonView.swift */; };
+		05D39C512876A28B00CCE136 /* BoredButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C502876A28B00CCE136 /* BoredButtonView.swift */; };
 		05D39C552876C54B00CCE136 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C532876C54A00CCE136 /* TabItemView.swift */; };
 		05D39C562876C54B00CCE136 /* TabItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C542876C54A00CCE136 /* TabItemState.swift */; };
 		05D39C582876C56500CCE136 /* TabItemReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C572876C56500CCE136 /* TabItemReducer.swift */; };
@@ -60,11 +61,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		052025AB287807350059654B /* BoardButtonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardButtonAction.swift; sourceTree = "<group>"; };
-		052025AD287810A40059654B /* BoardButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardButtonState.swift; sourceTree = "<group>"; };
-		052025AF287811280059654B /* BoardButtonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardButtonReducer.swift; sourceTree = "<group>"; };
-		052025B1287811390059654B /* BoardButtonEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardButtonEnv.swift; sourceTree = "<group>"; };
+		052025AB287807350059654B /* BoredButtonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonAction.swift; sourceTree = "<group>"; };
+		052025AD287810A40059654B /* BoredButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonState.swift; sourceTree = "<group>"; };
+		052025AF287811280059654B /* BoredButtonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonReducer.swift; sourceTree = "<group>"; };
+		052025B1287811390059654B /* BoredButtonEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonEnv.swift; sourceTree = "<group>"; };
 		052025B7287886590059654B /* dot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot.m4a; sourceTree = "<group>"; };
+		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		05D39C0E2876904200CCE136 /* WhenBored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhenBored.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D39C112876904200CCE136 /* WhenBoredApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenBoredApp.swift; sourceTree = "<group>"; };
 		05D39C132876904200CCE136 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -75,7 +77,7 @@
 		05D39C282876904300CCE136 /* WhenBoredUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhenBoredUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D39C2C2876904300CCE136 /* WhenBoredUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenBoredUITests.swift; sourceTree = "<group>"; };
 		05D39C2E2876904300CCE136 /* WhenBoredUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenBoredUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		05D39C502876A28B00CCE136 /* BoardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardButtonView.swift; sourceTree = "<group>"; };
+		05D39C502876A28B00CCE136 /* BoredButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonView.swift; sourceTree = "<group>"; };
 		05D39C532876C54A00CCE136 /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		05D39C542876C54A00CCE136 /* TabItemState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemState.swift; sourceTree = "<group>"; };
 		05D39C572876C56500CCE136 /* TabItemReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemReducer.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0563BAA028794C2C00E8FC7B /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				0563BAA128794C3900E8FC7B /* PickerView.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
 		05D39C052876904200CCE136 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +156,7 @@
 		05D39C102876904200CCE136 /* WhenBored */ = {
 			isa = PBXGroup;
 			children = (
+				0563BAA028794C2C00E8FC7B /* Picker */,
 				05D39C4F2876A27A00CCE136 /* BoredButton */,
 				05D39C402876914500CCE136 /* Tabbar */,
 				05D39C112876904200CCE136 /* WhenBoredApp.swift */,
@@ -199,11 +210,11 @@
 		05D39C4F2876A27A00CCE136 /* BoredButton */ = {
 			isa = PBXGroup;
 			children = (
-				05D39C502876A28B00CCE136 /* BoardButtonView.swift */,
-				052025AB287807350059654B /* BoardButtonAction.swift */,
-				052025AD287810A40059654B /* BoardButtonState.swift */,
-				052025AF287811280059654B /* BoardButtonReducer.swift */,
-				052025B1287811390059654B /* BoardButtonEnv.swift */,
+				05D39C502876A28B00CCE136 /* BoredButtonView.swift */,
+				052025AB287807350059654B /* BoredButtonAction.swift */,
+				052025AD287810A40059654B /* BoredButtonState.swift */,
+				052025AF287811280059654B /* BoredButtonReducer.swift */,
+				052025B1287811390059654B /* BoredButtonEnv.swift */,
 			);
 			path = BoredButton;
 			sourceTree = "<group>";
@@ -383,29 +394,30 @@
 			files = (
 				05D39C552876C54B00CCE136 /* TabItemView.swift in Sources */,
 				05D39C782877269100CCE136 /* TapContentReducer.swift in Sources */,
-				052025B0287811280059654B /* BoardButtonReducer.swift in Sources */,
+				052025B0287811280059654B /* BoredButtonReducer.swift in Sources */,
 				05D39C662876F06200CCE136 /* TabState.swift in Sources */,
 				05D39C6E2877222000CCE136 /* SecondView.swift in Sources */,
 				05D39C562876C54B00CCE136 /* TabItemState.swift in Sources */,
 				05D39C71287722A800CCE136 /* FourthView.swift in Sources */,
 				05D39C652876F06200CCE136 /* TabEnv.swift in Sources */,
 				05D39C7A287726A400CCE136 /* TapContentState.swift in Sources */,
-				05D39C512876A28B00CCE136 /* BoardButtonView.swift in Sources */,
+				05D39C512876A28B00CCE136 /* BoredButtonView.swift in Sources */,
 				05D39C142876904200CCE136 /* MainView.swift in Sources */,
 				05D39C5C2876C58300CCE136 /* TabItemEnv.swift in Sources */,
 				05D39C742877266400CCE136 /* TabContentAction.swift in Sources */,
 				05D39C6C2876F0C100CCE136 /* TabContentView.swift in Sources */,
 				05D39C762877267400CCE136 /* TapContentEnv.swift in Sources */,
-				052025AC287807350059654B /* BoardButtonAction.swift in Sources */,
+				052025AC287807350059654B /* BoredButtonAction.swift in Sources */,
 				05D39C72287722A800CCE136 /* ThirdView.swift in Sources */,
 				05D39C672876F06200CCE136 /* TabAction.swift in Sources */,
 				05D39C5E2876EA0000CCE136 /* FirstView.swift in Sources */,
 				05D39C5A2876C57500CCE136 /* TabItemAction.swift in Sources */,
+				0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */,
 				05D39C582876C56500CCE136 /* TabItemReducer.swift in Sources */,
 				05D39C122876904200CCE136 /* WhenBoredApp.swift in Sources */,
-				052025B2287811390059654B /* BoardButtonEnv.swift in Sources */,
+				052025B2287811390059654B /* BoredButtonEnv.swift in Sources */,
 				05D39C682876F06200CCE136 /* TabView.swift in Sources */,
-				052025AE287810A40059654B /* BoardButtonState.swift in Sources */,
+				052025AE287810A40059654B /* BoredButtonState.swift in Sources */,
 				05D39C692876F06200CCE136 /* TabReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 struct FirstView: View {
     var body: some View {
-        BoardButtonView(store: Store(initialState: BoardButtonState(), reducer: boardButtonReducer, environment: BoardButtonEnv()))
+        BoredButtonView(store: Store(initialState: BoredButtonState(), reducer: BoredButtonReducer, environment: BoredButtonEnv()))
             .frame(maxWidth:.infinity, maxHeight: .infinity)
             .navigationTitle("Metronome")
             .navigationBarItems(
