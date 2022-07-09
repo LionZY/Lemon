@@ -76,7 +76,7 @@ struct BoredButtonView: View {
                         .buttonStyle(.borderedProminent)
                         .sheet(isPresented: $presentedCount) {
                             NavigationView {
-                                PickerView(title: "Select a count", datas: 0..<300, defaultIndex: viewStore.state.count) { selected in
+                                PickerView(title: "Select a count", datas:1..<13, defaultIndex: viewStore.state.count) { selected in
                                     viewStore.send(.updateCount(selected))
                                 }
                             }
@@ -90,7 +90,7 @@ struct BoredButtonView: View {
                         .buttonStyle(.borderedProminent)
                         .sheet(isPresented: $presentedBmp) {
                             NavigationView {
-                                PickerView(title: "Select a bpm", datas: 0..<300, defaultIndex: viewStore.state.bpm) { selected in
+                                PickerView(title: "Select a bpm", datas: 30..<300, defaultIndex: viewStore.state.bpm) { selected in
                                     viewStore.send(.updateBpm(selected))
                                 }
                             }
