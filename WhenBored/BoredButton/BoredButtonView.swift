@@ -21,7 +21,7 @@ struct BoredButtonView: View {
     func backgroundColor(_ viewStore: ViewStore<BoredButtonState, BoredButtonAction>) -> Color {
         switch viewStore.state.currentAction {
         case .run:
-            return viewStore.state.isCountDown ? Color(.systemGray5) :.red
+            return viewStore.state.isCountDown ? Color(.systemYellow) :.red
         case .stop:
             return .black
         default:
@@ -53,7 +53,7 @@ struct BoredButtonView: View {
                     .frame(width: 200, height: 200, alignment: .center)
                     .background(backgroundColor(viewStore))
                     .foregroundColor(.white)
-                    .font(viewStore.state.isCountDown ? .system(size: 60.0) : .system(.largeTitle))
+                    .font(viewStore.state.isCountDown ? .system(size: 68.0) : .system(size: 40.0))
                     .cornerRadius(100)
                     .shadow(color: .gray, radius: 28.0, x: 0, y: 0)
                     
@@ -79,11 +79,11 @@ struct BoredButtonView: View {
                         viewStore.send(.stop)
                     }
                     
-                    Spacer().frame(maxHeight: 30.0)
+                    Spacer()
                     
                     // 参数调节按钮
                     HStack {
-                        Button("Count: \(viewStore.state.count)") {
+                        Button("Meter: \(viewStore.state.count)") {
                             presentedCount = true
                             viewStore.send(.stop)
                         }
@@ -92,12 +92,17 @@ struct BoredButtonView: View {
                         .buttonStyle(.borderedProminent)
                         .sheet(isPresented: $presentedCount) {
                             NavigationView {
-                                PickerView(title: "Select a count", datas:1..<13, defaultIndex: viewStore.state.count) { selected in
+                                PickerView(
+                                    title: "Meter",
+                                    datas:1..<13,
+                                    presets: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                                    defaultIndex: viewStore.state.count
+                                ) { selected in
                                     viewStore.send(.updateCount(selected))
                                 }
                             }
                         }
-                        Spacer().frame(maxWidth: 30.0)
+                        Spacer().frame(maxWidth: 20.0)
                         Button("BPM: \(viewStore.state.bpm)") {
                             presentedBmp = true
                             viewStore.send(.stop)
@@ -107,12 +112,18 @@ struct BoredButtonView: View {
                         .buttonStyle(.borderedProminent)
                         .sheet(isPresented: $presentedBmp) {
                             NavigationView {
-                                PickerView(title: "Select a bpm", datas: 30..<300, defaultIndex: viewStore.state.bpm) { selected in
+                                PickerView(
+                                    title: "BPM",
+                                    datas: 30..<300,
+                                    presets: [40, 50, 60, 80, 120, 160, 200, 240],
+                                    defaultIndex: viewStore.state.bpm
+                                ) { selected in
                                     viewStore.send(.updateBpm(selected))
                                 }
                             }
                         }
                     }
+                    
                     Spacer()
                 }
             }

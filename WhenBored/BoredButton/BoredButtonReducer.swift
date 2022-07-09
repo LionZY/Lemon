@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import ComposableArchitecture
 import AVFAudio
+import UIKit
 
 var dotPlayer:AVAudioPlayer?
 func createPlayerIfNeeded() {
@@ -55,6 +56,7 @@ let BoredButtonReducer = Reducer<BoredButtonState, BoredButtonAction, BoredButto
             timer = Timer.publish(every: 60.0 / Double(state.bpm), on: .main, in: .common).autoconnect()
             createPlayerIfNeeded()
             createStrongPlayerIfNeeded()
+            UIApplication.shared.isIdleTimerDisabled = true
         }
         state.jump()
         if state.isCountDown { return .none }
@@ -70,6 +72,7 @@ let BoredButtonReducer = Reducer<BoredButtonState, BoredButtonAction, BoredButto
         timer.upstream.connect().cancel()
         dotPlayer?.stop()
         strongPlayer?.stop()
+        UIApplication.shared.isIdleTimerDisabled = false
         break
     case .updateBpm(let bpm):
         state.bpm = bpm
