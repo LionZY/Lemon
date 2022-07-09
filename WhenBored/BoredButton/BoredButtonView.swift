@@ -85,6 +85,7 @@ struct BoredButtonView: View {
                     HStack {
                         Button("Count: \(viewStore.state.count)") {
                             presentedCount = true
+                            viewStore.send(.stop)
                         }
                         .tint(.black)
                         .controlSize(.regular)
@@ -99,6 +100,7 @@ struct BoredButtonView: View {
                         Spacer().frame(maxWidth: 30.0)
                         Button("BPM: \(viewStore.state.bpm)") {
                             presentedBmp = true
+                            viewStore.send(.stop)
                         }
                         .tint(.black)
                         .controlSize(.regular)

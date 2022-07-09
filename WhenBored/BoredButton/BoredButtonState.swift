@@ -34,6 +34,5 @@ struct BoredButtonState: Equatable {
         } else {
             currentIndex = (currentIndex + 1) % count
         }
-        print(currentIndex)
     }
 }
