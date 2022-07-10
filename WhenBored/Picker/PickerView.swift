@@ -33,7 +33,7 @@ struct PickerView: View {
                         let index = rw * presetColum + col
                         if index < presets.count {
                             Button("\(presets[index])") {
-                                selectedValue = presets[index] 
+                                selectedValue = presets[index]
                                 action?(selectedValue)
                                 dismiss()
                             }
