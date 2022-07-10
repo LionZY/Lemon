@@ -18,10 +18,11 @@ struct PickerView: View {
     var presetRow: Int {
         presets.count % presetColum == 0 ? presets.count / presetColum : presets.count / presetColum + 1
     }
-    let defaultIndex: Int
+    let defaultValue: Int
     let action: ((Int) -> Void)?
     
-    @State private var selected: Int = 0
+    @State private var selectedValue: Int = 0
+
     var body: some View {
         VStack {
             Spacer()
@@ -32,11 +33,12 @@ struct PickerView: View {
                         let index = rw * presetColum + col
                         if index < presets.count {
                             Button("\(presets[index])") {
-                                
+                                selectedValue = presets[index] 
+                                action?(selectedValue)
+                                dismiss()
                             }
-                            .tint(selected == index ? .red : .black)
                             .frame(maxWidth: 60, maxHeight: 60)
-                            .background(.black)
+                            .background(selectedValue == presets[index] ? .red : .black)
                             .foregroundColor(.white)
                             .cornerRadius(30.0)
                         }
@@ -44,7 +46,7 @@ struct PickerView: View {
                 }
             }
             Spacer()
-            Picker(title, selection: $selected) {
+            Picker(title, selection: $selectedValue) {
                 ForEach(datas, id: \.self) {
                     Text("\($0.formatted(.number.grouping(.never)))")
                         .font(.title)
@@ -54,11 +56,11 @@ struct PickerView: View {
             .navigationTitle(title)
             .navigationBarItems(
                 trailing: Button("Done") {
-                    action?(selected)
+                    action?(selectedValue)
                     dismiss()
                 }
             ).onAppear {
-                selected = defaultIndex
+                selectedValue = defaultValue
             }
         }
     }
@@ -66,7 +68,7 @@ struct PickerView: View {
 
 struct PickerView_Previews: PreviewProvider {
     static var previews: some View {
-        PickerView(title: "", datas: 0..<4, presets: [], defaultIndex: 2,  action: nil)
+        PickerView(title: "", datas: 0..<4, presets: [], defaultValue: 2,  action: nil)
     }
 }
 

@@ -16,30 +16,18 @@ struct BoredButtonState: Equatable {
     }
     
     static var startIndex = -4
-    var count: Int {
-        get {
+    var count: Int = 4 {
+        didSet {
             let ud = UserDefaults.standard
-            let saved = ud.integer(forKey: KSaved_Meter)
-            return saved == 0 ? 4 : saved
-        }
-        
-        set {
-            let ud = UserDefaults.standard
-            ud.set(newValue, forKey: KSaved_Meter)
+            ud.set(count, forKey: KSaved_Meter)
             ud.synchronize()
         }
     }
 
-    var bpm: Int {
-        get {
+    var bpm: Int = 60 {
+        didSet {
             let ud = UserDefaults.standard
-            let saved = ud.integer(forKey: KSaved_BPM)
-            return saved == 0 ? 60 : saved
-        }
-        
-        set {
-            let ud = UserDefaults.standard
-            ud.set(newValue, forKey: KSaved_BPM)
+            ud.set(bpm, forKey: KSaved_BPM)
             ud.synchronize()
         }
     }

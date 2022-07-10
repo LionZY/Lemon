@@ -76,6 +76,8 @@ struct BoredButtonView: View {
                     .onReceive(timer) { input in
                         viewStore.send(.run)
                     }.onAppear {
+                        viewStore.send(.updateBpm(UserDefaults.standard.integer(forKey: KSaved_BPM)))
+                        viewStore.send(.updateCount(UserDefaults.standard.integer(forKey: KSaved_Meter)))
                         viewStore.send(.stop)
                     }
                     
@@ -96,7 +98,7 @@ struct BoredButtonView: View {
                                     title: "Meter",
                                     datas:1..<13,
                                     presets: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-                                    defaultIndex: viewStore.state.count
+                                    defaultValue: viewStore.state.count
                                 ) { selected in
                                     viewStore.send(.updateCount(selected))
                                 }
@@ -116,7 +118,7 @@ struct BoredButtonView: View {
                                     title: "BPM",
                                     datas: 30..<300,
                                     presets: [40, 50, 60, 80, 120, 160, 200, 240],
-                                    defaultIndex: viewStore.state.bpm
+                                    defaultValue: viewStore.state.bpm
                                 ) { selected in
                                     viewStore.send(.updateBpm(selected))
                                 }
