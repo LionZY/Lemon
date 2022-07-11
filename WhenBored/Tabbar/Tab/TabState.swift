@@ -11,5 +11,6 @@ struct TabState: Equatable {
     var items = [
         TabItemState(icon: "metronome", title: "Metronome", select: true, index: 0),
         TabItemState(icon: "tuningfork", title: "Tuner", select: false, index: 1),
+        TabItemState(icon: "gearshape", title: "Settings", select: false, index: 2)
     ]
 }

@@ -16,13 +16,11 @@ struct TabContentView: View {
         WithViewStore(store) { viewStore in
             ZStack {
                 if viewStore.state.selectIndex == 0 {
-                    FirstView()
+                    MetronomeView()
                 } else if (viewStore.state.selectIndex == 1) {
-                    SecondView()
-                } else if (viewStore.state.selectIndex == 2) {
-                    ThirdView()
+                    TunerView()
                 } else {
-                    FourthView()
+                    SettingsView()
                 }
             }.onAppear {
                 selectedTabContentReducer = viewStore

@@ -8,20 +8,20 @@
 import Foundation
 import SwiftUI
 
-struct ThirdView: View {
+struct SettingsView: View {
     var body: some View {
         HStack {
             VStack {
-                Text("Hello world 3")
+                Text("Settings Page")
             }
         }
         .frame(maxWidth:.infinity, maxHeight: .infinity)
-        .navigationTitle("Third Page")
+        .navigationTitle("Settings")
     }
 }
 
-struct ThirdView_Previews: PreviewProvider {
+struct FouthView_Previews: PreviewProvider {
     static var previews: some View {
-        ThirdView()
+        SettingsView()
     }
 }

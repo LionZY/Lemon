@@ -8,25 +8,17 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct FirstView: View {
+struct MetronomeView: View {
     var body: some View {
         BoredButtonView(store: Store(initialState: BoredButtonState(), reducer: BoredButtonReducer, environment: BoredButtonEnv()))
             .frame(maxWidth:.infinity, maxHeight: .infinity)
             .navigationTitle("Metronome")
-            .navigationBarItems(
-                leading: NavigationLink(destination: ThirdView()) {
-                    Image(systemName: "person")
-                },
-                trailing: NavigationLink(destination: FourthView()) {
-                    Image(systemName: "gearshape")
-                }
-            )
             .tint(.black)
     }
 }
 
 struct FirstView_Previews: PreviewProvider {
     static var previews: some View {
-        FirstView()
+        MetronomeView()
     }
 }
