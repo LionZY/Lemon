@@ -90,7 +90,7 @@ struct BoredButtonView: View {
                             viewStore.send(.stop)
                         }
                         .tint(.black)
-                        .controlSize(.regular)
+                        .controlSize(.small)
                         .buttonStyle(.borderedProminent)
                         .sheet(isPresented: $presentedCount) {
                             NavigationView {
@@ -110,7 +110,7 @@ struct BoredButtonView: View {
                             viewStore.send(.stop)
                         }
                         .tint(.black)
-                        .controlSize(.regular)
+                        .controlSize(.small)
                         .buttonStyle(.borderedProminent)
                         .sheet(isPresented: $presentedBmp) {
                             NavigationView {
