@@ -14,7 +14,7 @@ struct TranspositionMenu: View {
                 }
             },
             label: {
-                Text(transpositions[selectedTransposition].transpositionName)
+                Text("Tone: \(transpositions[selectedTransposition].transpositionName)")
                     .frame(minWidth: 64, alignment: .trailing)
             }
         )
@@ -27,12 +27,7 @@ struct TranspositionMenu: View {
 
 private extension ScaleNote {
     var transpositionName: String {
-        switch self {
-        case .C:
-            return "Concert"
-        default:
-            return names.joined(separator: " / ")
-        }
+        return names.joined(separator: " / ")
     }
 }
 
