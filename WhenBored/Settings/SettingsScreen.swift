@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct SettingsView: View {
+struct SettingsScreen: View {
     var body: some View {
         HStack {
             VStack {
@@ -22,6 +22,6 @@ struct SettingsView: View {
 
 struct FouthView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsScreen()
     }
 }

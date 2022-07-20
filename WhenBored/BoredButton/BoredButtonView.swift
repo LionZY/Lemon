@@ -76,8 +76,12 @@ struct BoredButtonView: View {
                     .onReceive(timer) { input in
                         viewStore.send(.run)
                     }.onAppear {
-                        viewStore.send(.updateBpm(UserDefaults.standard.integer(forKey: KSaved_BPM)))
-                        viewStore.send(.updateCount(UserDefaults.standard.integer(forKey: KSaved_Meter)))
+                        var savedBPM = UserDefaults.standard.integer(forKey: KSaved_BPM)
+                        savedBPM = savedBPM == 0 ? 60 : savedBPM
+                        viewStore.send(.updateBpm(savedBPM))
+                        var savedMeter = UserDefaults.standard.integer(forKey: KSaved_Meter)
+                        savedMeter = savedMeter == 0 ? 4 : savedMeter
+                        viewStore.send(.updateCount(savedMeter))
                         viewStore.send(.stop)
                     }
                     

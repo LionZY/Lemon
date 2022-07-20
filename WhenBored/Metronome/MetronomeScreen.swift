@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct MetronomeView: View {
+struct MetronomeScreen: View {
     var body: some View {
         BoredButtonView(store: Store(initialState: BoredButtonState(), reducer: BoredButtonReducer, environment: BoredButtonEnv()))
             .frame(maxWidth:.infinity, maxHeight: .infinity)
@@ -17,8 +17,8 @@ struct MetronomeView: View {
     }
 }
 
-struct FirstView_Previews: PreviewProvider {
+struct MetronomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MetronomeView()
+        MetronomeScreen()
     }
 }

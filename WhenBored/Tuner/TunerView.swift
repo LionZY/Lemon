@@ -9,20 +9,17 @@ import Foundation
 import SwiftUI
 
 struct TunerView: View {
+    let tunerData: TunerData
+    @State var modifierPreference: ModifierPreference
+    @State var selectedTransposition: Int
+    private var match: ScaleNote.Match {
+         tunerData.closestNote.inTransposition(ScaleNote.allCases[selectedTransposition])
+    }
+    
     @State private var selectedValue: String = "Guitar"
     var datas = [["D", "A", "E"], ["G", "B", "E"]]
     var segments = ["Guitar", "Ukulele"]
-    
-    func lineHeight(_ index: Int) -> Double {
-        if index < 50 {
-            return 10.0 + 54.0 * (Double(index + 1) / 50.0)
-        } else if index == 50 {
-            return 84
-        } else {
-            return 10.0 + 54.0 * (1.0 - Double(index - 50) / 50.0)
-        }
-    }
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -30,8 +27,7 @@ struct TunerView: View {
                 Spacer()
                 Picker("", selection: $selectedValue) {
                     ForEach(segments, id: \.self) { t in
-                        Text(t)
-                            .foregroundColor(selectedValue == t ? .red : Color(UIColor(white: 0.0, alpha: 0.3)))
+                        Text(t).foregroundColor(selectedValue == t ? .red : Color(UIColor(white: 0.0, alpha: 0.3)))
                     }
                 }
                 .pickerStyle(.segmented)
@@ -39,17 +35,15 @@ struct TunerView: View {
                 Spacer()
             }
             Spacer()
-            HStack{
-                Spacer()
-                ForEach(0..<101, id: \.self) {
-                    Text("")
-                        .frame(maxWidth: 1.0, maxHeight: lineHeight($0))
-                        .background($0 == 50 ? .red : Color(UIColor(white: 0.0, alpha: 0.3)))
-                    Spacer()
-                        .frame(maxWidth: 2.0)
-                }
-                Spacer()
+            VStack() {
+                MatchedNoteView(
+                    match: match,
+                    modifierPreference: modifierPreference
+                )
+                MatchedNoteFrequency(frequency: tunerData.closestNote.frequency)
+                NoteTicks(tunerData: tunerData, showFrequencyText: true)
             }
+            Spacer()
             Spacer()
             HStack {
                 Spacer()
@@ -71,14 +65,21 @@ struct TunerView: View {
                 }
             }
             Spacer()
+            Spacer()
         }
         .frame(maxWidth:.infinity, maxHeight: .infinity)
         .navigationTitle("Tuner")
+        .navigationBarItems(trailing: TranspositionMenu(selectedTransposition: $selectedTransposition))
+        .tint(.black)
     }
 }
 
 struct SecondView_Previews: PreviewProvider {
     static var previews: some View {
-        TunerView()
+        TunerView(
+            tunerData: TunerData(),
+            modifierPreference: .preferSharps,
+            selectedTransposition: 0
+        )
     }
 }
