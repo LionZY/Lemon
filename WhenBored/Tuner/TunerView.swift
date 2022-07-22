@@ -10,16 +10,17 @@ import SwiftUI
 
 struct TunerView: View {
     let tunerData: TunerData
+    @State private var auto = true
     @State var modifierPreference: ModifierPreference
     @State var selectedTransposition: Int
-    private var match: ScaleNote.Match {
+    @State var selectedValue: String = "Guitar"
+    
+    var match: ScaleNote.Match {
          tunerData.closestNote.inTransposition(ScaleNote.allCases[selectedTransposition])
     }
     
-    @State private var selectedValue: String = "Guitar"
-    var datas = [["D", "A", "E"], ["G", "B", "E"]]
     var segments = ["Guitar", "Ukulele"]
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -44,16 +45,14 @@ struct TunerView: View {
                 NoteTicks(tunerData: tunerData, showFrequencyText: true)
             }
             Spacer()
-            Spacer()
             HStack {
                 Spacer()
+                let datas = selectedValue == "Guitar" ? [["D", "A", "E"], ["G", "B", "E"]] : [["C", "G"], ["E", "A"]]
                 ForEach(datas.indices, id: \.self) { index in
                     let subItems = datas[index]
                     VStack {
                         ForEach(subItems, id: \.self) { item in
-                            Button(item) {
-                                
-                            }
+                            Button(item) { }
                             .frame(maxWidth: 60, maxHeight: 60)
                             .background(.black)
                             .foregroundColor(.white)
@@ -65,12 +64,16 @@ struct TunerView: View {
                 }
             }
             Spacer()
+            Toggle("Auto", isOn: $auto).toggleStyle(SwitchToggleStyle(tint: .red)).frame(maxWidth: 98.0)
             Spacer()
         }
         .frame(maxWidth:.infinity, maxHeight: .infinity)
         .navigationTitle("Tuner")
-        .navigationBarItems(trailing: TranspositionMenu(selectedTransposition: $selectedTransposition))
+        .navigationBarItems(
+            leading: TranspositionMenu(selectedTransposition: $selectedTransposition)
+        )
         .tint(.black)
+        .animation(.easeInOut, value: selectedValue)
     }
 }
 

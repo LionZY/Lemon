@@ -15,7 +15,7 @@ struct TranspositionMenu: View {
             },
             label: {
                 Text("Tone: \(transpositions[selectedTransposition].transpositionName)")
-                    .frame(minWidth: 64, alignment: .trailing)
+                    .frame(minWidth: 64, alignment: .leading)
             }
         )
         .transaction { transaction in

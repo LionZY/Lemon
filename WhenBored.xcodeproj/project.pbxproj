@@ -11,9 +11,11 @@
 		052025AE287810A40059654B /* BoredButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AD287810A40059654B /* BoredButtonState.swift */; };
 		052025B0287811280059654B /* BoredButtonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AF287811280059654B /* BoredButtonReducer.swift */; };
 		052025B2287811390059654B /* BoredButtonEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B1287811390059654B /* BoredButtonEnv.swift */; };
-		052025B8287886710059654B /* dot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 052025B7287886590059654B /* dot.m4a */; };
 		0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563BAA128794C3900E8FC7B /* PickerView.swift */; };
-		0563BAAC2879730B00E8FC7B /* dot_strong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0563BAAB2879726600E8FC7B /* dot_strong.m4a */; };
+		0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0578AD3B28897E1700AE5B04 /* ComposableArchitecture */; };
+		0584DA7F288AA37B008712DF /* dot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7C288AA37B008712DF /* dot.m4a */; };
+		0584DA80288AA37B008712DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7D288AA37B008712DF /* Assets.xcassets */; };
+		0584DA81288AA37B008712DF /* dot_strong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7E288AA37B008712DF /* dot_strong.m4a */; };
 		058513392887F46600F7B3AF /* TunerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058513372887F46600F7B3AF /* TunerScreen.swift */; };
 		0585133A2887F46600F7B3AF /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058513382887F46600F7B3AF /* TunerView.swift */; };
 		0585133D2887F4A700F7B3AF /* MetronomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */; };
@@ -37,12 +39,10 @@
 		05B41AC6288539C000151D70 /* MatchedNoteFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41ABD288539C000151D70 /* MatchedNoteFrequency.swift */; };
 		05D39C122876904200CCE136 /* WhenBoredApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C112876904200CCE136 /* WhenBoredApp.swift */; };
 		05D39C142876904200CCE136 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C132876904200CCE136 /* MainView.swift */; };
-		05D39C162876904300CCE136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D39C152876904300CCE136 /* Assets.xcassets */; };
 		05D39C192876904300CCE136 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D39C182876904300CCE136 /* Preview Assets.xcassets */; };
 		05D39C232876904300CCE136 /* WhenBoredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C222876904300CCE136 /* WhenBoredTests.swift */; };
 		05D39C2D2876904300CCE136 /* WhenBoredUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2C2876904300CCE136 /* WhenBoredUITests.swift */; };
 		05D39C2F2876904300CCE136 /* WhenBoredUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2E2876904300CCE136 /* WhenBoredUITestsLaunchTests.swift */; };
-		05D39C3D2876906800CCE136 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 05D39C3C2876906800CCE136 /* ComposableArchitecture */; };
 		05D39C512876A28B00CCE136 /* BoredButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C502876A28B00CCE136 /* BoredButtonView.swift */; };
 		05D39C552876C54B00CCE136 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C532876C54A00CCE136 /* TabItemView.swift */; };
 		05D39C562876C54B00CCE136 /* TabItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C542876C54A00CCE136 /* TabItemState.swift */; };
@@ -83,9 +83,11 @@
 		052025AD287810A40059654B /* BoredButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonState.swift; sourceTree = "<group>"; };
 		052025AF287811280059654B /* BoredButtonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonReducer.swift; sourceTree = "<group>"; };
 		052025B1287811390059654B /* BoredButtonEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonEnv.swift; sourceTree = "<group>"; };
-		052025B7287886590059654B /* dot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot.m4a; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
-		0563BAAB2879726600E8FC7B /* dot_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot_strong.m4a; sourceTree = "<group>"; };
+		0578AD392889651E00AE5B04 /* WhenBored.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhenBored.entitlements; sourceTree = "<group>"; };
+		0584DA7C288AA37B008712DF /* dot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot.m4a; sourceTree = "<group>"; };
+		0584DA7D288AA37B008712DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0584DA7E288AA37B008712DF /* dot_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot_strong.m4a; sourceTree = "<group>"; };
 		058513372887F46600F7B3AF /* TunerScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerScreen.swift; sourceTree = "<group>"; };
 		058513382887F46600F7B3AF /* TunerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerView.swift; sourceTree = "<group>"; };
 		0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeScreen.swift; sourceTree = "<group>"; };
@@ -110,7 +112,6 @@
 		05D39C0E2876904200CCE136 /* Bored Metro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bored Metro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D39C112876904200CCE136 /* WhenBoredApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenBoredApp.swift; sourceTree = "<group>"; };
 		05D39C132876904200CCE136 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		05D39C152876904300CCE136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05D39C182876904300CCE136 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		05D39C1E2876904300CCE136 /* WhenBoredTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhenBoredTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D39C222876904300CCE136 /* WhenBoredTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenBoredTests.swift; sourceTree = "<group>"; };
@@ -140,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05D39C3D2876906800CCE136 /* ComposableArchitecture in Frameworks */,
+				0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */,
 				058513462887F60900F7B3AF /* MicrophonePitchDetector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +169,16 @@
 				0563BAA128794C3900E8FC7B /* PickerView.swift */,
 			);
 			path = Picker;
+			sourceTree = "<group>";
+		};
+		0584DA7B288AA37B008712DF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0584DA7C288AA37B008712DF /* dot.m4a */,
+				0584DA7D288AA37B008712DF /* Assets.xcassets */,
+				0584DA7E288AA37B008712DF /* dot_strong.m4a */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		058513362887F46600F7B3AF /* Tuner */ = {
@@ -275,11 +286,10 @@
 		05D39C102876904200CCE136 /* WhenBored */ = {
 			isa = PBXGroup;
 			children = (
-				0563BAAB2879726600E8FC7B /* dot_strong.m4a */,
-				052025B7287886590059654B /* dot.m4a */,
+				0578AD392889651E00AE5B04 /* WhenBored.entitlements */,
 				05D39C132876904200CCE136 /* MainView.swift */,
 				05D39C112876904200CCE136 /* WhenBoredApp.swift */,
-				05D39C152876904300CCE136 /* Assets.xcassets */,
+				0584DA7B288AA37B008712DF /* Assets */,
 				05D39C4F2876A27A00CCE136 /* BoredButton */,
 				05B41AA12885389300151D70 /* Helpers */,
 				0585133B2887F4A700F7B3AF /* Metronome */,
@@ -392,8 +402,8 @@
 			);
 			name = WhenBored;
 			packageProductDependencies = (
-				05D39C3C2876906800CCE136 /* ComposableArchitecture */,
 				058513452887F60900F7B3AF /* MicrophonePitchDetector */,
+				0578AD3B28897E1700AE5B04 /* ComposableArchitecture */,
 			);
 			productName = WhenBored;
 			productReference = 05D39C0E2876904200CCE136 /* Bored Metro.app */;
@@ -468,7 +478,7 @@
 			);
 			mainGroup = 05D39C052876904200CCE136;
 			packageReferences = (
-				05D39C3B2876906800CCE136 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				0578AD3A28897E1700AE5B04 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 05D39C0F2876904200CCE136 /* Products */;
 			projectDirPath = "";
@@ -486,10 +496,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				052025B8287886710059654B /* dot.m4a in Resources */,
-				0563BAAC2879730B00E8FC7B /* dot_strong.m4a in Resources */,
+				0584DA7F288AA37B008712DF /* dot.m4a in Resources */,
+				0584DA81288AA37B008712DF /* dot_strong.m4a in Resources */,
+				0584DA80288AA37B008712DF /* Assets.xcassets in Resources */,
 				05D39C192876904300CCE136 /* Preview Assets.xcassets in Resources */,
-				05D39C162876904300CCE136 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,47 +724,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WhenBored/Preview Content\"";
-				DEVELOPMENT_TEAM = D4PFYTTGXR;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Board Metro will use microphone for tuner.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.WhenBored;
-				PRODUCT_NAME = "Bored Metro";
-				PROVISIONING_PROFILE_SPECIFIER = YueZhang;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		05D39C342876904300CCE136 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WhenBored/WhenBored.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhenBored/Preview Content\"";
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Board Metro will use microphone for tuner.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -771,9 +750,48 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.WhenBored;
 				PRODUCT_NAME = "Bored Metro";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Debug;
+		};
+		05D39C342876904300CCE136 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WhenBored/WhenBored.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WhenBored/Preview Content\"";
+				DEVELOPMENT_TEAM = D4PFYTTGXR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Board Metro will use microphone for tuner.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.WhenBored;
+				PRODUCT_NAME = "Bored Metro";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
@@ -895,7 +913,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		05D39C3B2876906800CCE136 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		0578AD3A28897E1700AE5B04 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
@@ -906,14 +924,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0578AD3B28897E1700AE5B04 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0578AD3A28897E1700AE5B04 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
 		058513452887F60900F7B3AF /* MicrophonePitchDetector */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MicrophonePitchDetector;
-		};
-		05D39C3C2876906800CCE136 /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 05D39C3B2876906800CCE136 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
