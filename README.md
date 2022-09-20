@@ -1,4 +1,4 @@
-# WhenBored
+# Bored Metro
 无聊的时候，SwiftUI + Combine + TCA 练手写了个节拍器
 
 # Demo
