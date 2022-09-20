@@ -106,7 +106,7 @@ struct BoredButtonView: View {
                                 ) { selected in
                                     viewStore.send(.updateCount(selected))
                                 }
-                            }
+                            }.navigationViewStyle(.stack)
                         }
                         Spacer().frame(maxWidth: 20.0)
                         Button("BPM: \(viewStore.state.bpm)") {
@@ -126,7 +126,7 @@ struct BoredButtonView: View {
                                 ) { selected in
                                     viewStore.send(.updateBpm(selected))
                                 }
-                            }
+                            }.navigationViewStyle(.stack)
                         }
                     }
                     

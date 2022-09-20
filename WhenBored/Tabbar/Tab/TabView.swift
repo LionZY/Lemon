@@ -24,6 +24,7 @@ struct TabView: View {
                 }
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

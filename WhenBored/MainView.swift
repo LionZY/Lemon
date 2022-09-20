@@ -10,16 +10,14 @@ import ComposableArchitecture
 
 struct MainView: View {
     var body: some View {
-        VStack {
-            TabView(
-                store: Store(
-                    initialState: TabState(),
-                    reducer: tabReducer,
-                    environment: TabEnv()
-                )
+        TabView(
+            store: Store(
+                initialState: TabState(),
+                reducer: tabReducer,
+                environment: TabEnv()
             )
-                .frame(maxWidth: .infinity, minHeight: 44.0)
-        }
+        )
+            .frame(maxWidth: .infinity, minHeight: 44.0)
     }
 }
 
