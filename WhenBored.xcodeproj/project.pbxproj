@@ -13,6 +13,8 @@
 		052025B2287811390059654B /* BoredButtonEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B1287811390059654B /* BoredButtonEnv.swift */; };
 		0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563BAA128794C3900E8FC7B /* PickerView.swift */; };
 		0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0578AD3B28897E1700AE5B04 /* ComposableArchitecture */; };
+		0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */; };
+		0579280928D97C9400FE70E6 /* icon_show.png in Resources */ = {isa = PBXBuildFile; fileRef = 0579280828D97C9400FE70E6 /* icon_show.png */; };
 		0584DA7F288AA37B008712DF /* dot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7C288AA37B008712DF /* dot.m4a */; };
 		0584DA80288AA37B008712DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7D288AA37B008712DF /* Assets.xcassets */; };
 		0584DA81288AA37B008712DF /* dot_strong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7E288AA37B008712DF /* dot_strong.m4a */; };
@@ -85,6 +87,9 @@
 		052025B1287811390059654B /* BoredButtonEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonEnv.swift; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0578AD392889651E00AE5B04 /* WhenBored.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhenBored.entitlements; sourceTree = "<group>"; };
+		0579280528D978C800FE70E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0579280828D97C9400FE70E6 /* icon_show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_show.png; sourceTree = "<group>"; };
 		0584DA7C288AA37B008712DF /* dot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot.m4a; sourceTree = "<group>"; };
 		0584DA7D288AA37B008712DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0584DA7E288AA37B008712DF /* dot_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot_strong.m4a; sourceTree = "<group>"; };
@@ -109,7 +114,7 @@
 		05B41ABA288539C000151D70 /* TranspositionMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranspositionMenu.swift; sourceTree = "<group>"; };
 		05B41ABC288539C000151D70 /* MainNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNoteView.swift; sourceTree = "<group>"; };
 		05B41ABD288539C000151D70 /* MatchedNoteFrequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedNoteFrequency.swift; sourceTree = "<group>"; };
-		05D39C0E2876904200CCE136 /* Bored Metro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bored Metro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D39C0E2876904200CCE136 /* XMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D39C112876904200CCE136 /* WhenBoredApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenBoredApp.swift; sourceTree = "<group>"; };
 		05D39C132876904200CCE136 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		05D39C182876904300CCE136 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -174,6 +179,7 @@
 		0584DA7B288AA37B008712DF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0579280828D97C9400FE70E6 /* icon_show.png */,
 				0584DA7C288AA37B008712DF /* dot.m4a */,
 				0584DA7D288AA37B008712DF /* Assets.xcassets */,
 				0584DA7E288AA37B008712DF /* dot_strong.m4a */,
@@ -276,7 +282,7 @@
 		05D39C0F2876904200CCE136 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				05D39C0E2876904200CCE136 /* Bored Metro.app */,
+				05D39C0E2876904200CCE136 /* XMetro.app */,
 				05D39C1E2876904300CCE136 /* WhenBoredTests.xctest */,
 				05D39C282876904300CCE136 /* WhenBoredUITests.xctest */,
 			);
@@ -286,9 +292,11 @@
 		05D39C102876904200CCE136 /* WhenBored */ = {
 			isa = PBXGroup;
 			children = (
+				0579280528D978C800FE70E6 /* Info.plist */,
 				0578AD392889651E00AE5B04 /* WhenBored.entitlements */,
 				05D39C132876904200CCE136 /* MainView.swift */,
 				05D39C112876904200CCE136 /* WhenBoredApp.swift */,
+				0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */,
 				0584DA7B288AA37B008712DF /* Assets */,
 				05D39C4F2876A27A00CCE136 /* BoredButton */,
 				05B41AA12885389300151D70 /* Helpers */,
@@ -406,7 +414,7 @@
 				0578AD3B28897E1700AE5B04 /* ComposableArchitecture */,
 			);
 			productName = WhenBored;
-			productReference = 05D39C0E2876904200CCE136 /* Bored Metro.app */;
+			productReference = 05D39C0E2876904200CCE136 /* XMetro.app */;
 			productType = "com.apple.product-type.application";
 		};
 		05D39C1D2876904300CCE136 /* WhenBoredTests */ = {
@@ -499,6 +507,8 @@
 				0584DA7F288AA37B008712DF /* dot.m4a in Resources */,
 				0584DA81288AA37B008712DF /* dot_strong.m4a in Resources */,
 				0584DA80288AA37B008712DF /* Assets.xcassets in Resources */,
+				0579280928D97C9400FE70E6 /* icon_show.png in Resources */,
+				0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */,
 				05D39C192876904300CCE136 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -726,18 +736,20 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhenBored/WhenBored.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhenBored/Preview Content\"";
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhenBored/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Board Metro will use microphone for tuner.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -747,14 +759,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.WhenBored;
-				PRODUCT_NAME = "Bored Metro";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
+				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -765,17 +777,20 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WhenBored/WhenBored.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhenBored/Preview Content\"";
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhenBored/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Board Metro will use microphone for tuner.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -785,13 +800,13 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.WhenBored;
-				PRODUCT_NAME = "Bored Metro";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
+				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

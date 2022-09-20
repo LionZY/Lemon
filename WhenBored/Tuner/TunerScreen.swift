@@ -14,6 +14,7 @@ struct TunerScreen: View {
             selectedTransposition: selectedTransposition
         )
         .onChange(of: scenePhase) { phase in
+            /*
             switch phase {
             case .active:
                 pitchDetector.start()
@@ -22,12 +23,13 @@ struct TunerScreen: View {
             @unknown default:
                 pitchDetector.stop()
             }
+            */
         }
         .onAppear(perform: {
-            pitchDetector.start()
+            //pitchDetector.start()
         })
         .onDisappear(perform: {
-            pitchDetector.stop()
+            //pitchDetector.stop()
         })
         .alert(isPresented: $pitchDetector.showMicrophoneAccessAlert) {
             MicrophoneAccessAlert()

@@ -17,9 +17,9 @@ struct TabContentView: View {
             ZStack {
                 if viewStore.state.selectIndex == 0 {
                     MetronomeScreen()
-                } else if (viewStore.state.selectIndex == 1) {
+                }/* else if (viewStore.state.selectIndex == 1) {
                     TunerScreen()
-                } else {
+                }*/ else {
                     SettingsScreen()
                 }
             }.onAppear {

@@ -12,11 +12,14 @@ struct SettingsScreen: View {
     var body: some View {
         HStack {
             VStack {
-                Text("Settings Page")
+                Text("XMetro is developed by @LionZY")
+                Link("Github", destination: URL(string: "https://github.com/LionZY")!)
+                    .buttonStyle(.bordered)
+                    .foregroundColor(.black)
             }
         }
         .frame(maxWidth:.infinity, maxHeight: .infinity)
-        .navigationTitle("Settings")
+        .navigationTitle("About")
     }
 }
 
