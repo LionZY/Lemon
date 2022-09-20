@@ -1,6 +1,6 @@
 //
-//  WhenBoredUITests.swift
-//  WhenBoredUITests
+//  XMetroUITests.swift
+//  XMetroUITests
 //
 //  Created by Yue Zhang on 2022/7/7.
 //

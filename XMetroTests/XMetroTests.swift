@@ -1,14 +1,14 @@
 //
-//  WhenBoredTests.swift
-//  WhenBoredTests
+//  XMetroTests.swift
+//  XMetroTests
 //
 //  Created by Yue Zhang on 2022/7/7.
 //
 
 import XCTest
-@testable import WhenBored
+@testable import XMetro
 
-class WhenBoredTests: XCTestCase {
+class XMetroTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

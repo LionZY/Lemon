@@ -18,33 +18,33 @@
 		0584DA7F288AA37B008712DF /* dot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7C288AA37B008712DF /* dot.m4a */; };
 		0584DA80288AA37B008712DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7D288AA37B008712DF /* Assets.xcassets */; };
 		0584DA81288AA37B008712DF /* dot_strong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7E288AA37B008712DF /* dot_strong.m4a */; };
-		058513392887F46600F7B3AF /* TunerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058513372887F46600F7B3AF /* TunerScreen.swift */; };
-		0585133A2887F46600F7B3AF /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058513382887F46600F7B3AF /* TunerView.swift */; };
 		0585133D2887F4A700F7B3AF /* MetronomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */; };
 		058513402887F4D300F7B3AF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133F2887F4D300F7B3AF /* SettingsScreen.swift */; };
 		058513462887F60900F7B3AF /* MicrophonePitchDetector in Frameworks */ = {isa = PBXBuildFile; productRef = 058513452887F60900F7B3AF /* MicrophonePitchDetector */; };
 		058513482887FAEF00F7B3AF /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058513472887FAEF00F7B3AF /* Color+Extensions.swift */; };
+		059D996128DA03DD00741591 /* ModifierPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995228DA03DD00741591 /* ModifierPreference.swift */; };
+		059D996228DA03DD00741591 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995328DA03DD00741591 /* Frequency.swift */; };
+		059D996328DA03DD00741591 /* ScaleNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995428DA03DD00741591 /* ScaleNote.swift */; };
+		059D996428DA03DD00741591 /* TunerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995528DA03DD00741591 /* TunerData.swift */; };
+		059D996528DA03DD00741591 /* TunerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995628DA03DD00741591 /* TunerScreen.swift */; };
+		059D996628DA03DD00741591 /* CurrentNoteMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995828DA03DD00741591 /* CurrentNoteMarker.swift */; };
+		059D996728DA03DD00741591 /* MatchedNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995928DA03DD00741591 /* MatchedNoteView.swift */; };
+		059D996828DA03DD00741591 /* NoteDistanceMarkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995A28DA03DD00741591 /* NoteDistanceMarkers.swift */; };
+		059D996928DA03DD00741591 /* NoteTicks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995B28DA03DD00741591 /* NoteTicks.swift */; };
+		059D996A28DA03DD00741591 /* MicrophoneAccessAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995C28DA03DD00741591 /* MicrophoneAccessAlert.swift */; };
+		059D996B28DA03DD00741591 /* TranspositionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995D28DA03DD00741591 /* TranspositionMenu.swift */; };
+		059D996C28DA03DD00741591 /* MainNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995E28DA03DD00741591 /* MainNoteView.swift */; };
+		059D996D28DA03DD00741591 /* MatchedNoteFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995F28DA03DD00741591 /* MatchedNoteFrequency.swift */; };
+		059D996E28DA03DD00741591 /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D996028DA03DD00741591 /* TunerView.swift */; };
 		05B41AA5288538AC00151D70 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AA2288538AC00151D70 /* Alignment.swift */; };
 		05B41AA6288538AC00151D70 /* ColorAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AA3288538AC00151D70 /* ColorAnimation.swift */; };
 		05B41AA7288538AC00151D70 /* Color+MusicalDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AA4288538AC00151D70 /* Color+MusicalDistance.swift */; };
-		05B41AAE288538FA00151D70 /* ModifierPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AAA288538FA00151D70 /* ModifierPreference.swift */; };
-		05B41AAF288538FA00151D70 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AAB288538FA00151D70 /* Frequency.swift */; };
-		05B41AB0288538FA00151D70 /* ScaleNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AAC288538FA00151D70 /* ScaleNote.swift */; };
-		05B41AB1288538FA00151D70 /* TunerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AAD288538FA00151D70 /* TunerData.swift */; };
-		05B41ABE288539C000151D70 /* CurrentNoteMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AB5288539C000151D70 /* CurrentNoteMarker.swift */; };
-		05B41ABF288539C000151D70 /* MatchedNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AB6288539C000151D70 /* MatchedNoteView.swift */; };
-		05B41AC0288539C000151D70 /* NoteDistanceMarkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AB7288539C000151D70 /* NoteDistanceMarkers.swift */; };
-		05B41AC1288539C000151D70 /* NoteTicks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AB8288539C000151D70 /* NoteTicks.swift */; };
-		05B41AC2288539C000151D70 /* MicrophoneAccessAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AB9288539C000151D70 /* MicrophoneAccessAlert.swift */; };
-		05B41AC3288539C000151D70 /* TranspositionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41ABA288539C000151D70 /* TranspositionMenu.swift */; };
-		05B41AC5288539C000151D70 /* MainNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41ABC288539C000151D70 /* MainNoteView.swift */; };
-		05B41AC6288539C000151D70 /* MatchedNoteFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41ABD288539C000151D70 /* MatchedNoteFrequency.swift */; };
-		05D39C122876904200CCE136 /* WhenBoredApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C112876904200CCE136 /* WhenBoredApp.swift */; };
+		05D39C122876904200CCE136 /* XMetroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C112876904200CCE136 /* XMetroApp.swift */; };
 		05D39C142876904200CCE136 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C132876904200CCE136 /* MainView.swift */; };
 		05D39C192876904300CCE136 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D39C182876904300CCE136 /* Preview Assets.xcassets */; };
-		05D39C232876904300CCE136 /* WhenBoredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C222876904300CCE136 /* WhenBoredTests.swift */; };
-		05D39C2D2876904300CCE136 /* WhenBoredUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2C2876904300CCE136 /* WhenBoredUITests.swift */; };
-		05D39C2F2876904300CCE136 /* WhenBoredUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2E2876904300CCE136 /* WhenBoredUITestsLaunchTests.swift */; };
+		05D39C232876904300CCE136 /* XMetroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C222876904300CCE136 /* XMetroTests.swift */; };
+		05D39C2D2876904300CCE136 /* XMetroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2C2876904300CCE136 /* XMetroUITests.swift */; };
+		05D39C2F2876904300CCE136 /* XMetroUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2E2876904300CCE136 /* XMetroUITestsLaunchTests.swift */; };
 		05D39C512876A28B00CCE136 /* BoredButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C502876A28B00CCE136 /* BoredButtonView.swift */; };
 		05D39C552876C54B00CCE136 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C532876C54A00CCE136 /* TabItemView.swift */; };
 		05D39C562876C54B00CCE136 /* TabItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C542876C54A00CCE136 /* TabItemState.swift */; };
@@ -86,43 +86,43 @@
 		052025AF287811280059654B /* BoredButtonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonReducer.swift; sourceTree = "<group>"; };
 		052025B1287811390059654B /* BoredButtonEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonEnv.swift; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
-		0578AD392889651E00AE5B04 /* WhenBored.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhenBored.entitlements; sourceTree = "<group>"; };
+		0578AD392889651E00AE5B04 /* XMetro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XMetro.entitlements; sourceTree = "<group>"; };
 		0579280528D978C800FE70E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0579280828D97C9400FE70E6 /* icon_show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_show.png; sourceTree = "<group>"; };
 		0584DA7C288AA37B008712DF /* dot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot.m4a; sourceTree = "<group>"; };
 		0584DA7D288AA37B008712DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0584DA7E288AA37B008712DF /* dot_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot_strong.m4a; sourceTree = "<group>"; };
-		058513372887F46600F7B3AF /* TunerScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerScreen.swift; sourceTree = "<group>"; };
-		058513382887F46600F7B3AF /* TunerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerView.swift; sourceTree = "<group>"; };
 		0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeScreen.swift; sourceTree = "<group>"; };
 		0585133F2887F4D300F7B3AF /* SettingsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
-		058513432887F5FD00F7B3AF /* MicrophonePitchDetector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicrophonePitchDetector; path = WhenBored/Packages/MicrophonePitchDetector; sourceTree = "<group>"; };
+		058513432887F5FD00F7B3AF /* MicrophonePitchDetector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicrophonePitchDetector; path = XMetro/Packages/MicrophonePitchDetector; sourceTree = "<group>"; };
 		058513472887FAEF00F7B3AF /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		059D995228DA03DD00741591 /* ModifierPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierPreference.swift; sourceTree = "<group>"; };
+		059D995328DA03DD00741591 /* Frequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
+		059D995428DA03DD00741591 /* ScaleNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleNote.swift; sourceTree = "<group>"; };
+		059D995528DA03DD00741591 /* TunerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerData.swift; sourceTree = "<group>"; };
+		059D995628DA03DD00741591 /* TunerScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerScreen.swift; sourceTree = "<group>"; };
+		059D995828DA03DD00741591 /* CurrentNoteMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentNoteMarker.swift; sourceTree = "<group>"; };
+		059D995928DA03DD00741591 /* MatchedNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedNoteView.swift; sourceTree = "<group>"; };
+		059D995A28DA03DD00741591 /* NoteDistanceMarkers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDistanceMarkers.swift; sourceTree = "<group>"; };
+		059D995B28DA03DD00741591 /* NoteTicks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTicks.swift; sourceTree = "<group>"; };
+		059D995C28DA03DD00741591 /* MicrophoneAccessAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneAccessAlert.swift; sourceTree = "<group>"; };
+		059D995D28DA03DD00741591 /* TranspositionMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranspositionMenu.swift; sourceTree = "<group>"; };
+		059D995E28DA03DD00741591 /* MainNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNoteView.swift; sourceTree = "<group>"; };
+		059D995F28DA03DD00741591 /* MatchedNoteFrequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedNoteFrequency.swift; sourceTree = "<group>"; };
+		059D996028DA03DD00741591 /* TunerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerView.swift; sourceTree = "<group>"; };
 		05B41AA2288538AC00151D70 /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
 		05B41AA3288538AC00151D70 /* ColorAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorAnimation.swift; sourceTree = "<group>"; };
 		05B41AA4288538AC00151D70 /* Color+MusicalDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+MusicalDistance.swift"; sourceTree = "<group>"; };
-		05B41AAA288538FA00151D70 /* ModifierPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierPreference.swift; sourceTree = "<group>"; };
-		05B41AAB288538FA00151D70 /* Frequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
-		05B41AAC288538FA00151D70 /* ScaleNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleNote.swift; sourceTree = "<group>"; };
-		05B41AAD288538FA00151D70 /* TunerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerData.swift; sourceTree = "<group>"; };
-		05B41AB5288539C000151D70 /* CurrentNoteMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentNoteMarker.swift; sourceTree = "<group>"; };
-		05B41AB6288539C000151D70 /* MatchedNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedNoteView.swift; sourceTree = "<group>"; };
-		05B41AB7288539C000151D70 /* NoteDistanceMarkers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDistanceMarkers.swift; sourceTree = "<group>"; };
-		05B41AB8288539C000151D70 /* NoteTicks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTicks.swift; sourceTree = "<group>"; };
-		05B41AB9288539C000151D70 /* MicrophoneAccessAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneAccessAlert.swift; sourceTree = "<group>"; };
-		05B41ABA288539C000151D70 /* TranspositionMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranspositionMenu.swift; sourceTree = "<group>"; };
-		05B41ABC288539C000151D70 /* MainNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNoteView.swift; sourceTree = "<group>"; };
-		05B41ABD288539C000151D70 /* MatchedNoteFrequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedNoteFrequency.swift; sourceTree = "<group>"; };
 		05D39C0E2876904200CCE136 /* XMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		05D39C112876904200CCE136 /* WhenBoredApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenBoredApp.swift; sourceTree = "<group>"; };
+		05D39C112876904200CCE136 /* XMetroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMetroApp.swift; sourceTree = "<group>"; };
 		05D39C132876904200CCE136 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		05D39C182876904300CCE136 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		05D39C1E2876904300CCE136 /* WhenBoredTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhenBoredTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		05D39C222876904300CCE136 /* WhenBoredTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenBoredTests.swift; sourceTree = "<group>"; };
-		05D39C282876904300CCE136 /* WhenBoredUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhenBoredUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		05D39C2C2876904300CCE136 /* WhenBoredUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenBoredUITests.swift; sourceTree = "<group>"; };
-		05D39C2E2876904300CCE136 /* WhenBoredUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenBoredUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		05D39C1E2876904300CCE136 /* XMetroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMetroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D39C222876904300CCE136 /* XMetroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMetroTests.swift; sourceTree = "<group>"; };
+		05D39C282876904300CCE136 /* XMetroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMetroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D39C2C2876904300CCE136 /* XMetroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMetroUITests.swift; sourceTree = "<group>"; };
+		05D39C2E2876904300CCE136 /* XMetroUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMetroUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		05D39C502876A28B00CCE136 /* BoredButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonView.swift; sourceTree = "<group>"; };
 		05D39C532876C54A00CCE136 /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		05D39C542876C54A00CCE136 /* TabItemState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemState.swift; sourceTree = "<group>"; };
@@ -187,18 +187,6 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		058513362887F46600F7B3AF /* Tuner */ = {
-			isa = PBXGroup;
-			children = (
-				05B41AB4288539C000151D70 /* Views */,
-				05B41AA9288538FA00151D70 /* Models */,
-				058513372887F46600F7B3AF /* TunerScreen.swift */,
-				058513382887F46600F7B3AF /* TunerView.swift */,
-			);
-			name = Tuner;
-			path = WhenBored/Tuner;
-			sourceTree = SOURCE_ROOT;
-		};
 		0585133B2887F4A700F7B3AF /* Metronome */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +210,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		059D995028DA03DD00741591 /* Tuner */ = {
+			isa = PBXGroup;
+			children = (
+				059D995628DA03DD00741591 /* TunerScreen.swift */,
+				059D996028DA03DD00741591 /* TunerView.swift */,
+				059D995128DA03DD00741591 /* Models */,
+				059D995728DA03DD00741591 /* Views */,
+			);
+			path = Tuner;
+			sourceTree = "<group>";
+		};
+		059D995128DA03DD00741591 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				059D995228DA03DD00741591 /* ModifierPreference.swift */,
+				059D995328DA03DD00741591 /* Frequency.swift */,
+				059D995428DA03DD00741591 /* ScaleNote.swift */,
+				059D995528DA03DD00741591 /* TunerData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		059D995728DA03DD00741591 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				059D995828DA03DD00741591 /* CurrentNoteMarker.swift */,
+				059D995928DA03DD00741591 /* MatchedNoteView.swift */,
+				059D995A28DA03DD00741591 /* NoteDistanceMarkers.swift */,
+				059D995B28DA03DD00741591 /* NoteTicks.swift */,
+				059D995C28DA03DD00741591 /* MicrophoneAccessAlert.swift */,
+				059D995D28DA03DD00741591 /* TranspositionMenu.swift */,
+				059D995E28DA03DD00741591 /* MainNoteView.swift */,
+				059D995F28DA03DD00741591 /* MatchedNoteFrequency.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		05B41AA12885389300151D70 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,17 +258,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		05B41AA9288538FA00151D70 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				05B41AAA288538FA00151D70 /* ModifierPreference.swift */,
-				05B41AAB288538FA00151D70 /* Frequency.swift */,
-				05B41AAC288538FA00151D70 /* ScaleNote.swift */,
-				05B41AAD288538FA00151D70 /* TunerData.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		05B41AB22885399300151D70 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,28 +266,13 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
-		05B41AB4288539C000151D70 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				05B41AB5288539C000151D70 /* CurrentNoteMarker.swift */,
-				05B41ABC288539C000151D70 /* MainNoteView.swift */,
-				05B41ABD288539C000151D70 /* MatchedNoteFrequency.swift */,
-				05B41AB6288539C000151D70 /* MatchedNoteView.swift */,
-				05B41AB9288539C000151D70 /* MicrophoneAccessAlert.swift */,
-				05B41AB7288539C000151D70 /* NoteDistanceMarkers.swift */,
-				05B41AB8288539C000151D70 /* NoteTicks.swift */,
-				05B41ABA288539C000151D70 /* TranspositionMenu.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		05D39C052876904200CCE136 = {
 			isa = PBXGroup;
 			children = (
 				05B41AB22885399300151D70 /* Packages */,
-				05D39C102876904200CCE136 /* WhenBored */,
-				05D39C212876904300CCE136 /* WhenBoredTests */,
-				05D39C2B2876904300CCE136 /* WhenBoredUITests */,
+				05D39C102876904200CCE136 /* XMetro */,
+				05D39C212876904300CCE136 /* XMetroTests */,
+				05D39C2B2876904300CCE136 /* XMetroUITests */,
 				05D39C0F2876904200CCE136 /* Products */,
 				058513442887F60900F7B3AF /* Frameworks */,
 			);
@@ -283,20 +282,20 @@
 			isa = PBXGroup;
 			children = (
 				05D39C0E2876904200CCE136 /* XMetro.app */,
-				05D39C1E2876904300CCE136 /* WhenBoredTests.xctest */,
-				05D39C282876904300CCE136 /* WhenBoredUITests.xctest */,
+				05D39C1E2876904300CCE136 /* XMetroTests.xctest */,
+				05D39C282876904300CCE136 /* XMetroUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		05D39C102876904200CCE136 /* WhenBored */ = {
+		05D39C102876904200CCE136 /* XMetro */ = {
 			isa = PBXGroup;
 			children = (
+				0578AD392889651E00AE5B04 /* XMetro.entitlements */,
 				0579280528D978C800FE70E6 /* Info.plist */,
-				0578AD392889651E00AE5B04 /* WhenBored.entitlements */,
-				05D39C132876904200CCE136 /* MainView.swift */,
-				05D39C112876904200CCE136 /* WhenBoredApp.swift */,
 				0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */,
+				05D39C132876904200CCE136 /* MainView.swift */,
+				05D39C112876904200CCE136 /* XMetroApp.swift */,
 				0584DA7B288AA37B008712DF /* Assets */,
 				05D39C4F2876A27A00CCE136 /* BoredButton */,
 				05B41AA12885389300151D70 /* Helpers */,
@@ -305,9 +304,9 @@
 				05D39C172876904300CCE136 /* Preview Content */,
 				0585133E2887F4D300F7B3AF /* Settings */,
 				05D39C402876914500CCE136 /* Tabbar */,
-				058513362887F46600F7B3AF /* Tuner */,
+				059D995028DA03DD00741591 /* Tuner */,
 			);
-			path = WhenBored;
+			path = XMetro;
 			sourceTree = "<group>";
 		};
 		05D39C172876904300CCE136 /* Preview Content */ = {
@@ -318,21 +317,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		05D39C212876904300CCE136 /* WhenBoredTests */ = {
+		05D39C212876904300CCE136 /* XMetroTests */ = {
 			isa = PBXGroup;
 			children = (
-				05D39C222876904300CCE136 /* WhenBoredTests.swift */,
+				05D39C222876904300CCE136 /* XMetroTests.swift */,
 			);
-			path = WhenBoredTests;
+			path = XMetroTests;
 			sourceTree = "<group>";
 		};
-		05D39C2B2876904300CCE136 /* WhenBoredUITests */ = {
+		05D39C2B2876904300CCE136 /* XMetroUITests */ = {
 			isa = PBXGroup;
 			children = (
-				05D39C2C2876904300CCE136 /* WhenBoredUITests.swift */,
-				05D39C2E2876904300CCE136 /* WhenBoredUITestsLaunchTests.swift */,
+				05D39C2C2876904300CCE136 /* XMetroUITests.swift */,
+				05D39C2E2876904300CCE136 /* XMetroUITestsLaunchTests.swift */,
 			);
-			path = WhenBoredUITests;
+			path = XMetroUITests;
 			sourceTree = "<group>";
 		};
 		05D39C402876914500CCE136 /* Tabbar */ = {
@@ -396,9 +395,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		05D39C0D2876904200CCE136 /* WhenBored */ = {
+		05D39C0D2876904200CCE136 /* XMetro */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 05D39C322876904300CCE136 /* Build configuration list for PBXNativeTarget "WhenBored" */;
+			buildConfigurationList = 05D39C322876904300CCE136 /* Build configuration list for PBXNativeTarget "XMetro" */;
 			buildPhases = (
 				05D39C0A2876904200CCE136 /* Sources */,
 				05D39C0B2876904200CCE136 /* Frameworks */,
@@ -408,7 +407,7 @@
 			);
 			dependencies = (
 			);
-			name = WhenBored;
+			name = XMetro;
 			packageProductDependencies = (
 				058513452887F60900F7B3AF /* MicrophonePitchDetector */,
 				0578AD3B28897E1700AE5B04 /* ComposableArchitecture */,
@@ -417,9 +416,9 @@
 			productReference = 05D39C0E2876904200CCE136 /* XMetro.app */;
 			productType = "com.apple.product-type.application";
 		};
-		05D39C1D2876904300CCE136 /* WhenBoredTests */ = {
+		05D39C1D2876904300CCE136 /* XMetroTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 05D39C352876904300CCE136 /* Build configuration list for PBXNativeTarget "WhenBoredTests" */;
+			buildConfigurationList = 05D39C352876904300CCE136 /* Build configuration list for PBXNativeTarget "XMetroTests" */;
 			buildPhases = (
 				05D39C1A2876904300CCE136 /* Sources */,
 				05D39C1B2876904300CCE136 /* Frameworks */,
@@ -430,14 +429,14 @@
 			dependencies = (
 				05D39C202876904300CCE136 /* PBXTargetDependency */,
 			);
-			name = WhenBoredTests;
+			name = XMetroTests;
 			productName = WhenBoredTests;
-			productReference = 05D39C1E2876904300CCE136 /* WhenBoredTests.xctest */;
+			productReference = 05D39C1E2876904300CCE136 /* XMetroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		05D39C272876904300CCE136 /* WhenBoredUITests */ = {
+		05D39C272876904300CCE136 /* XMetroUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 05D39C382876904300CCE136 /* Build configuration list for PBXNativeTarget "WhenBoredUITests" */;
+			buildConfigurationList = 05D39C382876904300CCE136 /* Build configuration list for PBXNativeTarget "XMetroUITests" */;
 			buildPhases = (
 				05D39C242876904300CCE136 /* Sources */,
 				05D39C252876904300CCE136 /* Frameworks */,
@@ -448,9 +447,9 @@
 			dependencies = (
 				05D39C2A2876904300CCE136 /* PBXTargetDependency */,
 			);
-			name = WhenBoredUITests;
+			name = XMetroUITests;
 			productName = WhenBoredUITests;
-			productReference = 05D39C282876904300CCE136 /* WhenBoredUITests.xctest */;
+			productReference = 05D39C282876904300CCE136 /* XMetroUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -476,7 +475,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 05D39C092876904200CCE136 /* Build configuration list for PBXProject "WhenBored" */;
+			buildConfigurationList = 05D39C092876904200CCE136 /* Build configuration list for PBXProject "XMetro" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -492,9 +491,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				05D39C0D2876904200CCE136 /* WhenBored */,
-				05D39C1D2876904300CCE136 /* WhenBoredTests */,
-				05D39C272876904300CCE136 /* WhenBoredUITests */,
+				05D39C0D2876904200CCE136 /* XMetro */,
+				05D39C1D2876904300CCE136 /* XMetroTests */,
+				05D39C272876904300CCE136 /* XMetroUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -534,49 +533,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059D996E28DA03DD00741591 /* TunerView.swift in Sources */,
 				05D39C552876C54B00CCE136 /* TabItemView.swift in Sources */,
 				05B41AA7288538AC00151D70 /* Color+MusicalDistance.swift in Sources */,
 				05D39C782877269100CCE136 /* TapContentReducer.swift in Sources */,
-				05B41AC5288539C000151D70 /* MainNoteView.swift in Sources */,
+				059D996C28DA03DD00741591 /* MainNoteView.swift in Sources */,
 				052025B0287811280059654B /* BoredButtonReducer.swift in Sources */,
+				059D996A28DA03DD00741591 /* MicrophoneAccessAlert.swift in Sources */,
 				0585133D2887F4A700F7B3AF /* MetronomeScreen.swift in Sources */,
+				059D996128DA03DD00741591 /* ModifierPreference.swift in Sources */,
+				059D996228DA03DD00741591 /* Frequency.swift in Sources */,
 				05D39C662876F06200CCE136 /* TabState.swift in Sources */,
-				05B41AAE288538FA00151D70 /* ModifierPreference.swift in Sources */,
+				059D996328DA03DD00741591 /* ScaleNote.swift in Sources */,
 				058513482887FAEF00F7B3AF /* Color+Extensions.swift in Sources */,
-				05B41AAF288538FA00151D70 /* Frequency.swift in Sources */,
-				05B41AB0288538FA00151D70 /* ScaleNote.swift in Sources */,
 				05D39C562876C54B00CCE136 /* TabItemState.swift in Sources */,
-				05B41AC0288539C000151D70 /* NoteDistanceMarkers.swift in Sources */,
-				05B41AC3288539C000151D70 /* TranspositionMenu.swift in Sources */,
-				0585133A2887F46600F7B3AF /* TunerView.swift in Sources */,
 				05D39C652876F06200CCE136 /* TabEnv.swift in Sources */,
-				05B41AB1288538FA00151D70 /* TunerData.swift in Sources */,
+				059D996528DA03DD00741591 /* TunerScreen.swift in Sources */,
+				059D996428DA03DD00741591 /* TunerData.swift in Sources */,
 				05D39C7A287726A400CCE136 /* TapContentState.swift in Sources */,
+				059D996628DA03DD00741591 /* CurrentNoteMarker.swift in Sources */,
 				05D39C512876A28B00CCE136 /* BoredButtonView.swift in Sources */,
 				05B41AA5288538AC00151D70 /* Alignment.swift in Sources */,
 				05D39C142876904200CCE136 /* MainView.swift in Sources */,
 				05D39C5C2876C58300CCE136 /* TabItemEnv.swift in Sources */,
-				05B41AC1288539C000151D70 /* NoteTicks.swift in Sources */,
-				05B41AC2288539C000151D70 /* MicrophoneAccessAlert.swift in Sources */,
 				05D39C742877266400CCE136 /* TabContentAction.swift in Sources */,
 				05D39C6C2876F0C100CCE136 /* TabContentView.swift in Sources */,
-				05B41ABF288539C000151D70 /* MatchedNoteView.swift in Sources */,
 				05D39C762877267400CCE136 /* TapContentEnv.swift in Sources */,
-				05B41ABE288539C000151D70 /* CurrentNoteMarker.swift in Sources */,
 				052025AC287807350059654B /* BoredButtonAction.swift in Sources */,
 				05D39C672876F06200CCE136 /* TabAction.swift in Sources */,
 				05D39C5A2876C57500CCE136 /* TabItemAction.swift in Sources */,
 				0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */,
+				059D996B28DA03DD00741591 /* TranspositionMenu.swift in Sources */,
 				05D39C582876C56500CCE136 /* TabItemReducer.swift in Sources */,
-				05B41AC6288539C000151D70 /* MatchedNoteFrequency.swift in Sources */,
-				05D39C122876904200CCE136 /* WhenBoredApp.swift in Sources */,
+				05D39C122876904200CCE136 /* XMetroApp.swift in Sources */,
 				052025B2287811390059654B /* BoredButtonEnv.swift in Sources */,
 				058513402887F4D300F7B3AF /* SettingsScreen.swift in Sources */,
-				058513392887F46600F7B3AF /* TunerScreen.swift in Sources */,
+				059D996728DA03DD00741591 /* MatchedNoteView.swift in Sources */,
+				059D996D28DA03DD00741591 /* MatchedNoteFrequency.swift in Sources */,
 				05D39C682876F06200CCE136 /* TabView.swift in Sources */,
 				052025AE287810A40059654B /* BoredButtonState.swift in Sources */,
+				059D996928DA03DD00741591 /* NoteTicks.swift in Sources */,
 				05B41AA6288538AC00151D70 /* ColorAnimation.swift in Sources */,
 				05D39C692876F06200CCE136 /* TabReducer.swift in Sources */,
+				059D996828DA03DD00741591 /* NoteDistanceMarkers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,7 +583,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05D39C232876904300CCE136 /* WhenBoredTests.swift in Sources */,
+				05D39C232876904300CCE136 /* XMetroTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,8 +591,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05D39C2D2876904300CCE136 /* WhenBoredUITests.swift in Sources */,
-				05D39C2F2876904300CCE136 /* WhenBoredUITestsLaunchTests.swift in Sources */,
+				05D39C2D2876904300CCE136 /* XMetroUITests.swift in Sources */,
+				05D39C2F2876904300CCE136 /* XMetroUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,12 +601,12 @@
 /* Begin PBXTargetDependency section */
 		05D39C202876904300CCE136 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 05D39C0D2876904200CCE136 /* WhenBored */;
+			target = 05D39C0D2876904200CCE136 /* XMetro */;
 			targetProxy = 05D39C1F2876904300CCE136 /* PBXContainerItemProxy */;
 		};
 		05D39C2A2876904300CCE136 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 05D39C0D2876904200CCE136 /* WhenBored */;
+			target = 05D39C0D2876904200CCE136 /* XMetro */;
 			targetProxy = 05D39C292876904300CCE136 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -734,16 +733,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WhenBored/WhenBored.entitlements;
+				CODE_SIGN_ENTITLEMENTS = XMetro/XMetro.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 202209202103;
-				DEVELOPMENT_ASSET_PATHS = "\"WhenBored/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WhenBored/Info.plist;
+				INFOPLIST_FILE = XMetro/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Board Metro will use microphone for tuner.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -777,16 +776,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WhenBored/WhenBored.entitlements;
+				CODE_SIGN_ENTITLEMENTS = XMetro/XMetro.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 202209202103;
-				DEVELOPMENT_ASSET_PATHS = "\"WhenBored/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WhenBored/Info.plist;
+				INFOPLIST_FILE = XMetro/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Board Metro will use microphone for tuner.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -825,12 +824,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.WhenBoredTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhenBored.app/WhenBored";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XMetro.app/XMetro";
 			};
 			name = Debug;
 		};
@@ -845,12 +844,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.WhenBoredTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhenBored.app/WhenBored";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XMetro.app/XMetro";
 			};
 			name = Release;
 		};
@@ -863,7 +862,7 @@
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.WhenBoredUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetroUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -881,7 +880,7 @@
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.WhenBoredUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetroUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -893,7 +892,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		05D39C092876904200CCE136 /* Build configuration list for PBXProject "WhenBored" */ = {
+		05D39C092876904200CCE136 /* Build configuration list for PBXProject "XMetro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				05D39C302876904300CCE136 /* Debug */,
@@ -902,7 +901,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		05D39C322876904300CCE136 /* Build configuration list for PBXNativeTarget "WhenBored" */ = {
+		05D39C322876904300CCE136 /* Build configuration list for PBXNativeTarget "XMetro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				05D39C332876904300CCE136 /* Debug */,
@@ -911,7 +910,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		05D39C352876904300CCE136 /* Build configuration list for PBXNativeTarget "WhenBoredTests" */ = {
+		05D39C352876904300CCE136 /* Build configuration list for PBXNativeTarget "XMetroTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				05D39C362876904300CCE136 /* Debug */,
@@ -920,7 +919,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		05D39C382876904300CCE136 /* Build configuration list for PBXNativeTarget "WhenBoredUITests" */ = {
+		05D39C382876904300CCE136 /* Build configuration list for PBXNativeTarget "XMetroUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				05D39C392876904300CCE136 /* Debug */,

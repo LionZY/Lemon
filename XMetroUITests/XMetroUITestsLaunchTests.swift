@@ -1,13 +1,13 @@
 //
-//  WhenBoredUITestsLaunchTests.swift
-//  WhenBoredUITests
+//  XMetroUITestsLaunchTests.swift
+//  XMetroUITests
 //
 //  Created by Yue Zhang on 2022/7/7.
 //
 
 import XCTest
 
-class WhenBoredUITestsLaunchTests: XCTestCase {
+class XMetroUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
