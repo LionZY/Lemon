@@ -103,15 +103,15 @@ struct TunerView: View {
     func checkPerceptible(first: String, last: String) -> Color {
         if auto {
             if note == first && last == octave {
-                return isPerceptible ? .red : .green
+                return isPerceptible ? .black : .green
             } else {
                 return .black
             }
         } else if let section = selected?.section, let item = selected?.item {
             if note == notes[section][item] && last == octaves[section][item] {
-                return isPerceptible ? .red : .green
+                return isPerceptible ? .black : .green
             } else {
-                return .red
+                return .black
             }
         }
         return .black
