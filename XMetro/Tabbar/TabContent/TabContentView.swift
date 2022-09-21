@@ -9,18 +9,18 @@ import SwiftUI
 import ComposableArchitecture
 
 struct TabContentView: View {
-    
+    private let metronomeScreen = MetronomeScreen()
+    private let tunerScreen = TunerScreen()
+    private let settingsScreen = SettingsScreen()
     let store = Store(initialState: TapContentState(selectIndex: 0), reducer: contentReducer, environment: TapContentEnv())
     
     var body: some View {
         WithViewStore(store) { viewStore in
             ZStack {
-                if viewStore.state.selectIndex == 0 {
-                    MetronomeScreen()
-                } else if (viewStore.state.selectIndex == 1) {
-                    TunerScreen()
-                } else {
-                    SettingsScreen()
+                switch viewStore.state.selectIndex {
+                case 0: metronomeScreen
+                case 1: tunerScreen
+                default: settingsScreen
                 }
             }.onAppear {
                 selectedTabContentReducer = viewStore

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct TunerView: View {
     let tunerData: TunerData
+    @State private var selected: IndexPath?
     @State private var auto = true
     @State var modifierPreference: ModifierPreference
     @State var selectedTransposition: Int
@@ -19,22 +20,30 @@ struct TunerView: View {
          tunerData.closestNote.inTransposition(ScaleNote.allCases[selectedTransposition])
     }
     
-    var segments = ["Guitar", "Ukulele"]
+    var note: String {
+        String(match.note.names.first?.prefix(1) ?? "")
+    }
     
+    var octave: String? {
+        String(match.octave)
+    }
+
+    var isPerceptible: Bool {
+        match.distance.isPerceptible
+    }
+    
+    var notes: [[String]] {
+        selectedValue == "Guitar" ? [["D", "A", "E"], ["G", "B", "E"]] : [["C", "G"], ["E", "A"]]
+    }
+    
+    var octaves: [[String]] {
+        selectedValue == "Guitar" ? [["3", "2", "2"], ["3", "3", "4"]] : [["4", "4"], ["4", "4"]]
+    }
+    
+    var segments = ["Guitar", "Ukulele"]
+
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Spacer()
-                Picker("", selection: $selectedValue) {
-                    ForEach(segments, id: \.self) { t in
-                        Text(t).foregroundColor(selectedValue == t ? .red : Color(UIColor(white: 0.0, alpha: 0.3)))
-                    }
-                }
-                .pickerStyle(.segmented)
-                Spacer()
-                Spacer()
-            }
             Spacer()
             VStack() {
                 MatchedNoteView(
@@ -47,19 +56,20 @@ struct TunerView: View {
             Spacer()
             HStack {
                 Spacer()
-                let datas = selectedValue == "Guitar" ? [["D", "A", "E"], ["G", "B", "E"]] : [["C", "G"], ["E", "A"]]
-                ForEach(datas.indices, id: \.self) { index in
-                    let subItems = datas[index]
+                ForEach(notes.indices, id: \.self) { m in
+                    let subItems = notes[m]
                     VStack {
-                        ForEach(subItems, id: \.self) { item in
-                            Button(item) { }
+                        ForEach(Array(subItems.enumerated()), id: \.offset) { n, md in
+                            Button(md) {
+                                auto = false
+                                selected = IndexPath(item: n, section: m)
+                            }
                             .frame(maxWidth: 60, maxHeight: 60)
-                            .background(.black)
+                            .background(checkPerceptible(first: md, last: octaves[m][n]))
                             .foregroundColor(.white)
                             .cornerRadius(30.0)
                         }
-
-                    }.rotationEffect(.degrees((index + 1) % 2 == 0 ? 6.0 : -6.0))
+                    }.rotationEffect(.degrees((m + 1) % 2 == 0 ? 6.0 : -6.0))
                     Spacer()
                 }
             }
@@ -69,11 +79,42 @@ struct TunerView: View {
         }
         .frame(maxWidth:.infinity, maxHeight: .infinity)
         .navigationTitle("Tuner")
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack {
+                    Picker("", selection: $selectedValue) {
+                        ForEach(segments, id: \.self) { t in
+                            Text(t).foregroundColor(selectedValue == t ? .red : Color(UIColor(white: 0.0, alpha: 0.3)))
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }.frame(width: 160.0)
+            }
+        }
+        /*
         .navigationBarItems(
-            leading: TranspositionMenu(selectedTransposition: $selectedTransposition)
+            leading: TranspositionMenu(selectedTransposition: $selectedTransposition),
         )
+        */
         .tint(.black)
         .animation(.easeInOut, value: selectedValue)
+    }
+    
+    func checkPerceptible(first: String, last: String) -> Color {
+        if auto {
+            if note == first && last == octave {
+                return isPerceptible ? .red : .green
+            } else {
+                return .black
+            }
+        } else if let section = selected?.section, let item = selected?.item {
+            if note == notes[section][item] && last == octaves[section][item] {
+                return isPerceptible ? .red : .green
+            } else {
+                return .red
+            }
+        }
+        return .black
     }
 }
 

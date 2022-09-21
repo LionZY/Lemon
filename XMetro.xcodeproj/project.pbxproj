@@ -36,6 +36,7 @@
 		059D996C28DA03DD00741591 /* MainNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995E28DA03DD00741591 /* MainNoteView.swift */; };
 		059D996D28DA03DD00741591 /* MatchedNoteFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995F28DA03DD00741591 /* MatchedNoteFrequency.swift */; };
 		059D996E28DA03DD00741591 /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D996028DA03DD00741591 /* TunerView.swift */; };
+		059D997128DA9B0E00741591 /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 059D997028DA9B0E00741591 /* ActivityIndicatorView */; };
 		05B41AA5288538AC00151D70 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AA2288538AC00151D70 /* Alignment.swift */; };
 		05B41AA6288538AC00151D70 /* ColorAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AA3288538AC00151D70 /* ColorAnimation.swift */; };
 		05B41AA7288538AC00151D70 /* Color+MusicalDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AA4288538AC00151D70 /* Color+MusicalDistance.swift */; };
@@ -147,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */,
+				059D997128DA9B0E00741591 /* ActivityIndicatorView in Frameworks */,
 				058513462887F60900F7B3AF /* MicrophonePitchDetector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +413,7 @@
 			packageProductDependencies = (
 				058513452887F60900F7B3AF /* MicrophonePitchDetector */,
 				0578AD3B28897E1700AE5B04 /* ComposableArchitecture */,
+				059D997028DA9B0E00741591 /* ActivityIndicatorView */,
 			);
 			productName = WhenBored;
 			productReference = 05D39C0E2876904200CCE136 /* XMetro.app */;
@@ -486,6 +489,7 @@
 			mainGroup = 05D39C052876904200CCE136;
 			packageReferences = (
 				0578AD3A28897E1700AE5B04 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				059D996F28DA9B0E00741591 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
 			);
 			productRefGroup = 05D39C0F2876904200CCE136 /* Products */;
 			projectDirPath = "";
@@ -757,7 +761,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -800,7 +804,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -939,6 +943,14 @@
 				minimumVersion = 0.9.0;
 			};
 		};
+		059D996F28DA9B0E00741591 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -950,6 +962,11 @@
 		058513452887F60900F7B3AF /* MicrophonePitchDetector */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MicrophonePitchDetector;
+		};
+		059D997028DA9B0E00741591 /* ActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 059D996F28DA9B0E00741591 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
+			productName = ActivityIndicatorView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
