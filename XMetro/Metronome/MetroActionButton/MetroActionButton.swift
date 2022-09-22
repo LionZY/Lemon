@@ -1,5 +1,5 @@
 //
-//  BoredButtonView.swift
+//  MetroActionButton.swift
 //  XMetro
 //
 //  Created by Yue Zhang on 2022/7/7.
@@ -9,16 +9,16 @@ import SwiftUI
 import ComposableArchitecture
 import AudioToolbox
 
-struct BoredButtonView: View {
+struct MetroActionButton: View {
     
-    let store: Store<BoredButtonState, BoredButtonAction>
+    let store: Store<MetroActionButtonState, MetroActionButtonAction>
     var dotWidth = 10.0
     var dotSpace = 10.0
     
     @State private var presentedCount = false
     @State private var presentedBmp = false
     
-    func backgroundColor(_ viewStore: ViewStore<BoredButtonState, BoredButtonAction>) -> Color {
+    func backgroundColor(_ viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>) -> Color {
         switch viewStore.state.currentAction {
         case .run:
             return viewStore.state.isCountDown ? Color(.systemYellow) :.red
@@ -29,7 +29,7 @@ struct BoredButtonView: View {
         }
     }
 
-    func dotColor(_ viewStore: ViewStore<BoredButtonState, BoredButtonAction>, dotIndex: Int) -> Color {
+    func dotColor(_ viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>, dotIndex: Int) -> Color {
         if dotIndex < viewStore.state.count {
              return viewStore.state.currentIndex == dotIndex ? .red : .black
         }
@@ -137,8 +137,8 @@ struct BoredButtonView: View {
     }
 }
 
-struct BoredButtonView_Previews: PreviewProvider {
+struct MetroActionButton_Previews: PreviewProvider {
     static var previews: some View {
-        BoredButtonView(store: Store(initialState: BoredButtonState(), reducer: BoredButtonReducer, environment: BoredButtonEnv()))
+        MetroActionButton(store: Store(initialState: MetroActionButtonState(), reducer: MetroActionButtonReducer, environment: MetroActionButtonEnv()))
     }
 }

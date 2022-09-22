@@ -1,5 +1,5 @@
 //
-//  BoredButtonState.swift
+//  MetroActionButtonState.swift
 //  XMetro
 //
 //  Created by Yue Zhang on 2022/7/8.
@@ -10,8 +10,8 @@ import Foundation
 let KSaved_BPM = "KSaved_BPM"
 let KSaved_Meter = "KSaved_Meter"
 
-struct BoredButtonState: Equatable {
-    static func == (lhs: BoredButtonState, rhs: BoredButtonState) -> Bool {
+struct MetroActionButtonState: Equatable {
+    static func == (lhs: MetroActionButtonState, rhs: MetroActionButtonState) -> Bool {
         return lhs.count == rhs.count && lhs.bpm == rhs.bpm && lhs.currentIndex == rhs.currentIndex && lhs.isCountDown == rhs.isCountDown
     }
     
@@ -32,8 +32,8 @@ struct BoredButtonState: Equatable {
         }
     }
 
-    var currentIndex = BoredButtonState.startIndex
-    var currentAction: BoredButtonAction = .stop
+    var currentIndex = MetroActionButtonState.startIndex
+    var currentAction: MetroActionButtonAction = .stop
     var title: String {
         if isCountDown {
             return "\(abs(currentIndex))"

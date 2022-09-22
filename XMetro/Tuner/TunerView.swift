@@ -14,7 +14,11 @@ struct TunerView: View {
     @State private var auto = true
     @State var modifierPreference: ModifierPreference
     @State var selectedTransposition: Int
-    @State var selectedValue: String = "Guitar"
+    @State var selectedValue: String = "Guitar" {
+        didSet {
+            selected = nil
+        }
+    }
     
     var match: ScaleNote.Match {
          tunerData.closestNote.inTransposition(ScaleNote.allCases[selectedTransposition])
@@ -60,7 +64,8 @@ struct TunerView: View {
                     let subItems = notes[m]
                     VStack {
                         ForEach(Array(subItems.enumerated()), id: \.offset) { n, md in
-                            Button(md) {
+                            let title = md + (selectedValue == "Guitar" ? octaves[m][n] : "")
+                            Button(title) {
                                 auto = false
                                 selected = IndexPath(item: n, section: m)
                             }
@@ -108,8 +113,8 @@ struct TunerView: View {
                 return .black
             }
         } else if let section = selected?.section, let item = selected?.item {
-            if note == notes[section][item] && last == octaves[section][item] {
-                return isPerceptible ? .black : .green
+            if first == notes[section][item] && last == octaves[section][item] {
+                return isPerceptible ? .red : .green
             } else {
                 return .black
             }

@@ -1,5 +1,5 @@
 //
-//  BoredButtonReducer.swift
+//  MetroActionButtonReducer.swift
 //  XMetro
 //
 //  Created by Yue Zhang on 2022/7/8.
@@ -48,7 +48,7 @@ func destroy() {
 }
 
 var timer = Timer.publish(every: 4.0/4.0, on: .main, in: .common).autoconnect()
-let BoredButtonReducer = Reducer<BoredButtonState, BoredButtonAction, BoredButtonEnv> { state, action, _ in
+let MetroActionButtonReducer = Reducer<MetroActionButtonState, MetroActionButtonAction, MetroActionButtonEnv> { state, action, _ in
     switch action {
     case .run:
         if state.currentAction != .run {
@@ -68,7 +68,7 @@ let BoredButtonReducer = Reducer<BoredButtonState, BoredButtonAction, BoredButto
         break
     case .stop:
         state.currentAction = .stop
-        state.currentIndex = BoredButtonState.startIndex
+        state.currentIndex = MetroActionButtonState.startIndex
         timer.upstream.connect().cancel()
         dotPlayer?.stop()
         strongPlayer?.stop()

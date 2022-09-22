@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		052025AC287807350059654B /* BoredButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AB287807350059654B /* BoredButtonAction.swift */; };
-		052025AE287810A40059654B /* BoredButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AD287810A40059654B /* BoredButtonState.swift */; };
-		052025B0287811280059654B /* BoredButtonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AF287811280059654B /* BoredButtonReducer.swift */; };
-		052025B2287811390059654B /* BoredButtonEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B1287811390059654B /* BoredButtonEnv.swift */; };
+		052025AC287807350059654B /* MetroActionButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AB287807350059654B /* MetroActionButtonAction.swift */; };
+		052025AE287810A40059654B /* MetroActionButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AD287810A40059654B /* MetroActionButtonState.swift */; };
+		052025B0287811280059654B /* MetroActionButtonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AF287811280059654B /* MetroActionButtonReducer.swift */; };
+		052025B2287811390059654B /* MetroActionButtonEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B1287811390059654B /* MetroActionButtonEnv.swift */; };
 		0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563BAA128794C3900E8FC7B /* PickerView.swift */; };
 		0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0578AD3B28897E1700AE5B04 /* ComposableArchitecture */; };
 		0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */; };
@@ -46,7 +46,7 @@
 		05D39C232876904300CCE136 /* XMetroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C222876904300CCE136 /* XMetroTests.swift */; };
 		05D39C2D2876904300CCE136 /* XMetroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2C2876904300CCE136 /* XMetroUITests.swift */; };
 		05D39C2F2876904300CCE136 /* XMetroUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2E2876904300CCE136 /* XMetroUITestsLaunchTests.swift */; };
-		05D39C512876A28B00CCE136 /* BoredButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C502876A28B00CCE136 /* BoredButtonView.swift */; };
+		05D39C512876A28B00CCE136 /* MetroActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C502876A28B00CCE136 /* MetroActionButton.swift */; };
 		05D39C552876C54B00CCE136 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C532876C54A00CCE136 /* TabItemView.swift */; };
 		05D39C562876C54B00CCE136 /* TabItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C542876C54A00CCE136 /* TabItemState.swift */; };
 		05D39C582876C56500CCE136 /* TabItemReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C572876C56500CCE136 /* TabItemReducer.swift */; };
@@ -82,10 +82,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		052025AB287807350059654B /* BoredButtonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonAction.swift; sourceTree = "<group>"; };
-		052025AD287810A40059654B /* BoredButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonState.swift; sourceTree = "<group>"; };
-		052025AF287811280059654B /* BoredButtonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonReducer.swift; sourceTree = "<group>"; };
-		052025B1287811390059654B /* BoredButtonEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonEnv.swift; sourceTree = "<group>"; };
+		052025AB287807350059654B /* MetroActionButtonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonAction.swift; sourceTree = "<group>"; };
+		052025AD287810A40059654B /* MetroActionButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonState.swift; sourceTree = "<group>"; };
+		052025AF287811280059654B /* MetroActionButtonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonReducer.swift; sourceTree = "<group>"; };
+		052025B1287811390059654B /* MetroActionButtonEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonEnv.swift; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0578AD392889651E00AE5B04 /* XMetro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XMetro.entitlements; sourceTree = "<group>"; };
 		0579280528D978C800FE70E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		05D39C282876904300CCE136 /* XMetroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMetroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D39C2C2876904300CCE136 /* XMetroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMetroUITests.swift; sourceTree = "<group>"; };
 		05D39C2E2876904300CCE136 /* XMetroUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMetroUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		05D39C502876A28B00CCE136 /* BoredButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoredButtonView.swift; sourceTree = "<group>"; };
+		05D39C502876A28B00CCE136 /* MetroActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButton.swift; sourceTree = "<group>"; };
 		05D39C532876C54A00CCE136 /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		05D39C542876C54A00CCE136 /* TabItemState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemState.swift; sourceTree = "<group>"; };
 		05D39C572876C56500CCE136 /* TabItemReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemReducer.swift; sourceTree = "<group>"; };
@@ -192,6 +192,8 @@
 		0585133B2887F4A700F7B3AF /* Metronome */ = {
 			isa = PBXGroup;
 			children = (
+				0563BAA028794C2C00E8FC7B /* Picker */,
+				05D39C4F2876A27A00CCE136 /* MetroActionButton */,
 				0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */,
 			);
 			path = Metronome;
@@ -298,15 +300,13 @@
 				0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */,
 				05D39C132876904200CCE136 /* MainView.swift */,
 				05D39C112876904200CCE136 /* XMetroApp.swift */,
+				05D39C172876904300CCE136 /* Preview Content */,
 				0584DA7B288AA37B008712DF /* Assets */,
-				05D39C4F2876A27A00CCE136 /* BoredButton */,
 				05B41AA12885389300151D70 /* Helpers */,
 				0585133B2887F4A700F7B3AF /* Metronome */,
-				0563BAA028794C2C00E8FC7B /* Picker */,
-				05D39C172876904300CCE136 /* Preview Content */,
 				0585133E2887F4D300F7B3AF /* Settings */,
-				05D39C402876914500CCE136 /* Tabbar */,
 				059D995028DA03DD00741591 /* Tuner */,
+				05D39C402876914500CCE136 /* Tabbar */,
 			);
 			path = XMetro;
 			sourceTree = "<group>";
@@ -346,16 +346,16 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
-		05D39C4F2876A27A00CCE136 /* BoredButton */ = {
+		05D39C4F2876A27A00CCE136 /* MetroActionButton */ = {
 			isa = PBXGroup;
 			children = (
-				05D39C502876A28B00CCE136 /* BoredButtonView.swift */,
-				052025AB287807350059654B /* BoredButtonAction.swift */,
-				052025AD287810A40059654B /* BoredButtonState.swift */,
-				052025AF287811280059654B /* BoredButtonReducer.swift */,
-				052025B1287811390059654B /* BoredButtonEnv.swift */,
+				05D39C502876A28B00CCE136 /* MetroActionButton.swift */,
+				052025AB287807350059654B /* MetroActionButtonAction.swift */,
+				052025AD287810A40059654B /* MetroActionButtonState.swift */,
+				052025AF287811280059654B /* MetroActionButtonReducer.swift */,
+				052025B1287811390059654B /* MetroActionButtonEnv.swift */,
 			);
-			path = BoredButton;
+			path = MetroActionButton;
 			sourceTree = "<group>";
 		};
 		05D39C522876C54A00CCE136 /* TabItem */ = {
@@ -542,7 +542,7 @@
 				05B41AA7288538AC00151D70 /* Color+MusicalDistance.swift in Sources */,
 				05D39C782877269100CCE136 /* TapContentReducer.swift in Sources */,
 				059D996C28DA03DD00741591 /* MainNoteView.swift in Sources */,
-				052025B0287811280059654B /* BoredButtonReducer.swift in Sources */,
+				052025B0287811280059654B /* MetroActionButtonReducer.swift in Sources */,
 				059D996A28DA03DD00741591 /* MicrophoneAccessAlert.swift in Sources */,
 				0585133D2887F4A700F7B3AF /* MetronomeScreen.swift in Sources */,
 				059D996128DA03DD00741591 /* ModifierPreference.swift in Sources */,
@@ -556,26 +556,26 @@
 				059D996428DA03DD00741591 /* TunerData.swift in Sources */,
 				05D39C7A287726A400CCE136 /* TapContentState.swift in Sources */,
 				059D996628DA03DD00741591 /* CurrentNoteMarker.swift in Sources */,
-				05D39C512876A28B00CCE136 /* BoredButtonView.swift in Sources */,
+				05D39C512876A28B00CCE136 /* MetroActionButton.swift in Sources */,
 				05B41AA5288538AC00151D70 /* Alignment.swift in Sources */,
 				05D39C142876904200CCE136 /* MainView.swift in Sources */,
 				05D39C5C2876C58300CCE136 /* TabItemEnv.swift in Sources */,
 				05D39C742877266400CCE136 /* TabContentAction.swift in Sources */,
 				05D39C6C2876F0C100CCE136 /* TabContentView.swift in Sources */,
 				05D39C762877267400CCE136 /* TapContentEnv.swift in Sources */,
-				052025AC287807350059654B /* BoredButtonAction.swift in Sources */,
+				052025AC287807350059654B /* MetroActionButtonAction.swift in Sources */,
 				05D39C672876F06200CCE136 /* TabAction.swift in Sources */,
 				05D39C5A2876C57500CCE136 /* TabItemAction.swift in Sources */,
 				0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */,
 				059D996B28DA03DD00741591 /* TranspositionMenu.swift in Sources */,
 				05D39C582876C56500CCE136 /* TabItemReducer.swift in Sources */,
 				05D39C122876904200CCE136 /* XMetroApp.swift in Sources */,
-				052025B2287811390059654B /* BoredButtonEnv.swift in Sources */,
+				052025B2287811390059654B /* MetroActionButtonEnv.swift in Sources */,
 				058513402887F4D300F7B3AF /* SettingsScreen.swift in Sources */,
 				059D996728DA03DD00741591 /* MatchedNoteView.swift in Sources */,
 				059D996D28DA03DD00741591 /* MatchedNoteFrequency.swift in Sources */,
 				05D39C682876F06200CCE136 /* TabView.swift in Sources */,
-				052025AE287810A40059654B /* BoredButtonState.swift in Sources */,
+				052025AE287810A40059654B /* MetroActionButtonState.swift in Sources */,
 				059D996928DA03DD00741591 /* NoteTicks.swift in Sources */,
 				05B41AA6288538AC00151D70 /* ColorAnimation.swift in Sources */,
 				05D39C692876F06200CCE136 /* TabReducer.swift in Sources */,
@@ -741,12 +741,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202209202103;
+				CURRENT_PROJECT_VERSION = 202209212257;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XMetro/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = XMetro;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Board Metro will use microphone for tuner.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -761,7 +762,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -784,12 +785,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202209202103;
+				CURRENT_PROJECT_VERSION = 202209212257;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XMetro/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = XMetro;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Board Metro will use microphone for tuner.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -804,7 +806,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";

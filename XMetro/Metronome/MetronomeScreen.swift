@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 struct MetronomeScreen: View {
     var body: some View {
-        BoredButtonView(store: Store(initialState: BoredButtonState(), reducer: BoredButtonReducer, environment: BoredButtonEnv()))
+        MetroActionButton(store: Store(initialState: MetroActionButtonState(), reducer: MetroActionButtonReducer, environment: MetroActionButtonEnv()))
             .frame(maxWidth:.infinity, maxHeight: .infinity)
             .navigationTitle("Metronome")
             .tint(.black)
