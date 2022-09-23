@@ -11,6 +11,7 @@
 		052025AE287810A40059654B /* MetroActionButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AD287810A40059654B /* MetroActionButtonState.swift */; };
 		052025B0287811280059654B /* MetroActionButtonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AF287811280059654B /* MetroActionButtonReducer.swift */; };
 		052025B2287811390059654B /* MetroActionButtonEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B1287811390059654B /* MetroActionButtonEnv.swift */; };
+		053C560328DD771400390B5B /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C560228DD771400390B5B /* ImageButton.swift */; };
 		0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563BAA128794C3900E8FC7B /* PickerView.swift */; };
 		0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0578AD3B28897E1700AE5B04 /* ComposableArchitecture */; };
 		0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */; };
@@ -86,6 +87,7 @@
 		052025AD287810A40059654B /* MetroActionButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonState.swift; sourceTree = "<group>"; };
 		052025AF287811280059654B /* MetroActionButtonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonReducer.swift; sourceTree = "<group>"; };
 		052025B1287811390059654B /* MetroActionButtonEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonEnv.swift; sourceTree = "<group>"; };
+		053C560228DD771400390B5B /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0578AD392889651E00AE5B04 /* XMetro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XMetro.entitlements; sourceTree = "<group>"; };
 		0579280528D978C800FE70E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				052025AD287810A40059654B /* MetroActionButtonState.swift */,
 				052025AF287811280059654B /* MetroActionButtonReducer.swift */,
 				052025B1287811390059654B /* MetroActionButtonEnv.swift */,
+				053C560228DD771400390B5B /* ImageButton.swift */,
 			);
 			path = MetroActionButton;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				059D996D28DA03DD00741591 /* MatchedNoteFrequency.swift in Sources */,
 				05D39C682876F06200CCE136 /* TabView.swift in Sources */,
 				052025AE287810A40059654B /* MetroActionButtonState.swift in Sources */,
+				053C560328DD771400390B5B /* ImageButton.swift in Sources */,
 				059D996928DA03DD00741591 /* NoteTicks.swift in Sources */,
 				05B41AA6288538AC00151D70 /* ColorAnimation.swift in Sources */,
 				05D39C692876F06200CCE136 /* TabReducer.swift in Sources */,

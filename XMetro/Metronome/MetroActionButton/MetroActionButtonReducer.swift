@@ -44,26 +44,33 @@ func destroy() {
     strongPlayer = nil
     dotPlayer?.stop()
     dotPlayer = nil
+    countDownFlag = 0
     timer.upstream.connect().cancel()
 }
 
+var countDownFlag = 0
 var timer = Timer.publish(every: 4.0/4.0, on: .main, in: .common).autoconnect()
 let MetroActionButtonReducer = Reducer<MetroActionButtonState, MetroActionButtonAction, MetroActionButtonEnv> { state, action, _ in
     switch action {
     case .run:
+        let every = 60.0 / Double(state.bpm)
+        let scale = Int(1.0 / every)
         if state.currentAction != .run {
             state.currentAction = .run
-            timer = Timer.publish(every: 60.0 / Double(state.bpm), on: .main, in: .common).autoconnect()
+            timer = Timer.publish(every: every, on: .main, in: .common).autoconnect()
             createPlayerIfNeeded()
             createStrongPlayerIfNeeded()
             UIApplication.shared.isIdleTimerDisabled = true
         }
-        state.jump()
-        if state.isCountDown { return .none }
-        if state.currentIndex == 0 {
-            strongPlayer?.play()
+        
+        if state.isCountDown {
+            if scale <= 0 || (scale > 0 && countDownFlag % scale == 0) { state.jump() }
+            countDownFlag = countDownFlag + 1
+            if state.currentIndex == 0 { strongPlayer?.play() }
         } else {
-            dotPlayer?.play()
+            countDownFlag = 0
+            state.jump()
+            (state.currentIndex == 0 ? strongPlayer : dotPlayer)?.play()
         }
         break
     case .stop:

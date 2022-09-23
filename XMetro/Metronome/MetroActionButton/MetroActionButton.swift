@@ -21,7 +21,7 @@ struct MetroActionButton: View {
     func backgroundColor(_ viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>) -> Color {
         switch viewStore.state.currentAction {
         case .run:
-            return viewStore.state.isCountDown ? Color(.systemYellow) :.red
+            return viewStore.state.isCountDown ? .yellow : .red
         case .stop:
             return .black
         default:
@@ -41,22 +41,21 @@ struct MetroActionButton: View {
             HStack {
                 VStack {
                     Spacer()
-                    
                     // 中间大按钮
-                    Button(viewStore.state.title) {
-                        if viewStore.state.currentAction == .stop {
-                            viewStore.send(.run)
-                        } else {
-                            viewStore.send(.stop)
+                    ImageButton(viewStore: viewStore)
+                        .onTapGesture {
+                            switch viewStore.state.currentAction {
+                            case .run: viewStore.send(.stop)
+                            case .stop: viewStore.send(.run)
+                            default: break
+                            }
                         }
-                    }
-                    .frame(width: 200, height: 200, alignment: .center)
-                    .background(backgroundColor(viewStore))
-                    .foregroundColor(.white)
-                    .font(viewStore.state.isCountDown ? .system(size: 68.0) : .system(size: 40.0))
-                    .cornerRadius(100)
-                    .shadow(color: .gray, radius: 28.0, x: 0, y: 0)
-                    
+                        .frame(width: 200, height: 200, alignment: .center)
+                        .font(.custom("Futura", size: viewStore.state.isCountDown ? 68 : 40))
+                        .background(backgroundColor(viewStore))
+                        .foregroundColor(.white)
+                        .cornerRadius(100)
+                        .shadow(color: .gray, radius: 28.0, x: 0, y: 0)
                     Spacer()
                     
                     // 波点

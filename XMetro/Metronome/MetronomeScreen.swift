@@ -9,8 +9,9 @@ import SwiftUI
 import ComposableArchitecture
 
 struct MetronomeScreen: View {
+    let store = Store(initialState: MetroActionButtonState(), reducer: MetroActionButtonReducer, environment: MetroActionButtonEnv())
     var body: some View {
-        MetroActionButton(store: Store(initialState: MetroActionButtonState(), reducer: MetroActionButtonReducer, environment: MetroActionButtonEnv()))
+        MetroActionButton(store: store)
             .frame(maxWidth:.infinity, maxHeight: .infinity)
             .navigationTitle("Metronome")
             .tint(.black)

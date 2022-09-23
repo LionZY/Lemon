@@ -38,7 +38,12 @@ struct MetroActionButtonState: Equatable {
         if isCountDown {
             return "\(abs(currentIndex))"
         }
-        return currentAction == .stop ? "Start" : "Stop"
+        return ""
+    }
+    
+    var titleIcon: String {
+        if isCountDown { return "" }
+        return currentAction == .stop ? "play.fill" : "stop.fill"
     }
     
     var isCountDown: Bool {

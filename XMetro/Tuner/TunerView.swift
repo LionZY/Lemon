@@ -64,7 +64,7 @@ struct TunerView: View {
                     let subItems = notes[m]
                     VStack {
                         ForEach(Array(subItems.enumerated()), id: \.offset) { n, md in
-                            let title = md + (selectedValue == "Guitar" ? octaves[m][n] : "")
+                            let title = md + octaves[m][n]
                             Button(title) {
                                 auto = false
                                 selected = IndexPath(item: n, section: m)
@@ -98,7 +98,7 @@ struct TunerView: View {
         }
         /*
         .navigationBarItems(
-            leading: TranspositionMenu(selectedTransposition: $selectedTransposition),
+            leading: TranspositionMenu(selectedTransposition: $selectedTransposition)
         )
         */
         .tint(.black)
