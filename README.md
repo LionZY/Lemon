@@ -1,5 +1,6 @@
 # Bored Metro
 When I bored，I write a SwiftUI + Combine + TCA metronome & tuner, called "XMetro"
+<br>
 无聊的时候，使用swiftUI+Combine+TCA写的一个节拍器和调音器
 
 # Download
