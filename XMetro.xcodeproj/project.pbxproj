@@ -12,6 +12,7 @@
 		052025B0287811280059654B /* MetroActionButtonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AF287811280059654B /* MetroActionButtonReducer.swift */; };
 		052025B2287811390059654B /* MetroActionButtonEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B1287811390059654B /* MetroActionButtonEnv.swift */; };
 		053C560328DD771400390B5B /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C560228DD771400390B5B /* ImageButton.swift */; };
+		053C560528DD957500390B5B /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C560428DD957500390B5B /* ActivityVC.swift */; };
 		0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563BAA128794C3900E8FC7B /* PickerView.swift */; };
 		0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0578AD3B28897E1700AE5B04 /* ComposableArchitecture */; };
 		0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */; };
@@ -88,6 +89,7 @@
 		052025AF287811280059654B /* MetroActionButtonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonReducer.swift; sourceTree = "<group>"; };
 		052025B1287811390059654B /* MetroActionButtonEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonEnv.swift; sourceTree = "<group>"; };
 		053C560228DD771400390B5B /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		053C560428DD957500390B5B /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0578AD392889651E00AE5B04 /* XMetro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XMetro.entitlements; sourceTree = "<group>"; };
 		0579280528D978C800FE70E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				05B41AA4288538AC00151D70 /* Color+MusicalDistance.swift */,
 				05B41AA3288538AC00151D70 /* ColorAnimation.swift */,
 				058513472887FAEF00F7B3AF /* Color+Extensions.swift */,
+				053C560428DD957500390B5B /* ActivityVC.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				052025AC287807350059654B /* MetroActionButtonAction.swift in Sources */,
 				05D39C672876F06200CCE136 /* TabAction.swift in Sources */,
 				05D39C5A2876C57500CCE136 /* TabItemAction.swift in Sources */,
+				053C560528DD957500390B5B /* ActivityVC.swift in Sources */,
 				0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */,
 				059D996B28DA03DD00741591 /* TranspositionMenu.swift in Sources */,
 				05D39C582876C56500CCE136 /* TabItemReducer.swift in Sources */,
@@ -745,7 +749,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202209212257;
+				CURRENT_PROJECT_VERSION = 202209231509;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
@@ -766,7 +770,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -789,7 +793,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202209212257;
+				CURRENT_PROJECT_VERSION = 202209231509;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
@@ -810,7 +814,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";
