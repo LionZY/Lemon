@@ -14,11 +14,7 @@ struct TunerView: View {
     @State private var auto = true
     @State var modifierPreference: ModifierPreference
     @State var selectedTransposition: Int
-    @State var selectedValue: String = "Guitar" {
-        didSet {
-            selected = nil
-        }
-    }
+    @State var selectedValue: String = "Guitar"
     
     var match: ScaleNote.Match {
          tunerData.closestNote.inTransposition(ScaleNote.allCases[selectedTransposition])
@@ -65,12 +61,13 @@ struct TunerView: View {
                     VStack {
                         ForEach(Array(subItems.enumerated()), id: \.offset) { n, md in
                             let title = md + octaves[m][n]
+                            let indexPath = IndexPath(item: n, section: m)
                             Button(title) {
                                 auto = false
-                                selected = IndexPath(item: n, section: m)
+                                selected = indexPath
                             }
                             .frame(maxWidth: 60, maxHeight: 60)
-                            .background(checkPerceptible(first: md, last: octaves[m][n]))
+                            .background(checkPerceptible(first: md, last: octaves[m][n], indexPath: indexPath))
                             .foregroundColor(.white)
                             .cornerRadius(30.0)
                         }
@@ -93,6 +90,9 @@ struct TunerView: View {
                         }
                     }
                     .pickerStyle(.segmented)
+                    .onChange(of: selectedValue) { _ in
+                        selected = nil
+                    }
                 }.frame(width: 160.0)
             }
         }
@@ -105,21 +105,21 @@ struct TunerView: View {
         .animation(.easeInOut, value: selectedValue)
     }
     
-    func checkPerceptible(first: String, last: String) -> Color {
-        if auto {
+    func checkPerceptible(first: String, last: String, indexPath: IndexPath) -> Color {
+        let isSelected = indexPath.section == selected?.section && indexPath.item == selected?.item
+        if auto && note == first && last == octave {
+            return isPerceptible ? .black : .green
+        } else if isSelected {
+            if isPerceptible {
+                return .red
+            }
             if note == first && last == octave {
-                return isPerceptible ? .black : .green
-            } else {
-                return .black
+                return .green
             }
-        } else if let section = selected?.section, let item = selected?.item {
-            if first == notes[section][item] && last == octaves[section][item] {
-                return isPerceptible ? .red : .green
-            } else {
-                return .black
-            }
+            return .red
+        } else {
+            return .black
         }
-        return .black
     }
 }
 
