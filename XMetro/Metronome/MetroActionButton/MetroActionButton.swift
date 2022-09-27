@@ -93,7 +93,7 @@ struct MetroActionButton: View {
                             viewStore.send(.stop)
                         }
                         .tint(.black)
-                        .controlSize(.small)
+                        .controlSize(.regular)
                         .buttonStyle(.borderedProminent)
                         .sheet(isPresented: $presentedCount) {
                             NavigationView {
@@ -113,7 +113,7 @@ struct MetroActionButton: View {
                             viewStore.send(.stop)
                         }
                         .tint(.black)
-                        .controlSize(.small)
+                        .controlSize(.regular)
                         .buttonStyle(.borderedProminent)
                         .sheet(isPresented: $presentedBmp) {
                             NavigationView {
@@ -125,7 +125,8 @@ struct MetroActionButton: View {
                                 ) { selected in
                                     viewStore.send(.updateBpm(selected))
                                 }
-                            }.navigationViewStyle(.stack)
+                            }
+                            .navigationViewStyle(.stack)
                         }
                     }
                     

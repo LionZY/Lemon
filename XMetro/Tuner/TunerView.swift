@@ -76,7 +76,12 @@ struct TunerView: View {
                 }
             }
             Spacer()
-            Toggle("Auto", isOn: $auto).toggleStyle(SwitchToggleStyle(tint: .red)).frame(maxWidth: 98.0)
+            Toggle("Auto", isOn: $auto)
+                .toggleStyle(SwitchToggleStyle(tint: .red))
+                .frame(maxWidth: 98.0)
+                .onChange(of: auto) { isAuto in
+                    if isAuto { selected = nil }
+                }
             Spacer()
         }
         .frame(maxWidth:.infinity, maxHeight: .infinity)
