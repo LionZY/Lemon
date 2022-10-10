@@ -11,6 +11,7 @@ import ComposableArchitecture
 struct TabContentView: View {
     private let metronomeScreen = MetronomeScreen()
     private let tunerScreen = TunerScreen()
+    private let musicListScreen = MusicListScreen()
     private let settingsScreen = SettingsScreen()
     let store = Store(initialState: TapContentState(selectIndex: 0), reducer: contentReducer, environment: TapContentEnv())
     
@@ -20,6 +21,7 @@ struct TabContentView: View {
                 switch viewStore.state.selectIndex {
                 case 0: metronomeScreen.background(.white)
                 case 1: tunerScreen.background(.white)
+                case 2: musicListScreen.background(.white)
                 default: settingsScreen.background(.white)
                 }
             }.onAppear {

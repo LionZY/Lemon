@@ -7,7 +7,7 @@ DEPENDENCIES:
   - UMCommon
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - UMCommon
     - UMDevice
 
@@ -15,6 +15,6 @@ SPEC CHECKSUMS:
   UMCommon: 37fe35f498e92cf57bbb06a086f02915fc35f211
   UMDevice: 053478c4b4d7292f31f0a275c227d3c4007a5571
 
-PODFILE CHECKSUM: a7daa52ad1f489e3b75e6d87b7402032222091ad
+PODFILE CHECKSUM: 744c08a81cb9da75743c7c62d4b7c1380748ba59
 
 COCOAPODS: 1.11.3

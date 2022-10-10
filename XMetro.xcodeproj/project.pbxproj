@@ -64,6 +64,20 @@
 		05D39C762877267400CCE136 /* TapContentEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C752877267400CCE136 /* TapContentEnv.swift */; };
 		05D39C782877269100CCE136 /* TapContentReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C772877269100CCE136 /* TapContentReducer.swift */; };
 		05D39C7A287726A400CCE136 /* TapContentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C79287726A400CCE136 /* TapContentState.swift */; };
+		05E2849928F4236900B7C8BD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E2849828F4235400B7C8BD /* libc++.tbd */; };
+		05E284C728F42A5C00B7C8BD /* UMAnalyticsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284B928F42A5C00B7C8BD /* UMAnalyticsSwift.swift */; };
+		05E284C828F42A5C00B7C8BD /* UMCommonSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284BA28F42A5C00B7C8BD /* UMCommonSwift.swift */; };
+		05E284C928F42A5C00B7C8BD /* iOS UMeng OC和Swift混编文档.md in Resources */ = {isa = PBXBuildFile; fileRef = 05E284BB28F42A5C00B7C8BD /* iOS UMeng OC和Swift混编文档.md */; };
+		05E284CA28F42A5C00B7C8BD /* swift3.png in Resources */ = {isa = PBXBuildFile; fileRef = 05E284BD28F42A5C00B7C8BD /* swift3.png */; };
+		05E284CB28F42A5C00B7C8BD /* swift2.png in Resources */ = {isa = PBXBuildFile; fileRef = 05E284BE28F42A5C00B7C8BD /* swift2.png */; };
+		05E284CC28F42A5C00B7C8BD /* swift1.png in Resources */ = {isa = PBXBuildFile; fileRef = 05E284BF28F42A5C00B7C8BD /* swift1.png */; };
+		05E284CD28F42A5C00B7C8BD /* UMCommonLogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284C028F42A5C00B7C8BD /* UMCommonLogSwift.swift */; };
+		05E284CE28F42A5C00B7C8BD /* UMCommonLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C228F42A5C00B7C8BD /* UMCommonLog.framework */; };
+		05E284CF28F42A5C00B7C8BD /* UMCommonLog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 05E284C328F42A5C00B7C8BD /* UMCommonLog.bundle */; };
+		05E284D028F42A5C00B7C8BD /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C428F42A5C00B7C8BD /* UMCommon.framework */; };
+		05E284D128F42A5C00B7C8BD /* UMAPM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C528F42A5C00B7C8BD /* UMAPM.framework */; };
+		05E284D228F42A5D00B7C8BD /* UMDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C628F42A5C00B7C8BD /* UMDevice.framework */; };
+		05E284D528F42AAD00B7C8BD /* MusicListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D428F42AAD00B7C8BD /* MusicListScreen.swift */; };
 		5CCE39078C61F9C481461EAF /* libPods-XMetro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B12AE02EB8FA2D79EAC35036 /* libPods-XMetro.a */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +159,21 @@
 		05D39C752877267400CCE136 /* TapContentEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapContentEnv.swift; sourceTree = "<group>"; };
 		05D39C772877269100CCE136 /* TapContentReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapContentReducer.swift; sourceTree = "<group>"; };
 		05D39C79287726A400CCE136 /* TapContentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapContentState.swift; sourceTree = "<group>"; };
+		05E2847828F41F0C00B7C8BD /* XMetro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XMetro-Bridging-Header.h"; sourceTree = "<group>"; };
+		05E2849828F4235400B7C8BD /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		05E284B928F42A5C00B7C8BD /* UMAnalyticsSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UMAnalyticsSwift.swift; sourceTree = "<group>"; };
+		05E284BA28F42A5C00B7C8BD /* UMCommonSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UMCommonSwift.swift; sourceTree = "<group>"; };
+		05E284BB28F42A5C00B7C8BD /* iOS UMeng OC和Swift混编文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS UMeng OC和Swift混编文档.md"; sourceTree = "<group>"; };
+		05E284BD28F42A5C00B7C8BD /* swift3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift3.png; sourceTree = "<group>"; };
+		05E284BE28F42A5C00B7C8BD /* swift2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift2.png; sourceTree = "<group>"; };
+		05E284BF28F42A5C00B7C8BD /* swift1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift1.png; sourceTree = "<group>"; };
+		05E284C028F42A5C00B7C8BD /* UMCommonLogSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UMCommonLogSwift.swift; sourceTree = "<group>"; };
+		05E284C228F42A5C00B7C8BD /* UMCommonLog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommonLog.framework; sourceTree = "<group>"; };
+		05E284C328F42A5C00B7C8BD /* UMCommonLog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMCommonLog.bundle; sourceTree = "<group>"; };
+		05E284C428F42A5C00B7C8BD /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
+		05E284C528F42A5C00B7C8BD /* UMAPM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAPM.framework; sourceTree = "<group>"; };
+		05E284C628F42A5C00B7C8BD /* UMDevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMDevice.framework; sourceTree = "<group>"; };
+		05E284D428F42AAD00B7C8BD /* MusicListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListScreen.swift; sourceTree = "<group>"; };
 		242DDA6598D6DC53515E32CE /* Pods-XMetro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMetro.debug.xcconfig"; path = "Target Support Files/Pods-XMetro/Pods-XMetro.debug.xcconfig"; sourceTree = "<group>"; };
 		908AC7539FACC183CFF5D4A2 /* Pods-XMetro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMetro.release.xcconfig"; path = "Target Support Files/Pods-XMetro/Pods-XMetro.release.xcconfig"; sourceTree = "<group>"; };
 		B12AE02EB8FA2D79EAC35036 /* libPods-XMetro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMetro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,10 +184,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E284CE28F42A5C00B7C8BD /* UMCommonLog.framework in Frameworks */,
 				0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */,
 				059D997128DA9B0E00741591 /* ActivityIndicatorView in Frameworks */,
+				05E284D128F42A5C00B7C8BD /* UMAPM.framework in Frameworks */,
+				05E284D028F42A5C00B7C8BD /* UMCommon.framework in Frameworks */,
 				058513462887F60900F7B3AF /* MicrophonePitchDetector in Frameworks */,
+				05E284D228F42A5D00B7C8BD /* UMDevice.framework in Frameworks */,
 				5CCE39078C61F9C481461EAF /* libPods-XMetro.a in Frameworks */,
+				05E2849928F4236900B7C8BD /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +253,7 @@
 		058513442887F60900F7B3AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05E2849828F4235400B7C8BD /* libc++.tbd */,
 				B12AE02EB8FA2D79EAC35036 /* libPods-XMetro.a */,
 			);
 			name = Frameworks;
@@ -309,9 +344,12 @@
 			children = (
 				0578AD392889651E00AE5B04 /* XMetro.entitlements */,
 				0579280528D978C800FE70E6 /* Info.plist */,
+				05E2847828F41F0C00B7C8BD /* XMetro-Bridging-Header.h */,
 				0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */,
 				05D39C132876904200CCE136 /* MainView.swift */,
 				05D39C112876904200CCE136 /* XMetroApp.swift */,
+				05E284D328F42A9B00B7C8BD /* MusicList */,
+				05E284B628F42A5C00B7C8BD /* Vendor */,
 				05D39C172876904300CCE136 /* Preview Content */,
 				0584DA7B288AA37B008712DF /* Assets */,
 				05B41AA12885389300151D70 /* Helpers */,
@@ -407,13 +445,71 @@
 			path = TabContent;
 			sourceTree = "<group>";
 		};
+		05E284B628F42A5C00B7C8BD /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				05E284B728F42A5C00B7C8BD /* Umeng */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		05E284B728F42A5C00B7C8BD /* Umeng */ = {
+			isa = PBXGroup;
+			children = (
+				05E284B828F42A5C00B7C8BD /* UMSwift */,
+				05E284C128F42A5C00B7C8BD /* UMFramework */,
+			);
+			path = Umeng;
+			sourceTree = "<group>";
+		};
+		05E284B828F42A5C00B7C8BD /* UMSwift */ = {
+			isa = PBXGroup;
+			children = (
+				05E284B928F42A5C00B7C8BD /* UMAnalyticsSwift.swift */,
+				05E284BA28F42A5C00B7C8BD /* UMCommonSwift.swift */,
+				05E284BB28F42A5C00B7C8BD /* iOS UMeng OC和Swift混编文档.md */,
+				05E284BC28F42A5C00B7C8BD /* img */,
+				05E284C028F42A5C00B7C8BD /* UMCommonLogSwift.swift */,
+			);
+			path = UMSwift;
+			sourceTree = "<group>";
+		};
+		05E284BC28F42A5C00B7C8BD /* img */ = {
+			isa = PBXGroup;
+			children = (
+				05E284BD28F42A5C00B7C8BD /* swift3.png */,
+				05E284BE28F42A5C00B7C8BD /* swift2.png */,
+				05E284BF28F42A5C00B7C8BD /* swift1.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		05E284C128F42A5C00B7C8BD /* UMFramework */ = {
+			isa = PBXGroup;
+			children = (
+				05E284C228F42A5C00B7C8BD /* UMCommonLog.framework */,
+				05E284C328F42A5C00B7C8BD /* UMCommonLog.bundle */,
+				05E284C428F42A5C00B7C8BD /* UMCommon.framework */,
+				05E284C528F42A5C00B7C8BD /* UMAPM.framework */,
+				05E284C628F42A5C00B7C8BD /* UMDevice.framework */,
+			);
+			path = UMFramework;
+			sourceTree = "<group>";
+		};
+		05E284D328F42A9B00B7C8BD /* MusicList */ = {
+			isa = PBXGroup;
+			children = (
+				05E284D428F42AAD00B7C8BD /* MusicListScreen.swift */,
+			);
+			path = MusicList;
+			sourceTree = "<group>";
+		};
 		7FE4EA469A244F35F3D20521 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				242DDA6598D6DC53515E32CE /* Pods-XMetro.debug.xcconfig */,
 				908AC7539FACC183CFF5D4A2 /* Pods-XMetro.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -513,7 +609,7 @@
 			mainGroup = 05D39C052876904200CCE136;
 			packageReferences = (
 				0578AD3A28897E1700AE5B04 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				059D996F28DA9B0E00741591 /* XCRemoteSwiftPackageReference "ActivityIndicatorView.git" */,
+				059D996F28DA9B0E00741591 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
 			);
 			productRefGroup = 05D39C0F2876904200CCE136 /* Products */;
 			projectDirPath = "";
@@ -532,11 +628,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0584DA7F288AA37B008712DF /* dot.m4a in Resources */,
+				05E284C928F42A5C00B7C8BD /* iOS UMeng OC和Swift混编文档.md in Resources */,
 				0584DA81288AA37B008712DF /* dot_strong.m4a in Resources */,
 				0584DA80288AA37B008712DF /* Assets.xcassets in Resources */,
 				0579280928D97C9400FE70E6 /* icon_show.png in Resources */,
+				05E284CC28F42A5C00B7C8BD /* swift1.png in Resources */,
+				05E284CA28F42A5C00B7C8BD /* swift3.png in Resources */,
+				05E284CF28F42A5C00B7C8BD /* UMCommonLog.bundle in Resources */,
 				0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */,
 				05D39C192876904300CCE136 /* Preview Assets.xcassets in Resources */,
+				05E284CB28F42A5C00B7C8BD /* swift2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +689,7 @@
 			files = (
 				059D996E28DA03DD00741591 /* TunerView.swift in Sources */,
 				05D39C552876C54B00CCE136 /* TabItemView.swift in Sources */,
+				05E284C828F42A5C00B7C8BD /* UMCommonSwift.swift in Sources */,
 				05B41AA7288538AC00151D70 /* Color+MusicalDistance.swift in Sources */,
 				05D39C782877269100CCE136 /* TapContentReducer.swift in Sources */,
 				059D996C28DA03DD00741591 /* MainNoteView.swift in Sources */,
@@ -604,8 +706,10 @@
 				059D996528DA03DD00741591 /* TunerScreen.swift in Sources */,
 				059D996428DA03DD00741591 /* TunerData.swift in Sources */,
 				05D39C7A287726A400CCE136 /* TapContentState.swift in Sources */,
+				05E284C728F42A5C00B7C8BD /* UMAnalyticsSwift.swift in Sources */,
 				059D996628DA03DD00741591 /* CurrentNoteMarker.swift in Sources */,
 				05D39C512876A28B00CCE136 /* MetroActionButton.swift in Sources */,
+				05E284D528F42AAD00B7C8BD /* MusicListScreen.swift in Sources */,
 				05B41AA5288538AC00151D70 /* Alignment.swift in Sources */,
 				05D39C142876904200CCE136 /* MainView.swift in Sources */,
 				05D39C5C2876C58300CCE136 /* TabItemEnv.swift in Sources */,
@@ -627,6 +731,7 @@
 				05D39C682876F06200CCE136 /* TabView.swift in Sources */,
 				052025AE287810A40059654B /* MetroActionButtonState.swift in Sources */,
 				053C560328DD771400390B5B /* ImageButton.swift in Sources */,
+				05E284CD28F42A5C00B7C8BD /* UMCommonLogSwift.swift in Sources */,
 				059D996928DA03DD00741591 /* NoteTicks.swift in Sources */,
 				05B41AA6288538AC00151D70 /* ColorAnimation.swift in Sources */,
 				05D39C692876F06200CCE136 /* TabReducer.swift in Sources */,
@@ -793,10 +898,16 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202210082046;
+				CURRENT_PROJECT_VERSION = 202210101811;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XMetro/UMFramework",
+					"$(PROJECT_DIR)/XMetro/Umeng/UMFramework",
+					"$(PROJECT_DIR)/XMetro/Vendor/Umeng/UMFramework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XMetro/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = XMetro;
@@ -814,7 +925,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -823,6 +934,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/XMetro/XMetro-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -838,10 +950,16 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202210082046;
+				CURRENT_PROJECT_VERSION = 202210101811;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XMetro/UMFramework",
+					"$(PROJECT_DIR)/XMetro/Umeng/UMFramework",
+					"$(PROJECT_DIR)/XMetro/Vendor/Umeng/UMFramework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XMetro/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = XMetro;
@@ -859,7 +977,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -867,6 +985,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/XMetro/XMetro-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -998,7 +1117,7 @@
 				minimumVersion = 0.9.0;
 			};
 		};
-		059D996F28DA9B0E00741591 /* XCRemoteSwiftPackageReference "ActivityIndicatorView.git" */ = {
+		059D996F28DA9B0E00741591 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/ActivityIndicatorView.git";
 			requirement = {
@@ -1020,7 +1139,7 @@
 		};
 		059D997028DA9B0E00741591 /* ActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 059D996F28DA9B0E00741591 /* XCRemoteSwiftPackageReference "ActivityIndicatorView.git" */;
+			package = 059D996F28DA9B0E00741591 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
 			productName = ActivityIndicatorView;
 		};
 /* End XCSwiftPackageProductDependency section */

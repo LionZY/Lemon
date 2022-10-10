@@ -10,9 +10,6 @@ struct TunerScreen: View {
     @AppStorage("selectedTransposition") private var selectedTransposition = 0
     
     var body: some View {
-        ActivityIndicatorView(isVisible: $showLoadingIndicator, type: .scalingDots(count: 3, inset: 6))
-            .frame(width: 44.0, height: 44.0)
-             .foregroundColor(.red)
         TunerView(
             tunerData: TunerData(pitch: pitchDetector.pitch),
             modifierPreference: modifierPreference,
@@ -38,13 +35,16 @@ struct TunerScreen: View {
         .alert(isPresented: $pitchDetector.showMicrophoneAccessAlert) {
             MicrophoneAccessAlert()
         }
+        ActivityIndicatorView(isVisible: $showLoadingIndicator, type: .scalingDots(count: 3, inset: 6))
+            .frame(width: 44.0, height: 44.0)
+             .foregroundColor(.red)
     }
     
     private func startAudio() {
         showLoadingIndicator = true
         DispatchQueue.main.async {
             pitchDetector.start()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: DispatchWorkItem(block: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: DispatchWorkItem(block: {
                 showLoadingIndicator = false
             }))
         }
@@ -54,7 +54,7 @@ struct TunerScreen: View {
         showLoadingIndicator = true
         DispatchQueue.main.async {
             pitchDetector.stop()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: DispatchWorkItem(block: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: DispatchWorkItem(block: {
                 showLoadingIndicator = false
             }))
         }
