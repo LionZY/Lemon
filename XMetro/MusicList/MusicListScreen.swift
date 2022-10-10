@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct MusicListScreen: View {
+    private var listData: [MusicListItem] = [
+        MusicListItem(icon: "music.quarternote.3", title: "Chord Library"),
+        MusicListItem(icon: "music.note.house.fill", title: "Song Library"),
+        MusicListItem(icon: "list.triangle", title: "SetList Library"),
+    ]
     var body: some View {
         VStack {
-            Spacer()
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            Spacer()
+            List {
+                Section {
+                    ForEach(listData, id: \.self) { item in
+                        NavigationLink(destination: SettingsScreen()) {
+                            HStack{
+                                Image(systemName: item.icon)
+                                Text(item.title)
+                            }
+                        }
+                    }
+                }
+            }
         }
         .navigationTitle("Library")
     }

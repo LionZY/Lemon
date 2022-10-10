@@ -78,6 +78,9 @@
 		05E284D128F42A5C00B7C8BD /* UMAPM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C528F42A5C00B7C8BD /* UMAPM.framework */; };
 		05E284D228F42A5D00B7C8BD /* UMDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C628F42A5C00B7C8BD /* UMDevice.framework */; };
 		05E284D528F42AAD00B7C8BD /* MusicListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D428F42AAD00B7C8BD /* MusicListScreen.swift */; };
+		05E284D728F4731D00B7C8BD /* MusicListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D628F4731D00B7C8BD /* MusicListItem.swift */; };
+		05E284D928F479A100B7C8BD /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D828F479A100B7C8BD /* AboutScreen.swift */; };
+		05E284DB28F47A7000B7C8BD /* SettingsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284DA28F47A7000B7C8BD /* SettingsListItem.swift */; };
 		5CCE39078C61F9C481461EAF /* libPods-XMetro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B12AE02EB8FA2D79EAC35036 /* libPods-XMetro.a */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +177,9 @@
 		05E284C528F42A5C00B7C8BD /* UMAPM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAPM.framework; sourceTree = "<group>"; };
 		05E284C628F42A5C00B7C8BD /* UMDevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMDevice.framework; sourceTree = "<group>"; };
 		05E284D428F42AAD00B7C8BD /* MusicListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListScreen.swift; sourceTree = "<group>"; };
+		05E284D628F4731D00B7C8BD /* MusicListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListItem.swift; sourceTree = "<group>"; };
+		05E284D828F479A100B7C8BD /* AboutScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
+		05E284DA28F47A7000B7C8BD /* SettingsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListItem.swift; sourceTree = "<group>"; };
 		242DDA6598D6DC53515E32CE /* Pods-XMetro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMetro.debug.xcconfig"; path = "Target Support Files/Pods-XMetro/Pods-XMetro.debug.xcconfig"; sourceTree = "<group>"; };
 		908AC7539FACC183CFF5D4A2 /* Pods-XMetro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMetro.release.xcconfig"; path = "Target Support Files/Pods-XMetro/Pods-XMetro.release.xcconfig"; sourceTree = "<group>"; };
 		B12AE02EB8FA2D79EAC35036 /* libPods-XMetro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMetro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,7 +251,9 @@
 		0585133E2887F4D300F7B3AF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				05E284D828F479A100B7C8BD /* AboutScreen.swift */,
 				0585133F2887F4D300F7B3AF /* SettingsScreen.swift */,
+				05E284DA28F47A7000B7C8BD /* SettingsListItem.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -348,11 +356,11 @@
 				0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */,
 				05D39C132876904200CCE136 /* MainView.swift */,
 				05D39C112876904200CCE136 /* XMetroApp.swift */,
-				05E284D328F42A9B00B7C8BD /* MusicList */,
-				05E284B628F42A5C00B7C8BD /* Vendor */,
-				05D39C172876904300CCE136 /* Preview Content */,
 				0584DA7B288AA37B008712DF /* Assets */,
 				05B41AA12885389300151D70 /* Helpers */,
+				05E284B628F42A5C00B7C8BD /* Vendor */,
+				05D39C172876904300CCE136 /* Preview Content */,
+				05E284D328F42A9B00B7C8BD /* MusicList */,
 				0585133B2887F4A700F7B3AF /* Metronome */,
 				0585133E2887F4D300F7B3AF /* Settings */,
 				059D995028DA03DD00741591 /* Tuner */,
@@ -500,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				05E284D428F42AAD00B7C8BD /* MusicListScreen.swift */,
+				05E284D628F4731D00B7C8BD /* MusicListItem.swift */,
 			);
 			path = MusicList;
 			sourceTree = "<group>";
@@ -691,6 +700,9 @@
 				05D39C552876C54B00CCE136 /* TabItemView.swift in Sources */,
 				05E284C828F42A5C00B7C8BD /* UMCommonSwift.swift in Sources */,
 				05B41AA7288538AC00151D70 /* Color+MusicalDistance.swift in Sources */,
+				05E284D728F4731D00B7C8BD /* MusicListItem.swift in Sources */,
+				05E284DB28F47A7000B7C8BD /* SettingsListItem.swift in Sources */,
+				05E284D928F479A100B7C8BD /* AboutScreen.swift in Sources */,
 				05D39C782877269100CCE136 /* TapContentReducer.swift in Sources */,
 				059D996C28DA03DD00741591 /* MainNoteView.swift in Sources */,
 				052025B0287811280059654B /* MetroActionButtonReducer.swift in Sources */,
