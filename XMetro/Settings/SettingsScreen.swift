@@ -37,6 +37,7 @@ struct SettingsScreen: View {
                                 Text(item.title)
                             }
                         }
+                        .accentColor(.black)
                     }
                 }
             }
