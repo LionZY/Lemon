@@ -15,6 +15,9 @@ struct MetronomeScreen: View {
             .frame(maxWidth:.infinity, maxHeight: .infinity)
             .navigationTitle("Metronome")
             .tint(.black)
+            .onAppear(perform: {
+                UIApplication.shared.isIdleTimerDisabled = true
+            })
     }
 }
 

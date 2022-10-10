@@ -60,7 +60,6 @@ let MetroActionButtonReducer = Reducer<MetroActionButtonState, MetroActionButton
             timer = Timer.publish(every: every, on: .main, in: .common).autoconnect()
             createPlayerIfNeeded()
             createStrongPlayerIfNeeded()
-            UIApplication.shared.isIdleTimerDisabled = true
         }
         
         if state.isCountDown {
@@ -79,7 +78,6 @@ let MetroActionButtonReducer = Reducer<MetroActionButtonState, MetroActionButton
         timer.upstream.connect().cancel()
         dotPlayer?.stop()
         strongPlayer?.stop()
-        UIApplication.shared.isIdleTimerDisabled = false
         break
     case .updateBpm(let bpm):
         state.bpm = bpm

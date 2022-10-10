@@ -1,0 +1,5 @@
+
+.DS_Store
+Podfile
+Podfile.lock
+Pods/*/*.*
