@@ -44,7 +44,7 @@ struct TunerScreen: View {
         showLoadingIndicator = true
         DispatchQueue.main.async {
             pitchDetector.start()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: DispatchWorkItem(block: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: DispatchWorkItem(block: {
                 showLoadingIndicator = false
             }))
         }
@@ -54,7 +54,7 @@ struct TunerScreen: View {
         showLoadingIndicator = true
         DispatchQueue.main.async {
             pitchDetector.stop()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: DispatchWorkItem(block: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: DispatchWorkItem(block: {
                 showLoadingIndicator = false
             }))
         }
