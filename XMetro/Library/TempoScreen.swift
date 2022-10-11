@@ -13,6 +13,7 @@ struct TempoScreen: View {
             VStack {
                 Spacer()
                 Text("No tempo yet.")
+                    .foregroundColor(Theme.grayColor)
                 Spacer()
             }
             VStack {

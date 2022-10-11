@@ -13,6 +13,7 @@ struct ChordScreen: View {
             VStack {
                 Spacer()
                 Text("No chord yet.")
+                    .foregroundColor(Theme.grayColor)
                 Spacer()
             }
             VStack {

@@ -13,6 +13,7 @@ struct SetlistScreen: View {
             VStack {
                 Spacer()
                 Text("No setlist yet.")
+                    .foregroundColor(Theme.grayColor)
                 Spacer()
             }
             VStack {
