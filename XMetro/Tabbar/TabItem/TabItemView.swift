@@ -16,14 +16,14 @@ struct TabItemView: View {
                 Image(systemName: viewStore.state.icon)
                     .frame(height: 20.0, alignment: .center)
                 Spacer()
-                    .frame(maxHeight: 2.0)
+                    .frame(maxHeight: 4.0)
                 Text(viewStore.state.title)
                     .font(.system(size: 12))
             }
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, maxHeight: 44.0)
             .foregroundColor(viewStore.state.select ? Theme.lightColor : Theme.mainColor)
             .onTapGesture {
-                selectedTabItemReducer = viewStore
+                if selectedTabItemReducer?.state.index != viewStore.state.index { selectedTabItemReducer = viewStore }
             }
             .onAppear {
                 guard selectedTabItemReducer == nil, viewStore.state.select == true else { return }

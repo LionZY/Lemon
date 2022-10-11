@@ -21,7 +21,7 @@ struct TabView: View {
                             TabItemView(store: itemStore)
                         }
                     }
-                    .padding()
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 }
             }
         }
