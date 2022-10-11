@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct MetronomeSettingsScreen: View {
+    private let listData: [MetronomeSettingsListItem] = [
+        .default_meter,
+        .default_bpm
+    ]
     var body: some View {
         VStack {
-            Spacer()
-            Text("Hello world!")
-            Spacer()
+            List {
+                Section {
+                    ForEach(listData, id: \.self) { item in
+                        item.itemView()
+                    }
+                }
+            }
         }
+        .navigationTitle("Metronome Settings")
     }
 }
 

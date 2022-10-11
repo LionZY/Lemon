@@ -17,7 +17,7 @@ struct TunerView: View {
     @State var selectedValue: String = "Guitar"
     
     var match: ScaleNote.Match {
-         tunerData.closestNote.inTransposition(ScaleNote.allCases[selectedTransposition])
+        tunerData.closestNote.inTransposition(ScaleNote.allCases[selectedTransposition])
     }
     
     var note: String {
@@ -27,7 +27,7 @@ struct TunerView: View {
     var octave: String? {
         String(match.octave)
     }
-
+    
     var isPerceptible: Bool {
         match.distance.isPerceptible
     }
@@ -41,7 +41,7 @@ struct TunerView: View {
     }
     
     var segments = ["Guitar", "Ukulele"]
-
+    
     var body: some View {
         VStack {
             Spacer()
@@ -76,36 +76,29 @@ struct TunerView: View {
                 }
             }
             Spacer()
-            Toggle("Auto", isOn: $auto)
+        }
+        .frame(maxWidth:.infinity, maxHeight: .infinity)
+        .navigationTitle("Tuner")
+        .navigationBarItems(
+            leading: HStack {
+                Picker("", selection: $selectedValue) {
+                    ForEach(segments, id: \.self) { t in
+                        Text(t).foregroundColor(selectedValue == t ? Theme.lightColor : Color(UIColor(white: 0.0, alpha: 0.3)))
+                    }
+                }
+                .frame(width: 140.0)
+                .pickerStyle(.segmented)
+                .onChange(of: selectedValue) { _ in
+                    selected = nil
+                }
+            },
+            trailing: Toggle("Auto", isOn: $auto)
                 .toggleStyle(SwitchToggleStyle(tint: Theme.lightColor))
                 .frame(maxWidth: 98.0)
                 .onChange(of: auto) { isAuto in
                     if isAuto { selected = nil }
                 }
-            Spacer()
-        }
-        .frame(maxWidth:.infinity, maxHeight: .infinity)
-        .navigationTitle("Tuner")
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                HStack {
-                    Picker("", selection: $selectedValue) {
-                        ForEach(segments, id: \.self) { t in
-                            Text(t).foregroundColor(selectedValue == t ? Theme.lightColor : Color(UIColor(white: 0.0, alpha: 0.3)))
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                    .onChange(of: selectedValue) { _ in
-                        selected = nil
-                    }
-                }.frame(width: 160.0)
-            }
-        }
-        /*
-        .navigationBarItems(
-            leading: TranspositionMenu(selectedTransposition: $selectedTransposition)
         )
-        */
         .tint(Theme.mainColor)
         .animation(.easeInOut, value: selectedValue)
     }

@@ -88,7 +88,7 @@ struct MetroActionButton: View {
                     
                     // 参数调节按钮
                     HStack {
-                        Button("Meter: \(viewStore.state.count)") {
+                        Button("\(viewStore.state.count)/4") {
                             presentedCount = true
                             viewStore.send(.stop)
                         }
@@ -98,7 +98,7 @@ struct MetroActionButton: View {
                         .sheet(isPresented: $presentedCount) {
                             NavigationView {
                                 PickerView(
-                                    title: "Meter",
+                                    title: "Time Signature",
                                     datas:1..<13,
                                     presets: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
                                     defaultValue: viewStore.state.count
@@ -107,8 +107,8 @@ struct MetroActionButton: View {
                                 }
                             }.navigationViewStyle(.stack)
                         }
-                        Spacer().frame(maxWidth: 20.0)
-                        Button("BPM: \(viewStore.state.bpm)") {
+                        Spacer().frame(maxWidth: 16.0)
+                        Button("\(viewStore.state.bpm)") {
                             presentedBmp = true
                             viewStore.send(.stop)
                         }

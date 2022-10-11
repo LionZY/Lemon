@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct TunerSettingsScreen: View {
+    private let listData: [TunerSettingsListItem] = [
+        .auto_open,
+    ]
     var body: some View {
         VStack {
-            Spacer()
-            Text("Hello world!")
-            Spacer()
+            List {
+                Section {
+                    ForEach(listData, id: \.self) { item in
+                        item.itemView()
+                    }
+                }
+            }
         }
+        .navigationTitle("Tuner Settings")
     }
 }
 

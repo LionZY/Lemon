@@ -27,7 +27,6 @@ struct TunerScreen: View {
         }
         .onAppear(perform: {
             startAudio()
-            UIApplication.shared.isIdleTimerDisabled = true
         })
         .onDisappear(perform: {
             stopAudio()
