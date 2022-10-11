@@ -9,34 +9,37 @@ import Foundation
 import SwiftUI
 
 struct AboutScreen: View {
-    @State private var isSharePresented: Bool = false
-    private let shareURL = URL(string: "https://apps.apple.com/app/6443442078")!
     var body: some View {
         HStack {
             Spacer().frame(width: 20.0)
             VStack {
-                Image("icon_show")
-                    .frame(width: 100.0, height: 100.0)
-                    .cornerRadius(17.6)
-                    .shadow(color: .gray, radius: 40.0, x: 0, y: 0)
-                Spacer().frame(minHeight: 0, maxHeight: 84.0)
+                Spacer()
                 HStack {
-                    Text("Developed by")
+                    Spacer().frame(width: 10.0)
+                    VStack {
+                        Image("icon_small")
+                            .frame(width: 80.0, height: 80.0)
+                            .cornerRadius(14.0)
+                            .shadow(color: Theme.shadowColor, radius: 32.0, x: 0, y: 0)
+                        Spacer().frame(height: 30)
+                        Text("XMetro is a software for musicians.\nI am also a music lover.\nCause most of the similar apps on the market are not nice to me, I developed this app. I hope it will get better and better in order to serve every musician.")
+                            .multilineTextAlignment(.center)
+                            .lineSpacing(6.0)
+                    }
+                    Spacer().frame(width: 8.0)
+                }
+                .foregroundColor(.gray)
+                Spacer()
+                HStack {
+                    Text("My Github:").foregroundColor(.gray)
                     Link("@LionZY", destination: URL(string: "https://github.com/LionZY")!)
                 }
-                Spacer().frame(minHeight: 0, maxHeight: 12.0)
-                Button("Share XMetro with friends") {
-                    self.isSharePresented = true
+                Spacer().frame(height: 6.0)
+                HStack {
+                    Text("Contact me:").foregroundColor(.gray)
+                    Link("yue_zhang_lion@163.com", destination: URL(string: "mailto://yue_zhang_lion@163.com")!)
                 }
-                .buttonStyle(.borderedProminent)
-                .background(.black)
-                .foregroundColor(.white)
-                .cornerRadius(8.0)
-                .sheet(isPresented: $isSharePresented, onDismiss: {
-                    print("Dismiss")
-                }, content: {
-                    ActivityVC(activityItems: [shareURL])
-                })
+                Spacer().frame(height: 20.0)
             }
             Spacer().frame(width: 20.0)
         }

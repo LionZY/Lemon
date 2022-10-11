@@ -38,8 +38,8 @@ struct PickerView: View {
                                 dismiss()
                             }
                             .frame(maxWidth: 60, maxHeight: 60)
-                            .background(selectedValue == presets[index] ? .red : .black)
-                            .foregroundColor(.white)
+                            .background(selectedValue == presets[index] ? Theme.lightColor : Theme.mainColor)
+                            .foregroundColor(Theme.whiteColor)
                             .cornerRadius(30.0)
                         }
                     }

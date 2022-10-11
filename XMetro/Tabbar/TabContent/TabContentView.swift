@@ -19,10 +19,10 @@ struct TabContentView: View {
         WithViewStore(store) { viewStore in
             ZStack {
                 switch viewStore.state.selectIndex {
-                case 0: metronomeScreen.background(.white)
-                case 1: tunerScreen.background(.white)
-                case 2: musicListScreen.background(.white)
-                default: settingsScreen.background(.white)
+                case 0: metronomeScreen.background(Theme.whiteColor)
+                case 1: tunerScreen.background(Theme.whiteColor)
+                case 2: musicListScreen.background(Theme.whiteColor)
+                default: settingsScreen.background(Theme.whiteColor)
                 }
             }.onAppear {
                 selectedTabContentReducer = viewStore

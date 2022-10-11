@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct SettingsScreen: View {
+    @State private var isSharePresented: Bool = false
+    private let shareURL = URL(string: "https://apps.apple.com/app/6443442078")!
     private let infoDictionary = Bundle.main.infoDictionary
     private var appVersion: String {
         (infoDictionary?["CFBundleShortVersionString"] as? String) ?? ""
@@ -16,32 +18,49 @@ struct SettingsScreen: View {
     private var buildVersion: String {
         (infoDictionary?["CFBundleVersion"] as? String) ?? ""
     }
-    private var footerInfo: String {
+    private var versionInfo: String {
         "Build:" + buildVersion + " Version:" + appVersion
     }
     private var listData: [SettingListItem] = [
-        SettingListItem(icon: "info.circle", title: "About XMetro")
+        .metronome,
+        .tuner,
+        .about,
     ]
     var body: some View {
         VStack {
             List {
-                Section(footer: HStack {
-                    Spacer()
-                    Text(footerInfo)
-                    Spacer()
-                }) {
+                Section {
                     ForEach(listData, id: \.self) { item in
-                        NavigationLink(destination: AboutScreen()) {
+                        NavigationLink(destination: item.destination()) {
                             HStack{
-                                Image(systemName: item.icon)
-                                Text(item.title)
+                                Image(systemName: item.icon())
+                                Text(item.title())
                             }
                         }
-                        .accentColor(.black)
                     }
+                }
+                Section(footer: VStack {
+                    HStack {
+                        Spacer()
+                        Button("Share XMetro with friends") {
+                            isSharePresented = true
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .foregroundColor(.white)
+                        .sheet(isPresented: $isSharePresented, onDismiss: {
+                            print("Dismiss")
+                        }, content: {
+                            ActivityVC(activityItems: [shareURL])
+                        })
+                        Spacer()
+                    }
+                    Text(versionInfo)
+                }) {
+                    
                 }
             }
         }
+        .background(.gray)
         .frame(maxWidth:.infinity, maxHeight: .infinity)
         .navigationTitle("Settings")
     }

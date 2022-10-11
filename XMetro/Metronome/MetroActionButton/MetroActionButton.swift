@@ -21,17 +21,17 @@ struct MetroActionButton: View {
     func backgroundColor(_ viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>) -> Color {
         switch viewStore.state.currentAction {
         case .run:
-            return viewStore.state.isCountDown ? .yellow : .red
+            return viewStore.state.isCountDown ? Theme.middleLightColor : Theme.lightColor
         case .stop:
-            return .black
+            return Theme.mainColor
         default:
-            return .black
+            return Theme.mainColor
         }
     }
 
     func dotColor(_ viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>, dotIndex: Int) -> Color {
         if dotIndex < viewStore.state.count {
-             return viewStore.state.currentIndex == dotIndex ? .red : .black
+            return viewStore.state.currentIndex == dotIndex ? Theme.lightColor : Theme.mainColor
         }
         return Color(.systemGray5)
     }
@@ -53,9 +53,9 @@ struct MetroActionButton: View {
                         .frame(width: 200, height: 200, alignment: .center)
                         .font(.custom("Futura", size: viewStore.state.isCountDown ? 68 : 40))
                         .background(backgroundColor(viewStore))
-                        .foregroundColor(.white)
+                        .foregroundColor(Theme.whiteColor)
                         .cornerRadius(100)
-                        .shadow(color: .gray, radius: 28.0, x: 0, y: 0)
+                        .shadow(color: Theme.shadowColor, radius: 28.0, x: 0, y: 0)
                     Spacer()
                     
                     // 波点
@@ -66,7 +66,7 @@ struct MetroActionButton: View {
                                     Text("")
                                         .frame(width: dotWidth, height: dotWidth, alignment: .center)
                                         .background(dotColor(viewStore, dotIndex: Int(row * 4 + colum)))
-                                        .foregroundColor(.white)
+                                        .foregroundColor(Theme.whiteColor)
                                         .cornerRadius(dotWidth/2.0)
                                 }
                             }
@@ -92,7 +92,7 @@ struct MetroActionButton: View {
                             presentedCount = true
                             viewStore.send(.stop)
                         }
-                        .tint(.black)
+                        .tint(Theme.mainColor)
                         .controlSize(.regular)
                         .buttonStyle(.borderedProminent)
                         .sheet(isPresented: $presentedCount) {
@@ -112,7 +112,7 @@ struct MetroActionButton: View {
                             presentedBmp = true
                             viewStore.send(.stop)
                         }
-                        .tint(.black)
+                        .tint(Theme.mainColor)
                         .controlSize(.regular)
                         .buttonStyle(.borderedProminent)
                         .sheet(isPresented: $presentedBmp) {

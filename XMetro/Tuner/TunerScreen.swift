@@ -37,7 +37,7 @@ struct TunerScreen: View {
         }
         ActivityIndicatorView(isVisible: $showLoadingIndicator, type: .scalingDots(count: 3, inset: 6))
             .frame(width: 44.0, height: 44.0)
-             .foregroundColor(.red)
+            .foregroundColor(Theme.lightColor)
     }
     
     private func startAudio() {

@@ -14,7 +14,7 @@ struct MetronomeScreen: View {
         MetroActionButton(store: store)
             .frame(maxWidth:.infinity, maxHeight: .infinity)
             .navigationTitle("Metronome")
-            .tint(.black)
+            .tint(Theme.mainColor)
             .onAppear(perform: {
                 UIApplication.shared.isIdleTimerDisabled = true
             })

@@ -68,7 +68,7 @@ struct TunerView: View {
                             }
                             .frame(maxWidth: 60, maxHeight: 60)
                             .background(checkPerceptible(first: md, last: octaves[m][n], indexPath: indexPath))
-                            .foregroundColor(.white)
+                            .foregroundColor(Theme.whiteColor)
                             .cornerRadius(30.0)
                         }
                     }.rotationEffect(.degrees((m + 1) % 2 == 0 ? 6.0 : -6.0))
@@ -77,7 +77,7 @@ struct TunerView: View {
             }
             Spacer()
             Toggle("Auto", isOn: $auto)
-                .toggleStyle(SwitchToggleStyle(tint: .red))
+                .toggleStyle(SwitchToggleStyle(tint: Theme.lightColor))
                 .frame(maxWidth: 98.0)
                 .onChange(of: auto) { isAuto in
                     if isAuto { selected = nil }
@@ -91,7 +91,7 @@ struct TunerView: View {
                 HStack {
                     Picker("", selection: $selectedValue) {
                         ForEach(segments, id: \.self) { t in
-                            Text(t).foregroundColor(selectedValue == t ? .red : Color(UIColor(white: 0.0, alpha: 0.3)))
+                            Text(t).foregroundColor(selectedValue == t ? Theme.lightColor : Color(UIColor(white: 0.0, alpha: 0.3)))
                         }
                     }
                     .pickerStyle(.segmented)
@@ -106,24 +106,24 @@ struct TunerView: View {
             leading: TranspositionMenu(selectedTransposition: $selectedTransposition)
         )
         */
-        .tint(.black)
+        .tint(Theme.mainColor)
         .animation(.easeInOut, value: selectedValue)
     }
     
     func checkPerceptible(first: String, last: String, indexPath: IndexPath) -> Color {
         let isSelected = indexPath.section == selected?.section && indexPath.item == selected?.item
         if auto && note == first && last == octave {
-            return isPerceptible ? .black : .green
+            return isPerceptible ? Theme.mainColor : Theme.specialLightColor
         } else if isSelected {
             if isPerceptible {
-                return .red
+                return Theme.lightColor
             }
             if note == first && last == octave {
-                return .green
+                return Theme.specialLightColor
             }
-            return .red
+            return Theme.lightColor
         } else {
-            return .black
+            return Theme.mainColor
         }
     }
 }

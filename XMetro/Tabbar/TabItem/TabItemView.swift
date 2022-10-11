@@ -21,7 +21,7 @@ struct TabItemView: View {
                     .font(.system(size: 12))
             }
             .frame(maxWidth: .infinity)
-            .foregroundColor(Color( viewStore.state.select ? .red : .black ))
+            .foregroundColor(viewStore.state.select ? Theme.lightColor : Theme.mainColor)
             .onTapGesture {
                 selectedTabItemReducer = viewStore
             }
