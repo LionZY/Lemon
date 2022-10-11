@@ -85,6 +85,7 @@
 		05E284E028F4FB6F00B7C8BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284DF28F4FB6F00B7C8BD /* AppDelegate.swift */; };
 		05E284E428F52B0000B7C8BD /* MetronomeSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284E328F52B0000B7C8BD /* MetronomeSettingsScreen.swift */; };
 		05E284E628F52B3700B7C8BD /* TunerSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284E528F52B3700B7C8BD /* TunerSettingsScreen.swift */; };
+		05E284EA28F5678800B7C8BD /* launch_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 05E284E928F5678800B7C8BD /* launch_bg.jpg */; };
 		5CCE39078C61F9C481461EAF /* libPods-XMetro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B12AE02EB8FA2D79EAC35036 /* libPods-XMetro.a */; };
 /* End PBXBuildFile section */
 
@@ -188,6 +189,7 @@
 		05E284DF28F4FB6F00B7C8BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05E284E328F52B0000B7C8BD /* MetronomeSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeSettingsScreen.swift; sourceTree = "<group>"; };
 		05E284E528F52B3700B7C8BD /* TunerSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerSettingsScreen.swift; sourceTree = "<group>"; };
+		05E284E928F5678800B7C8BD /* launch_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch_bg.jpg; sourceTree = "<group>"; };
 		242DDA6598D6DC53515E32CE /* Pods-XMetro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMetro.debug.xcconfig"; path = "Target Support Files/Pods-XMetro/Pods-XMetro.debug.xcconfig"; sourceTree = "<group>"; };
 		908AC7539FACC183CFF5D4A2 /* Pods-XMetro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMetro.release.xcconfig"; path = "Target Support Files/Pods-XMetro/Pods-XMetro.release.xcconfig"; sourceTree = "<group>"; };
 		B12AE02EB8FA2D79EAC35036 /* libPods-XMetro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMetro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +240,7 @@
 		0584DA7B288AA37B008712DF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				05E284E928F5678800B7C8BD /* launch_bg.jpg */,
 				0579280828D97C9400FE70E6 /* icon_show.png */,
 				0584DA7C288AA37B008712DF /* dot.m4a */,
 				0584DA7D288AA37B008712DF /* Assets.xcassets */,
@@ -663,6 +666,7 @@
 				0579280928D97C9400FE70E6 /* icon_show.png in Resources */,
 				05E284CC28F42A5C00B7C8BD /* swift1.png in Resources */,
 				05E284CA28F42A5C00B7C8BD /* swift3.png in Resources */,
+				05E284EA28F5678800B7C8BD /* launch_bg.jpg in Resources */,
 				05E284CF28F42A5C00B7C8BD /* UMCommonLog.bundle in Resources */,
 				0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */,
 				05D39C192876904300CCE136 /* Preview Assets.xcassets in Resources */,
