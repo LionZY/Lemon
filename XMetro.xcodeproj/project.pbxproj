@@ -77,8 +77,8 @@
 		05E284D028F42A5C00B7C8BD /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C428F42A5C00B7C8BD /* UMCommon.framework */; };
 		05E284D128F42A5C00B7C8BD /* UMAPM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C528F42A5C00B7C8BD /* UMAPM.framework */; };
 		05E284D228F42A5D00B7C8BD /* UMDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C628F42A5C00B7C8BD /* UMDevice.framework */; };
-		05E284D528F42AAD00B7C8BD /* MusicListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D428F42AAD00B7C8BD /* MusicListScreen.swift */; };
-		05E284D728F4731D00B7C8BD /* MusicListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D628F4731D00B7C8BD /* MusicListItem.swift */; };
+		05E284D528F42AAD00B7C8BD /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D428F42AAD00B7C8BD /* LibraryScreen.swift */; };
+		05E284D728F4731D00B7C8BD /* LibraryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D628F4731D00B7C8BD /* LibraryListItem.swift */; };
 		05E284D928F479A100B7C8BD /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D828F479A100B7C8BD /* AboutScreen.swift */; };
 		05E284DB28F47A7000B7C8BD /* SettingsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284DA28F47A7000B7C8BD /* SettingsListItem.swift */; };
 		05E284DE28F4F8AB00B7C8BD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284DD28F4F8AB00B7C8BD /* Theme.swift */; };
@@ -86,6 +86,9 @@
 		05E284E428F52B0000B7C8BD /* MetronomeSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284E328F52B0000B7C8BD /* MetronomeSettingsScreen.swift */; };
 		05E284E628F52B3700B7C8BD /* TunerSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284E528F52B3700B7C8BD /* TunerSettingsScreen.swift */; };
 		05E284EA28F5678800B7C8BD /* launch_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 05E284E928F5678800B7C8BD /* launch_bg.jpg */; };
+		05E284EC28F5755400B7C8BD /* ChordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284EB28F5755400B7C8BD /* ChordScreen.swift */; };
+		05E284EE28F5757A00B7C8BD /* TempoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284ED28F5757A00B7C8BD /* TempoScreen.swift */; };
+		05E284F028F5758B00B7C8BD /* SetlistScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284EF28F5758B00B7C8BD /* SetlistScreen.swift */; };
 		5CCE39078C61F9C481461EAF /* libPods-XMetro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B12AE02EB8FA2D79EAC35036 /* libPods-XMetro.a */; };
 /* End PBXBuildFile section */
 
@@ -123,7 +126,6 @@
 		0584DA7E288AA37B008712DF /* dot_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot_strong.m4a; sourceTree = "<group>"; };
 		0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeScreen.swift; sourceTree = "<group>"; };
 		0585133F2887F4D300F7B3AF /* SettingsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
-		058513432887F5FD00F7B3AF /* MicrophonePitchDetector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicrophonePitchDetector; path = XMetro/Packages/MicrophonePitchDetector; sourceTree = "<group>"; };
 		058513472887FAEF00F7B3AF /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		059D995228DA03DD00741591 /* ModifierPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierPreference.swift; sourceTree = "<group>"; };
 		059D995328DA03DD00741591 /* Frequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
@@ -181,8 +183,8 @@
 		05E284C428F42A5C00B7C8BD /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
 		05E284C528F42A5C00B7C8BD /* UMAPM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAPM.framework; sourceTree = "<group>"; };
 		05E284C628F42A5C00B7C8BD /* UMDevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMDevice.framework; sourceTree = "<group>"; };
-		05E284D428F42AAD00B7C8BD /* MusicListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListScreen.swift; sourceTree = "<group>"; };
-		05E284D628F4731D00B7C8BD /* MusicListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListItem.swift; sourceTree = "<group>"; };
+		05E284D428F42AAD00B7C8BD /* LibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryScreen.swift; sourceTree = "<group>"; };
+		05E284D628F4731D00B7C8BD /* LibraryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryListItem.swift; sourceTree = "<group>"; };
 		05E284D828F479A100B7C8BD /* AboutScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
 		05E284DA28F47A7000B7C8BD /* SettingsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListItem.swift; sourceTree = "<group>"; };
 		05E284DD28F4F8AB00B7C8BD /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -190,6 +192,10 @@
 		05E284E328F52B0000B7C8BD /* MetronomeSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeSettingsScreen.swift; sourceTree = "<group>"; };
 		05E284E528F52B3700B7C8BD /* TunerSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerSettingsScreen.swift; sourceTree = "<group>"; };
 		05E284E928F5678800B7C8BD /* launch_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch_bg.jpg; sourceTree = "<group>"; };
+		05E284EB28F5755400B7C8BD /* ChordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordScreen.swift; sourceTree = "<group>"; };
+		05E284ED28F5757A00B7C8BD /* TempoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoScreen.swift; sourceTree = "<group>"; };
+		05E284EF28F5758B00B7C8BD /* SetlistScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistScreen.swift; sourceTree = "<group>"; };
+		05E284F128F5765500B7C8BD /* MicrophonePitchDetector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicrophonePitchDetector; path = XMetro/Packages/MicrophonePitchDetector; sourceTree = "<group>"; };
 		242DDA6598D6DC53515E32CE /* Pods-XMetro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMetro.debug.xcconfig"; path = "Target Support Files/Pods-XMetro/Pods-XMetro.debug.xcconfig"; sourceTree = "<group>"; };
 		908AC7539FACC183CFF5D4A2 /* Pods-XMetro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMetro.release.xcconfig"; path = "Target Support Files/Pods-XMetro/Pods-XMetro.release.xcconfig"; sourceTree = "<group>"; };
 		B12AE02EB8FA2D79EAC35036 /* libPods-XMetro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XMetro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -332,7 +338,7 @@
 		05B41AB22885399300151D70 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				058513432887F5FD00F7B3AF /* MicrophonePitchDetector */,
+				05E284F128F5765500B7C8BD /* MicrophonePitchDetector */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -375,7 +381,7 @@
 				05B41AA12885389300151D70 /* Helpers */,
 				05E284B628F42A5C00B7C8BD /* Vendor */,
 				05D39C172876904300CCE136 /* Preview Content */,
-				05E284D328F42A9B00B7C8BD /* MusicList */,
+				05E284D328F42A9B00B7C8BD /* Library */,
 				0585133B2887F4A700F7B3AF /* Metronome */,
 				0585133E2887F4D300F7B3AF /* Settings */,
 				059D995028DA03DD00741591 /* Tuner */,
@@ -519,13 +525,16 @@
 			path = UMFramework;
 			sourceTree = "<group>";
 		};
-		05E284D328F42A9B00B7C8BD /* MusicList */ = {
+		05E284D328F42A9B00B7C8BD /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				05E284D428F42AAD00B7C8BD /* MusicListScreen.swift */,
-				05E284D628F4731D00B7C8BD /* MusicListItem.swift */,
+				05E284D628F4731D00B7C8BD /* LibraryListItem.swift */,
+				05E284D428F42AAD00B7C8BD /* LibraryScreen.swift */,
+				05E284EB28F5755400B7C8BD /* ChordScreen.swift */,
+				05E284ED28F5757A00B7C8BD /* TempoScreen.swift */,
+				05E284EF28F5758B00B7C8BD /* SetlistScreen.swift */,
 			);
-			path = MusicList;
+			path = Library;
 			sourceTree = "<group>";
 		};
 		05E284DC28F4F8A200B7C8BD /* Theme */ = {
@@ -725,7 +734,7 @@
 				05E284C828F42A5C00B7C8BD /* UMCommonSwift.swift in Sources */,
 				05E284E428F52B0000B7C8BD /* MetronomeSettingsScreen.swift in Sources */,
 				05B41AA7288538AC00151D70 /* Color+MusicalDistance.swift in Sources */,
-				05E284D728F4731D00B7C8BD /* MusicListItem.swift in Sources */,
+				05E284D728F4731D00B7C8BD /* LibraryListItem.swift in Sources */,
 				05E284DB28F47A7000B7C8BD /* SettingsListItem.swift in Sources */,
 				05E284D928F479A100B7C8BD /* AboutScreen.swift in Sources */,
 				05D39C782877269100CCE136 /* TapContentReducer.swift in Sources */,
@@ -734,6 +743,7 @@
 				059D996A28DA03DD00741591 /* MicrophoneAccessAlert.swift in Sources */,
 				0585133D2887F4A700F7B3AF /* MetronomeScreen.swift in Sources */,
 				059D996128DA03DD00741591 /* ModifierPreference.swift in Sources */,
+				05E284F028F5758B00B7C8BD /* SetlistScreen.swift in Sources */,
 				059D996228DA03DD00741591 /* Frequency.swift in Sources */,
 				05D39C662876F06200CCE136 /* TabState.swift in Sources */,
 				059D996328DA03DD00741591 /* ScaleNote.swift in Sources */,
@@ -747,7 +757,7 @@
 				05E284C728F42A5C00B7C8BD /* UMAnalyticsSwift.swift in Sources */,
 				059D996628DA03DD00741591 /* CurrentNoteMarker.swift in Sources */,
 				05D39C512876A28B00CCE136 /* MetroActionButton.swift in Sources */,
-				05E284D528F42AAD00B7C8BD /* MusicListScreen.swift in Sources */,
+				05E284D528F42AAD00B7C8BD /* LibraryScreen.swift in Sources */,
 				05B41AA5288538AC00151D70 /* Alignment.swift in Sources */,
 				05D39C142876904200CCE136 /* MainView.swift in Sources */,
 				05D39C5C2876C58300CCE136 /* TabItemEnv.swift in Sources */,
@@ -774,7 +784,9 @@
 				05E284CD28F42A5C00B7C8BD /* UMCommonLogSwift.swift in Sources */,
 				059D996928DA03DD00741591 /* NoteTicks.swift in Sources */,
 				05B41AA6288538AC00151D70 /* ColorAnimation.swift in Sources */,
+				05E284EE28F5757A00B7C8BD /* TempoScreen.swift in Sources */,
 				05D39C692876F06200CCE136 /* TabReducer.swift in Sources */,
+				05E284EC28F5755400B7C8BD /* ChordScreen.swift in Sources */,
 				059D996828DA03DD00741591 /* NoteDistanceMarkers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -944,8 +956,6 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/XMetro/UMFramework",
-					"$(PROJECT_DIR)/XMetro/Umeng/UMFramework",
 					"$(PROJECT_DIR)/XMetro/Vendor/Umeng/UMFramework",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
@@ -996,8 +1006,6 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/XMetro/UMFramework",
-					"$(PROJECT_DIR)/XMetro/Umeng/UMFramework",
 					"$(PROJECT_DIR)/XMetro/Vendor/Umeng/UMFramework",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
