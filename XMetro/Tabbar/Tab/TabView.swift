@@ -21,6 +21,7 @@ struct TabView: View {
                             TabItemView(store: itemStore)
                         }
                     }
+                    .padding()
                 }
             }
         }

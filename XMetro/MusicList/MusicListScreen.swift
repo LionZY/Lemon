@@ -11,7 +11,7 @@ struct MusicListScreen: View {
     private var listData: [MusicListItem] = [
         MusicListItem(icon: "music.quarternote.3", title: "Chord Library"),
         MusicListItem(icon: "music.note.house.fill", title: "Song Library"),
-        MusicListItem(icon: "list.triangle", title: "Setlist Library"),
+        MusicListItem(icon: "list.bullet", title: "Setlist Library"),
     ]
     var body: some View {
         VStack {

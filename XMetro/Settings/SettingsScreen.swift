@@ -19,7 +19,7 @@ struct SettingsScreen: View {
         (infoDictionary?["CFBundleVersion"] as? String) ?? ""
     }
     private var versionInfo: String {
-        "Build:" + buildVersion + " Version:" + appVersion
+        "Build: " + buildVersion + "\nVersion: " + appVersion
     }
     private var listData: [SettingListItem] = [
         .metronome,
@@ -27,40 +27,41 @@ struct SettingsScreen: View {
         .about,
     ]
     var body: some View {
-        VStack {
+        ZStack {
             List {
                 Section {
                     ForEach(listData, id: \.self) { item in
-                        NavigationLink(destination: item.destination()) {
-                            HStack{
-                                Image(systemName: item.icon())
-                                Text(item.title())
-                            }
-                        }
+                        item.itemView()
                     }
-                }
-                Section(footer: VStack {
-                    HStack {
-                        Spacer()
-                        Button("Share XMetro with friends") {
-                            isSharePresented = true
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .foregroundColor(.white)
-                        .sheet(isPresented: $isSharePresented, onDismiss: {
-                            print("Dismiss")
-                        }, content: {
-                            ActivityVC(activityItems: [shareURL])
-                        })
-                        Spacer()
-                    }
-                    Text(versionInfo)
-                }) {
-                    
                 }
             }
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer().frame(width: 16.0)
+                    Button("Share XMetro with friends") {
+                        isSharePresented = true
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: 44.0)
+                    .background(Theme.mainColor)
+                    .foregroundColor(Theme.whiteColor)
+                    .cornerRadius(8.0)
+                    .sheet(isPresented: $isSharePresented, onDismiss: {
+                        print("Dismiss")
+                    }, content: {
+                        ActivityVC(activityItems: [shareURL])
+                    })
+                    Spacer().frame(width: 16.0)
+                }
+                .font(Font.system(size: 14))
+                Spacer().frame(height: 10.0)
+                Text(versionInfo)
+                    .multilineTextAlignment(.center)
+                    .font(Font.system(size: 12))
+                    .foregroundColor(Theme.grayColor)
+                Spacer().frame(height: 20.0)
+            }
         }
-        .background(.gray)
         .frame(maxWidth:.infinity, maxHeight: .infinity)
         .navigationTitle("Settings")
     }

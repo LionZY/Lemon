@@ -13,7 +13,8 @@ class Theme {
     static let middleLightColor = Color.yellow
     static let specialLightColor = Color.green
     static let whiteColor = Color.white
-    static let shadowColor = Color.gray
+    static let grayColor = Color(hex: 0xAAAAAA, alpha: 1.0)
+    static let shadowColor = Color(hex: 0xAAAAAA, alpha: 1.0)
     
     static func navigationBarColors(background : UIColor?, titleColor : UIColor? = nil, tintColor : UIColor? = nil ){
         let navBar = UINavigationBarAppearance()

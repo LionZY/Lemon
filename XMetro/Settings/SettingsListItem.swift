@@ -28,11 +28,20 @@ enum SettingListItem: Hashable {
         }
     }
     
-    func destination() -> some View {
+    @ViewBuilder func destination() -> some View {
         switch self {
-        case .metronome: return AboutScreen()
-        case .tuner: return AboutScreen()
-        case .about: return AboutScreen()
+        case .metronome: MetronomeSettingsScreen()
+        case .tuner: TunerSettingsScreen()
+        case .about: AboutScreen()
+        }
+    }
+    
+    func itemView() -> some View {
+        NavigationLink(destination: destination()) {
+            HStack{
+                Image(systemName: icon())
+                Text(title())
+            }
         }
     }
 }
