@@ -22,7 +22,7 @@ struct AboutScreen: View {
                             .cornerRadius(14.0)
                             .shadow(color: Theme.shadowColor, radius: 38.0, x: 0, y: 0)
                         Spacer().frame(height: 30)
-                        Text("XMetro is developed for musicians.\nI am also a music lover.\nCause most of the similar apps on the market are not nice to me, I developed this app. I hope it will get better and better in order to serve every musician.")
+                        Text("XMetro is developed for musicians.\n---\nEasy for beginner!\nRock-solid precision!\nMaster your tempo!")
                             .multilineTextAlignment(.center)
                             .lineSpacing(6.0)
                     }
