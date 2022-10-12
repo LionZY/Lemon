@@ -11,5 +11,5 @@ enum MetroActionButtonAction: Equatable {
     case run
     case stop
     case updateBpm(Int)
-    case updateCount(Int)
+    case updateTimeSignature(Int, Int)
 }

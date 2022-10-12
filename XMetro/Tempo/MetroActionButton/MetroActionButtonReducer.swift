@@ -82,8 +82,9 @@ let MetroActionButtonReducer = Reducer<MetroActionButtonState, MetroActionButton
     case .updateBpm(let bpm):
         state.bpm = bpm
         break
-    case .updateCount(let count):
-        state.count = count
+    case .updateTimeSignature(let meter, let devide):
+        state.meter = meter
+        state.devide = devide
         break
     }
     return .none

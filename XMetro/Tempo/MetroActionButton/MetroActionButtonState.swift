@@ -9,17 +9,26 @@ import Foundation
 
 let KSaved_BPM = "KSaved_BPM"
 let KSaved_Meter = "KSaved_Meter"
+let KSaved_Devide = "KSaved_Devide"
 
 struct MetroActionButtonState: Equatable {
     static func == (lhs: MetroActionButtonState, rhs: MetroActionButtonState) -> Bool {
-        return lhs.count == rhs.count && lhs.bpm == rhs.bpm && lhs.currentIndex == rhs.currentIndex && lhs.isCountDown == rhs.isCountDown
+        return lhs.meter == rhs.meter && lhs.bpm == rhs.bpm && lhs.currentIndex == rhs.currentIndex && lhs.isCountDown == rhs.isCountDown
     }
     
     static var startIndex = -4
-    var count: Int = 4 {
+    var meter: Int = 4 {
         didSet {
             let ud = UserDefaults.standard
-            ud.set(count, forKey: KSaved_Meter)
+            ud.set(meter, forKey: KSaved_Meter)
+            ud.synchronize()
+        }
+    }
+    
+    var devide: Int = 4 {
+        didSet {
+            let ud = UserDefaults.standard
+            ud.set(devide, forKey: KSaved_Devide)
             ud.synchronize()
         }
     }
@@ -54,7 +63,7 @@ struct MetroActionButtonState: Equatable {
         if currentIndex < 0 {
             currentIndex = currentIndex + 1
         } else {
-            currentIndex = (currentIndex + 1) % count
+            currentIndex = (currentIndex + 1) % meter
         }
     }
 }

@@ -259,14 +259,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		0585133B2887F4A700F7B3AF /* Metronome */ = {
+		0585133B2887F4A700F7B3AF /* Tempo */ = {
 			isa = PBXGroup;
 			children = (
 				0563BAA028794C2C00E8FC7B /* Picker */,
 				05D39C4F2876A27A00CCE136 /* MetroActionButton */,
 				0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */,
 			);
-			path = Metronome;
+			path = Tempo;
 			sourceTree = "<group>";
 		};
 		0585133E2887F4D300F7B3AF /* Settings */ = {
@@ -388,7 +388,7 @@
 				05E284B628F42A5C00B7C8BD /* Vendor */,
 				05D39C172876904300CCE136 /* Preview Content */,
 				05E284D328F42A9B00B7C8BD /* Library */,
-				0585133B2887F4A700F7B3AF /* Metronome */,
+				0585133B2887F4A700F7B3AF /* Tempo */,
 				0585133E2887F4D300F7B3AF /* Settings */,
 				059D995028DA03DD00741591 /* Tuner */,
 				05D39C402876914500CCE136 /* Tabbar */,

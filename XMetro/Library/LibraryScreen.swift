@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LibraryScreen: View {
     private var listData: [LibraryListItem] = [
-        .chord,
         .tempo,
         .setlist
     ]
