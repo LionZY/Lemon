@@ -9,21 +9,22 @@
 
 @implementation UMOC
 + (void)config {
-    //[NSURLProtocol registerClass:[UMURLProtocol class]];
-    
-    UMAPMConfig *config = [UMAPMConfig defaultConfig];
-    config.networkEnable = YES;
-    [UMCrashConfigure setAPMConfig:config];
+    [UMCommonLogManager setUpUMCommonLogManager];
+    [UMConfigure setLogEnabled:NO];
     [UMConfigure initWithAppkey:@"6343ddf288ccdf4b7e4574be" channel:@"App Store"];
 }
 
-+ (void)registerPush:(NSDictionary * __nullable)launchOptions delegate:(id<UNUserNotificationCenterDelegate>) delegate{
-    UMessageRegisterEntity *entity = [[UMessageRegisterEntity alloc] init];
++ (void)registerPush:(UIApplication *)application launchOptions:(NSDictionary * __nullable)launchOptions delegate:(id<UNUserNotificationCenterDelegate>) delegate {
+    UMessageRegisterEntity *entity = [UMessageRegisterEntity new];
     entity.types = UMessageAuthorizationOptionBadge | UMessageAuthorizationOptionSound | UMessageAuthorizationOptionAlert;
-    [UMessage registerForRemoteNotificationsWithLaunchOptions:launchOptions Entity:entity completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        
-    }];
     [UNUserNotificationCenter currentNotificationCenter].delegate = delegate;
+    [UMessage registerForRemoteNotificationsWithLaunchOptions:launchOptions Entity:entity completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(error) {
+                NSLog(@"%@", error);
+            }
+        });
+    }];
 }
 
 + (NSString *)deviceTokenStr:(NSData *)deviceToken {
