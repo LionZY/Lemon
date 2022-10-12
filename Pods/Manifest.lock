@@ -1,20 +1,34 @@
 PODS:
+  - UMAPM (1.7.0)
   - UMCommon (7.3.7):
     - UMDevice
+  - UMCommonLog (1.0.0)
   - UMDevice (2.2.1)
+  - UMPush (4.0.3):
+    - UMCommon
 
 DEPENDENCIES:
+  - UMAPM
   - UMCommon
+  - UMCommonLog
+  - UMDevice
+  - UMPush
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - UMAPM
     - UMCommon
+    - UMCommonLog
     - UMDevice
+    - UMPush
 
 SPEC CHECKSUMS:
+  UMAPM: e7674c15fd583c3d9bf2e469cf40002f61bf2b97
   UMCommon: 37fe35f498e92cf57bbb06a086f02915fc35f211
+  UMCommonLog: f3741161dc46e9f56f050e5ca331043f58fe7d4f
   UMDevice: 053478c4b4d7292f31f0a275c227d3c4007a5571
+  UMPush: a517cd5907eb10669ce6cf2e6c0dfe40be84b6b5
 
-PODFILE CHECKSUM: 744c08a81cb9da75743c7c62d4b7c1380748ba59
+PODFILE CHECKSUM: aba4e9eddb99f9c3c4b76ea4fed7035ec4ed5efe
 
 COCOAPODS: 1.11.3

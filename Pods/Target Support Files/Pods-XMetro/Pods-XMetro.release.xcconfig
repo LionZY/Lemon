@@ -1,8 +1,9 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/UMCommon/UMCommon_7.3.7" "${PODS_ROOT}/UMDevice/UMDevice_2.2.1"
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/UMAPM/UMAPM_1.7.0" "${PODS_ROOT}/UMCommon/UMCommon_7.3.7" "${PODS_ROOT}/UMCommonLog/UMCommonLog" "${PODS_ROOT}/UMDevice/UMDevice_2.2.1" "${PODS_ROOT}/UMPush/UMPush"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-OTHER_CFLAGS = $(inherited) -iframework "${PODS_ROOT}/UMCommon/UMCommon_7.3.7" -iframework "${PODS_ROOT}/UMDevice/UMDevice_2.2.1"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"sqlite3" -l"z" -framework "CoreTelephony" -framework "SystemConfiguration" -framework "UMCommon" -framework "UMDevice"
+OTHER_CFLAGS = $(inherited) -iframework "${PODS_ROOT}/UMAPM/UMAPM_1.7.0" -iframework "${PODS_ROOT}/UMCommon/UMCommon_7.3.7" -iframework "${PODS_ROOT}/UMCommonLog/UMCommonLog" -iframework "${PODS_ROOT}/UMDevice/UMDevice_2.2.1" -iframework "${PODS_ROOT}/UMPush/UMPush"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"sqlite3" -l"z" -framework "CoreTelephony" -framework "SystemConfiguration" -framework "UMAPM" -framework "UMCommon" -framework "UMCommonLog" -framework "UMDevice" -framework "UMPush" -framework "UserNotifications"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

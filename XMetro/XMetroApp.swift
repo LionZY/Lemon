@@ -15,7 +15,6 @@ struct XMetroApp: App {
     init() {
         UIApplication.shared.isIdleTimerDisabled = true
         Theme.barButtonItemColors()
-        UMCommonSwift.initWithAppkey(appKey: "6343ddf288ccdf4b7e4574be", channel: "App Store")
     }
 
     var body: some Scene {

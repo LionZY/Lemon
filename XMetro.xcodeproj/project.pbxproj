@@ -24,6 +24,8 @@
 		058513402887F4D300F7B3AF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133F2887F4D300F7B3AF /* SettingsScreen.swift */; };
 		058513462887F60900F7B3AF /* MicrophonePitchDetector in Frameworks */ = {isa = PBXBuildFile; productRef = 058513452887F60900F7B3AF /* MicrophonePitchDetector */; };
 		058513482887FAEF00F7B3AF /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058513472887FAEF00F7B3AF /* Color+Extensions.swift */; };
+		058C1C2E28F6B0230021C376 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C1C2D28F6B0220021C376 /* UserNotifications.framework */; };
+		058C1C3428F6B3B00021C376 /* UMOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C1C3328F6B3B00021C376 /* UMOC.m */; };
 		059D996128DA03DD00741591 /* ModifierPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995228DA03DD00741591 /* ModifierPreference.swift */; };
 		059D996228DA03DD00741591 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995328DA03DD00741591 /* Frequency.swift */; };
 		059D996328DA03DD00741591 /* ScaleNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D995428DA03DD00741591 /* ScaleNote.swift */; };
@@ -67,16 +69,7 @@
 		05E2849928F4236900B7C8BD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E2849828F4235400B7C8BD /* libc++.tbd */; };
 		05E284C728F42A5C00B7C8BD /* UMAnalyticsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284B928F42A5C00B7C8BD /* UMAnalyticsSwift.swift */; };
 		05E284C828F42A5C00B7C8BD /* UMCommonSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284BA28F42A5C00B7C8BD /* UMCommonSwift.swift */; };
-		05E284C928F42A5C00B7C8BD /* iOS UMeng OC和Swift混编文档.md in Resources */ = {isa = PBXBuildFile; fileRef = 05E284BB28F42A5C00B7C8BD /* iOS UMeng OC和Swift混编文档.md */; };
-		05E284CA28F42A5C00B7C8BD /* swift3.png in Resources */ = {isa = PBXBuildFile; fileRef = 05E284BD28F42A5C00B7C8BD /* swift3.png */; };
-		05E284CB28F42A5C00B7C8BD /* swift2.png in Resources */ = {isa = PBXBuildFile; fileRef = 05E284BE28F42A5C00B7C8BD /* swift2.png */; };
-		05E284CC28F42A5C00B7C8BD /* swift1.png in Resources */ = {isa = PBXBuildFile; fileRef = 05E284BF28F42A5C00B7C8BD /* swift1.png */; };
 		05E284CD28F42A5C00B7C8BD /* UMCommonLogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284C028F42A5C00B7C8BD /* UMCommonLogSwift.swift */; };
-		05E284CE28F42A5C00B7C8BD /* UMCommonLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C228F42A5C00B7C8BD /* UMCommonLog.framework */; };
-		05E284CF28F42A5C00B7C8BD /* UMCommonLog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 05E284C328F42A5C00B7C8BD /* UMCommonLog.bundle */; };
-		05E284D028F42A5C00B7C8BD /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C428F42A5C00B7C8BD /* UMCommon.framework */; };
-		05E284D128F42A5C00B7C8BD /* UMAPM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C528F42A5C00B7C8BD /* UMAPM.framework */; };
-		05E284D228F42A5D00B7C8BD /* UMDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E284C628F42A5C00B7C8BD /* UMDevice.framework */; };
 		05E284D528F42AAD00B7C8BD /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D428F42AAD00B7C8BD /* LibraryScreen.swift */; };
 		05E284D728F4731D00B7C8BD /* LibraryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D628F4731D00B7C8BD /* LibraryListItem.swift */; };
 		05E284D928F479A100B7C8BD /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284D828F479A100B7C8BD /* AboutScreen.swift */; };
@@ -129,6 +122,9 @@
 		0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeScreen.swift; sourceTree = "<group>"; };
 		0585133F2887F4D300F7B3AF /* SettingsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		058513472887FAEF00F7B3AF /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		058C1C2D28F6B0220021C376 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		058C1C3228F6B3B00021C376 /* UMOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMOC.h; sourceTree = "<group>"; };
+		058C1C3328F6B3B00021C376 /* UMOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMOC.m; sourceTree = "<group>"; };
 		059D995228DA03DD00741591 /* ModifierPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifierPreference.swift; sourceTree = "<group>"; };
 		059D995328DA03DD00741591 /* Frequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
 		059D995428DA03DD00741591 /* ScaleNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleNote.swift; sourceTree = "<group>"; };
@@ -175,16 +171,7 @@
 		05E2849828F4235400B7C8BD /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		05E284B928F42A5C00B7C8BD /* UMAnalyticsSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UMAnalyticsSwift.swift; sourceTree = "<group>"; };
 		05E284BA28F42A5C00B7C8BD /* UMCommonSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UMCommonSwift.swift; sourceTree = "<group>"; };
-		05E284BB28F42A5C00B7C8BD /* iOS UMeng OC和Swift混编文档.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS UMeng OC和Swift混编文档.md"; sourceTree = "<group>"; };
-		05E284BD28F42A5C00B7C8BD /* swift3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift3.png; sourceTree = "<group>"; };
-		05E284BE28F42A5C00B7C8BD /* swift2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift2.png; sourceTree = "<group>"; };
-		05E284BF28F42A5C00B7C8BD /* swift1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift1.png; sourceTree = "<group>"; };
 		05E284C028F42A5C00B7C8BD /* UMCommonLogSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UMCommonLogSwift.swift; sourceTree = "<group>"; };
-		05E284C228F42A5C00B7C8BD /* UMCommonLog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommonLog.framework; sourceTree = "<group>"; };
-		05E284C328F42A5C00B7C8BD /* UMCommonLog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMCommonLog.bundle; sourceTree = "<group>"; };
-		05E284C428F42A5C00B7C8BD /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
-		05E284C528F42A5C00B7C8BD /* UMAPM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAPM.framework; sourceTree = "<group>"; };
-		05E284C628F42A5C00B7C8BD /* UMDevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMDevice.framework; sourceTree = "<group>"; };
 		05E284D428F42AAD00B7C8BD /* LibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryScreen.swift; sourceTree = "<group>"; };
 		05E284D628F4731D00B7C8BD /* LibraryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryListItem.swift; sourceTree = "<group>"; };
 		05E284D828F479A100B7C8BD /* AboutScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
@@ -210,13 +197,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05E284CE28F42A5C00B7C8BD /* UMCommonLog.framework in Frameworks */,
+				058C1C2E28F6B0230021C376 /* UserNotifications.framework in Frameworks */,
 				0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */,
 				059D997128DA9B0E00741591 /* ActivityIndicatorView in Frameworks */,
-				05E284D128F42A5C00B7C8BD /* UMAPM.framework in Frameworks */,
-				05E284D028F42A5C00B7C8BD /* UMCommon.framework in Frameworks */,
 				058513462887F60900F7B3AF /* MicrophonePitchDetector in Frameworks */,
-				05E284D228F42A5D00B7C8BD /* UMDevice.framework in Frameworks */,
 				5CCE39078C61F9C481461EAF /* libPods-XMetro.a in Frameworks */,
 				05E2849928F4236900B7C8BD /* libc++.tbd in Frameworks */,
 			);
@@ -286,10 +270,20 @@
 		058513442887F60900F7B3AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				058C1C2D28F6B0220021C376 /* UserNotifications.framework */,
 				05E2849828F4235400B7C8BD /* libc++.tbd */,
 				B12AE02EB8FA2D79EAC35036 /* libPods-XMetro.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		058C1C3128F6B39C0021C376 /* UMOC */ = {
+			isa = PBXGroup;
+			children = (
+				058C1C3228F6B3B00021C376 /* UMOC.h */,
+				058C1C3328F6B3B00021C376 /* UMOC.m */,
+			);
+			path = UMOC;
 			sourceTree = "<group>";
 		};
 		059D995028DA03DD00741591 /* Tuner */ = {
@@ -491,8 +485,8 @@
 		05E284B728F42A5C00B7C8BD /* Umeng */ = {
 			isa = PBXGroup;
 			children = (
+				058C1C3128F6B39C0021C376 /* UMOC */,
 				05E284B828F42A5C00B7C8BD /* UMSwift */,
-				05E284C128F42A5C00B7C8BD /* UMFramework */,
 			);
 			path = Umeng;
 			sourceTree = "<group>";
@@ -502,33 +496,9 @@
 			children = (
 				05E284B928F42A5C00B7C8BD /* UMAnalyticsSwift.swift */,
 				05E284BA28F42A5C00B7C8BD /* UMCommonSwift.swift */,
-				05E284BB28F42A5C00B7C8BD /* iOS UMeng OC和Swift混编文档.md */,
-				05E284BC28F42A5C00B7C8BD /* img */,
 				05E284C028F42A5C00B7C8BD /* UMCommonLogSwift.swift */,
 			);
 			path = UMSwift;
-			sourceTree = "<group>";
-		};
-		05E284BC28F42A5C00B7C8BD /* img */ = {
-			isa = PBXGroup;
-			children = (
-				05E284BD28F42A5C00B7C8BD /* swift3.png */,
-				05E284BE28F42A5C00B7C8BD /* swift2.png */,
-				05E284BF28F42A5C00B7C8BD /* swift1.png */,
-			);
-			path = img;
-			sourceTree = "<group>";
-		};
-		05E284C128F42A5C00B7C8BD /* UMFramework */ = {
-			isa = PBXGroup;
-			children = (
-				05E284C228F42A5C00B7C8BD /* UMCommonLog.framework */,
-				05E284C328F42A5C00B7C8BD /* UMCommonLog.bundle */,
-				05E284C428F42A5C00B7C8BD /* UMCommon.framework */,
-				05E284C528F42A5C00B7C8BD /* UMAPM.framework */,
-				05E284C628F42A5C00B7C8BD /* UMDevice.framework */,
-			);
-			path = UMFramework;
 			sourceTree = "<group>";
 		};
 		05E284D328F42A9B00B7C8BD /* Library */ = {
@@ -571,6 +541,7 @@
 				05D39C0A2876904200CCE136 /* Sources */,
 				05D39C0B2876904200CCE136 /* Frameworks */,
 				05D39C0C2876904200CCE136 /* Resources */,
+				F7168FE10FD96C535DB23D92 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -675,17 +646,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0584DA7F288AA37B008712DF /* dot.m4a in Resources */,
-				05E284C928F42A5C00B7C8BD /* iOS UMeng OC和Swift混编文档.md in Resources */,
 				0584DA81288AA37B008712DF /* dot_strong.m4a in Resources */,
 				0584DA80288AA37B008712DF /* Assets.xcassets in Resources */,
 				0579280928D97C9400FE70E6 /* icon_show.png in Resources */,
-				05E284CC28F42A5C00B7C8BD /* swift1.png in Resources */,
-				05E284CA28F42A5C00B7C8BD /* swift3.png in Resources */,
 				05E284EA28F5678800B7C8BD /* launch_bg.jpg in Resources */,
-				05E284CF28F42A5C00B7C8BD /* UMCommonLog.bundle in Resources */,
 				0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */,
 				05D39C192876904300CCE136 /* Preview Assets.xcassets in Resources */,
-				05E284CB28F42A5C00B7C8BD /* swift2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +692,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7168FE10FD96C535DB23D92 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XMetro/Pods-XMetro-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XMetro/Pods-XMetro-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XMetro/Pods-XMetro-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -776,6 +759,7 @@
 				05D39C5A2876C57500CCE136 /* TabItemAction.swift in Sources */,
 				05E284F528F5993C00B7C8BD /* TunerSettingsListItem.swift in Sources */,
 				053C560528DD957500390B5B /* ActivityVC.swift in Sources */,
+				058C1C3428F6B3B00021C376 /* UMOC.m in Sources */,
 				0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */,
 				059D996B28DA03DD00741591 /* TranspositionMenu.swift in Sources */,
 				05D39C582876C56500CCE136 /* TabItemReducer.swift in Sources */,

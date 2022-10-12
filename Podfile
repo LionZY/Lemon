@@ -4,5 +4,9 @@ platform :ios, '15.0'
 inhibit_all_warnings!
 
 target 'XMetro' do
-pod 'UMCommon'
+  pod 'UMCommonLog'
+  pod 'UMCommon'
+  pod 'UMPush'
+  pod 'UMDevice'
+  pod 'UMAPM'
 end
