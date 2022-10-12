@@ -12,8 +12,10 @@ struct ImageButton: View {
     let viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>
     var body: some View {
         ZStack {
-            Image(systemName: viewStore.state.titleIcon)
-                .frame(width: 60, height: 60)
+            if let systemName = viewStore.state.titleIcon, systemName.count > 0 {
+                Image(systemName: systemName)
+                    .frame(width: 60, height: 60)
+            }
             Text(viewStore.state.title)
         }
     }

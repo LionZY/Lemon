@@ -111,7 +111,23 @@ struct MetroActionButton: View {
             .navigationViewStyle(.stack)
         }
     }
-        
+    
+    /*
+    @ViewBuilder private func subDivisionButton(viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>) -> some View {
+        Button("♫") { }
+        .tint(Theme.mainColor)
+        .controlSize(.regular)
+        .buttonStyle(.borderedProminent)
+    }
+    
+    @ViewBuilder private func accentsButton(viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>) -> some View {
+        Button("■□□□") { }
+        .tint(Theme.mainColor)
+        .controlSize(.regular)
+        .buttonStyle(.borderedProminent)
+    }
+    */
+    
     @ViewBuilder private func dotsView(viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>) -> some View {
         VStack {
             ForEach(0..<3, id: \.self) { row in
@@ -163,9 +179,17 @@ struct MetroActionButton: View {
                 dotsView(viewStore: viewStore)
                 Spacer()
                 HStack {
+                    Spacer()
                     timeSignatureButton(viewStore: viewStore)
-                    Spacer().frame(maxWidth: 16.0)
+                    Spacer().frame(maxWidth: 10.0)
                     bpmButton(viewStore: viewStore)
+                    /*
+                    Spacer().frame(maxWidth: 10.0)
+                    subDivisionButton(viewStore: viewStore)
+                    Spacer().frame(maxWidth: 10.0)
+                    accentsButton(viewStore: viewStore)
+                    */
+                    Spacer()
                 }
                 Spacer()
             }.onAppear {
