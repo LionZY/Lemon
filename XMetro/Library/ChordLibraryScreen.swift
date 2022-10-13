@@ -1,5 +1,5 @@
 //
-//  SetlistScreen.swift
+//  ChordScreen.swift
 //  XMetro
 //
 //  Created by Yue Zhang on 2022/10/11.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct SetlistScreen: View {
+struct ChordLibraryScreen: View {
     var body: some View {
         ZStack {
             VStack {
                 Spacer()
-                Text("No setlist yet.")
+                Text("No chord yet.")
                     .foregroundColor(Theme.grayColor)
                 Spacer()
             }
@@ -20,7 +20,7 @@ struct SetlistScreen: View {
                 Spacer()
                 HStack {
                     Spacer().frame(width: 16.0)
-                    Button("Add new setlist") {
+                    Button("Add new chord") {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: 44.0)
@@ -33,12 +33,12 @@ struct SetlistScreen: View {
                 Spacer().frame(height: 20.0)
             }
         }
-        .navigationTitle("Setlist Library")
+        .navigationTitle("Chord Library")
     }
 }
 
-struct SetlistScreen_Previews: PreviewProvider {
+struct ChordScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SetlistScreen()
+        ChordLibraryScreen()
     }
 }

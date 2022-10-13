@@ -1,5 +1,5 @@
 //
-//  SongScreen.swift
+//  SetlistScreen.swift
 //  XMetro
 //
 //  Created by Yue Zhang on 2022/10/11.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct TempoScreen: View {
+struct SetlistLibraryScreen: View {
     var body: some View {
         ZStack {
             VStack {
                 Spacer()
-                Text("No tempo yet.")
+                Text("No setlist yet.")
                     .foregroundColor(Theme.grayColor)
                 Spacer()
             }
@@ -20,7 +20,7 @@ struct TempoScreen: View {
                 Spacer()
                 HStack {
                     Spacer().frame(width: 16.0)
-                    Button("Add new tempo") {
+                    Button("Add new setlist") {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: 44.0)
@@ -33,12 +33,12 @@ struct TempoScreen: View {
                 Spacer().frame(height: 20.0)
             }
         }
-        .navigationTitle("Tempo Library")
+        .navigationTitle("Setlist Library")
     }
 }
 
-struct SongScreen_Previews: PreviewProvider {
+struct SetlistScreen_Previews: PreviewProvider {
     static var previews: some View {
-        TempoScreen()
+        SetlistLibraryScreen()
     }
 }

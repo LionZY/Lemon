@@ -30,9 +30,9 @@ enum LibraryListItem: Hashable {
     
     @ViewBuilder func destination() -> some View {
         switch self {
-        case .chord: ChordScreen()
-        case .tempo: TempoScreen()
-        case .setlist: SetlistScreen()
+        case .chord: ChordLibraryScreen()
+        case .tempo: TempoLibraryScreen()
+        case .setlist: SetlistLibraryScreen()
         }
     }
     

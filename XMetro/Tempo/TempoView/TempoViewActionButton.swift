@@ -8,13 +8,12 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct ImageButton: View {
-    let viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>
+struct TempoViewActionButton: View {
+    let viewStore: ViewStore<TempoViewState, TempoViewAction>
     var body: some View {
         ZStack {
             if let systemName = viewStore.state.titleIcon, systemName.count > 0 {
                 Image(systemName: systemName)
-                    .frame(width: 60, height: 60)
             }
             Text(viewStore.state.buttonTitle)
         }

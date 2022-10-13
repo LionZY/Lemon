@@ -1,5 +1,5 @@
 //
-//  MetroActionButtonState.swift
+//  TempoViewState.swift
 //  XMetro
 //
 //  Created by Yue Zhang on 2022/7/8.
@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 
-struct MetroActionButtonState: Equatable {
+struct TempoViewState: Equatable {
     var buttonTitle: String {
         isCountDown ? "\(abs(currentIndex))" : ""
     }
@@ -20,7 +20,7 @@ struct MetroActionButtonState: Equatable {
         currentIndex < 0 && currentAction != .stop
     }
     
-    var timerEvery: CGFloat {
+    var timerEvery: Double {
         60.0 / Double(tempoItem.bpm)
     }
     
@@ -43,14 +43,14 @@ struct MetroActionButtonState: Equatable {
     static var startIndex = -4
     var tempoItem: TempoItem
     var countDownIndex = 0
-    var currentIndex = MetroActionButtonState.startIndex
-    var currentAction: MetroActionButtonAction = .stop
+    var currentIndex = TempoViewState.startIndex
+    var currentAction: TempoViewAction = .stop
     
     init(
         tempoItem: TempoItem = .init(),
         countDownIndex: Int = 0,
-        currentIndex: Int = MetroActionButtonState.startIndex,
-        currentAction: MetroActionButtonAction = .stop
+        currentIndex: Int = TempoViewState.startIndex,
+        currentAction: TempoViewAction = .stop
     ) {
         self.tempoItem = tempoItem
         self.countDownIndex = countDownIndex
@@ -73,10 +73,10 @@ struct MetroActionButtonState: Equatable {
     
     mutating func reset() {
         currentAction = .stop
-        currentIndex = MetroActionButtonState.startIndex
+        currentIndex = TempoViewState.startIndex
     }
     
-    static func == (lhs: MetroActionButtonState, rhs: MetroActionButtonState) -> Bool {
+    static func == (lhs: TempoViewState, rhs: TempoViewState) -> Bool {
         return lhs.tempoItem == rhs.tempoItem
         && lhs.currentIndex == rhs.currentIndex
         && lhs.isCountDown == rhs.isCountDown

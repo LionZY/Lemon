@@ -8,25 +8,24 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct MetronomeScreen: View {
-    let store = Store<MetroActionButtonState, MetroActionButtonAction>(
-        initialState: MetroActionButtonState(),
-        reducer: MetroActionButtonReducer,
-        environment: MetroActionButtonEnv()
+struct TempoScreen: View {
+    let store = Store<TempoViewState, TempoViewAction>(
+        initialState: TempoViewState(),
+        reducer: TempoViewReducer,
+        environment: TempoViewEnv()
     )
     var body: some View {
         VStack {
-            MetroActionButton(store: store)
+            TempoView(store: store)
                 .frame(maxWidth:.infinity, maxHeight: .infinity)
                 .tint(Theme.mainColor)
-            
         }
         .navigationTitle("Tempo")
     }
 }
 
-struct MetronomeScreen_Previews: PreviewProvider {
+struct TempoScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MetronomeScreen()
+        TempoScreen()
     }
 }

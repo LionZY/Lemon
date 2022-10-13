@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct TabContentView: View {
-    private let metronomeScreen = MetronomeScreen()
+    private let metronomeScreen = TempoScreen()
     private let tunerScreen = TunerScreen()
     private let libraryScreen = LibraryScreen()
     private let settingsScreen = SettingsScreen()

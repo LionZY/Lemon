@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		052025AC287807350059654B /* MetroActionButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AB287807350059654B /* MetroActionButtonAction.swift */; };
-		052025AE287810A40059654B /* MetroActionButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AD287810A40059654B /* MetroActionButtonState.swift */; };
-		052025B0287811280059654B /* MetroActionButtonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AF287811280059654B /* MetroActionButtonReducer.swift */; };
-		052025B2287811390059654B /* MetroActionButtonEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B1287811390059654B /* MetroActionButtonEnv.swift */; };
-		053C560328DD771400390B5B /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C560228DD771400390B5B /* ImageButton.swift */; };
+		052025AC287807350059654B /* TempoViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AB287807350059654B /* TempoViewAction.swift */; };
+		052025AE287810A40059654B /* TempoViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AD287810A40059654B /* TempoViewState.swift */; };
+		052025B0287811280059654B /* TempoViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AF287811280059654B /* TempoViewReducer.swift */; };
+		052025B2287811390059654B /* TempoViewEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B1287811390059654B /* TempoViewEnv.swift */; };
+		053C560328DD771400390B5B /* TempoViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C560228DD771400390B5B /* TempoViewActionButton.swift */; };
 		053C560528DD957500390B5B /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C560428DD957500390B5B /* ActivityVC.swift */; };
+		05520FB628F7F8DB001814B0 /* PickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FB528F7F8DB001814B0 /* PickerButton.swift */; };
 		0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563BAA128794C3900E8FC7B /* PickerView.swift */; };
 		0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0578AD3B28897E1700AE5B04 /* ComposableArchitecture */; };
 		0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */; };
@@ -20,7 +21,7 @@
 		0584DA7F288AA37B008712DF /* dot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7C288AA37B008712DF /* dot.m4a */; };
 		0584DA80288AA37B008712DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7D288AA37B008712DF /* Assets.xcassets */; };
 		0584DA81288AA37B008712DF /* dot_strong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7E288AA37B008712DF /* dot_strong.m4a */; };
-		0585133D2887F4A700F7B3AF /* MetronomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */; };
+		0585133D2887F4A700F7B3AF /* TempoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133C2887F4A700F7B3AF /* TempoScreen.swift */; };
 		058513402887F4D300F7B3AF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133F2887F4D300F7B3AF /* SettingsScreen.swift */; };
 		058513462887F60900F7B3AF /* MicrophonePitchDetector in Frameworks */ = {isa = PBXBuildFile; productRef = 058513452887F60900F7B3AF /* MicrophonePitchDetector */; };
 		058513482887FAEF00F7B3AF /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058513472887FAEF00F7B3AF /* Color+Extensions.swift */; };
@@ -54,7 +55,7 @@
 		05D39C232876904300CCE136 /* XMetroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C222876904300CCE136 /* XMetroTests.swift */; };
 		05D39C2D2876904300CCE136 /* XMetroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2C2876904300CCE136 /* XMetroUITests.swift */; };
 		05D39C2F2876904300CCE136 /* XMetroUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2E2876904300CCE136 /* XMetroUITestsLaunchTests.swift */; };
-		05D39C512876A28B00CCE136 /* MetroActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C502876A28B00CCE136 /* MetroActionButton.swift */; };
+		05D39C512876A28B00CCE136 /* TempoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C502876A28B00CCE136 /* TempoView.swift */; };
 		05D39C552876C54B00CCE136 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C532876C54A00CCE136 /* TabItemView.swift */; };
 		05D39C562876C54B00CCE136 /* TabItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C542876C54A00CCE136 /* TabItemState.swift */; };
 		05D39C582876C56500CCE136 /* TabItemReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C572876C56500CCE136 /* TabItemReducer.swift */; };
@@ -86,9 +87,9 @@
 		05E284E428F52B0000B7C8BD /* MetronomeSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284E328F52B0000B7C8BD /* MetronomeSettingsScreen.swift */; };
 		05E284E628F52B3700B7C8BD /* TunerSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284E528F52B3700B7C8BD /* TunerSettingsScreen.swift */; };
 		05E284EA28F5678800B7C8BD /* launch_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 05E284E928F5678800B7C8BD /* launch_bg.jpg */; };
-		05E284EC28F5755400B7C8BD /* ChordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284EB28F5755400B7C8BD /* ChordScreen.swift */; };
-		05E284EE28F5757A00B7C8BD /* TempoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284ED28F5757A00B7C8BD /* TempoScreen.swift */; };
-		05E284F028F5758B00B7C8BD /* SetlistScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284EF28F5758B00B7C8BD /* SetlistScreen.swift */; };
+		05E284EC28F5755400B7C8BD /* ChordLibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284EB28F5755400B7C8BD /* ChordLibraryScreen.swift */; };
+		05E284EE28F5757A00B7C8BD /* TempoLibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284ED28F5757A00B7C8BD /* TempoLibraryScreen.swift */; };
+		05E284F028F5758B00B7C8BD /* SetlistLibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284EF28F5758B00B7C8BD /* SetlistLibraryScreen.swift */; };
 		05E284F328F597A600B7C8BD /* MetronomeSettingsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284F228F597A600B7C8BD /* MetronomeSettingsListItem.swift */; };
 		05E284F528F5993C00B7C8BD /* TunerSettingsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284F428F5993C00B7C8BD /* TunerSettingsListItem.swift */; };
 		5CCE39078C61F9C481461EAF /* libPods-XMetro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B12AE02EB8FA2D79EAC35036 /* libPods-XMetro.a */; };
@@ -112,12 +113,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		052025AB287807350059654B /* MetroActionButtonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonAction.swift; sourceTree = "<group>"; };
-		052025AD287810A40059654B /* MetroActionButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonState.swift; sourceTree = "<group>"; };
-		052025AF287811280059654B /* MetroActionButtonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonReducer.swift; sourceTree = "<group>"; };
-		052025B1287811390059654B /* MetroActionButtonEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButtonEnv.swift; sourceTree = "<group>"; };
-		053C560228DD771400390B5B /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		052025AB287807350059654B /* TempoViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoViewAction.swift; sourceTree = "<group>"; };
+		052025AD287810A40059654B /* TempoViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoViewState.swift; sourceTree = "<group>"; };
+		052025AF287811280059654B /* TempoViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoViewReducer.swift; sourceTree = "<group>"; };
+		052025B1287811390059654B /* TempoViewEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoViewEnv.swift; sourceTree = "<group>"; };
+		053C560228DD771400390B5B /* TempoViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoViewActionButton.swift; sourceTree = "<group>"; };
 		053C560428DD957500390B5B /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
+		05520FB528F7F8DB001814B0 /* PickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerButton.swift; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0578AD392889651E00AE5B04 /* XMetro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XMetro.entitlements; sourceTree = "<group>"; };
 		0579280528D978C800FE70E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -126,7 +128,7 @@
 		0584DA7C288AA37B008712DF /* dot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot.m4a; sourceTree = "<group>"; };
 		0584DA7D288AA37B008712DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0584DA7E288AA37B008712DF /* dot_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot_strong.m4a; sourceTree = "<group>"; };
-		0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeScreen.swift; sourceTree = "<group>"; };
+		0585133C2887F4A700F7B3AF /* TempoScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempoScreen.swift; sourceTree = "<group>"; };
 		0585133F2887F4D300F7B3AF /* SettingsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		058513472887FAEF00F7B3AF /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		058C1C2D28F6B0220021C376 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -164,7 +166,7 @@
 		05D39C282876904300CCE136 /* XMetroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMetroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D39C2C2876904300CCE136 /* XMetroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMetroUITests.swift; sourceTree = "<group>"; };
 		05D39C2E2876904300CCE136 /* XMetroUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMetroUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		05D39C502876A28B00CCE136 /* MetroActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroActionButton.swift; sourceTree = "<group>"; };
+		05D39C502876A28B00CCE136 /* TempoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoView.swift; sourceTree = "<group>"; };
 		05D39C532876C54A00CCE136 /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		05D39C542876C54A00CCE136 /* TabItemState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemState.swift; sourceTree = "<group>"; };
 		05D39C572876C56500CCE136 /* TabItemReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemReducer.swift; sourceTree = "<group>"; };
@@ -197,9 +199,9 @@
 		05E284E328F52B0000B7C8BD /* MetronomeSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeSettingsScreen.swift; sourceTree = "<group>"; };
 		05E284E528F52B3700B7C8BD /* TunerSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerSettingsScreen.swift; sourceTree = "<group>"; };
 		05E284E928F5678800B7C8BD /* launch_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch_bg.jpg; sourceTree = "<group>"; };
-		05E284EB28F5755400B7C8BD /* ChordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordScreen.swift; sourceTree = "<group>"; };
-		05E284ED28F5757A00B7C8BD /* TempoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoScreen.swift; sourceTree = "<group>"; };
-		05E284EF28F5758B00B7C8BD /* SetlistScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistScreen.swift; sourceTree = "<group>"; };
+		05E284EB28F5755400B7C8BD /* ChordLibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordLibraryScreen.swift; sourceTree = "<group>"; };
+		05E284ED28F5757A00B7C8BD /* TempoLibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoLibraryScreen.swift; sourceTree = "<group>"; };
+		05E284EF28F5758B00B7C8BD /* SetlistLibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistLibraryScreen.swift; sourceTree = "<group>"; };
 		05E284F228F597A600B7C8BD /* MetronomeSettingsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeSettingsListItem.swift; sourceTree = "<group>"; };
 		05E284F428F5993C00B7C8BD /* TunerSettingsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerSettingsListItem.swift; sourceTree = "<group>"; };
 		242DDA6598D6DC53515E32CE /* Pods-XMetro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMetro.debug.xcconfig"; path = "Target Support Files/Pods-XMetro/Pods-XMetro.debug.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				0563BAA128794C3900E8FC7B /* PickerView.swift */,
+				05520FB528F7F8DB001814B0 /* PickerButton.swift */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -266,8 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				0563BAA028794C2C00E8FC7B /* Picker */,
-				05D39C4F2876A27A00CCE136 /* MetroActionButton */,
-				0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */,
+				05D39C4F2876A27A00CCE136 /* TempoView */,
+				0585133C2887F4A700F7B3AF /* TempoScreen.swift */,
 				05DD51CA28F79BC2004BCA89 /* TempoItem.swift */,
 				05DD51CC28F7B256004BCA89 /* TempoPlayers.swift */,
 				05DD51CE28F7BAE8004BCA89 /* TempoTimer.swift */,
@@ -403,16 +406,16 @@
 				05D39C132876904200CCE136 /* MainView.swift */,
 				05D39C112876904200CCE136 /* XMetroApp.swift */,
 				05E284DF28F4FB6F00B7C8BD /* AppDelegate.swift */,
-				05E284DC28F4F8A200B7C8BD /* Theme */,
+				05D39C172876904300CCE136 /* Preview Content */,
 				0584DA7B288AA37B008712DF /* Assets */,
 				05B41AA12885389300151D70 /* Helpers */,
+				05E284DC28F4F8A200B7C8BD /* Theme */,
 				05E284B628F42A5C00B7C8BD /* Vendor */,
-				05D39C172876904300CCE136 /* Preview Content */,
-				05E284D328F42A9B00B7C8BD /* Library */,
-				0585133B2887F4A700F7B3AF /* Tempo */,
-				0585133E2887F4D300F7B3AF /* Settings */,
-				059D995028DA03DD00741591 /* Tuner */,
 				05D39C402876914500CCE136 /* Tabbar */,
+				0585133B2887F4A700F7B3AF /* Tempo */,
+				059D995028DA03DD00741591 /* Tuner */,
+				05E284D328F42A9B00B7C8BD /* Library */,
+				0585133E2887F4D300F7B3AF /* Settings */,
 			);
 			path = XMetro;
 			sourceTree = "<group>";
@@ -452,17 +455,17 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
-		05D39C4F2876A27A00CCE136 /* MetroActionButton */ = {
+		05D39C4F2876A27A00CCE136 /* TempoView */ = {
 			isa = PBXGroup;
 			children = (
-				05D39C502876A28B00CCE136 /* MetroActionButton.swift */,
-				052025AB287807350059654B /* MetroActionButtonAction.swift */,
-				052025AD287810A40059654B /* MetroActionButtonState.swift */,
-				052025AF287811280059654B /* MetroActionButtonReducer.swift */,
-				052025B1287811390059654B /* MetroActionButtonEnv.swift */,
-				053C560228DD771400390B5B /* ImageButton.swift */,
+				05D39C502876A28B00CCE136 /* TempoView.swift */,
+				052025AB287807350059654B /* TempoViewAction.swift */,
+				052025AD287810A40059654B /* TempoViewState.swift */,
+				052025AF287811280059654B /* TempoViewReducer.swift */,
+				052025B1287811390059654B /* TempoViewEnv.swift */,
+				053C560228DD771400390B5B /* TempoViewActionButton.swift */,
 			);
-			path = MetroActionButton;
+			path = TempoView;
 			sourceTree = "<group>";
 		};
 		05D39C522876C54A00CCE136 /* TabItem */ = {
@@ -533,9 +536,9 @@
 			children = (
 				05E284D628F4731D00B7C8BD /* LibraryListItem.swift */,
 				05E284D428F42AAD00B7C8BD /* LibraryScreen.swift */,
-				05E284EB28F5755400B7C8BD /* ChordScreen.swift */,
-				05E284ED28F5757A00B7C8BD /* TempoScreen.swift */,
-				05E284EF28F5758B00B7C8BD /* SetlistScreen.swift */,
+				05E284EB28F5755400B7C8BD /* ChordLibraryScreen.swift */,
+				05E284ED28F5757A00B7C8BD /* TempoLibraryScreen.swift */,
+				05E284EF28F5758B00B7C8BD /* SetlistLibraryScreen.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -755,17 +758,18 @@
 				05E284D928F479A100B7C8BD /* AboutScreen.swift in Sources */,
 				05D39C782877269100CCE136 /* TapContentReducer.swift in Sources */,
 				059D996C28DA03DD00741591 /* MainNoteView.swift in Sources */,
-				052025B0287811280059654B /* MetroActionButtonReducer.swift in Sources */,
+				052025B0287811280059654B /* TempoViewReducer.swift in Sources */,
 				059D996A28DA03DD00741591 /* MicrophoneAccessAlert.swift in Sources */,
-				0585133D2887F4A700F7B3AF /* MetronomeScreen.swift in Sources */,
+				0585133D2887F4A700F7B3AF /* TempoScreen.swift in Sources */,
 				059D996128DA03DD00741591 /* ModifierPreference.swift in Sources */,
-				05E284F028F5758B00B7C8BD /* SetlistScreen.swift in Sources */,
+				05E284F028F5758B00B7C8BD /* SetlistLibraryScreen.swift in Sources */,
 				059D996228DA03DD00741591 /* Frequency.swift in Sources */,
 				05E284F328F597A600B7C8BD /* MetronomeSettingsListItem.swift in Sources */,
 				05D39C662876F06200CCE136 /* TabState.swift in Sources */,
 				059D996328DA03DD00741591 /* ScaleNote.swift in Sources */,
 				058513482887FAEF00F7B3AF /* Color+Extensions.swift in Sources */,
 				05D39C562876C54B00CCE136 /* TabItemState.swift in Sources */,
+				05520FB628F7F8DB001814B0 /* PickerButton.swift in Sources */,
 				05DD51CB28F79BC2004BCA89 /* TempoItem.swift in Sources */,
 				05E284E628F52B3700B7C8BD /* TunerSettingsScreen.swift in Sources */,
 				05D39C652876F06200CCE136 /* TabEnv.swift in Sources */,
@@ -774,7 +778,7 @@
 				05D39C7A287726A400CCE136 /* TapContentState.swift in Sources */,
 				05E284C728F42A5C00B7C8BD /* UMAnalyticsSwift.swift in Sources */,
 				059D996628DA03DD00741591 /* CurrentNoteMarker.swift in Sources */,
-				05D39C512876A28B00CCE136 /* MetroActionButton.swift in Sources */,
+				05D39C512876A28B00CCE136 /* TempoView.swift in Sources */,
 				05E284D528F42AAD00B7C8BD /* LibraryScreen.swift in Sources */,
 				05B41AA5288538AC00151D70 /* Alignment.swift in Sources */,
 				05D39C142876904200CCE136 /* MainView.swift in Sources */,
@@ -783,7 +787,7 @@
 				05D39C6C2876F0C100CCE136 /* TabContentView.swift in Sources */,
 				05DD51CD28F7B256004BCA89 /* TempoPlayers.swift in Sources */,
 				05D39C762877267400CCE136 /* TapContentEnv.swift in Sources */,
-				052025AC287807350059654B /* MetroActionButtonAction.swift in Sources */,
+				052025AC287807350059654B /* TempoViewAction.swift in Sources */,
 				05D39C672876F06200CCE136 /* TabAction.swift in Sources */,
 				05D39C5A2876C57500CCE136 /* TabItemAction.swift in Sources */,
 				05E284F528F5993C00B7C8BD /* TunerSettingsListItem.swift in Sources */,
@@ -794,21 +798,21 @@
 				059D996B28DA03DD00741591 /* TranspositionMenu.swift in Sources */,
 				05D39C582876C56500CCE136 /* TabItemReducer.swift in Sources */,
 				05D39C122876904200CCE136 /* XMetroApp.swift in Sources */,
-				052025B2287811390059654B /* MetroActionButtonEnv.swift in Sources */,
+				052025B2287811390059654B /* TempoViewEnv.swift in Sources */,
 				058513402887F4D300F7B3AF /* SettingsScreen.swift in Sources */,
 				059D996728DA03DD00741591 /* MatchedNoteView.swift in Sources */,
 				059D996D28DA03DD00741591 /* MatchedNoteFrequency.swift in Sources */,
 				05E284DE28F4F8AB00B7C8BD /* Theme.swift in Sources */,
 				05D39C682876F06200CCE136 /* TabView.swift in Sources */,
-				052025AE287810A40059654B /* MetroActionButtonState.swift in Sources */,
-				053C560328DD771400390B5B /* ImageButton.swift in Sources */,
+				052025AE287810A40059654B /* TempoViewState.swift in Sources */,
+				053C560328DD771400390B5B /* TempoViewActionButton.swift in Sources */,
 				05E284E028F4FB6F00B7C8BD /* AppDelegate.swift in Sources */,
 				05E284CD28F42A5C00B7C8BD /* UMCommonLogSwift.swift in Sources */,
 				059D996928DA03DD00741591 /* NoteTicks.swift in Sources */,
 				05B41AA6288538AC00151D70 /* ColorAnimation.swift in Sources */,
-				05E284EE28F5757A00B7C8BD /* TempoScreen.swift in Sources */,
+				05E284EE28F5757A00B7C8BD /* TempoLibraryScreen.swift in Sources */,
 				05D39C692876F06200CCE136 /* TabReducer.swift in Sources */,
-				05E284EC28F5755400B7C8BD /* ChordScreen.swift in Sources */,
+				05E284EC28F5755400B7C8BD /* ChordLibraryScreen.swift in Sources */,
 				059D996828DA03DD00741591 /* NoteDistanceMarkers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

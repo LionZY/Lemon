@@ -1,5 +1,5 @@
 //
-//  ChordScreen.swift
+//  SongScreen.swift
 //  XMetro
 //
 //  Created by Yue Zhang on 2022/10/11.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ChordScreen: View {
+struct TempoLibraryScreen: View {
     var body: some View {
         ZStack {
             VStack {
                 Spacer()
-                Text("No chord yet.")
+                Text("No tempo yet.")
                     .foregroundColor(Theme.grayColor)
                 Spacer()
             }
@@ -20,7 +20,7 @@ struct ChordScreen: View {
                 Spacer()
                 HStack {
                     Spacer().frame(width: 16.0)
-                    Button("Add new chord") {
+                    Button("Add new tempo") {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: 44.0)
@@ -33,12 +33,12 @@ struct ChordScreen: View {
                 Spacer().frame(height: 20.0)
             }
         }
-        .navigationTitle("Chord Library")
+        .navigationTitle("Tempo Library")
     }
 }
 
-struct ChordScreen_Previews: PreviewProvider {
+struct TempoLibraryScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ChordScreen()
+        TempoLibraryScreen()
     }
 }

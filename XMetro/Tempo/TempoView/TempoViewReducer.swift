@@ -1,5 +1,5 @@
 //
-//  MetroActionButtonReducer.swift
+//  TempoViewReducer.swift
 //  XMetro
 //
 //  Created by Yue Zhang on 2022/7/8.
@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import ComposableArchitecture
 
-let MetroActionButtonReducer = Reducer<MetroActionButtonState, MetroActionButtonAction, MetroActionButtonEnv> { state, action, _ in
+let TempoViewReducer = Reducer<TempoViewState, TempoViewAction, TempoViewEnv> { state, action, _ in
     switch action {
     case .run:
         if state.currentAction != .run {
@@ -39,6 +39,9 @@ let MetroActionButtonReducer = Reducer<MetroActionButtonState, MetroActionButton
     case .updateTimeSignature(let meter, let devide):
         state.tempoItem.meter = meter
         state.tempoItem.devide = devide
+        break
+    case .updateSubdivision(let subDivision):
+        state.tempoItem.subDivision = subDivision
         break
     }
     return .none
