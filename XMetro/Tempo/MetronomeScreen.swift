@@ -9,12 +9,17 @@ import SwiftUI
 import ComposableArchitecture
 
 struct MetronomeScreen: View {
-    let store = Store(initialState: MetroActionButtonState(), reducer: MetroActionButtonReducer, environment: MetroActionButtonEnv())
+    let store = Store<MetroActionButtonState, MetroActionButtonAction>(
+        initialState: MetroActionButtonState(),
+        reducer: MetroActionButtonReducer,
+        environment: MetroActionButtonEnv()
+    )
     var body: some View {
-        ZStack {
+        VStack {
             MetroActionButton(store: store)
                 .frame(maxWidth:.infinity, maxHeight: .infinity)
                 .tint(Theme.mainColor)
+            
         }
         .navigationTitle("Tempo")
     }

@@ -70,6 +70,9 @@
 		05D39C762877267400CCE136 /* TapContentEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C752877267400CCE136 /* TapContentEnv.swift */; };
 		05D39C782877269100CCE136 /* TapContentReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C772877269100CCE136 /* TapContentReducer.swift */; };
 		05D39C7A287726A400CCE136 /* TapContentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C79287726A400CCE136 /* TapContentState.swift */; };
+		05DD51CB28F79BC2004BCA89 /* TempoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD51CA28F79BC2004BCA89 /* TempoItem.swift */; };
+		05DD51CD28F7B256004BCA89 /* TempoPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD51CC28F7B256004BCA89 /* TempoPlayers.swift */; };
+		05DD51CF28F7BAE8004BCA89 /* TempoTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD51CE28F7BAE8004BCA89 /* TempoTimer.swift */; };
 		05E2849928F4236900B7C8BD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E2849828F4235400B7C8BD /* libc++.tbd */; };
 		05E284C728F42A5C00B7C8BD /* UMAnalyticsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284B928F42A5C00B7C8BD /* UMAnalyticsSwift.swift */; };
 		05E284C828F42A5C00B7C8BD /* UMCommonSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284BA28F42A5C00B7C8BD /* UMCommonSwift.swift */; };
@@ -177,6 +180,9 @@
 		05D39C752877267400CCE136 /* TapContentEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapContentEnv.swift; sourceTree = "<group>"; };
 		05D39C772877269100CCE136 /* TapContentReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapContentReducer.swift; sourceTree = "<group>"; };
 		05D39C79287726A400CCE136 /* TapContentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapContentState.swift; sourceTree = "<group>"; };
+		05DD51CA28F79BC2004BCA89 /* TempoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoItem.swift; sourceTree = "<group>"; };
+		05DD51CC28F7B256004BCA89 /* TempoPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoPlayers.swift; sourceTree = "<group>"; };
+		05DD51CE28F7BAE8004BCA89 /* TempoTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoTimer.swift; sourceTree = "<group>"; };
 		05E2847828F41F0C00B7C8BD /* XMetro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XMetro-Bridging-Header.h"; sourceTree = "<group>"; };
 		05E2849828F4235400B7C8BD /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		05E284B928F42A5C00B7C8BD /* UMAnalyticsSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UMAnalyticsSwift.swift; sourceTree = "<group>"; };
@@ -262,6 +268,9 @@
 				0563BAA028794C2C00E8FC7B /* Picker */,
 				05D39C4F2876A27A00CCE136 /* MetroActionButton */,
 				0585133C2887F4A700F7B3AF /* MetronomeScreen.swift */,
+				05DD51CA28F79BC2004BCA89 /* TempoItem.swift */,
+				05DD51CC28F7B256004BCA89 /* TempoPlayers.swift */,
+				05DD51CE28F7BAE8004BCA89 /* TempoTimer.swift */,
 			);
 			path = Tempo;
 			sourceTree = "<group>";
@@ -757,6 +766,7 @@
 				059D996328DA03DD00741591 /* ScaleNote.swift in Sources */,
 				058513482887FAEF00F7B3AF /* Color+Extensions.swift in Sources */,
 				05D39C562876C54B00CCE136 /* TabItemState.swift in Sources */,
+				05DD51CB28F79BC2004BCA89 /* TempoItem.swift in Sources */,
 				05E284E628F52B3700B7C8BD /* TunerSettingsScreen.swift in Sources */,
 				05D39C652876F06200CCE136 /* TabEnv.swift in Sources */,
 				059D996528DA03DD00741591 /* TunerScreen.swift in Sources */,
@@ -771,12 +781,14 @@
 				05D39C5C2876C58300CCE136 /* TabItemEnv.swift in Sources */,
 				05D39C742877266400CCE136 /* TabContentAction.swift in Sources */,
 				05D39C6C2876F0C100CCE136 /* TabContentView.swift in Sources */,
+				05DD51CD28F7B256004BCA89 /* TempoPlayers.swift in Sources */,
 				05D39C762877267400CCE136 /* TapContentEnv.swift in Sources */,
 				052025AC287807350059654B /* MetroActionButtonAction.swift in Sources */,
 				05D39C672876F06200CCE136 /* TabAction.swift in Sources */,
 				05D39C5A2876C57500CCE136 /* TabItemAction.swift in Sources */,
 				05E284F528F5993C00B7C8BD /* TunerSettingsListItem.swift in Sources */,
 				053C560528DD957500390B5B /* ActivityVC.swift in Sources */,
+				05DD51CF28F7BAE8004BCA89 /* TempoTimer.swift in Sources */,
 				058C1C3428F6B3B00021C376 /* UMOC.m in Sources */,
 				0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */,
 				059D996B28DA03DD00741591 /* TranspositionMenu.swift in Sources */,

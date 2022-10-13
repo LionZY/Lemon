@@ -16,7 +16,7 @@ struct ImageButton: View {
                 Image(systemName: systemName)
                     .frame(width: 60, height: 60)
             }
-            Text(viewStore.state.title)
+            Text(viewStore.state.buttonTitle)
         }
     }
 }

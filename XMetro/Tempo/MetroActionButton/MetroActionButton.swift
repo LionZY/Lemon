@@ -19,16 +19,6 @@ struct MetroActionButton: View {
     @State private var presentedTimeSignature: Bool
     @State private var presentedBmp: Bool
     
-    private var savedMeter: Int {
-        let savedMeter = UserDefaults.standard.integer(forKey: KSaved_Meter)
-        return savedMeter == 0 ? 4 : savedMeter
-    }
-    
-    private var savedDevide: Int {
-        let savedDevide = UserDefaults.standard.integer(forKey: KSaved_Devide)
-        return savedDevide == 0 ? 4 : savedDevide
-    }
-    
     init(
         store: Store<MetroActionButtonState, MetroActionButtonAction>,
         dotWidth: Double = 10.0,
@@ -57,7 +47,7 @@ struct MetroActionButton: View {
     }
 
     func dotColor(_ viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>, dotIndex: Int) -> Color {
-        if dotIndex < viewStore.state.meter {
+        if dotIndex < viewStore.state.tempoItem.meter {
             return viewStore.state.currentIndex == dotIndex ? Theme.lightColor : Theme.mainColor
         }
         return Color(.systemGray5)
@@ -77,19 +67,19 @@ struct MetroActionButton: View {
                     title: "Time Signature",
                     subject1Range:1..<13,
                     subject1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-                    subject1DefaultValue: viewStore.state.meter,
+                    subject1DefaultValue: viewStore.state.tempoItem.meter,
                     subject2: [1, 2, 3, 4, 5, 6, 7, 8],
-                    subject2DefaultValue: viewStore.state.devide
+                    subject2DefaultValue: viewStore.state.tempoItem.devide
                 ) { selected1, selected2 in
                     viewStore.send(.updateTimeSignature(selected1, selected2))
-                    timeSignatureButtonTitle = "\(savedMeter)/\(savedDevide)"
+                    timeSignatureButtonTitle = "\(TempoItem.savedMeter)/\(TempoItem.savedDevide)"
                 }
             }.navigationViewStyle(.stack)
         }
     }
     
     @ViewBuilder private func bpmButton(viewStore: ViewStore<MetroActionButtonState, MetroActionButtonAction>) -> some View {
-        Button("\(viewStore.state.bpm)") {
+        Button("\(viewStore.state.tempoItem.bpm)") {
             presentedBmp = true
             viewStore.send(.stop)
         }
@@ -102,7 +92,7 @@ struct MetroActionButton: View {
                     title: "BPM",
                     subject1Range: 30..<300,
                     subject1: [40, 50, 60, 80, 120, 160, 200, 240],
-                    subject1DefaultValue: viewStore.state.bpm,
+                    subject1DefaultValue: viewStore.state.tempoItem.bpm,
                     subject2DefaultValue: 4
                 ) { selected, _ in
                     viewStore.send(.updateBpm(selected))
@@ -145,10 +135,8 @@ struct MetroActionButton: View {
         .onReceive(timer) { input in
             viewStore.send(.run)
         }.onAppear {
-            var savedBPM = UserDefaults.standard.integer(forKey: KSaved_BPM)
-            savedBPM = savedBPM == 0 ? 60 : savedBPM
-            viewStore.send(.updateBpm(savedBPM))
-            viewStore.send(.updateTimeSignature(savedMeter, savedDevide))
+            viewStore.send(.updateBpm(TempoItem.savedBPM))
+            viewStore.send(.updateTimeSignature(TempoItem.savedMeter, TempoItem.savedDevide))
             viewStore.send(.stop)
         }
     }
@@ -193,7 +181,7 @@ struct MetroActionButton: View {
                 }
                 Spacer()
             }.onAppear {
-                timeSignatureButtonTitle = "\(savedMeter)/\(savedDevide)"
+                timeSignatureButtonTitle = "\(TempoItem.savedMeter)/\(TempoItem.savedDevide)"
             }
         }
     }

@@ -10,7 +10,6 @@ import SwiftUI
 struct LibraryScreen: View {
     private var listData: [LibraryListItem] = [
         .tempo,
-        .setlist
     ]
     var body: some View {
         ZStack {}
