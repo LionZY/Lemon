@@ -57,6 +57,7 @@ protocol PopupBottomPickerDelegate {
 
 struct PopupBottomPicker: View {
     @Binding var isPresented: Bool
+    @State var isTouchDownButton = false
     var type: PickerContentType = .text
     var title: String
     var datas: [String]
@@ -72,6 +73,7 @@ struct PopupBottomPicker: View {
             PickerView(datas: datas, selectedValue: defaultValue, didValueChanged: didValueChange)
             HStack {
                 Button("Cancel") {
+                    isTouchDownButton = true
                     isPresented = false
                     didValueChange?(defaultValue, false)
                 }
@@ -83,6 +85,7 @@ struct PopupBottomPicker: View {
                 .background(Theme.lightColor)
                 .cornerRadius(12)
                 Button("Done") {
+                    isTouchDownButton = true
                     isPresented = false
                     didValueChange?(selectedValue, true)
                 }
@@ -95,6 +98,11 @@ struct PopupBottomPicker: View {
                 .cornerRadius(12)
             }
         }
+        .onChange(of: isPresented, perform: { newValue in
+            if isPresented == false && !isTouchDownButton {
+                didValueChange?(defaultValue, false)
+            }
+        })
         .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
         .background(Color.white.cornerRadius(20))
         .shadowedStyle()
@@ -154,13 +162,7 @@ struct Popups_Previews: PreviewProvider {
         ZStack {
             Rectangle()
                 .ignoresSafeArea()
-            PopupBottomPicker(
-                isPresented: .constant(false),
-                title: "123",
-                datas: ["123", "456"],
-                defaultValue: "123",
-                selectedValue: "123"
-            )
+            PopupBottomPicker(isPresented: .constant(false), title: "123", datas: ["123"], defaultValue: "123", selectedValue: "123")
         }
         
         ZStack {

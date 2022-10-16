@@ -58,7 +58,7 @@ struct TempoScreen: View {
             Spacer()
         }
         .navigationTitle("Tempo")
-        .popup(isPresented: $isTimeSignaturePresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: false, closeOnTapOutside: false, backgroundColor: .clear) {
+        .popup(isPresented: $isTimeSignaturePresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 let components = newValue.components(separatedBy: "/")
                 meter = Int(components.first ?? "4") ?? 4
@@ -77,7 +77,7 @@ struct TempoScreen: View {
                 didValueChange: action
             )
         }
-        .popup(isPresented: $isBPMPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: false, closeOnTapOutside: false, backgroundColor: .clear) {
+        .popup(isPresented: $isBPMPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
             let defaultValue = "\(bpm)"
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 bpm = Int(newValue) ?? 60
@@ -93,7 +93,7 @@ struct TempoScreen: View {
                 didValueChange: action
             )
         }
-        .popup(isPresented: $isSubdivisionPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: false, closeOnTapOutside: false, backgroundColor: .clear) {
+        .popup(isPresented: $isSubdivisionPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
             let datas = ["♩", "♪", "♫", "♬", "♭", "♮", "♯", "𝄡"]
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 
@@ -107,7 +107,7 @@ struct TempoScreen: View {
                 didValueChange: action
             )
         }
-        .popup(isPresented: $isSoundEffectPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: false, closeOnTapOutside: false, backgroundColor: .clear) {
+        .popup(isPresented: $isSoundEffectPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
             let datas = ["Sound 1", "Sound 2", "Sound 3", "Sound 4"]
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 
