@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct XMetroApp: App {
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     init() {

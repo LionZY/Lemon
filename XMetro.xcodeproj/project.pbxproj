@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		052025AC287807350059654B /* TempoViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AB287807350059654B /* TempoViewAction.swift */; };
-		052025AE287810A40059654B /* TempoViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AD287810A40059654B /* TempoViewState.swift */; };
-		052025B0287811280059654B /* TempoViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AF287811280059654B /* TempoViewReducer.swift */; };
-		052025B2287811390059654B /* TempoViewEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025B1287811390059654B /* TempoViewEnv.swift */; };
-		053C560328DD771400390B5B /* TempoViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C560228DD771400390B5B /* TempoViewActionButton.swift */; };
+		052025AC287807350059654B /* TempoScreenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052025AB287807350059654B /* TempoScreenAction.swift */; };
+		052D21F428FA6C9C00C3E09D /* TempoPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052D21F328FA6C9C00C3E09D /* TempoPrefix.swift */; };
+		052D21FC28FA9ED100C3E09D /* TGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 052D21FB28FA9ED100C3E09D /* TGCDTimer.m */; };
+		052D21FE28FA9FDB00C3E09D /* XTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052D21FD28FA9FDB00C3E09D /* XTimer.swift */; };
+		052D220028FAB29800C3E09D /* TestContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052D21FF28FAB29800C3E09D /* TestContentView.swift */; };
+		052D220428FAB3D800C3E09D /* TempoDotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052D220328FAB3D800C3E09D /* TempoDotsView.swift */; };
+		053C560328DD771400390B5B /* TempoRunButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C560228DD771400390B5B /* TempoRunButton.swift */; };
 		053C560528DD957500390B5B /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C560428DD957500390B5B /* ActivityVC.swift */; };
-		05520FB628F7F8DB001814B0 /* PickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FB528F7F8DB001814B0 /* PickerButton.swift */; };
+		05520FB928F863F6001814B0 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 05520FB828F863F6001814B0 /* PopupView */; };
+		05520FC228F8EEF9001814B0 /* Floats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FBB28F8EEF9001814B0 /* Floats.swift */; };
+		05520FC328F8EEF9001814B0 /* PopupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FBC28F8EEF9001814B0 /* PopupButton.swift */; };
+		05520FC428F8EEF9001814B0 /* Toasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FBD28F8EEF9001814B0 /* Toasts.swift */; };
+		05520FC528F8EEF9001814B0 /* ActionSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FBE28F8EEF9001814B0 /* ActionSheets.swift */; };
+		05520FC628F8EEF9001814B0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FBF28F8EEF9001814B0 /* Images.swift */; };
+		05520FC728F8EEF9001814B0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FC028F8EEF9001814B0 /* Utils.swift */; };
+		05520FC828F8EEF9001814B0 /* Popups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FC128F8EEF9001814B0 /* Popups.swift */; };
 		0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563BAA128794C3900E8FC7B /* PickerView.swift */; };
 		0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0578AD3B28897E1700AE5B04 /* ComposableArchitecture */; };
 		0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */; };
@@ -55,25 +64,14 @@
 		05D39C232876904300CCE136 /* XMetroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C222876904300CCE136 /* XMetroTests.swift */; };
 		05D39C2D2876904300CCE136 /* XMetroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2C2876904300CCE136 /* XMetroUITests.swift */; };
 		05D39C2F2876904300CCE136 /* XMetroUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C2E2876904300CCE136 /* XMetroUITestsLaunchTests.swift */; };
-		05D39C512876A28B00CCE136 /* TempoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C502876A28B00CCE136 /* TempoView.swift */; };
 		05D39C552876C54B00CCE136 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C532876C54A00CCE136 /* TabItemView.swift */; };
-		05D39C562876C54B00CCE136 /* TabItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C542876C54A00CCE136 /* TabItemState.swift */; };
-		05D39C582876C56500CCE136 /* TabItemReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C572876C56500CCE136 /* TabItemReducer.swift */; };
-		05D39C5A2876C57500CCE136 /* TabItemAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C592876C57500CCE136 /* TabItemAction.swift */; };
-		05D39C5C2876C58300CCE136 /* TabItemEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C5B2876C58300CCE136 /* TabItemEnv.swift */; };
 		05D39C652876F06200CCE136 /* TabEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C602876F06200CCE136 /* TabEnv.swift */; };
 		05D39C662876F06200CCE136 /* TabState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C612876F06200CCE136 /* TabState.swift */; };
 		05D39C672876F06200CCE136 /* TabAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C622876F06200CCE136 /* TabAction.swift */; };
 		05D39C682876F06200CCE136 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C632876F06200CCE136 /* TabView.swift */; };
 		05D39C692876F06200CCE136 /* TabReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C642876F06200CCE136 /* TabReducer.swift */; };
-		05D39C6C2876F0C100CCE136 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C6B2876F0C100CCE136 /* TabContentView.swift */; };
-		05D39C742877266400CCE136 /* TabContentAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C732877266400CCE136 /* TabContentAction.swift */; };
-		05D39C762877267400CCE136 /* TapContentEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C752877267400CCE136 /* TapContentEnv.swift */; };
-		05D39C782877269100CCE136 /* TapContentReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C772877269100CCE136 /* TapContentReducer.swift */; };
-		05D39C7A287726A400CCE136 /* TapContentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C79287726A400CCE136 /* TapContentState.swift */; };
 		05DD51CB28F79BC2004BCA89 /* TempoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD51CA28F79BC2004BCA89 /* TempoItem.swift */; };
 		05DD51CD28F7B256004BCA89 /* TempoPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD51CC28F7B256004BCA89 /* TempoPlayers.swift */; };
-		05DD51CF28F7BAE8004BCA89 /* TempoTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD51CE28F7BAE8004BCA89 /* TempoTimer.swift */; };
 		05E2849928F4236900B7C8BD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E2849828F4235400B7C8BD /* libc++.tbd */; };
 		05E284C728F42A5C00B7C8BD /* UMAnalyticsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284B928F42A5C00B7C8BD /* UMAnalyticsSwift.swift */; };
 		05E284C828F42A5C00B7C8BD /* UMCommonSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284BA28F42A5C00B7C8BD /* UMCommonSwift.swift */; };
@@ -113,13 +111,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		052025AB287807350059654B /* TempoViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoViewAction.swift; sourceTree = "<group>"; };
-		052025AD287810A40059654B /* TempoViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoViewState.swift; sourceTree = "<group>"; };
-		052025AF287811280059654B /* TempoViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoViewReducer.swift; sourceTree = "<group>"; };
-		052025B1287811390059654B /* TempoViewEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoViewEnv.swift; sourceTree = "<group>"; };
-		053C560228DD771400390B5B /* TempoViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoViewActionButton.swift; sourceTree = "<group>"; };
+		052025AB287807350059654B /* TempoScreenAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoScreenAction.swift; sourceTree = "<group>"; };
+		052D21F028F973F500C3E09D /* MicrophonePitchDetector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicrophonePitchDetector; path = XMetro/Packages/MicrophonePitchDetector; sourceTree = "<group>"; };
+		052D21F328FA6C9C00C3E09D /* TempoPrefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoPrefix.swift; sourceTree = "<group>"; };
+		052D21FA28FA9ED100C3E09D /* TGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCDTimer.h; sourceTree = "<group>"; };
+		052D21FB28FA9ED100C3E09D /* TGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCDTimer.m; sourceTree = "<group>"; };
+		052D21FD28FA9FDB00C3E09D /* XTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTimer.swift; sourceTree = "<group>"; };
+		052D21FF28FAB29800C3E09D /* TestContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContentView.swift; sourceTree = "<group>"; };
+		052D220328FAB3D800C3E09D /* TempoDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoDotsView.swift; sourceTree = "<group>"; };
+		053C560228DD771400390B5B /* TempoRunButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoRunButton.swift; sourceTree = "<group>"; };
 		053C560428DD957500390B5B /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
-		05520FB528F7F8DB001814B0 /* PickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerButton.swift; sourceTree = "<group>"; };
+		05520FBB28F8EEF9001814B0 /* Floats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Floats.swift; sourceTree = "<group>"; };
+		05520FBC28F8EEF9001814B0 /* PopupButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupButton.swift; sourceTree = "<group>"; };
+		05520FBD28F8EEF9001814B0 /* Toasts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toasts.swift; sourceTree = "<group>"; };
+		05520FBE28F8EEF9001814B0 /* ActionSheets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheets.swift; sourceTree = "<group>"; };
+		05520FBF28F8EEF9001814B0 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		05520FC028F8EEF9001814B0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		05520FC128F8EEF9001814B0 /* Popups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popups.swift; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0578AD392889651E00AE5B04 /* XMetro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XMetro.entitlements; sourceTree = "<group>"; };
 		0579280528D978C800FE70E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -148,7 +156,6 @@
 		059D995E28DA03DD00741591 /* MainNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNoteView.swift; sourceTree = "<group>"; };
 		059D995F28DA03DD00741591 /* MatchedNoteFrequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedNoteFrequency.swift; sourceTree = "<group>"; };
 		059D996028DA03DD00741591 /* TunerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerView.swift; sourceTree = "<group>"; };
-		05AFFE5928F70B0B00474EBA /* MicrophonePitchDetector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicrophonePitchDetector; path = XMetro/Packages/MicrophonePitchDetector; sourceTree = "<group>"; };
 		05AFFE5A28F7178900474EBA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		05AFFE5C28F717A400474EBA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		05AFFE5E28F717B200474EBA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -166,25 +173,14 @@
 		05D39C282876904300CCE136 /* XMetroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMetroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D39C2C2876904300CCE136 /* XMetroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMetroUITests.swift; sourceTree = "<group>"; };
 		05D39C2E2876904300CCE136 /* XMetroUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMetroUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		05D39C502876A28B00CCE136 /* TempoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoView.swift; sourceTree = "<group>"; };
 		05D39C532876C54A00CCE136 /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
-		05D39C542876C54A00CCE136 /* TabItemState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemState.swift; sourceTree = "<group>"; };
-		05D39C572876C56500CCE136 /* TabItemReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemReducer.swift; sourceTree = "<group>"; };
-		05D39C592876C57500CCE136 /* TabItemAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemAction.swift; sourceTree = "<group>"; };
-		05D39C5B2876C58300CCE136 /* TabItemEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemEnv.swift; sourceTree = "<group>"; };
 		05D39C602876F06200CCE136 /* TabEnv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabEnv.swift; sourceTree = "<group>"; };
 		05D39C612876F06200CCE136 /* TabState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabState.swift; sourceTree = "<group>"; };
 		05D39C622876F06200CCE136 /* TabAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabAction.swift; sourceTree = "<group>"; };
 		05D39C632876F06200CCE136 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		05D39C642876F06200CCE136 /* TabReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabReducer.swift; sourceTree = "<group>"; };
-		05D39C6B2876F0C100CCE136 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
-		05D39C732877266400CCE136 /* TabContentAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentAction.swift; sourceTree = "<group>"; };
-		05D39C752877267400CCE136 /* TapContentEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapContentEnv.swift; sourceTree = "<group>"; };
-		05D39C772877269100CCE136 /* TapContentReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapContentReducer.swift; sourceTree = "<group>"; };
-		05D39C79287726A400CCE136 /* TapContentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapContentState.swift; sourceTree = "<group>"; };
 		05DD51CA28F79BC2004BCA89 /* TempoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoItem.swift; sourceTree = "<group>"; };
 		05DD51CC28F7B256004BCA89 /* TempoPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoPlayers.swift; sourceTree = "<group>"; };
-		05DD51CE28F7BAE8004BCA89 /* TempoTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoTimer.swift; sourceTree = "<group>"; };
 		05E2847828F41F0C00B7C8BD /* XMetro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XMetro-Bridging-Header.h"; sourceTree = "<group>"; };
 		05E2849828F4235400B7C8BD /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		05E284B928F42A5C00B7C8BD /* UMAnalyticsSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UMAnalyticsSwift.swift; sourceTree = "<group>"; };
@@ -217,6 +213,7 @@
 				05AFFE6128F717C900474EBA /* CoreTelephony.framework in Frameworks */,
 				05AFFE5F28F717B200474EBA /* libz.tbd in Frameworks */,
 				05AFFE5D28F717A400474EBA /* libsqlite3.tbd in Frameworks */,
+				05520FB928F863F6001814B0 /* PopupView in Frameworks */,
 				05AFFE5B28F7178900474EBA /* SystemConfiguration.framework in Frameworks */,
 				058C1C2E28F6B0230021C376 /* UserNotifications.framework in Frameworks */,
 				0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */,
@@ -244,11 +241,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		052D21F928FA9ED100C3E09D /* GCDTimer */ = {
+			isa = PBXGroup;
+			children = (
+				052D21FA28FA9ED100C3E09D /* TGCDTimer.h */,
+				052D21FB28FA9ED100C3E09D /* TGCDTimer.m */,
+			);
+			path = GCDTimer;
+			sourceTree = "<group>";
+		};
+		05520FBA28F8EEF9001814B0 /* PopupView */ = {
+			isa = PBXGroup;
+			children = (
+				05520FBE28F8EEF9001814B0 /* ActionSheets.swift */,
+				05520FBB28F8EEF9001814B0 /* Floats.swift */,
+				05520FBF28F8EEF9001814B0 /* Images.swift */,
+				05520FBC28F8EEF9001814B0 /* PopupButton.swift */,
+				05520FC128F8EEF9001814B0 /* Popups.swift */,
+				05520FBD28F8EEF9001814B0 /* Toasts.swift */,
+				05520FC028F8EEF9001814B0 /* Utils.swift */,
+			);
+			path = PopupView;
+			sourceTree = "<group>";
+		};
 		0563BAA028794C2C00E8FC7B /* Picker */ = {
 			isa = PBXGroup;
 			children = (
 				0563BAA128794C3900E8FC7B /* PickerView.swift */,
-				05520FB528F7F8DB001814B0 /* PickerButton.swift */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -269,11 +288,14 @@
 			isa = PBXGroup;
 			children = (
 				0563BAA028794C2C00E8FC7B /* Picker */,
-				05D39C4F2876A27A00CCE136 /* TempoView */,
+				052025AB287807350059654B /* TempoScreenAction.swift */,
+				053C560228DD771400390B5B /* TempoRunButton.swift */,
 				0585133C2887F4A700F7B3AF /* TempoScreen.swift */,
 				05DD51CA28F79BC2004BCA89 /* TempoItem.swift */,
 				05DD51CC28F7B256004BCA89 /* TempoPlayers.swift */,
-				05DD51CE28F7BAE8004BCA89 /* TempoTimer.swift */,
+				052D21F328FA6C9C00C3E09D /* TempoPrefix.swift */,
+				052D21FF28FAB29800C3E09D /* TestContentView.swift */,
+				052D220328FAB3D800C3E09D /* TempoDotsView.swift */,
 			);
 			path = Tempo;
 			sourceTree = "<group>";
@@ -368,7 +390,7 @@
 		05B41AB22885399300151D70 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				05AFFE5928F70B0B00474EBA /* MicrophonePitchDetector */,
+				052D21F028F973F500C3E09D /* MicrophonePitchDetector */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -448,65 +470,22 @@
 		05D39C402876914500CCE136 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				05D39C6A2876F07A00CCE136 /* TabContent */,
-				05D39C5F2876F06200CCE136 /* Tab */,
-				05D39C522876C54A00CCE136 /* TabItem */,
-			);
-			path = Tabbar;
-			sourceTree = "<group>";
-		};
-		05D39C4F2876A27A00CCE136 /* TempoView */ = {
-			isa = PBXGroup;
-			children = (
-				05D39C502876A28B00CCE136 /* TempoView.swift */,
-				052025AB287807350059654B /* TempoViewAction.swift */,
-				052025AD287810A40059654B /* TempoViewState.swift */,
-				052025AF287811280059654B /* TempoViewReducer.swift */,
-				052025B1287811390059654B /* TempoViewEnv.swift */,
-				053C560228DD771400390B5B /* TempoViewActionButton.swift */,
-			);
-			path = TempoView;
-			sourceTree = "<group>";
-		};
-		05D39C522876C54A00CCE136 /* TabItem */ = {
-			isa = PBXGroup;
-			children = (
-				05D39C532876C54A00CCE136 /* TabItemView.swift */,
-				05D39C542876C54A00CCE136 /* TabItemState.swift */,
-				05D39C572876C56500CCE136 /* TabItemReducer.swift */,
-				05D39C592876C57500CCE136 /* TabItemAction.swift */,
-				05D39C5B2876C58300CCE136 /* TabItemEnv.swift */,
-			);
-			path = TabItem;
-			sourceTree = "<group>";
-		};
-		05D39C5F2876F06200CCE136 /* Tab */ = {
-			isa = PBXGroup;
-			children = (
 				05D39C602876F06200CCE136 /* TabEnv.swift */,
 				05D39C612876F06200CCE136 /* TabState.swift */,
 				05D39C622876F06200CCE136 /* TabAction.swift */,
 				05D39C632876F06200CCE136 /* TabView.swift */,
 				05D39C642876F06200CCE136 /* TabReducer.swift */,
+				05D39C532876C54A00CCE136 /* TabItemView.swift */,
 			);
-			path = Tab;
-			sourceTree = "<group>";
-		};
-		05D39C6A2876F07A00CCE136 /* TabContent */ = {
-			isa = PBXGroup;
-			children = (
-				05D39C6B2876F0C100CCE136 /* TabContentView.swift */,
-				05D39C732877266400CCE136 /* TabContentAction.swift */,
-				05D39C752877267400CCE136 /* TapContentEnv.swift */,
-				05D39C772877269100CCE136 /* TapContentReducer.swift */,
-				05D39C79287726A400CCE136 /* TapContentState.swift */,
-			);
-			path = TabContent;
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		05E284B628F42A5C00B7C8BD /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				052D21FD28FA9FDB00C3E09D /* XTimer.swift */,
+				052D21F928FA9ED100C3E09D /* GCDTimer */,
+				05520FBA28F8EEF9001814B0 /* PopupView */,
 				05E284B728F42A5C00B7C8BD /* Umeng */,
 			);
 			path = Vendor;
@@ -582,6 +561,7 @@
 				058513452887F60900F7B3AF /* MicrophonePitchDetector */,
 				0578AD3B28897E1700AE5B04 /* ComposableArchitecture */,
 				059D997028DA9B0E00741591 /* ActivityIndicatorView */,
+				05520FB828F863F6001814B0 /* PopupView */,
 			);
 			productName = WhenBored;
 			productReference = 05D39C0E2876904200CCE136 /* XMetro.app */;
@@ -658,6 +638,7 @@
 			packageReferences = (
 				0578AD3A28897E1700AE5B04 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				059D996F28DA9B0E00741591 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
+				05520FB728F863F6001814B0 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 05D39C0F2876904200CCE136 /* Products */;
 			projectDirPath = "";
@@ -748,64 +729,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				052D21FE28FA9FDB00C3E09D /* XTimer.swift in Sources */,
 				059D996E28DA03DD00741591 /* TunerView.swift in Sources */,
+				05520FC828F8EEF9001814B0 /* Popups.swift in Sources */,
+				052D220028FAB29800C3E09D /* TestContentView.swift in Sources */,
 				05D39C552876C54B00CCE136 /* TabItemView.swift in Sources */,
 				05E284C828F42A5C00B7C8BD /* UMCommonSwift.swift in Sources */,
 				05E284E428F52B0000B7C8BD /* MetronomeSettingsScreen.swift in Sources */,
 				05B41AA7288538AC00151D70 /* Color+MusicalDistance.swift in Sources */,
 				05E284D728F4731D00B7C8BD /* LibraryListItem.swift in Sources */,
 				05E284DB28F47A7000B7C8BD /* SettingsListItem.swift in Sources */,
+				052D21FC28FA9ED100C3E09D /* TGCDTimer.m in Sources */,
 				05E284D928F479A100B7C8BD /* AboutScreen.swift in Sources */,
-				05D39C782877269100CCE136 /* TapContentReducer.swift in Sources */,
 				059D996C28DA03DD00741591 /* MainNoteView.swift in Sources */,
-				052025B0287811280059654B /* TempoViewReducer.swift in Sources */,
 				059D996A28DA03DD00741591 /* MicrophoneAccessAlert.swift in Sources */,
 				0585133D2887F4A700F7B3AF /* TempoScreen.swift in Sources */,
 				059D996128DA03DD00741591 /* ModifierPreference.swift in Sources */,
 				05E284F028F5758B00B7C8BD /* SetlistLibraryScreen.swift in Sources */,
 				059D996228DA03DD00741591 /* Frequency.swift in Sources */,
 				05E284F328F597A600B7C8BD /* MetronomeSettingsListItem.swift in Sources */,
+				052D220428FAB3D800C3E09D /* TempoDotsView.swift in Sources */,
+				052D21F428FA6C9C00C3E09D /* TempoPrefix.swift in Sources */,
 				05D39C662876F06200CCE136 /* TabState.swift in Sources */,
 				059D996328DA03DD00741591 /* ScaleNote.swift in Sources */,
 				058513482887FAEF00F7B3AF /* Color+Extensions.swift in Sources */,
-				05D39C562876C54B00CCE136 /* TabItemState.swift in Sources */,
-				05520FB628F7F8DB001814B0 /* PickerButton.swift in Sources */,
+				05520FC428F8EEF9001814B0 /* Toasts.swift in Sources */,
+				05520FC228F8EEF9001814B0 /* Floats.swift in Sources */,
 				05DD51CB28F79BC2004BCA89 /* TempoItem.swift in Sources */,
 				05E284E628F52B3700B7C8BD /* TunerSettingsScreen.swift in Sources */,
 				05D39C652876F06200CCE136 /* TabEnv.swift in Sources */,
 				059D996528DA03DD00741591 /* TunerScreen.swift in Sources */,
 				059D996428DA03DD00741591 /* TunerData.swift in Sources */,
-				05D39C7A287726A400CCE136 /* TapContentState.swift in Sources */,
+				05520FC328F8EEF9001814B0 /* PopupButton.swift in Sources */,
 				05E284C728F42A5C00B7C8BD /* UMAnalyticsSwift.swift in Sources */,
 				059D996628DA03DD00741591 /* CurrentNoteMarker.swift in Sources */,
-				05D39C512876A28B00CCE136 /* TempoView.swift in Sources */,
 				05E284D528F42AAD00B7C8BD /* LibraryScreen.swift in Sources */,
 				05B41AA5288538AC00151D70 /* Alignment.swift in Sources */,
 				05D39C142876904200CCE136 /* MainView.swift in Sources */,
-				05D39C5C2876C58300CCE136 /* TabItemEnv.swift in Sources */,
-				05D39C742877266400CCE136 /* TabContentAction.swift in Sources */,
-				05D39C6C2876F0C100CCE136 /* TabContentView.swift in Sources */,
 				05DD51CD28F7B256004BCA89 /* TempoPlayers.swift in Sources */,
-				05D39C762877267400CCE136 /* TapContentEnv.swift in Sources */,
-				052025AC287807350059654B /* TempoViewAction.swift in Sources */,
+				052025AC287807350059654B /* TempoScreenAction.swift in Sources */,
 				05D39C672876F06200CCE136 /* TabAction.swift in Sources */,
-				05D39C5A2876C57500CCE136 /* TabItemAction.swift in Sources */,
 				05E284F528F5993C00B7C8BD /* TunerSettingsListItem.swift in Sources */,
 				053C560528DD957500390B5B /* ActivityVC.swift in Sources */,
-				05DD51CF28F7BAE8004BCA89 /* TempoTimer.swift in Sources */,
+				05520FC728F8EEF9001814B0 /* Utils.swift in Sources */,
 				058C1C3428F6B3B00021C376 /* UMOC.m in Sources */,
 				0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */,
 				059D996B28DA03DD00741591 /* TranspositionMenu.swift in Sources */,
-				05D39C582876C56500CCE136 /* TabItemReducer.swift in Sources */,
 				05D39C122876904200CCE136 /* XMetroApp.swift in Sources */,
-				052025B2287811390059654B /* TempoViewEnv.swift in Sources */,
+				05520FC628F8EEF9001814B0 /* Images.swift in Sources */,
 				058513402887F4D300F7B3AF /* SettingsScreen.swift in Sources */,
 				059D996728DA03DD00741591 /* MatchedNoteView.swift in Sources */,
 				059D996D28DA03DD00741591 /* MatchedNoteFrequency.swift in Sources */,
 				05E284DE28F4F8AB00B7C8BD /* Theme.swift in Sources */,
 				05D39C682876F06200CCE136 /* TabView.swift in Sources */,
-				052025AE287810A40059654B /* TempoViewState.swift in Sources */,
-				053C560328DD771400390B5B /* TempoViewActionButton.swift in Sources */,
+				053C560328DD771400390B5B /* TempoRunButton.swift in Sources */,
+				05520FC528F8EEF9001814B0 /* ActionSheets.swift in Sources */,
 				05E284E028F4FB6F00B7C8BD /* AppDelegate.swift in Sources */,
 				05E284CD28F42A5C00B7C8BD /* UMCommonLogSwift.swift in Sources */,
 				059D996928DA03DD00741591 /* NoteTicks.swift in Sources */,
@@ -1188,6 +1166,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		05520FB728F863F6001814B0 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		0578AD3A28897E1700AE5B04 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -1207,6 +1193,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		05520FB828F863F6001814B0 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05520FB728F863F6001814B0 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
 		0578AD3B28897E1700AE5B04 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0578AD3A28897E1700AE5B04 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

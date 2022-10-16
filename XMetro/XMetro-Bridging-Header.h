@@ -10,5 +10,6 @@
 
 #import "UmengHeaders.h"
 #import "UMOC.h"
+#import "TGCDTimer.h"
 
 #endif /* XMetro_Bridging_Header_h */

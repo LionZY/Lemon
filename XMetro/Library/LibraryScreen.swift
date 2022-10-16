@@ -12,7 +12,6 @@ struct LibraryScreen: View {
         .tempo,
     ]
     var body: some View {
-        ZStack {}
         VStack {
             List {
                 Section {

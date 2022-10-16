@@ -10,33 +10,38 @@ struct TunerScreen: View {
     @AppStorage("selectedTransposition") private var selectedTransposition = 0
     
     var body: some View {
-        TunerView(
-            tunerData: TunerData(pitch: pitchDetector.pitch),
-            modifierPreference: modifierPreference,
-            selectedTransposition: selectedTransposition
-        )
-        .onChange(of: scenePhase) { phase in
-            switch phase {
-            case .active:
-                startAudio()
-            case .inactive, .background:
-                stopAudio()
-            @unknown default:
-                stopAudio()
+        ZStack {
+            TunerView(
+                tunerData: TunerData(pitch: pitchDetector.pitch),
+                modifierPreference: modifierPreference,
+                selectedTransposition: selectedTransposition
+            )
+            .onChange(of: scenePhase) { phase in
+                switch phase {
+                case .active:
+                    startAudio()
+                case .inactive, .background:
+                    stopAudio()
+                @unknown default:
+                    stopAudio()
+                }
             }
-        }
-        .onAppear(perform: {
-            startAudio()
-        })
-        .onDisappear(perform: {
-            stopAudio()
-        })
-        .alert(isPresented: $pitchDetector.showMicrophoneAccessAlert) {
-            MicrophoneAccessAlert()
-        }
-        ActivityIndicatorView(isVisible: $showLoadingIndicator, type: .scalingDots(count: 3, inset: 6))
+            .onAppear(perform: {
+                startAudio()
+            })
+            .onDisappear(perform: {
+                stopAudio()
+            })
+            .alert(isPresented: $pitchDetector.showMicrophoneAccessAlert) {
+                MicrophoneAccessAlert()
+            }
+            ActivityIndicatorView(
+                isVisible: $showLoadingIndicator,
+                type: .scalingDots(count: 3, inset: 6)
+            )
             .frame(width: 44.0, height: 44.0)
             .foregroundColor(Theme.lightColor)
+        }
     }
     
     private func startAudio() {
