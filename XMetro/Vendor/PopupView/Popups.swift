@@ -78,7 +78,7 @@ struct PopupBottomPicker: View {
                     didValueChange?(defaultValue, false)
                 }
                 .buttonStyle(.plain)
-                .font(.system(size: 18, weight: .bold))
+                .font(.system(size: 18))
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 18)
                 .foregroundColor(.white)
@@ -90,7 +90,7 @@ struct PopupBottomPicker: View {
                     didValueChange?(selectedValue, true)
                 }
                 .buttonStyle(.plain)
-                .font(.system(size: 18, weight: .bold))
+                .font(.system(size: 18))
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 18)
                 .foregroundColor(.white)
