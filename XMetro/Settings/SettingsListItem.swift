@@ -24,7 +24,7 @@ enum SettingListItem: Hashable {
         switch self {
         case .metronome: return "Metronome settings"
         case .tuner: return "Tuner settings"
-        case .about: return "About XMetro"
+        case .about: return "About Ticker"
         }
     }
     

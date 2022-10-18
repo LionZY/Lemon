@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "GRDB",
+        "repositoryURL": "https://github.com/groue/GRDB.swift.git",
+        "state": {
+          "branch": "master",
+          "revision": "9e3eebf4c276efb8690bdeb13158bff321ae5fcf",
+          "version": null
+        }
+      },
+      {
         "package": "PopupView",
         "repositoryURL": "https://github.com/exyte/PopupView.git",
         "state": {

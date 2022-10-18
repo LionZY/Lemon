@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let userInfo = response.notification.request.content.userInfo
         if let trigger = response.notification.request.trigger, trigger.isKind(of: UNPushNotificationTrigger.self) {
             UMessage.didReceiveRemoteNotification(userInfo)
+            PushManager.didReceiveRemoteNotification(userInfo)
         }
     }
     

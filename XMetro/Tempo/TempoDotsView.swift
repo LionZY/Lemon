@@ -11,9 +11,11 @@ import ComposableArchitecture
 struct TempoDotsView: View {
     private let rows = 3
     private let columsPerRow = 4
-    @Binding var countDownIndex: Int
-    @Binding var runningIndex: Int
-    @Binding var total: Int
+    private let updateKey = "\(TempoDotsView.self)"
+    @Binding var manager: TempoRunManager
+    @State private var countDownIndex = -4
+    @State private var runningIndex = -1
+    @State private var total = TempoItem.meter
     var body: some View {
         VStack {
             ForEach(0..<rows, id: \.self) { row in
@@ -28,6 +30,16 @@ struct TempoDotsView: View {
                     }
                 }
             }
+        }
+        .onAppear {
+            manager.register(key: updateKey) {
+                countDownIndex = manager.countDownIndex
+                runningIndex = manager.runingIndex
+                total = manager.tempoItem.meter
+            }
+        }
+        .onDisappear {
+            manager.remove(key: updateKey)
         }
     }
 

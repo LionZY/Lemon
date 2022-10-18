@@ -14,6 +14,7 @@ struct XMetroApp: App {
     init() {
         UIApplication.shared.isIdleTimerDisabled = true
         Theme.barButtonItemColors()
+        CreateTables()
     }
 
     var body: some Scene {

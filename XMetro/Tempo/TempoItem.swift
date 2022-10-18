@@ -7,8 +7,14 @@
 
 import Foundation
 import SwiftUI
+import GRDB
 
-struct TempoItem: Equatable {
+enum TempoItemSource: Int {
+case temp
+case db
+}
+
+struct TempoItem: Identifiable, Equatable, Hashable, Codable, FetchableRecord, PersistableRecord {
     static func == (lhs: TempoItem, rhs: TempoItem) -> Bool {
         return lhs.id == rhs.id
         && lhs.meter == rhs.meter
@@ -18,7 +24,7 @@ struct TempoItem: Equatable {
         && lhs.soundEffect == rhs.soundEffect
     }
     
-    let id = "\(Date.now.timeIntervalSince1970)"
+    var id = "\(Date.now.timeIntervalSince1970)"
     
     var meter: Int {
         didSet { TempoItem.save(meter, forKey: TempoItem.KSaved_Meter) }
@@ -46,6 +52,14 @@ struct TempoItem: Equatable {
         self.bpm = TempoItem.bpm
         self.subDivision = TempoItem.subdivision
         self.soundEffect = TempoItem.soundEffect
+    }
+
+    init(meter: Int, devide: Int, bpm: Int, subDivision: String, soundEffect: String) {
+        self.meter = meter
+        self.devide = devide
+        self.bpm = bpm
+        self.subDivision = subDivision
+        self.soundEffect = soundEffect
     }
 }
 
@@ -85,5 +99,53 @@ extension TempoItem {
         let ud = UserDefaults.standard
         ud.set(value, forKey: forKey)
         ud.synchronize()
+    }
+}
+
+extension TempoItem {
+    static func createTable() {
+        var exists = true
+        let group = GCDGroup.create()
+        GCDGroup.enter(group)
+        try? dbQueue?.read({ db in
+            exists = try db.tableExists("TempoItem")
+            GCDGroup.leave(group)
+        })
+        
+        if !exists {
+            try? dbQueue?.write { db in
+                try db.create(table: "TempoItem") { t in
+                    t.column("id")
+                    t.column("meter", .integer).notNull()
+                    t.column("devide", .integer).notNull()
+                    t.column("bpm", .integer).notNull()
+                    t.column("subDivision", .text)
+                    t.column("soundEffect", .text)
+                }
+            }
+        }
+        
+        GCDGroup.notify(group)
+    }
+    
+    static func all() -> [TempoItem]? {
+        try? dbQueue?.read { db in
+            try TempoItem.fetchAll(db)
+        }
+    }
+    
+    func replace() {
+        try? dbQueue?.write { db in
+            if (try Row.fetchOne(db, sql: "SELECT id FROM TempoItem WHERE id = ?", arguments: [self.id])) != nil {
+                try self.delete(db)
+            }
+            try self.insert(db)
+        }
+    }
+    
+    func delete() {
+        try? dbQueue?.write { db in
+            try db.execute(sql: "DELETE FROM TempoItem WHERE id = ?", arguments: [self.id])
+        }
     }
 }

@@ -22,8 +22,6 @@ struct SettingsScreen: View {
         "Build: " + buildVersion + "\nVersion: " + appVersion
     }
     private var listData: [SettingListItem] = [
-        .metronome,
-        .tuner,
         .about,
     ]
     var body: some View {
@@ -39,7 +37,7 @@ struct SettingsScreen: View {
                 Spacer()
                 HStack {
                     Spacer().frame(width: 16.0)
-                    Button("Share XMetro with friends") {
+                    Button("Share Ticker with friends") {
                         isSharePresented = true
                     }
                     .frame(maxWidth: .infinity, maxHeight: 44.0)
@@ -49,7 +47,7 @@ struct SettingsScreen: View {
                     .sheet(isPresented: $isSharePresented, onDismiss: {
                         print("Dismiss")
                     }, content: {
-                        ActivityVC(activityItems: [shareURL])
+                        ActivityVC(activityItems: ["Ticker", shareURL])
                     })
                     Spacer().frame(width: 16.0)
                 }

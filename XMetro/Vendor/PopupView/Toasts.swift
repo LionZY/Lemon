@@ -133,5 +133,48 @@ struct Toasts_Previews: PreviewProvider {
     }
 }
 
+struct ToastTempoItemSaved: View {
+    var body: some View {
+        HStack(alignment: .top, spacing: 16.0) {
+            Image("checkmark")
+                .frame(width: 48, height: 48)
+                .cornerRadius(24)
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Tempo Saved!")
+                    .font(.system(size: 16, weight: .bold))
+                Text("You can retrive it back in: Library > Tempo Library.")
+                    .font(.system(size: 16, weight: .light))
+                    .opacity(0.8)
+            }
+            Spacer()
+        }
+        .foregroundColor(.black)
+        .padding(EdgeInsets(top: 60.0, leading: 16.0, bottom: 24.0, trailing: 16.0))
+        .frame(maxWidth: .infinity)
+        .background(Color.white)
+        .shadow(color: .black.opacity(0.1), radius: 40, x: 0, y: -4)
+    }
+}
 
-
+struct ToastTempoItemUsedInTempo: View {
+    var body: some View {
+        HStack(alignment: .top, spacing: 16.0) {
+            Image("checkmark")
+                .frame(width: 48, height: 48)
+                .cornerRadius(24)
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Tempo Loaded!")
+                    .font(.system(size: 16, weight: .bold))
+                Text("Tempo already load on Tempo Screen.")
+                    .font(.system(size: 16, weight: .light))
+                    .opacity(0.8)
+            }
+            Spacer()
+        }
+        .foregroundColor(.black)
+        .padding(EdgeInsets(top: 60.0, leading: 16.0, bottom: 24.0, trailing: 16.0))
+        .frame(maxWidth: .infinity)
+        .background(Color.white)
+        .shadow(color: .black.opacity(0.1), radius: 40, x: 0, y: -4)
+    }
+}

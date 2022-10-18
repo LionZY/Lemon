@@ -23,6 +23,13 @@
 		05520FC628F8EEF9001814B0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FBF28F8EEF9001814B0 /* Images.swift */; };
 		05520FC728F8EEF9001814B0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FC028F8EEF9001814B0 /* Utils.swift */; };
 		05520FC828F8EEF9001814B0 /* Popups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FC128F8EEF9001814B0 /* Popups.swift */; };
+		0557D8C328FCDCCA005A901A /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 0557D8C228FCDCCA005A901A /* GRDB */; };
+		0557D8C628FCDD0A005A901A /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8C528FCDD0A005A901A /* DB.swift */; };
+		0557D8CD28FD66FA005A901A /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8CB28FD66FA005A901A /* GCDGroup.m */; };
+		0557D8CF28FD6AFD005A901A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8CE28FD6AFD005A901A /* DateUtils.swift */; };
+		0557D8D228FDB4D6005A901A /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8D128FDB4D6005A901A /* PushManager.swift */; };
+		0557D8D428FE51FB005A901A /* TempoRunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8D328FE51FB005A901A /* TempoRunManager.swift */; };
+		0557D8D628FE7DF4005A901A /* TempoLibraryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8D528FE7DF4005A901A /* TempoLibraryRow.swift */; };
 		0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563BAA128794C3900E8FC7B /* PickerView.swift */; };
 		0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0578AD3B28897E1700AE5B04 /* ComposableArchitecture */; };
 		0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */; };
@@ -128,6 +135,13 @@
 		05520FBF28F8EEF9001814B0 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		05520FC028F8EEF9001814B0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		05520FC128F8EEF9001814B0 /* Popups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popups.swift; sourceTree = "<group>"; };
+		0557D8C528FCDD0A005A901A /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		0557D8CB28FD66FA005A901A /* GCDGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDGroup.m; sourceTree = "<group>"; };
+		0557D8CC28FD66FA005A901A /* GCDGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDGroup.h; sourceTree = "<group>"; };
+		0557D8CE28FD6AFD005A901A /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		0557D8D128FDB4D6005A901A /* PushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushManager.swift; sourceTree = "<group>"; };
+		0557D8D328FE51FB005A901A /* TempoRunManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoRunManager.swift; sourceTree = "<group>"; };
+		0557D8D528FE7DF4005A901A /* TempoLibraryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoLibraryRow.swift; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0578AD392889651E00AE5B04 /* XMetro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XMetro.entitlements; sourceTree = "<group>"; };
 		0579280528D978C800FE70E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -213,6 +227,7 @@
 				05AFFE6128F717C900474EBA /* CoreTelephony.framework in Frameworks */,
 				05AFFE5F28F717B200474EBA /* libz.tbd in Frameworks */,
 				05AFFE5D28F717A400474EBA /* libsqlite3.tbd in Frameworks */,
+				0557D8C328FCDCCA005A901A /* GRDB in Frameworks */,
 				05520FB928F863F6001814B0 /* PopupView in Frameworks */,
 				05AFFE5B28F7178900474EBA /* SystemConfiguration.framework in Frameworks */,
 				058C1C2E28F6B0230021C376 /* UserNotifications.framework in Frameworks */,
@@ -264,13 +279,31 @@
 			path = PopupView;
 			sourceTree = "<group>";
 		};
-		0563BAA028794C2C00E8FC7B /* Picker */ = {
+		0557D8C428FCDCFA005A901A /* DB */ = {
 			isa = PBXGroup;
 			children = (
-				0563BAA128794C3900E8FC7B /* PickerView.swift */,
+				0557D8C528FCDD0A005A901A /* DB.swift */,
 			);
-			path = Picker;
+			path = DB;
 			sourceTree = "<group>";
+		};
+		0557D8CA28FD66FA005A901A /* GCDGroup */ = {
+			isa = PBXGroup;
+			children = (
+				0557D8CB28FD66FA005A901A /* GCDGroup.m */,
+				0557D8CC28FD66FA005A901A /* GCDGroup.h */,
+			);
+			path = GCDGroup;
+			sourceTree = "<group>";
+		};
+		0557D8D028FDB4BF005A901A /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				0557D8D128FDB4D6005A901A /* PushManager.swift */,
+			);
+			name = Push;
+			path = XMetro/Push;
+			sourceTree = SOURCE_ROOT;
 		};
 		0584DA7B288AA37B008712DF /* Assets */ = {
 			isa = PBXGroup;
@@ -287,7 +320,7 @@
 		0585133B2887F4A700F7B3AF /* Tempo */ = {
 			isa = PBXGroup;
 			children = (
-				0563BAA028794C2C00E8FC7B /* Picker */,
+				0563BAA128794C3900E8FC7B /* PickerView.swift */,
 				052025AB287807350059654B /* TempoScreenAction.swift */,
 				053C560228DD771400390B5B /* TempoRunButton.swift */,
 				0585133C2887F4A700F7B3AF /* TempoScreen.swift */,
@@ -296,6 +329,7 @@
 				052D21F328FA6C9C00C3E09D /* TempoPrefix.swift */,
 				052D21FF28FAB29800C3E09D /* TestContentView.swift */,
 				052D220328FAB3D800C3E09D /* TempoDotsView.swift */,
+				0557D8D328FE51FB005A901A /* TempoRunManager.swift */,
 			);
 			path = Tempo;
 			sourceTree = "<group>";
@@ -430,6 +464,8 @@
 				05E284DF28F4FB6F00B7C8BD /* AppDelegate.swift */,
 				05D39C172876904300CCE136 /* Preview Content */,
 				0584DA7B288AA37B008712DF /* Assets */,
+				0557D8D028FDB4BF005A901A /* Push */,
+				0557D8C428FCDCFA005A901A /* DB */,
 				05B41AA12885389300151D70 /* Helpers */,
 				05E284DC28F4F8A200B7C8BD /* Theme */,
 				05E284B628F42A5C00B7C8BD /* Vendor */,
@@ -484,9 +520,11 @@
 			isa = PBXGroup;
 			children = (
 				052D21FD28FA9FDB00C3E09D /* XTimer.swift */,
+				0557D8CA28FD66FA005A901A /* GCDGroup */,
 				052D21F928FA9ED100C3E09D /* GCDTimer */,
 				05520FBA28F8EEF9001814B0 /* PopupView */,
 				05E284B728F42A5C00B7C8BD /* Umeng */,
+				0557D8CE28FD6AFD005A901A /* DateUtils.swift */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -518,6 +556,7 @@
 				05E284EB28F5755400B7C8BD /* ChordLibraryScreen.swift */,
 				05E284ED28F5757A00B7C8BD /* TempoLibraryScreen.swift */,
 				05E284EF28F5758B00B7C8BD /* SetlistLibraryScreen.swift */,
+				0557D8D528FE7DF4005A901A /* TempoLibraryRow.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -562,6 +601,7 @@
 				0578AD3B28897E1700AE5B04 /* ComposableArchitecture */,
 				059D997028DA9B0E00741591 /* ActivityIndicatorView */,
 				05520FB828F863F6001814B0 /* PopupView */,
+				0557D8C228FCDCCA005A901A /* GRDB */,
 			);
 			productName = WhenBored;
 			productReference = 05D39C0E2876904200CCE136 /* XMetro.app */;
@@ -639,6 +679,7 @@
 				0578AD3A28897E1700AE5B04 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				059D996F28DA9B0E00741591 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
 				05520FB728F863F6001814B0 /* XCRemoteSwiftPackageReference "PopupView" */,
+				0557D8C128FCDCC9005A901A /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
 			productRefGroup = 05D39C0F2876904200CCE136 /* Products */;
 			projectDirPath = "";
@@ -742,6 +783,7 @@
 				052D21FC28FA9ED100C3E09D /* TGCDTimer.m in Sources */,
 				05E284D928F479A100B7C8BD /* AboutScreen.swift in Sources */,
 				059D996C28DA03DD00741591 /* MainNoteView.swift in Sources */,
+				0557D8D428FE51FB005A901A /* TempoRunManager.swift in Sources */,
 				059D996A28DA03DD00741591 /* MicrophoneAccessAlert.swift in Sources */,
 				0585133D2887F4A700F7B3AF /* TempoScreen.swift in Sources */,
 				059D996128DA03DD00741591 /* ModifierPreference.swift in Sources */,
@@ -766,10 +808,13 @@
 				05E284D528F42AAD00B7C8BD /* LibraryScreen.swift in Sources */,
 				05B41AA5288538AC00151D70 /* Alignment.swift in Sources */,
 				05D39C142876904200CCE136 /* MainView.swift in Sources */,
+				0557D8D228FDB4D6005A901A /* PushManager.swift in Sources */,
 				05DD51CD28F7B256004BCA89 /* TempoPlayers.swift in Sources */,
 				052025AC287807350059654B /* TempoScreenAction.swift in Sources */,
 				05D39C672876F06200CCE136 /* TabAction.swift in Sources */,
+				0557D8CD28FD66FA005A901A /* GCDGroup.m in Sources */,
 				05E284F528F5993C00B7C8BD /* TunerSettingsListItem.swift in Sources */,
+				0557D8C628FCDD0A005A901A /* DB.swift in Sources */,
 				053C560528DD957500390B5B /* ActivityVC.swift in Sources */,
 				05520FC728F8EEF9001814B0 /* Utils.swift in Sources */,
 				058C1C3428F6B3B00021C376 /* UMOC.m in Sources */,
@@ -782,6 +827,8 @@
 				059D996D28DA03DD00741591 /* MatchedNoteFrequency.swift in Sources */,
 				05E284DE28F4F8AB00B7C8BD /* Theme.swift in Sources */,
 				05D39C682876F06200CCE136 /* TabView.swift in Sources */,
+				0557D8CF28FD6AFD005A901A /* DateUtils.swift in Sources */,
+				0557D8D628FE7DF4005A901A /* TempoLibraryRow.swift in Sources */,
 				053C560328DD771400390B5B /* TempoRunButton.swift in Sources */,
 				05520FC528F8EEF9001814B0 /* ActionSheets.swift in Sources */,
 				05E284E028F4FB6F00B7C8BD /* AppDelegate.swift in Sources */,
@@ -955,7 +1002,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202210101811;
+				CURRENT_PROJECT_VERSION = 202210172334;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D4PFYTTGXR;
@@ -966,13 +1013,14 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XMetro/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = XMetro;
+				INFOPLIST_KEY_CFBundleDisplayName = Ticker;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Board Metro will use microphone for tuner.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Tempomaster will use microphone for tuner.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -1007,7 +1055,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202210101811;
+				CURRENT_PROJECT_VERSION = 202210172334;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D4PFYTTGXR;
@@ -1018,13 +1066,14 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XMetro/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = XMetro;
+				INFOPLIST_KEY_CFBundleDisplayName = Ticker;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Board Metro will use microphone for tuner.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Tempomaster will use microphone for tuner.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -1174,6 +1223,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		0557D8C128FCDCC9005A901A /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		0578AD3A28897E1700AE5B04 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -1197,6 +1254,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 05520FB728F863F6001814B0 /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
+		};
+		0557D8C228FCDCCA005A901A /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0557D8C128FCDCC9005A901A /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
 		};
 		0578AD3B28897E1700AE5B04 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
