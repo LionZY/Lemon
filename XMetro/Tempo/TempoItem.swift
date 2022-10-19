@@ -130,7 +130,9 @@ extension TempoItem {
     
     static func all() -> [TempoItem]? {
         try? dbQueue?.read { db in
-            try TempoItem.fetchAll(db)
+            try TempoItem.fetchAll(db).sorted(by: { t1, t2 in
+                t1.id > t2.id
+            })
         }
     }
     

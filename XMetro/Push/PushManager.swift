@@ -9,7 +9,11 @@ import Foundation
 
 struct PushManager {
     static func didReceiveRemoteNotification(_ userInfo:  [AnyHashable : Any]) {
-        // TODO: 跳转到AppStore下载页
-        print(userInfo)
+        if let appId = userInfo["upgrade"] {
+            let urlStr = "https://apps.apple.com/app/\(appId)"
+            if let url = URL(string: urlStr) {
+                UIApplication.shared.open(url)
+            }
+        }
     }
 }

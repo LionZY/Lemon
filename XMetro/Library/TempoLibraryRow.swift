@@ -22,10 +22,7 @@ struct TempoLibraryRow: View {
                     Text("\(item.bpm)")
                 }
                 Spacer()
-                HStack {
-                    Text("Create at:")
-                    Text(StringFromTimeStamp(timeStamp: Double(item.id) ?? 0))
-                }
+                Text(StringFromTimeStamp(timeStamp: Double(item.id) ?? 0))
                 .font(Font.system(size: 12))
             }
             Spacer()

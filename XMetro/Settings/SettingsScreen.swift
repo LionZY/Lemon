@@ -23,6 +23,7 @@ struct SettingsScreen: View {
     }
     private var listData: [SettingListItem] = [
         .about,
+        .update
     ]
     var body: some View {
         ZStack {

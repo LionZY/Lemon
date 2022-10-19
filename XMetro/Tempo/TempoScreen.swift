@@ -18,7 +18,7 @@ struct TempoScreen: View {
     @State private var isSubdivisionPresented: Bool = false
     @State private var isSoundEffectPresented: Bool = false
     @State private var isSaveSucessPresented: Bool = false
-    private var updateKey = "\(TempoScreen.self)"
+    private var updateKey = "TempoScreen"
     
     var body: some View {
         VStack {
@@ -198,6 +198,7 @@ extension TempoScreen {
             "Import",
             destination: TempoLibraryScreen(shouldAutoDismiss: true) { newTempo in
                 manager.tempoItem = newTempo
+                manager.notifyListeners()
             }
         )
         .foregroundColor(Theme.mainColor)

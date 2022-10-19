@@ -13,6 +13,7 @@ struct TempoLibraryScreen: View {
     @State var datas = TempoItem.all() ?? []
     @State private var isLoadedPresented: Bool = false
     @State private var manager = TempoRunManager()
+    @State private var selectedItem: TempoItem?
     var shouldAutoDismiss: Bool = false
     var didSelectItem:((TempoItem) -> Void)?
     var body: some View {
@@ -34,11 +35,16 @@ struct TempoLibraryScreen: View {
     }
 
     @ViewBuilder func listView() -> some View {
-        List {
+        List(selection: $selectedItem) {
             ForEach(datas, id: \.self) { item in
                 TempoLibraryRow(manager: $manager, item: item)
             }
             .onDelete(perform: delete(at:))
+        }.onChange(of: selectedItem) { newValue in
+            guard let newItem = newValue else { return }
+            didSelectItem?(newItem)
+            guard shouldAutoDismiss else { return }
+            self.presentationMode.wrappedValue.dismiss()
         }
     }
     
