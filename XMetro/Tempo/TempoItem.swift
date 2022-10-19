@@ -25,25 +25,13 @@ struct TempoItem: Identifiable, Equatable, Hashable, Codable, FetchableRecord, P
     }
     
     var id = "\(Date.now.timeIntervalSince1970)"
-    
-    var meter: Int {
-        didSet { TempoItem.save(meter, forKey: TempoItem.KSaved_Meter) }
-    }
-    
-    var devide: Int {
-        didSet { TempoItem.save(devide, forKey: TempoItem.KSaved_Devide) }
-    }
-
-    var bpm: Int {
-        didSet { TempoItem.save(bpm, forKey: TempoItem.KSaved_BPM) }
-    }
-    
-    var subDivision: String {
-        didSet { TempoItem.save(subDivision, forKey: TempoItem.KSaved_Subdivision) }
-    }
-    
-    var soundEffect: String {
-        didSet { TempoItem.save(soundEffect, forKey: TempoItem.KSaved_Subdivision) }
+    var meter: Int
+    var devide: Int
+    var bpm: Int
+    var subDivision: String
+    var soundEffect: String
+    var soundEffectStong: String {
+        soundEffect.appending("_strong")
     }
     
     init() {
@@ -91,8 +79,12 @@ extension TempoItem {
     }
     
     static var soundEffect: String {
-        guard let soundEffect = UserDefaults.standard.string(forKey: KSaved_SoundEffect) else { return "" }
+        guard let soundEffect = UserDefaults.standard.string(forKey: KSaved_SoundEffect) else { return "Default" }
         return soundEffect
+    }
+    
+    static var soundEffectStrong: String {
+        soundEffect.appending("_strong")
     }
     
     static func save(_ value: Any, forKey: String) {
@@ -100,16 +92,36 @@ extension TempoItem {
         ud.set(value, forKey: forKey)
         ud.synchronize()
     }
+    
+    static func saveTimeSignature(_ value: String) {
+        let components = value.components(separatedBy: "/")
+        let newMeter = Int(components.first ?? "4") ?? 4
+        let newDevide = Int(components.last ?? "4") ?? 4
+        save(newMeter, forKey: KSaved_Meter)
+        save(newDevide, forKey: KSaved_Devide)
+    }
+    
+    static func saveBPM(_ value: Int) {
+        save(value, forKey: KSaved_BPM)
+    }
+    
+    static func saveSubdivision(_ value: String) {
+        save(value, forKey: KSaved_Subdivision)
+    }
+    
+    static func saveSoundEffect(_ value: String) {
+        save(value, forKey: KSaved_SoundEffect)
+    }
 }
 
 extension TempoItem {
     static func createTable() {
         var exists = true
-        let group = GCDGroup.create()
-        GCDGroup.enter(group)
+        let group = XGCDGroup.create()
+        XGCDGroup.enter(group)
         try? dbQueue?.read({ db in
             exists = try db.tableExists("TempoItem")
-            GCDGroup.leave(group)
+            XGCDGroup.leave(group)
         })
         
         if !exists {
@@ -125,7 +137,7 @@ extension TempoItem {
             }
         }
         
-        GCDGroup.notify(group)
+        XGCDGroup.notify(group)
     }
     
     static func all() -> [TempoItem]? {

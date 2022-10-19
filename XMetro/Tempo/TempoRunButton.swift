@@ -15,7 +15,7 @@ enum RunButtonStyle {
     func countDownFont() -> Font {
         switch self {
         case .normal: return Font.system(size: 32)
-        case .large: return Font.system(size: 68)
+        case .large: return Font.custom("Arial-BoldMT", size: 84)
         }
     }
     

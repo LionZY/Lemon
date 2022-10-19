@@ -58,11 +58,12 @@ protocol PopupBottomPickerDelegate {
 struct PopupBottomPicker: View {
     @Binding var isPresented: Bool
     @State var isTouchDownButton = false
+    
     var type: PickerContentType = .text
     var title: String
     var datas: [String]
     var defaultValue: String
-    var selectedValue: String
+    @State var selectedValue: String
     var didValueChange: ((String, Bool) -> Void)?
 
     var body: some View {
@@ -70,7 +71,10 @@ struct PopupBottomPicker: View {
             Text(title)
                 .foregroundColor(.black)
                 .font(.system(size: 24))
-            PickerView(datas: datas, selectedValue: defaultValue, didValueChanged: didValueChange)
+            PickerView(datas: datas, selectedValue: defaultValue) { newValue, complete in
+                selectedValue = newValue
+                didValueChange?(newValue, complete)
+            }
             HStack {
                 Button("Cancel") {
                     isTouchDownButton = true
@@ -80,7 +84,7 @@ struct PopupBottomPicker: View {
                 .buttonStyle(.plain)
                 .font(.system(size: 18))
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 18)
+                .padding(.vertical, 12.0)
                 .foregroundColor(.white)
                 .background(Theme.lightColor)
                 .cornerRadius(12)
@@ -92,7 +96,7 @@ struct PopupBottomPicker: View {
                 .buttonStyle(.plain)
                 .font(.system(size: 18))
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 18)
+                .padding(.vertical, 12.0)
                 .foregroundColor(.white)
                 .background(Theme.mainColor)
                 .cornerRadius(12)

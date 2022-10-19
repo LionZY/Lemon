@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GCDGroup : NSObject
+@interface XGCDGroup : NSObject
 + (dispatch_group_t)create;
 + (void)enter:(dispatch_group_t)group;
 + (void)leave:(dispatch_group_t)group;

@@ -9,9 +9,10 @@ import Foundation
 import AVFAudio
 
 var lightPlayer:AVAudioPlayer?
-func createLightPlayerIfNeeded() {
+func createLightPlayerIfNeeded(manager: TempoRunManager? = nil) {
     if lightPlayer == nil {
-        let path = Bundle.main.path(forResource: "dot", ofType: "m4a")!
+        let resource = manager?.tempoItem.soundEffect ?? TempoItem.soundEffect
+        guard let path = Bundle.main.path(forResource: resource, ofType: "m4a") else { return }
         let url = URL(fileURLWithPath: path)
         do {
             lightPlayer =  try AVAudioPlayer(contentsOf: url)
@@ -23,9 +24,10 @@ func createLightPlayerIfNeeded() {
 }
 
 var strongPlayer:AVAudioPlayer?
-func createStrongPlayerIfNeeded() {
+func createStrongPlayerIfNeeded(manager: TempoRunManager? = nil) {
     if strongPlayer == nil {
-        let path = Bundle.main.path(forResource: "dot_strong", ofType: "m4a")!
+        let resource = manager?.tempoItem.soundEffectStong ?? TempoItem.soundEffectStrong
+        guard let path = Bundle.main.path(forResource: resource, ofType: "m4a") else { return }
         let url = URL(fileURLWithPath: path)
         do {
             strongPlayer =  try AVAudioPlayer(contentsOf: url)
@@ -36,9 +38,9 @@ func createStrongPlayerIfNeeded() {
     }
 }
 
-func createPlayers() {
-    createLightPlayerIfNeeded()
-    createStrongPlayerIfNeeded()
+func createPlayers(manager: TempoRunManager? = nil) {
+    createLightPlayerIfNeeded(manager: manager)
+    createStrongPlayerIfNeeded(manager: manager)
 }
 
 func stopPlayers() {
@@ -51,4 +53,9 @@ func cleanPlayers() {
     strongPlayer = nil
     lightPlayer?.stop()
     lightPlayer = nil
+}
+
+func recreatePlayers(manager: TempoRunManager? = nil) {
+    cleanPlayers()
+    createPlayers(manager: manager)
 }

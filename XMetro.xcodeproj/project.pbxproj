@@ -25,18 +25,20 @@
 		05520FC828F8EEF9001814B0 /* Popups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FC128F8EEF9001814B0 /* Popups.swift */; };
 		0557D8C328FCDCCA005A901A /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 0557D8C228FCDCCA005A901A /* GRDB */; };
 		0557D8C628FCDD0A005A901A /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8C528FCDD0A005A901A /* DB.swift */; };
-		0557D8CD28FD66FA005A901A /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8CB28FD66FA005A901A /* GCDGroup.m */; };
+		0557D8CD28FD66FA005A901A /* XGCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8CB28FD66FA005A901A /* XGCDGroup.m */; };
 		0557D8CF28FD6AFD005A901A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8CE28FD6AFD005A901A /* DateUtils.swift */; };
 		0557D8D228FDB4D6005A901A /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8D128FDB4D6005A901A /* PushManager.swift */; };
 		0557D8D428FE51FB005A901A /* TempoRunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8D328FE51FB005A901A /* TempoRunManager.swift */; };
 		0557D8D628FE7DF4005A901A /* TempoLibraryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8D528FE7DF4005A901A /* TempoLibraryRow.swift */; };
+		0557D8DA28FFA935005A901A /* Default_strong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0557D8D828FFA934005A901A /* Default_strong.m4a */; };
+		0557D8DB28FFA935005A901A /* Default.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0557D8D928FFA934005A901A /* Default.m4a */; };
+		0557D8DE28FFB080005A901A /* Drum.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0557D8DC28FFB080005A901A /* Drum.m4a */; };
+		0557D8DF28FFB080005A901A /* Drum_strong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0557D8DD28FFB080005A901A /* Drum_strong.m4a */; };
 		0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563BAA128794C3900E8FC7B /* PickerView.swift */; };
 		0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0578AD3B28897E1700AE5B04 /* ComposableArchitecture */; };
 		0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */; };
 		0579280928D97C9400FE70E6 /* icon_show.png in Resources */ = {isa = PBXBuildFile; fileRef = 0579280828D97C9400FE70E6 /* icon_show.png */; };
-		0584DA7F288AA37B008712DF /* dot.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7C288AA37B008712DF /* dot.m4a */; };
 		0584DA80288AA37B008712DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7D288AA37B008712DF /* Assets.xcassets */; };
-		0584DA81288AA37B008712DF /* dot_strong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7E288AA37B008712DF /* dot_strong.m4a */; };
 		0585133D2887F4A700F7B3AF /* TempoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133C2887F4A700F7B3AF /* TempoScreen.swift */; };
 		058513402887F4D300F7B3AF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133F2887F4D300F7B3AF /* SettingsScreen.swift */; };
 		058513462887F60900F7B3AF /* MicrophonePitchDetector in Frameworks */ = {isa = PBXBuildFile; productRef = 058513452887F60900F7B3AF /* MicrophonePitchDetector */; };
@@ -119,7 +121,6 @@
 
 /* Begin PBXFileReference section */
 		052025AB287807350059654B /* TempoScreenAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoScreenAction.swift; sourceTree = "<group>"; };
-		052D21F028F973F500C3E09D /* MicrophonePitchDetector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicrophonePitchDetector; path = XMetro/Packages/MicrophonePitchDetector; sourceTree = "<group>"; };
 		052D21F328FA6C9C00C3E09D /* TempoPrefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoPrefix.swift; sourceTree = "<group>"; };
 		052D21FA28FA9ED100C3E09D /* TGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCDTimer.h; sourceTree = "<group>"; };
 		052D21FB28FA9ED100C3E09D /* TGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCDTimer.m; sourceTree = "<group>"; };
@@ -136,20 +137,23 @@
 		05520FC028F8EEF9001814B0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		05520FC128F8EEF9001814B0 /* Popups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popups.swift; sourceTree = "<group>"; };
 		0557D8C528FCDD0A005A901A /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
-		0557D8CB28FD66FA005A901A /* GCDGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDGroup.m; sourceTree = "<group>"; };
-		0557D8CC28FD66FA005A901A /* GCDGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDGroup.h; sourceTree = "<group>"; };
+		0557D8CB28FD66FA005A901A /* XGCDGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGCDGroup.m; sourceTree = "<group>"; };
+		0557D8CC28FD66FA005A901A /* XGCDGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGCDGroup.h; sourceTree = "<group>"; };
 		0557D8CE28FD6AFD005A901A /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		0557D8D128FDB4D6005A901A /* PushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushManager.swift; sourceTree = "<group>"; };
 		0557D8D328FE51FB005A901A /* TempoRunManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoRunManager.swift; sourceTree = "<group>"; };
 		0557D8D528FE7DF4005A901A /* TempoLibraryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoLibraryRow.swift; sourceTree = "<group>"; };
+		0557D8D828FFA934005A901A /* Default_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Default_strong.m4a; sourceTree = "<group>"; };
+		0557D8D928FFA934005A901A /* Default.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Default.m4a; sourceTree = "<group>"; };
+		0557D8DC28FFB080005A901A /* Drum.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drum.m4a; sourceTree = "<group>"; };
+		0557D8DD28FFB080005A901A /* Drum_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drum_strong.m4a; sourceTree = "<group>"; };
+		0557D8E12900035B005A901A /* MicrophonePitchDetector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicrophonePitchDetector; path = XMetro/Packages/MicrophonePitchDetector; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0578AD392889651E00AE5B04 /* XMetro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XMetro.entitlements; sourceTree = "<group>"; };
 		0579280528D978C800FE70E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0579280828D97C9400FE70E6 /* icon_show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_show.png; sourceTree = "<group>"; };
-		0584DA7C288AA37B008712DF /* dot.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot.m4a; sourceTree = "<group>"; };
 		0584DA7D288AA37B008712DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0584DA7E288AA37B008712DF /* dot_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dot_strong.m4a; sourceTree = "<group>"; };
 		0585133C2887F4A700F7B3AF /* TempoScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempoScreen.swift; sourceTree = "<group>"; };
 		0585133F2887F4D300F7B3AF /* SettingsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		058513472887FAEF00F7B3AF /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
@@ -290,8 +294,8 @@
 		0557D8CA28FD66FA005A901A /* GCDGroup */ = {
 			isa = PBXGroup;
 			children = (
-				0557D8CB28FD66FA005A901A /* GCDGroup.m */,
-				0557D8CC28FD66FA005A901A /* GCDGroup.h */,
+				0557D8CB28FD66FA005A901A /* XGCDGroup.m */,
+				0557D8CC28FD66FA005A901A /* XGCDGroup.h */,
 			);
 			path = GCDGroup;
 			sourceTree = "<group>";
@@ -305,14 +309,24 @@
 			path = XMetro/Push;
 			sourceTree = SOURCE_ROOT;
 		};
+		0557D8D728FFA934005A901A /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				0557D8DC28FFB080005A901A /* Drum.m4a */,
+				0557D8DD28FFB080005A901A /* Drum_strong.m4a */,
+				0557D8D828FFA934005A901A /* Default_strong.m4a */,
+				0557D8D928FFA934005A901A /* Default.m4a */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		0584DA7B288AA37B008712DF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0557D8D728FFA934005A901A /* Audio */,
 				05E284E928F5678800B7C8BD /* launch_bg.jpg */,
 				0579280828D97C9400FE70E6 /* icon_show.png */,
-				0584DA7C288AA37B008712DF /* dot.m4a */,
 				0584DA7D288AA37B008712DF /* Assets.xcassets */,
-				0584DA7E288AA37B008712DF /* dot_strong.m4a */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -424,7 +438,7 @@
 		05B41AB22885399300151D70 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				052D21F028F973F500C3E09D /* MicrophonePitchDetector */,
+				0557D8E12900035B005A901A /* MicrophonePitchDetector */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -697,13 +711,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0584DA7F288AA37B008712DF /* dot.m4a in Resources */,
-				0584DA81288AA37B008712DF /* dot_strong.m4a in Resources */,
+				0557D8DE28FFB080005A901A /* Drum.m4a in Resources */,
 				0584DA80288AA37B008712DF /* Assets.xcassets in Resources */,
+				0557D8DA28FFA935005A901A /* Default_strong.m4a in Resources */,
 				0579280928D97C9400FE70E6 /* icon_show.png in Resources */,
 				05E284EA28F5678800B7C8BD /* launch_bg.jpg in Resources */,
 				0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */,
+				0557D8DB28FFA935005A901A /* Default.m4a in Resources */,
 				05D39C192876904300CCE136 /* Preview Assets.xcassets in Resources */,
+				0557D8DF28FFB080005A901A /* Drum_strong.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,7 +828,7 @@
 				05DD51CD28F7B256004BCA89 /* TempoPlayers.swift in Sources */,
 				052025AC287807350059654B /* TempoScreenAction.swift in Sources */,
 				05D39C672876F06200CCE136 /* TabAction.swift in Sources */,
-				0557D8CD28FD66FA005A901A /* GCDGroup.m in Sources */,
+				0557D8CD28FD66FA005A901A /* XGCDGroup.m in Sources */,
 				05E284F528F5993C00B7C8BD /* TunerSettingsListItem.swift in Sources */,
 				0557D8C628FCDD0A005A901A /* DB.swift in Sources */,
 				053C560528DD957500390B5B /* ActivityVC.swift in Sources */,

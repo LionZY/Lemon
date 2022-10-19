@@ -5,9 +5,9 @@
 //  Created by Yue Zhang on 2022/10/17.
 //
 
-#import "GCDGroup.h"
+#import "XGCDGroup.h"
 
-@implementation GCDGroup
+@implementation XGCDGroup
 + (dispatch_group_t)create {
     return dispatch_group_create();
 }

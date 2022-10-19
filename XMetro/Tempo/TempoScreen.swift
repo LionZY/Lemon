@@ -13,6 +13,8 @@ struct TempoScreen: View {
     @State private var manager: TempoRunManager = .init()
     @State private var timeSignature: String = "\(TempoItem.meter)/\(TempoItem.devide)"
     @State private var bpm: String = "\(TempoItem.bpm)"
+    @State private var subdivision: String = "\(TempoItem.subdivision)"
+    @State private var soundEffect: String = "\(TempoItem.soundEffect)"
     @State private var isTimeSignaturePresented: Bool = false
     @State private var isBPMPresented: Bool = false
     @State private var isSubdivisionPresented: Bool = false
@@ -32,6 +34,8 @@ struct TempoScreen: View {
                     Spacer()
                     meterButton()
                     bpmButton()
+                    subDivisionButton()
+                    soundButton()
                     Spacer()
                 }
             }
@@ -52,6 +56,8 @@ struct TempoScreen: View {
             manager.register(key: updateKey) {
                 timeSignature = "\(TempoItem.meter)/\(TempoItem.devide)"
                 bpm = "\(TempoItem.bpm)"
+                subdivision = TempoItem.subdivision
+                soundEffect = TempoItem.soundEffect
             }
         }
         .onDisappear {
@@ -79,8 +85,11 @@ extension View {
         self.popup(isPresented: isTimeSignaturePresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 let components = newValue.components(separatedBy: "/")
-                manager.tempoItem.meter = Int(components.first ?? "4") ?? 4
-                manager.tempoItem.devide = Int(components.last ?? "4") ?? 4
+                let newMeter = Int(components.first ?? "4") ?? 4
+                let newDevide = Int(components.last ?? "4") ?? 4
+                manager.tempoItem.meter = newMeter
+                manager.tempoItem.devide = newDevide
+                if complete { TempoItem.saveTimeSignature(newValue) }
                 manager.notifyListeners()
             }
             PopupBottomPicker(
@@ -94,7 +103,9 @@ extension View {
         }
         .popup(isPresented: isBPMPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
             let action: ((String, Bool) -> Void) = { newValue, complete in
-                manager.tempoItem.bpm = Int(newValue) ?? 60
+                let newBPM = Int(newValue) ?? 60
+                manager.tempoItem.bpm = newBPM
+                if complete { TempoItem.saveBPM(newBPM) }
                 manager.notifyListeners()
                 if manager.isCountDownStoped { manager.run() }
             }
@@ -108,28 +119,31 @@ extension View {
             )
         }
         .popup(isPresented: isSubdivisionPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
-            let datas = ["♩", "♪", "♫", "♬", "♭", "♮", "♯", "𝄡"]
             let action: ((String, Bool) -> Void) = { newValue, complete in
-                
+                manager.tempoItem.subDivision = newValue
+                if complete { TempoItem.saveSubdivision(newValue) }
+                manager.notifyListeners()
             }
             PopupBottomPicker(
                 isPresented: isSubdivisionPresented,
                 title: "Subdivision",
-                datas: datas,
+                datas: subdivisionSet,
                 defaultValue: TempoItem.subdivision,
                 selectedValue: manager.tempoItem.subDivision,
                 didValueChange: action
             )
         }
         .popup(isPresented: isSoundEffectPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
-            let datas = ["Sound 1", "Sound 2", "Sound 3", "Sound 4"]
             let action: ((String, Bool) -> Void) = { newValue, complete in
-                
+                manager.tempoItem.soundEffect = newValue
+                recreatePlayers(manager: manager)
+                if complete { TempoItem.saveSoundEffect(newValue) }
+                manager.notifyListeners()
             }
             PopupBottomPicker(
                 isPresented: isSoundEffectPresented,
                 title: "Sound Effect",
-                datas: datas,
+                datas: soundSet,
                 defaultValue: TempoItem.soundEffect,
                 selectedValue: manager.tempoItem.soundEffect,
                 didValueChange: action
@@ -176,7 +190,7 @@ extension TempoScreen {
     }
     
     @ViewBuilder private func subDivisionButton() -> some View {
-        Button("\(manager.tempoItem.subDivision)") {
+        Button(subdivision) {
             isSubdivisionPresented = true
         }
         .tint(Theme.mainColor)
@@ -185,7 +199,7 @@ extension TempoScreen {
     }
     
     @ViewBuilder private func soundButton() -> some View {
-        Button("Sound") {
+        Button(soundEffect) {
             isSoundEffectPresented = true
         }
         .tint(Theme.mainColor)
