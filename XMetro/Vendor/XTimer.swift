@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class XTimer{
+class XTimer {
     private var timer: TGCDTimer?
     static let shared = XTimer()
     var timerEvery: Double = 1.0

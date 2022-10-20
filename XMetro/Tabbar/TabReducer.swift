@@ -10,7 +10,7 @@ import ComposableArchitecture
 let tabReducer = Reducer<TabState, TabAction, TabEnv> { state, action, env in
     switch action {
     case .select(let type):
-        state.current = type
+        if state.current != type { state.current = type }
         break
     }
     return .none

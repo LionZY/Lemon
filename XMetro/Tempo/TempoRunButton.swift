@@ -40,11 +40,23 @@ struct TempoRunButton: View {
     @State private var isCountingDown: Bool = false
     private let startIcon: String = "play.fill"
     private let stopIcon: String = "stop.fill"
-    private var icon: String { isRunning ? stopIcon : isStoped ? startIcon : "" }
+    private var icon: String {
+        if isRunning { return stopIcon }
+        if isStoped { return startIcon }
+        return ""
+    }
     private var isStoped: Bool { countDownIndex == -4 }
     private var isRunning: Bool { countDownIndex == 0 }
-    private var title: String { isRunning ? "" : isStoped ? "" : "\(abs(countDownIndex))" }
-    private var color: Color { isRunning ? Theme.lightColor : isStoped ? Theme.mainColor : Theme.middleLightColor }
+    private var title: String {
+        if isRunning || isStoped || !manager.isCountDownEnable { return "" }
+        return "\(abs(countDownIndex))"
+    }
+    private var color: Color {
+        if isRunning { return Theme.lightColor }
+        if isStoped { return Theme.mainColor }
+        if manager.isCountDownEnable { return Theme.middleLightColor }
+        return Theme.mainColor
+    }
 
     var body: some View {
         ZStack {

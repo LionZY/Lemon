@@ -7,29 +7,41 @@
 
 import SwiftUI
 
-enum MetronomeSettingsListItem: Hashable {
-    case default_meter
-    case default_bpm
+enum MetronomeSettingsListItem: String, Hashable {
+    
+    case autoSaveTimeSignature
+    case autoSaveBPM
+    case countDownEnable
     
     func icon() -> String {
         switch self {
-        case .default_meter: return "dot.squareshape"
-        case .default_bpm: return "note"
+        case .autoSaveTimeSignature: return "dot.squareshape"
+        case .autoSaveBPM: return "note"
+        case .countDownEnable: return "timer"
         }
     }
     
     func title() -> String {
         switch self {
-        case .default_meter: return "Auto save time signature"
-        case .default_bpm: return "Auto save bpm"
+        case .autoSaveTimeSignature: return "Auto save time signature"
+        case .autoSaveBPM: return "Auto save bpm"
+        case .countDownEnable: return "Countdown enable"
         }
     }
-        
-    func itemView() -> some View {
-        HStack{
-            Image(systemName: icon())
-            Text(title())
-        }
+    
+    func value() -> Bool {
+        let ud = UserDefaults.standard
+        return ud.bool(forKey: self.rawValue)
+    }
+    
+    func save(newValue: Bool) {
+        let ud = UserDefaults.standard
+        ud.set(newValue, forKey: self.rawValue)
+        ud.synchronize()
+    }
+    
+    static func countDownEnable() -> Bool {
+        MetronomeSettingsListItem.countDownEnable.value()
     }
 }
 

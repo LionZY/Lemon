@@ -8,16 +8,27 @@
 import SwiftUI
 
 struct MetronomeSettingsScreen: View {
+    @State var isCountDownEnable: Bool = MetronomeSettingsListItem.countDownEnable()
     private let listData: [MetronomeSettingsListItem] = [
-        .default_meter,
-        .default_bpm
+        //.autoSaveTimeSignature,
+        //.autoSaveBPM
+        .countDownEnable
     ]
+
     var body: some View {
         VStack {
             List {
                 Section {
                     ForEach(listData, id: \.self) { item in
-                        item.itemView()
+                        HStack{
+                            Image(systemName: item.icon())
+                            Text(item.title())
+                            Spacer()
+                            Toggle("", isOn: $isCountDownEnable)
+                        }
+                        .onChange(of: isCountDownEnable) { newValue in
+                            item.save(newValue: newValue)
+                        }
                     }
                 }
             }

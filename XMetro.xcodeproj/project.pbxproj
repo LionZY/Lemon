@@ -34,10 +34,11 @@
 		0557D8DB28FFA935005A901A /* Default.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0557D8D928FFA934005A901A /* Default.m4a */; };
 		0557D8DE28FFB080005A901A /* Drum.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0557D8DC28FFB080005A901A /* Drum.m4a */; };
 		0557D8DF28FFB080005A901A /* Drum_strong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0557D8DD28FFB080005A901A /* Drum_strong.m4a */; };
+		0557D8E3290113DB005A901A /* launch_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0557D8E2290113DB005A901A /* launch_icon.png */; };
+		0557D8E5290123BB005A901A /* View+Appear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8E4290123BB005A901A /* View+Appear.swift */; };
 		0563BAA228794C3900E8FC7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563BAA128794C3900E8FC7B /* PickerView.swift */; };
 		0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 0578AD3B28897E1700AE5B04 /* ComposableArchitecture */; };
 		0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */; };
-		0579280928D97C9400FE70E6 /* icon_show.png in Resources */ = {isa = PBXBuildFile; fileRef = 0579280828D97C9400FE70E6 /* icon_show.png */; };
 		0584DA80288AA37B008712DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7D288AA37B008712DF /* Assets.xcassets */; };
 		0585133D2887F4A700F7B3AF /* TempoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133C2887F4A700F7B3AF /* TempoScreen.swift */; };
 		058513402887F4D300F7B3AF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133F2887F4D300F7B3AF /* SettingsScreen.swift */; };
@@ -148,11 +149,12 @@
 		0557D8DC28FFB080005A901A /* Drum.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drum.m4a; sourceTree = "<group>"; };
 		0557D8DD28FFB080005A901A /* Drum_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drum_strong.m4a; sourceTree = "<group>"; };
 		0557D8E12900035B005A901A /* MicrophonePitchDetector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicrophonePitchDetector; path = XMetro/Packages/MicrophonePitchDetector; sourceTree = "<group>"; };
+		0557D8E2290113DB005A901A /* launch_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_icon.png; sourceTree = "<group>"; };
+		0557D8E4290123BB005A901A /* View+Appear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Appear.swift"; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		0578AD392889651E00AE5B04 /* XMetro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XMetro.entitlements; sourceTree = "<group>"; };
 		0579280528D978C800FE70E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0579280628D97C2B00FE70E6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		0579280828D97C9400FE70E6 /* icon_show.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_show.png; sourceTree = "<group>"; };
 		0584DA7D288AA37B008712DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0585133C2887F4A700F7B3AF /* TempoScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempoScreen.swift; sourceTree = "<group>"; };
 		0585133F2887F4D300F7B3AF /* SettingsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
@@ -325,7 +327,7 @@
 			children = (
 				0557D8D728FFA934005A901A /* Audio */,
 				05E284E928F5678800B7C8BD /* launch_bg.jpg */,
-				0579280828D97C9400FE70E6 /* icon_show.png */,
+				0557D8E2290113DB005A901A /* launch_icon.png */,
 				0584DA7D288AA37B008712DF /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -534,11 +536,12 @@
 			isa = PBXGroup;
 			children = (
 				052D21FD28FA9FDB00C3E09D /* XTimer.swift */,
+				0557D8CE28FD6AFD005A901A /* DateUtils.swift */,
+				0557D8E4290123BB005A901A /* View+Appear.swift */,
 				0557D8CA28FD66FA005A901A /* GCDGroup */,
 				052D21F928FA9ED100C3E09D /* GCDTimer */,
 				05520FBA28F8EEF9001814B0 /* PopupView */,
 				05E284B728F42A5C00B7C8BD /* Umeng */,
-				0557D8CE28FD6AFD005A901A /* DateUtils.swift */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -714,12 +717,12 @@
 				0557D8DE28FFB080005A901A /* Drum.m4a in Resources */,
 				0584DA80288AA37B008712DF /* Assets.xcassets in Resources */,
 				0557D8DA28FFA935005A901A /* Default_strong.m4a in Resources */,
-				0579280928D97C9400FE70E6 /* icon_show.png in Resources */,
 				05E284EA28F5678800B7C8BD /* launch_bg.jpg in Resources */,
 				0579280728D97C2B00FE70E6 /* Launch Screen.storyboard in Resources */,
 				0557D8DB28FFA935005A901A /* Default.m4a in Resources */,
 				05D39C192876904300CCE136 /* Preview Assets.xcassets in Resources */,
 				0557D8DF28FFB080005A901A /* Drum_strong.m4a in Resources */,
+				0557D8E3290113DB005A901A /* launch_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,6 +851,7 @@
 				053C560328DD771400390B5B /* TempoRunButton.swift in Sources */,
 				05520FC528F8EEF9001814B0 /* ActionSheets.swift in Sources */,
 				05E284E028F4FB6F00B7C8BD /* AppDelegate.swift in Sources */,
+				0557D8E5290123BB005A901A /* View+Appear.swift in Sources */,
 				05E284CD28F42A5C00B7C8BD /* UMCommonLogSwift.swift in Sources */,
 				059D996928DA03DD00741591 /* NoteTicks.swift in Sources */,
 				05B41AA6288538AC00151D70 /* ColorAnimation.swift in Sources */,
@@ -1018,7 +1022,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202210182236;
+				CURRENT_PROJECT_VERSION = 202210201458;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D4PFYTTGXR;
@@ -1045,7 +1049,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1071,7 +1075,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202210182236;
+				CURRENT_PROJECT_VERSION = 202210201458;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D4PFYTTGXR;
@@ -1098,7 +1102,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";

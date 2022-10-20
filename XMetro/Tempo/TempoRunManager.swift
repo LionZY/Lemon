@@ -28,11 +28,12 @@ class TempoRunManager {
     var action: TempoScreenAction { isReadyCountDown ? .run : .stop }
     var timerEvery: CGFloat { countDownIndex == -4 ? 1.0 : (60.0 / CGFloat(tempoItem.bpm)) }
     var shouldPlayStrong: Bool { runingIndex == 0 }
+    var isCountDownEnable: Bool { MetronomeSettingsListItem.countDownEnable() }
     
     // Actions
     func coundDown() {
         if isReadyCountDown {
-            XTimer.shared.createNewTimer(timerEvery: timerEvery) {
+            XTimer.shared.createNewTimer(timerEvery: isCountDownEnable ? timerEvery : 0) {
                 self.countDownHandler()
             }
         }
@@ -40,18 +41,17 @@ class TempoRunManager {
     
     func stop() {
         XTimer.shared.cancelTimer()
-        stopPlayers()
+        PlayerManager.stopPlayers()
         countDownIndex = -4
         runingIndex = -1
         notifyListeners()
     }
     
     func run() {
-        notifyListeners()
         XTimer.shared.cancelTimer()
-        createPlayers()
-        strongPlayer?.play()
+        PlayerManager.CreateAndPlayStrong()
         runingIndex = (runingIndex + 1) % tempoItem.meter
+        notifyListeners()
         XTimer.shared.createNewTimer(timerEvery: timerEvery) {
             self.runHandler()
         }
@@ -65,7 +65,7 @@ class TempoRunManager {
     
     func runHandler() {
         runingIndex = (runingIndex + 1) % tempoItem.meter
-        (shouldPlayStrong ? strongPlayer : lightPlayer)?.play()
+        PlayerManager.Play(strong: shouldPlayStrong)
         notifyListeners()
     }
     

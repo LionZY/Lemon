@@ -11,7 +11,7 @@ import SwiftUI
 struct TunerView: View {
     let tunerData: TunerData
     @State private var selected: IndexPath?
-    @State private var auto = true
+    @State private var autoTuning = TunerSettingsListItem.autoTuner()
     @State var modifierPreference: ModifierPreference
     @State var selectedTransposition: Int
     @State var selectedValue: String = "Guitar"
@@ -63,7 +63,7 @@ struct TunerView: View {
                             let title = md + octaves[m][n]
                             let indexPath = IndexPath(item: n, section: m)
                             Button(title) {
-                                auto = false
+                                autoTuning = false
                                 selected = indexPath
                             }
                             .frame(maxWidth: 60, maxHeight: 60)
@@ -92,10 +92,10 @@ struct TunerView: View {
                     selected = nil
                 }
             },
-            trailing: Toggle("Auto", isOn: $auto)
+            trailing: Toggle("Auto", isOn: $autoTuning)
                 .toggleStyle(SwitchToggleStyle(tint: Theme.lightColor))
                 .frame(maxWidth: 98.0)
-                .onChange(of: auto) { isAuto in
+                .onChange(of: autoTuning) { isAuto in
                     if isAuto { selected = nil }
                 }
         )
@@ -105,7 +105,7 @@ struct TunerView: View {
     
     func checkPerceptible(first: String, last: String, indexPath: IndexPath) -> Color {
         let isSelected = indexPath.section == selected?.section && indexPath.item == selected?.item
-        if auto && note == first && last == octave {
+        if autoTuning && note == first && last == octave {
             return isPerceptible ? Theme.mainColor : Theme.specialLightColor
         } else if isSelected {
             if isPerceptible {

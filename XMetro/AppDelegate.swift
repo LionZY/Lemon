@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import MediaPlayer
+import SwiftUI
 
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     var window: UIWindow?
@@ -29,5 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print(error.localizedDescription)
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        AudioManager.endRemoteControlEvent()
     }
 }

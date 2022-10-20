@@ -21,8 +21,8 @@ public final class MicrophonePitchDetector: ObservableObject {
         do {
             try engine.start()
             tracker.start()
-        } catch {
-            // TODO: Handle error
+        } catch(let err){
+            print(err.localizedDescription)
         }
     }
 
@@ -30,8 +30,8 @@ public final class MicrophonePitchDetector: ObservableObject {
         guard hasMicrophoneAccess else { return }
         do {
             try engine.stop()
-        } catch {
-            // TODO: Handle error
+        } catch(let err) {
+            print(err.localizedDescription)
         }
     }
 

@@ -22,6 +22,8 @@ struct SettingsScreen: View {
         "Build: " + buildVersion + "\nVersion: " + appVersion
     }
     private var listData: [SettingListItem] = [
+        .metronome,
+        .tuner,
         .about,
         .update
     ]

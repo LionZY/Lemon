@@ -34,7 +34,6 @@ struct TempoScreen: View {
                     Spacer()
                     meterButton()
                     bpmButton()
-                    subDivisionButton()
                     soundButton()
                     Spacer()
                 }
@@ -52,6 +51,13 @@ struct TempoScreen: View {
             $isSoundEffectPresented,
             $isSaveSucessPresented
         )
+        .onWillAppear {
+            AudioManager.beginRemoteControlEvent()
+        }
+        .onWillDisappear {
+            AudioManager.endRemoteControlEvent()
+            manager.stop()
+        }
         .onAppear {
             manager.register(key: updateKey) {
                 timeSignature = "\(TempoItem.meter)/\(TempoItem.devide)"
@@ -61,7 +67,6 @@ struct TempoScreen: View {
             }
         }
         .onDisappear {
-            manager.stop()
             manager.remove(key: updateKey)
         }
     }
@@ -136,7 +141,7 @@ extension View {
         .popup(isPresented: isSoundEffectPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 manager.tempoItem.soundEffect = newValue
-                recreatePlayers(manager: manager)
+                PlayerManager.recreatePlayers(manager: manager)
                 if complete { TempoItem.saveSoundEffect(newValue) }
                 manager.notifyListeners()
             }
