@@ -33,7 +33,7 @@ enum RunButtonStyle {
 
 struct TempoRunButton: View {
     @Binding var manager: TempoRunManager
-    var tempo: TempoItem
+    var tempo: TempoModel
     var style: RunButtonStyle = .normal
     
     @State private var countDownIndex: Int = -4
@@ -72,12 +72,12 @@ struct TempoRunButton: View {
     }
     
     private func updateKey() -> String {
-        "\(tempo.id)"
+        "\(tempo.uid)"
     }
     
     func register() {
         manager.register(key: updateKey()) {
-            if manager.tempoItem.id == tempo.id {
+            if manager.tempoItem.uid == tempo.uid {
                 countDownIndex = manager.countDownIndex
                 isCountingDown = manager.isCountDown
             }

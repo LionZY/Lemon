@@ -15,7 +15,7 @@ struct TempoDotsView: View {
     @Binding var manager: TempoRunManager
     @State private var countDownIndex = -4
     @State private var runningIndex = -1
-    @State private var total = TempoItem.meter
+    @State private var total = TempoModel.meter
     var body: some View {
         VStack {
             ForEach(0..<rows, id: \.self) { row in

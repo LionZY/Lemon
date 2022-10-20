@@ -10,7 +10,7 @@ import SwiftUI
 class TempoRunManager {
     
     // Data Model
-    var tempoItem: TempoItem = .init()
+    var tempoItem: TempoModel = .init()
     
     // Timer
     private var timer: TGCDTimer?
@@ -33,6 +33,7 @@ class TempoRunManager {
     // Actions
     func coundDown() {
         if isReadyCountDown {
+            AudioManager.beginRemoteControlEvent()
             XTimer.shared.createNewTimer(timerEvery: isCountDownEnable ? timerEvery : 0) {
                 self.countDownHandler()
             }

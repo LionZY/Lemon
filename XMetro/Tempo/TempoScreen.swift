@@ -11,10 +11,10 @@ import PopupView
 
 struct TempoScreen: View {
     @State private var manager: TempoRunManager = .init()
-    @State private var timeSignature: String = "\(TempoItem.meter)/\(TempoItem.devide)"
-    @State private var bpm: String = "\(TempoItem.bpm)"
-    @State private var subdivision: String = "\(TempoItem.subdivision)"
-    @State private var soundEffect: String = "\(TempoItem.soundEffect)"
+    @State private var timeSignature: String = "\(TempoModel.meter)/\(TempoModel.devide)"
+    @State private var bpm: String = "\(TempoModel.bpm)"
+    @State private var subdivision: String = "\(TempoModel.subdivision)"
+    @State private var soundEffect: String = "\(TempoModel.soundEffect)"
     @State private var isTimeSignaturePresented: Bool = false
     @State private var isBPMPresented: Bool = false
     @State private var isSubdivisionPresented: Bool = false
@@ -51,19 +51,15 @@ struct TempoScreen: View {
             $isSoundEffectPresented,
             $isSaveSucessPresented
         )
-        .onWillAppear {
-            AudioManager.beginRemoteControlEvent()
-        }
         .onWillDisappear {
-            AudioManager.endRemoteControlEvent()
             manager.stop()
         }
         .onAppear {
             manager.register(key: updateKey) {
-                timeSignature = "\(TempoItem.meter)/\(TempoItem.devide)"
-                bpm = "\(TempoItem.bpm)"
-                subdivision = TempoItem.subdivision
-                soundEffect = TempoItem.soundEffect
+                timeSignature = "\(TempoModel.meter)/\(TempoModel.devide)"
+                bpm = "\(TempoModel.bpm)"
+                subdivision = TempoModel.subdivision
+                soundEffect = TempoModel.soundEffect
             }
         }
         .onDisappear {
@@ -94,14 +90,14 @@ extension View {
                 let newDevide = Int(components.last ?? "4") ?? 4
                 manager.tempoItem.meter = newMeter
                 manager.tempoItem.devide = newDevide
-                if complete { TempoItem.saveTimeSignature(newValue) }
+                if complete { TempoModel.saveTimeSignature(newValue) }
                 manager.notifyListeners()
             }
             PopupBottomPicker(
                 isPresented: isTimeSignaturePresented,
                 title: "Time Signature",
                 datas: meterSet,
-                defaultValue: "\(TempoItem.meter)/\(TempoItem.devide)",
+                defaultValue: "\(TempoModel.meter)/\(TempoModel.devide)",
                 selectedValue: "\(manager.tempoItem.meter)/\(manager.tempoItem.devide)",
                 didValueChange: action
             )
@@ -110,7 +106,7 @@ extension View {
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 let newBPM = Int(newValue) ?? 60
                 manager.tempoItem.bpm = newBPM
-                if complete { TempoItem.saveBPM(newBPM) }
+                if complete { TempoModel.saveBPM(newBPM) }
                 manager.notifyListeners()
                 if manager.isCountDownStoped { manager.run() }
             }
@@ -118,7 +114,7 @@ extension View {
                 isPresented: isBPMPresented,
                 title: "BPM",
                 datas: bpmSet,
-                defaultValue: "\(TempoItem.bpm)",
+                defaultValue: "\(TempoModel.bpm)",
                 selectedValue: "\(manager.tempoItem.bpm)",
                 didValueChange: action
             )
@@ -126,14 +122,14 @@ extension View {
         .popup(isPresented: isSubdivisionPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 manager.tempoItem.subDivision = newValue
-                if complete { TempoItem.saveSubdivision(newValue) }
+                if complete { TempoModel.saveSubdivision(newValue) }
                 manager.notifyListeners()
             }
             PopupBottomPicker(
                 isPresented: isSubdivisionPresented,
                 title: "Subdivision",
                 datas: subdivisionSet,
-                defaultValue: TempoItem.subdivision,
+                defaultValue: TempoModel.subdivision,
                 selectedValue: manager.tempoItem.subDivision,
                 didValueChange: action
             )
@@ -142,14 +138,14 @@ extension View {
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 manager.tempoItem.soundEffect = newValue
                 PlayerManager.recreatePlayers(manager: manager)
-                if complete { TempoItem.saveSoundEffect(newValue) }
+                if complete { TempoModel.saveSoundEffect(newValue) }
                 manager.notifyListeners()
             }
             PopupBottomPicker(
                 isPresented: isSoundEffectPresented,
                 title: "Sound Effect",
                 datas: soundSet,
-                defaultValue: TempoItem.soundEffect,
+                defaultValue: TempoModel.soundEffect,
                 selectedValue: manager.tempoItem.soundEffect,
                 didValueChange: action
             )

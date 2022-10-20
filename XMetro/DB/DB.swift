@@ -13,6 +13,6 @@ let dbPath = documentPath.appending("/xmetro.sqlite")
 let dbQueue = try? DatabaseQueue(path: dbPath)
 
 func CreateTables() {
-    TempoItem.createTable()
+    TempoModel.createTable()
 }
 

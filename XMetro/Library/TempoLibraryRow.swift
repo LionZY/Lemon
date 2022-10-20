@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TempoLibraryRow: View {
     @Binding var manager: TempoRunManager
-    var item: TempoItem
+    var item: TempoModel
     var body: some View {
         HStack() {
             VStack(alignment: .leading, spacing: 10.0) {
@@ -22,7 +22,7 @@ struct TempoLibraryRow: View {
                     Text("\(item.bpm)")
                 }
                 Spacer()
-                Text(StringFromTimeStamp(timeStamp: Double(item.id) ?? 0))
+                Text(StringFromTimeStamp(timeStamp: Double(item.uid) ?? 0))
                 .font(Font.system(size: 12))
             }
             Spacer()

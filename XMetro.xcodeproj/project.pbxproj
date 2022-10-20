@@ -23,6 +23,7 @@
 		05520FC628F8EEF9001814B0 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FBF28F8EEF9001814B0 /* Images.swift */; };
 		05520FC728F8EEF9001814B0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FC028F8EEF9001814B0 /* Utils.swift */; };
 		05520FC828F8EEF9001814B0 /* Popups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05520FC128F8EEF9001814B0 /* Popups.swift */; };
+		0555D679290175EF00FA00B1 /* MicrophonePitchDetector in Frameworks */ = {isa = PBXBuildFile; productRef = 0555D678290175EF00FA00B1 /* MicrophonePitchDetector */; };
 		0557D8C328FCDCCA005A901A /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 0557D8C228FCDCCA005A901A /* GRDB */; };
 		0557D8C628FCDD0A005A901A /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8C528FCDD0A005A901A /* DB.swift */; };
 		0557D8CD28FD66FA005A901A /* XGCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0557D8CB28FD66FA005A901A /* XGCDGroup.m */; };
@@ -42,7 +43,6 @@
 		0584DA80288AA37B008712DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0584DA7D288AA37B008712DF /* Assets.xcassets */; };
 		0585133D2887F4A700F7B3AF /* TempoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133C2887F4A700F7B3AF /* TempoScreen.swift */; };
 		058513402887F4D300F7B3AF /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585133F2887F4D300F7B3AF /* SettingsScreen.swift */; };
-		058513462887F60900F7B3AF /* MicrophonePitchDetector in Frameworks */ = {isa = PBXBuildFile; productRef = 058513452887F60900F7B3AF /* MicrophonePitchDetector */; };
 		058513482887FAEF00F7B3AF /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058513472887FAEF00F7B3AF /* Color+Extensions.swift */; };
 		058C1C2E28F6B0230021C376 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C1C2D28F6B0220021C376 /* UserNotifications.framework */; };
 		058C1C3428F6B3B00021C376 /* UMOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C1C3328F6B3B00021C376 /* UMOC.m */; };
@@ -80,7 +80,7 @@
 		05D39C672876F06200CCE136 /* TabAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C622876F06200CCE136 /* TabAction.swift */; };
 		05D39C682876F06200CCE136 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C632876F06200CCE136 /* TabView.swift */; };
 		05D39C692876F06200CCE136 /* TabReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C642876F06200CCE136 /* TabReducer.swift */; };
-		05DD51CB28F79BC2004BCA89 /* TempoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD51CA28F79BC2004BCA89 /* TempoItem.swift */; };
+		05DD51CB28F79BC2004BCA89 /* TempoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD51CA28F79BC2004BCA89 /* TempoModel.swift */; };
 		05DD51CD28F7B256004BCA89 /* TempoPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD51CC28F7B256004BCA89 /* TempoPlayers.swift */; };
 		05E2849928F4236900B7C8BD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E2849828F4235400B7C8BD /* libc++.tbd */; };
 		05E284C728F42A5C00B7C8BD /* UMAnalyticsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E284B928F42A5C00B7C8BD /* UMAnalyticsSwift.swift */; };
@@ -128,6 +128,7 @@
 		052D21FD28FA9FDB00C3E09D /* XTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTimer.swift; sourceTree = "<group>"; };
 		052D21FF28FAB29800C3E09D /* TestContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContentView.swift; sourceTree = "<group>"; };
 		052D220328FAB3D800C3E09D /* TempoDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoDotsView.swift; sourceTree = "<group>"; };
+		05339C5C2901575F00E05EA0 /* MicrophonePitchDetector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicrophonePitchDetector; path = XMetro/Packages/MicrophonePitchDetector; sourceTree = "<group>"; };
 		053C560228DD771400390B5B /* TempoRunButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoRunButton.swift; sourceTree = "<group>"; };
 		053C560428DD957500390B5B /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
 		05520FBB28F8EEF9001814B0 /* Floats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Floats.swift; sourceTree = "<group>"; };
@@ -148,7 +149,6 @@
 		0557D8D928FFA934005A901A /* Default.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Default.m4a; sourceTree = "<group>"; };
 		0557D8DC28FFB080005A901A /* Drum.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drum.m4a; sourceTree = "<group>"; };
 		0557D8DD28FFB080005A901A /* Drum_strong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drum_strong.m4a; sourceTree = "<group>"; };
-		0557D8E12900035B005A901A /* MicrophonePitchDetector */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicrophonePitchDetector; path = XMetro/Packages/MicrophonePitchDetector; sourceTree = "<group>"; };
 		0557D8E2290113DB005A901A /* launch_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_icon.png; sourceTree = "<group>"; };
 		0557D8E4290123BB005A901A /* View+Appear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Appear.swift"; sourceTree = "<group>"; };
 		0563BAA128794C3900E8FC7B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		05D39C622876F06200CCE136 /* TabAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabAction.swift; sourceTree = "<group>"; };
 		05D39C632876F06200CCE136 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		05D39C642876F06200CCE136 /* TabReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabReducer.swift; sourceTree = "<group>"; };
-		05DD51CA28F79BC2004BCA89 /* TempoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoItem.swift; sourceTree = "<group>"; };
+		05DD51CA28F79BC2004BCA89 /* TempoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoModel.swift; sourceTree = "<group>"; };
 		05DD51CC28F7B256004BCA89 /* TempoPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoPlayers.swift; sourceTree = "<group>"; };
 		05E2847828F41F0C00B7C8BD /* XMetro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XMetro-Bridging-Header.h"; sourceTree = "<group>"; };
 		05E2849828F4235400B7C8BD /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -235,11 +235,11 @@
 				05AFFE5D28F717A400474EBA /* libsqlite3.tbd in Frameworks */,
 				0557D8C328FCDCCA005A901A /* GRDB in Frameworks */,
 				05520FB928F863F6001814B0 /* PopupView in Frameworks */,
+				0555D679290175EF00FA00B1 /* MicrophonePitchDetector in Frameworks */,
 				05AFFE5B28F7178900474EBA /* SystemConfiguration.framework in Frameworks */,
 				058C1C2E28F6B0230021C376 /* UserNotifications.framework in Frameworks */,
 				0578AD3C28897E1700AE5B04 /* ComposableArchitecture in Frameworks */,
 				059D997128DA9B0E00741591 /* ActivityIndicatorView in Frameworks */,
-				058513462887F60900F7B3AF /* MicrophonePitchDetector in Frameworks */,
 				5CCE39078C61F9C481461EAF /* libPods-XMetro.a in Frameworks */,
 				05E2849928F4236900B7C8BD /* libc++.tbd in Frameworks */,
 			);
@@ -340,7 +340,7 @@
 				052025AB287807350059654B /* TempoScreenAction.swift */,
 				053C560228DD771400390B5B /* TempoRunButton.swift */,
 				0585133C2887F4A700F7B3AF /* TempoScreen.swift */,
-				05DD51CA28F79BC2004BCA89 /* TempoItem.swift */,
+				05DD51CA28F79BC2004BCA89 /* TempoModel.swift */,
 				05DD51CC28F7B256004BCA89 /* TempoPlayers.swift */,
 				052D21F328FA6C9C00C3E09D /* TempoPrefix.swift */,
 				052D21FF28FAB29800C3E09D /* TestContentView.swift */,
@@ -440,7 +440,7 @@
 		05B41AB22885399300151D70 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				0557D8E12900035B005A901A /* MicrophonePitchDetector */,
+				05339C5C2901575F00E05EA0 /* MicrophonePitchDetector */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -614,11 +614,11 @@
 			);
 			name = XMetro;
 			packageProductDependencies = (
-				058513452887F60900F7B3AF /* MicrophonePitchDetector */,
 				0578AD3B28897E1700AE5B04 /* ComposableArchitecture */,
 				059D997028DA9B0E00741591 /* ActivityIndicatorView */,
 				05520FB828F863F6001814B0 /* PopupView */,
 				0557D8C228FCDCCA005A901A /* GRDB */,
+				0555D678290175EF00FA00B1 /* MicrophonePitchDetector */,
 			);
 			productName = WhenBored;
 			productReference = 05D39C0E2876904200CCE136 /* XMetro.app */;
@@ -816,7 +816,7 @@
 				058513482887FAEF00F7B3AF /* Color+Extensions.swift in Sources */,
 				05520FC428F8EEF9001814B0 /* Toasts.swift in Sources */,
 				05520FC228F8EEF9001814B0 /* Floats.swift in Sources */,
-				05DD51CB28F79BC2004BCA89 /* TempoItem.swift in Sources */,
+				05DD51CB28F79BC2004BCA89 /* TempoModel.swift in Sources */,
 				05E284E628F52B3700B7C8BD /* TunerSettingsScreen.swift in Sources */,
 				05D39C652876F06200CCE136 /* TabEnv.swift in Sources */,
 				059D996528DA03DD00741591 /* TunerScreen.swift in Sources */,
@@ -1022,7 +1022,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202210201458;
+				CURRENT_PROJECT_VERSION = 202210202259;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D4PFYTTGXR;
@@ -1075,7 +1075,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202210201458;
+				CURRENT_PROJECT_VERSION = 202210202259;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D4PFYTTGXR;
@@ -1275,6 +1275,10 @@
 			package = 05520FB728F863F6001814B0 /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
 		};
+		0555D678290175EF00FA00B1 /* MicrophonePitchDetector */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MicrophonePitchDetector;
+		};
 		0557D8C228FCDCCA005A901A /* GRDB */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0557D8C128FCDCC9005A901A /* XCRemoteSwiftPackageReference "GRDB.swift" */;
@@ -1284,10 +1288,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0578AD3A28897E1700AE5B04 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		058513452887F60900F7B3AF /* MicrophonePitchDetector */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MicrophonePitchDetector;
 		};
 		059D997028DA9B0E00741591 /* ActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -10,27 +10,29 @@ import PopupView
 
 struct TempoLibraryScreen: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State var datas = TempoItem.all() ?? []
+    @State private var datas = TempoModel.AllItems() ?? []
     @State private var isLoadedPresented: Bool = false
     @State private var manager = TempoRunManager()
-    @State private var selectedItem: TempoItem?
+    @State private var selectedItem: TempoModel?
+    @State private var isEmpty: Bool = true
     var shouldAutoDismiss: Bool = false
-    var didSelectItem:((TempoItem) -> Void)?
+    var didSelectItem:((TempoModel) -> Void)?
+    
     var body: some View {
         VStack {
-            contentView()
+            if isEmpty { empyView() }
+            else { listView() }
         }
         .navigationTitle("Tempo Library")
         .popup(isPresented: $isLoadedPresented, type: .toast, position: .top, autohideIn: 2.5) {
             ToastTempoItemUsedInTempo()
         }
-    }
-
-    @ViewBuilder func contentView() -> some View {
-        if datas.isEmpty {
-            empyView()
-        } else {
-            listView()
+        .onWillAppear {
+            datas = TempoModel.AllItems() ?? []
+            isEmpty = datas.isEmpty
+        }
+        .onWillDisappear {
+            manager.stop()
         }
     }
 
@@ -39,7 +41,9 @@ struct TempoLibraryScreen: View {
             ForEach(datas, id: \.self) { item in
                 TempoLibraryRow(manager: $manager, item: item)
             }
-            .onDelete(perform: delete(at:))
+            .onDelete {
+                delete(at: $0)
+            }
         }.onChange(of: selectedItem) { newValue in
             guard let newItem = newValue else { return }
             didSelectItem?(newItem)
@@ -73,6 +77,7 @@ struct TempoLibraryScreen: View {
         if let index = offsets.first {
             datas[index].delete()
             datas.remove(at: index)
+            isEmpty = datas.isEmpty
         }
     }
 }
