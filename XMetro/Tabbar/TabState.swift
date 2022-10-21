@@ -8,11 +8,6 @@
 import SwiftUI
 import ComposableArchitecture
 
-let tempoScreen = TempoScreen()
-let tunerScreen = TunerScreen()
-let libraryScreen = LibraryScreen()
-let settingsScreen = SettingsScreen()
-
 enum PopupType {
     case timeSignature
     case bpm
@@ -46,10 +41,10 @@ enum TabbarItemType: Int {
     
     @ViewBuilder func content() -> some View {
         switch self {
-        case .tempo: tempoScreen
-        case .tuner: tunerScreen
-        case .library: libraryScreen
-        case .settings: settingsScreen
+        case .tempo: TempoScreen()
+        case .tuner: TunerScreen()
+        case .library: LibraryScreen()
+        case .settings: SettingsScreen()
         }
     }
 }

@@ -30,6 +30,9 @@ struct TunerSettingsScreen: View {
                 }
             }
         }
+        .onWillAppear {
+            isAutoTunerEnable = TunerSettingsListItem.autoTuner()
+        }
         .navigationTitle("Tuner Settings")
     }
 }

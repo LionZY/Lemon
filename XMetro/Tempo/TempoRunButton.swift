@@ -68,7 +68,6 @@ struct TempoRunButton: View {
         .foregroundColor(Theme.whiteColor)
         .font(style.font(isCountingDown: isCountingDown))
         .onAppear { register() }
-        .onDisappear { remove() }
     }
     
     private func updateKey() -> String {
@@ -82,9 +81,5 @@ struct TempoRunButton: View {
                 isCountingDown = manager.isCountDown
             }
         }
-    }
-    
-    func remove() {
-        manager.remove(key: updateKey())
     }
 }

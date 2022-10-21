@@ -38,9 +38,6 @@ struct TempoDotsView: View {
                 total = manager.tempoItem.meter
             }
         }
-        .onDisappear {
-            manager.remove(key: updateKey)
-        }
     }
 
     func dotColor(_ dotIndex: Int) -> Color {

@@ -56,8 +56,8 @@ struct PlayerManager {
         createPlayers(manager: manager)
     }
     
-    static func CreateAndPlayStrong() {
-        PlayerManager.createPlayers()
+    static func CreateAndPlayStrong(manager: TempoRunManager? = nil) {
+        PlayerManager.createPlayers(manager: manager)
         PlayerManager.strongPlayer?.play()
     }
     

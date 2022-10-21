@@ -10,18 +10,28 @@ import ComposableArchitecture
 import PopupView
 
 struct TempoScreen: View {
+    
+    @State private var unsavedTempo: TempoModel?
     @State private var manager: TempoRunManager = .init()
+    
     @State private var timeSignature: String = "\(TempoModel.meter)/\(TempoModel.devide)"
     @State private var bpm: String = "\(TempoModel.bpm)"
     @State private var subdivision: String = "\(TempoModel.subdivision)"
     @State private var soundEffect: String = "\(TempoModel.soundEffect)"
+    
     @State private var isTimeSignaturePresented: Bool = false
     @State private var isBPMPresented: Bool = false
     @State private var isSubdivisionPresented: Bool = false
     @State private var isSoundEffectPresented: Bool = false
     @State private var isSaveSucessPresented: Bool = false
+    @State private var fromDB: Bool = false
+    
     private var updateKey = "TempoScreen"
     
+    init() {
+        unsavedTempo = manager.tempoItem
+    }
+
     var body: some View {
         VStack {
             Spacer()
@@ -36,6 +46,12 @@ struct TempoScreen: View {
                     bpmButton()
                     soundButton()
                     Spacer()
+                }
+                if fromDB {
+                    Spacer().frame(height: 12.0)
+                    Text("This tempo comes from the library.")
+                        .foregroundColor(Theme.lightGrayColor)
+                        .font(.system(size: 12))
                 }
             }
             Spacer()
@@ -54,17 +70,20 @@ struct TempoScreen: View {
         .onWillDisappear {
             manager.stop()
         }
-        .onAppear {
+        .onWillAppear {
             manager.register(key: updateKey) {
-                timeSignature = "\(TempoModel.meter)/\(TempoModel.devide)"
-                bpm = "\(TempoModel.bpm)"
-                subdivision = TempoModel.subdivision
-                soundEffect = TempoModel.soundEffect
+                timeSignature = "\(manager.tempoItem.meter)/\(manager.tempoItem.devide)"
+                bpm = "\(manager.tempoItem.bpm)"
+                subdivision = manager.tempoItem.subDivision
+                soundEffect = manager.tempoItem.soundEffect
+                
+                // 数据不是来自数据去的情况下
+                if fromDB == false {
+                    manager.tempoItem.saveToUserDefaults()
+                }
             }
         }
-        .onDisappear {
-            manager.remove(key: updateKey)
-        }
+        .animation(.easeInOut, value: fromDB)
     }
 }
 
@@ -90,14 +109,13 @@ extension View {
                 let newDevide = Int(components.last ?? "4") ?? 4
                 manager.tempoItem.meter = newMeter
                 manager.tempoItem.devide = newDevide
-                if complete { TempoModel.saveTimeSignature(newValue) }
                 manager.notifyListeners()
             }
             PopupBottomPicker(
                 isPresented: isTimeSignaturePresented,
                 title: "Time Signature",
                 datas: meterSet,
-                defaultValue: "\(TempoModel.meter)/\(TempoModel.devide)",
+                defaultValue: "\(manager.tempoItem.meter)/\(manager.tempoItem.devide)",
                 selectedValue: "\(manager.tempoItem.meter)/\(manager.tempoItem.devide)",
                 didValueChange: action
             )
@@ -106,7 +124,6 @@ extension View {
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 let newBPM = Int(newValue) ?? 60
                 manager.tempoItem.bpm = newBPM
-                if complete { TempoModel.saveBPM(newBPM) }
                 manager.notifyListeners()
                 if manager.isCountDownStoped { manager.run() }
             }
@@ -114,7 +131,7 @@ extension View {
                 isPresented: isBPMPresented,
                 title: "BPM",
                 datas: bpmSet,
-                defaultValue: "\(TempoModel.bpm)",
+                defaultValue: "\(manager.tempoItem.bpm)",
                 selectedValue: "\(manager.tempoItem.bpm)",
                 didValueChange: action
             )
@@ -122,14 +139,13 @@ extension View {
         .popup(isPresented: isSubdivisionPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 manager.tempoItem.subDivision = newValue
-                if complete { TempoModel.saveSubdivision(newValue) }
                 manager.notifyListeners()
             }
             PopupBottomPicker(
                 isPresented: isSubdivisionPresented,
                 title: "Subdivision",
                 datas: subdivisionSet,
-                defaultValue: TempoModel.subdivision,
+                defaultValue: manager.tempoItem.subDivision,
                 selectedValue: manager.tempoItem.subDivision,
                 didValueChange: action
             )
@@ -138,14 +154,13 @@ extension View {
             let action: ((String, Bool) -> Void) = { newValue, complete in
                 manager.tempoItem.soundEffect = newValue
                 PlayerManager.recreatePlayers(manager: manager)
-                if complete { TempoModel.saveSoundEffect(newValue) }
                 manager.notifyListeners()
             }
             PopupBottomPicker(
                 isPresented: isSoundEffectPresented,
                 title: "Sound Effect",
                 datas: soundSet,
-                defaultValue: TempoModel.soundEffect,
+                defaultValue: manager.tempoItem.soundEffect,
                 selectedValue: manager.tempoItem.soundEffect,
                 didValueChange: action
             )
@@ -160,7 +175,7 @@ extension TempoScreen {
     // MARK: - View builders -
     @ViewBuilder private func actionButton() -> some View {
         TempoRunButton(manager: $manager, tempo: manager.tempoItem, style: .large)
-            .frame(width: 200, height: 200, alignment: .center)
+            .frame(maxWidth: 200, maxHeight: 200, alignment: .center)
             .cornerRadius(100)
             .shadow(color: Theme.shadowColor, radius: 28.0, x: 0, y: 0)
             .onTapGesture {
@@ -209,21 +224,41 @@ extension TempoScreen {
     }
     
     @ViewBuilder private func nagivationLeftView() -> some View {
-        NavigationLink(
-            "Import",
-            destination: TempoLibraryScreen(shouldAutoDismiss: true) { newTempo in
-                manager.tempoItem = newTempo
+        if fromDB {
+            Button("Cancel") {
+                manager.stop()
+                manager.tempoItem = unsavedTempo ?? .init()
+                fromDB = false
                 manager.notifyListeners()
             }
-        )
-        .foregroundColor(Theme.mainColor)
+            .foregroundColor(Theme.lightColor)
+        } else {
+            NavigationLink(
+                "Import",
+                destination: TempoLibraryScreen(
+                    shouldAutoDismiss: true,
+                    didSelectItem:  { newTempo in
+                        unsavedTempo = manager.tempoItem
+                        manager.tempoItem = newTempo
+                        fromDB = true
+                        manager.notifyListeners()
+                    }
+                )
+            )
+            .foregroundColor(Theme.mainColor)
+        }
     }
     
     @ViewBuilder private func navigationRightView() -> some View {
-        Button("Save to library") {
-            manager.tempoItem.replace()
-            isSaveSucessPresented = true
+        HStack {
+            Button(fromDB ? "Update" : "Save") {
+                manager.tempoItem.replace()
+                manager.tempoItem = unsavedTempo ?? .init()
+                isSaveSucessPresented = true
+                fromDB = false
+                manager.notifyListeners()
+            }
+            .foregroundColor(Theme.mainColor)
         }
-        .foregroundColor(Theme.mainColor)
     }
 }

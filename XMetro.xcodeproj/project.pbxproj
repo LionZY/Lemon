@@ -1022,7 +1022,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202210202259;
+				CURRENT_PROJECT_VERSION = 202210211002;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D4PFYTTGXR;
@@ -1075,7 +1075,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202210202259;
+				CURRENT_PROJECT_VERSION = 202210211002;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D4PFYTTGXR;

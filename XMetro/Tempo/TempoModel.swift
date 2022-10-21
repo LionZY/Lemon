@@ -34,14 +34,7 @@ struct TempoModel: Equatable, Hashable, Codable, FetchableRecord, PersistableRec
         soundEffect.appending("_strong")
     }
 
-    init() {
-        self.uid = "\(Date.now.timeIntervalSince1970)"
-        self.meter = TempoModel.meter
-        self.devide = TempoModel.devide
-        self.bpm = TempoModel.bpm
-        self.subDivision = TempoModel.subdivision
-        self.soundEffect = TempoModel.soundEffect
-    }
+    init() {}
     
     init(meter: Int, devide: Int, bpm: Int, subDivision: String, soundEffect: String) {
         self.meter = meter
@@ -127,6 +120,13 @@ extension TempoModel {
     
     static func saveSoundEffect(_ value: String) {
         save(value, forKey: KSaved_SoundEffect)
+    }
+    
+    func saveToUserDefaults() {
+        TempoModel.saveTimeSignature("\(meter)/\(devide)")
+        TempoModel.saveBPM(bpm)
+        TempoModel.saveSubdivision(subDivision)
+        TempoModel.saveSoundEffect(soundEffect)
     }
 }
 

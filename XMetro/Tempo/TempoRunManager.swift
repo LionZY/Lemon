@@ -50,7 +50,7 @@ class TempoRunManager {
     
     func run() {
         XTimer.shared.cancelTimer()
-        PlayerManager.CreateAndPlayStrong()
+        PlayerManager.CreateAndPlayStrong(manager: self)
         runingIndex = (runingIndex + 1) % tempoItem.meter
         notifyListeners()
         XTimer.shared.createNewTimer(timerEvery: timerEvery) {

@@ -16,6 +16,7 @@ struct TempoLibraryScreen: View {
     @State private var selectedItem: TempoModel?
     @State private var isEmpty: Bool = true
     var shouldAutoDismiss: Bool = false
+    var willAppear:(() -> Void)?
     var didSelectItem:((TempoModel) -> Void)?
     
     var body: some View {
@@ -40,6 +41,10 @@ struct TempoLibraryScreen: View {
         List(selection: $selectedItem) {
             ForEach(datas, id: \.self) { item in
                 TempoLibraryRow(manager: $manager, item: item)
+                    .onTapGesture {
+                        selectedItem = item
+                    }
+                    .listRowBackground(Theme.whiteColor)
             }
             .onDelete {
                 delete(at: $0)

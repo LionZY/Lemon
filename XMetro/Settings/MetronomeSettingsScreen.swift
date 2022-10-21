@@ -33,6 +33,9 @@ struct MetronomeSettingsScreen: View {
                 }
             }
         }
+        .onWillAppear {
+            isCountDownEnable = MetronomeSettingsListItem.countDownEnable()
+        }
         .navigationTitle("Metronome Settings")
     }
 }
