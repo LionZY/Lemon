@@ -12,22 +12,18 @@ struct TempoLibraryRow: View {
     var item: TempoModel
     var body: some View {
         HStack() {
-            VStack(alignment: .leading, spacing: 10.0) {
-                HStack {
-                    Text("Time signature:")
-                    Text("\(item.meter)/\(item.devide)")
-                }
-                HStack {
-                    Text("BPM:")
-                    Text("\(item.bpm)")
-                }
-                Spacer()
+            VStack(alignment: .leading, spacing: 8.0) {
+                Text("Time signature: \(item.meter)/\(item.devide)")
+                Text("BPM: \(item.bpm)")
+                TempoDotsView(manager: $manager, type: .small, tempo: item)
+                Spacer().frame(height: 4.0)
                 Text(StringFromTimeStamp(timeStamp: Double(item.uid) ?? 0))
-                .font(Font.system(size: 12))
+                    .font(Font.system(size: 12))
             }
             Spacer()
             TempoRunButton(manager: $manager, tempo: item)
                 .onTapGesture {
+                    if manager.tempoItem.uid != item.uid { manager.stop() }
                     manager.tempoItem = item
                     manager.nextAction()
                 }
@@ -37,6 +33,6 @@ struct TempoLibraryRow: View {
                 .cornerRadius(8.0)
         }
         .foregroundColor(Theme.grayColor)
-        .padding(EdgeInsets(top: 8.0, leading: 8.0, bottom: 8.0, trailing: 8.0))
+        .padding(EdgeInsets(top: 8.0, leading: 8.0, bottom: 4.0, trailing: 8.0))
     }
 }
