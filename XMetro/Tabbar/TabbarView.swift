@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct TabView: View {
+struct TabbarView: View {
     let store: Store<TabState, TabAction> = Store(initialState: TabState(), reducer: tabReducer, environment: TabEnv())
     var body: some View {
         NavigationView {
@@ -31,6 +31,6 @@ struct TabView: View {
 
 struct TabView_Previews: PreviewProvider {
     static var previews: some View {
-        TabView()
+        TabbarView()
     }
 }

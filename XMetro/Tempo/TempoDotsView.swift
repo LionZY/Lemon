@@ -60,11 +60,10 @@ struct TempoDotsView: View {
             updateKey = "\(TempoDotsView.self)_\(tempo?.uid ?? "")"
             total = tempo?.meter ?? TempoModel.meter
             manager.register(key: updateKey) {
-                if manager.tempoItem.uid == tempo?.uid {
-                    countDownIndex = manager.countDownIndex
-                    runningIndex = manager.runingIndex
-                    total = manager.tempoItem.meter
-                }
+                guard manager.tempoItem.uid == tempo?.uid || tempo?.uid == nil else { return }
+                countDownIndex = manager.countDownIndex
+                runningIndex = manager.runingIndex
+                total = manager.tempoItem.meter
             }
         }
     }

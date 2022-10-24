@@ -25,7 +25,7 @@ struct TempoScreen: View {
     @State private var isSoundEffectPresented: Bool = false
     @State private var isSaveSucessPresented: Bool = false
     @State private var fromDB: Bool = false
-    
+    @State private var selectedTempo: Int = 0
     private var updateKey = "TempoScreen"
     
     init() {
@@ -33,29 +33,7 @@ struct TempoScreen: View {
     }
 
     var body: some View {
-        VStack {
-            Spacer()
-            actionButton()
-            Spacer()
-            dotsView()
-            Spacer()
-            VStack {
-                HStack(spacing: 10.0) {
-                    Spacer()
-                    meterButton()
-                    bpmButton()
-                    soundButton()
-                    Spacer()
-                }
-                if fromDB {
-                    Spacer().frame(height: 12.0)
-                    Text("This tempo comes from the library.")
-                        .foregroundColor(Theme.lightGrayColor)
-                        .font(.system(size: 12))
-                }
-            }
-            Spacer()
-        }
+        mainView()
         .navigationTitle("Tempo")
         .navigationBarItems(leading: nagivationLeftView())
         .navigationBarItems(trailing: navigationRightView())
@@ -173,6 +151,53 @@ extension View {
 
 extension TempoScreen {
     // MARK: - View builders -
+    @ViewBuilder private func mainView() -> some View {
+        let allTempos = TempoModel.AllItems()
+        let countInLib = allTempos?.count ?? 0
+        let count = countInLib < 3 ? countInLib : 3
+        GeometryReader { proxy in
+            VStack {
+                TabView(selection: $selectedTempo) {
+                    ForEach(0...count, id: \.self) { index in
+                        tempoView(item: allTempos?[index])
+                            .frame(width: proxy.size.width)
+                    }
+                    Button("Import") {
+                        
+                    }
+                    .foregroundColor(Theme.mainColor)
+                }
+                .tabViewStyle(.page)
+            }
+        }
+    }
+    
+    @ViewBuilder private func tempoView(item: TempoModel? = nil) -> some View {
+        VStack {
+            Spacer()
+            actionButton()
+            Spacer()
+            dotsView()
+            Spacer()
+            VStack {
+                HStack(spacing: 10.0) {
+                    Spacer()
+                    meterButton()
+                    bpmButton()
+                    soundButton()
+                    Spacer()
+                }
+                if fromDB {
+                    Spacer().frame(height: 12.0)
+                    Text("This tempo comes from the library.")
+                        .foregroundColor(Theme.lightGrayColor)
+                        .font(.system(size: 12))
+                }
+            }
+            Spacer()
+        }
+    }
+    
     @ViewBuilder private func actionButton() -> some View {
         TempoRunButton(manager: $manager, tempo: manager.tempoItem, style: .large)
             .frame(maxWidth: 200, maxHeight: 200, alignment: .center)
