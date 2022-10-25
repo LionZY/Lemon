@@ -12,6 +12,8 @@ struct XMetroApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     init() {
+        TunerSettingsListItem.createDefaultConfigs()
+        TempoSettingsListItem.createDefaultConfigs()
         Theme.barButtonItemColors()
         CreateTables()
     }

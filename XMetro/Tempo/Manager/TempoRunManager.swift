@@ -25,10 +25,10 @@ class TempoRunManager {
     var isReadyCountDown: Bool { countDownIndex == -4 }
     var isCountDownStoped: Bool { countDownIndex == 0 }
     var isRunning: Bool { countDownIndex > -4 }
-    var action: TempoScreenAction { isReadyCountDown ? .run : .stop }
+    var action: TempoPlayAction { isReadyCountDown ? .run : .stop }
     var timerEvery: CGFloat { countDownIndex == -4 ? 1.0 : (60.0 / CGFloat(tempoItem.bpm)) }
     var shouldPlayStrong: Bool { runingIndex == 0 }
-    var isCountDownEnable: Bool { MetronomeSettingsListItem.countDownEnable() }
+    var isCountDownEnable: Bool { TempoSettingsListItem.countDownEnable() }
     
     // Actions
     func coundDown() {

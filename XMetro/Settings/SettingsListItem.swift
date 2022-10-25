@@ -24,7 +24,7 @@ enum SettingListItem: Hashable {
     
     func title() -> String {
         switch self {
-        case .metronome: return "Metronome settings"
+        case .metronome: return "Tempo settings"
         case .tuner: return "Tuner settings"
         case .about: return "About Ticker"
         case .update: return "Upgrade to new version"
@@ -33,7 +33,7 @@ enum SettingListItem: Hashable {
     
     @ViewBuilder func destination() -> some View {
         switch self {
-        case .metronome: MetronomeSettingsScreen()
+        case .metronome: TempoSettingsScreen()
         case .tuner: TunerSettingsScreen()
         case .about: AboutScreen()
         case .update: EmptyView()

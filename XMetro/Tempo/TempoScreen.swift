@@ -10,33 +10,24 @@ import ComposableArchitecture
 import PopupView
 
 struct TempoScreen: View {
-    
-    @State private var unsavedTempo: TempoModel?
     @State private var manager: TempoRunManager = .init()
     
-    @State private var timeSignature: String = "\(TempoModel.meter)/\(TempoModel.devide)"
-    @State private var bpm: String = "\(TempoModel.bpm)"
-    @State private var subdivision: String = "\(TempoModel.subdivision)"
-    @State private var soundEffect: String = "\(TempoModel.soundEffect)"
+    @State private var timeSignature: String = "\(4)/\(4)"
+    @State private var bpm: String = "\(60)"
+    @State private var subdivision: String = ""
+    @State private var soundEffect: String = "Default"
     
     @State private var isTimeSignaturePresented: Bool = false
     @State private var isBPMPresented: Bool = false
     @State private var isSubdivisionPresented: Bool = false
     @State private var isSoundEffectPresented: Bool = false
     @State private var isSaveSucessPresented: Bool = false
-    @State private var fromDB: Bool = false
-    @State private var selectedTempo: Int = 0
-    private var updateKey = "TempoScreen"
     
-    init() {
-        unsavedTempo = manager.tempoItem
-    }
-
+    @State private var tempoComesFromDB: Bool = false
+    
     var body: some View {
         mainView()
         .navigationTitle("Tempo")
-        .navigationBarItems(leading: nagivationLeftView())
-        .navigationBarItems(trailing: navigationRightView())
         .popups(
             manager,
             $isTimeSignaturePresented,
@@ -49,19 +40,15 @@ struct TempoScreen: View {
             manager.stop()
         }
         .onWillAppear {
-            manager.register(key: updateKey) {
+            manager.register(key: "\(TempoScreen.self)") {
                 timeSignature = "\(manager.tempoItem.meter)/\(manager.tempoItem.devide)"
                 bpm = "\(manager.tempoItem.bpm)"
                 subdivision = manager.tempoItem.subDivision
                 soundEffect = manager.tempoItem.soundEffect
-                
-                // 数据不是来自数据去的情况下
-                if fromDB == false {
-                    manager.tempoItem.saveToUserDefaults()
-                }
+                tempoComesFromDB = TempoModel.one(uid: manager.tempoItem.uid) != nil
             }
         }
-        .animation(.easeInOut, value: fromDB)
+        .animation(.easeInOut, value: tempoComesFromDB)
     }
 }
 
@@ -152,64 +139,98 @@ extension View {
 extension TempoScreen {
     // MARK: - View builders -
     @ViewBuilder private func mainView() -> some View {
-        let allTempos = TempoModel.AllItems()
-        let countInLib = allTempos?.count ?? 0
-        let count = countInLib < 3 ? countInLib : 3
-        GeometryReader { proxy in
-            VStack {
-                TabView(selection: $selectedTempo) {
-                    ForEach(0...count, id: \.self) { index in
-                        tempoView(item: allTempos?[index])
-                            .frame(width: proxy.size.width)
-                    }
-                    Button("Import") {
-                        
-                    }
-                    .foregroundColor(Theme.mainColor)
-                }
-                .tabViewStyle(.page)
-            }
+        ZStack {
+            listView()
+            tempoPlayView()
         }
     }
     
-    @ViewBuilder private func tempoView(item: TempoModel? = nil) -> some View {
+    @ViewBuilder private func listView() -> some View {
+        let didDeleteItem: ((TempoModel) -> Void)  = { deletedTempo in
+            manager.tempoItem = .init()
+            manager.notifyListeners()
+        }
+
+        let didSelectItem: ((TempoModel) -> Void) = { selectedTempo in
+            manager.tempoItem = selectedTempo
+            manager.notifyListeners()
+        }
+
+        TemposList(
+            manager: $manager,
+            didSelectItem: didSelectItem,
+            didDeleteItem: didDeleteItem
+        )
+    }
+    
+    @ViewBuilder private func tempoPlayView() -> some View {
         VStack {
             Spacer()
-            actionButton()
-            Spacer()
-            dotsView()
-            Spacer()
             VStack {
-                HStack(spacing: 10.0) {
-                    Spacer()
+                HStack {
                     meterButton()
                     bpmButton()
                     soundButton()
                     Spacer()
+                    dotsView()
+                    Spacer()
+                    actionButton()
                 }
-                if fromDB {
-                    Spacer().frame(height: 12.0)
-                    Text("This tempo comes from the library.")
-                        .foregroundColor(Theme.lightGrayColor)
-                        .font(.system(size: 12))
-                }
+                .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
+                playButton()
             }
-            Spacer()
+            .background(Theme.whiteColor)
+            .cornerRadius(8.0)
+            .padding()
         }
     }
     
-    @ViewBuilder private func actionButton() -> some View {
-        TempoRunButton(manager: $manager, tempo: manager.tempoItem, style: .large)
-            .frame(maxWidth: 200, maxHeight: 200, alignment: .center)
-            .cornerRadius(100)
-            .shadow(color: Theme.shadowColor, radius: 28.0, x: 0, y: 0)
-            .onTapGesture {
-                manager.nextAction()
+    @ViewBuilder private func playButton() -> some View {
+        HStack {
+            if tempoComesFromDB {
+                Button("Cancel") {
+                    manager.stop()
+                    manager.tempoItem = .init()
+                    manager.notifyListeners()
+                }
+                .frame(maxWidth: .infinity, maxHeight: 44.0)
+                .background(Theme.lightColor)
+                .foregroundColor(Theme.whiteColor)
+                .cornerRadius(8.0)
             }
+            Button(tempoComesFromDB ? "Update" : "Save to list") {
+                manager.tempoItem.replace()
+                manager.tempoItem = .init()
+                manager.notifyListeners()
+            }
+            .frame(maxWidth: .infinity, maxHeight: 48.0)
+            .background(Theme.mainColor)
+            .foregroundColor(Theme.whiteColor)
+            .cornerRadius(8.0)
+        }
+        .font(Font.system(size: 16))
+        .padding(EdgeInsets(top: 4, leading: 16, bottom: 16, trailing: 16))
+    }
+    
+    @ViewBuilder private func actionButton() -> some View {
+        TempoRunButton(
+            manager: $manager,
+            tempo: manager.tempoItem,
+            style: .global
+        )
+        .frame(maxWidth: 50.0, maxHeight: 50, alignment: .center)
+        .cornerRadius(25.0)
+        .onTapGesture {
+            manager.nextAction()
+        }
     }
 
     @ViewBuilder private func dotsView() -> some View {
-        TempoDotsView(manager: $manager)
+        TempoDotsView(
+            manager: $manager,
+            tempo: manager.tempoItem,
+            style: .global
+        )
     }
     
     @ViewBuilder private func meterButton() -> some View {
@@ -246,44 +267,5 @@ extension TempoScreen {
         .tint(Theme.mainColor)
         .controlSize(.regular)
         .buttonStyle(.borderedProminent)
-    }
-    
-    @ViewBuilder private func nagivationLeftView() -> some View {
-        if fromDB {
-            Button("Cancel") {
-                manager.stop()
-                manager.tempoItem = unsavedTempo ?? .init()
-                fromDB = false
-                manager.notifyListeners()
-            }
-            .foregroundColor(Theme.lightColor)
-        } else {
-            NavigationLink(
-                "Import",
-                destination: TempoLibraryScreen(
-                    shouldAutoDismiss: true,
-                    didSelectItem:  { newTempo in
-                        unsavedTempo = manager.tempoItem
-                        manager.tempoItem = newTempo
-                        fromDB = true
-                        manager.notifyListeners()
-                    }
-                )
-            )
-            .foregroundColor(Theme.mainColor)
-        }
-    }
-    
-    @ViewBuilder private func navigationRightView() -> some View {
-        HStack {
-            Button(fromDB ? "Update" : "Save") {
-                manager.tempoItem.replace()
-                manager.tempoItem = unsavedTempo ?? .init()
-                isSaveSucessPresented = true
-                fromDB = false
-                manager.notifyListeners()
-            }
-            .foregroundColor(Theme.mainColor)
-        }
     }
 }

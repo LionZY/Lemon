@@ -39,5 +39,12 @@ enum TunerSettingsListItem: String, Hashable {
     static func autoTuner() -> Bool {
         TunerSettingsListItem.autoTuning.value()
     }
+    
+    static func createDefaultConfigs() {
+        let ud = UserDefaults.standard
+        var item = TunerSettingsListItem.autoTuning
+        var exists = ud.object(forKey: item.rawValue)
+        if exists == nil { item.save(newValue: true) }
+    }
 }
 

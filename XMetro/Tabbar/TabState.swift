@@ -18,14 +18,12 @@ enum PopupType {
 enum TabbarItemType: Int {
     case tempo
     case tuner
-    case library
     case settings
     
     func icon() -> String {
         switch self {
         case .tempo: return "metronome"
         case .tuner: return "tuningfork"
-        case .library: return "music.note.list"
         case .settings: return "gear"
         }
     }
@@ -34,7 +32,6 @@ enum TabbarItemType: Int {
         switch self {
         case .tempo: return "Tempo"
         case .tuner: return "Tuner"
-        case .library: return "Library"
         case .settings: return "Settings"
         }
     }
@@ -43,7 +40,6 @@ enum TabbarItemType: Int {
         switch self {
         case .tempo: TempoScreen()
         case .tuner: TunerScreen()
-        case .library: LibraryScreen()
         case .settings: SettingsScreen()
         }
     }
@@ -51,5 +47,5 @@ enum TabbarItemType: Int {
 
 struct TabState: Equatable {
     var current: TabbarItemType = .tempo
-    var items: [TabbarItemType] = [.tempo, .tuner, .library, .settings]
+    var items: [TabbarItemType] = [.tempo, .tuner, .settings]
 }

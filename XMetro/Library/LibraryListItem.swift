@@ -9,13 +9,11 @@ import SwiftUI
 
 enum LibraryListItem: Hashable {
     case chord
-    case tempo
     case setlist
     
     func icon() -> String {
         switch self {
         case .chord: return "music.quarternote.3"
-        case .tempo: return "music.note.house.fill"
         case .setlist: return "list.bullet.rectangle.fill"
         }
     }
@@ -23,7 +21,6 @@ enum LibraryListItem: Hashable {
     func title() -> String {
         switch self {
         case .chord: return "Chord Library"
-        case .tempo: return "Tempo Library"
         case .setlist: return "Setlist Library"
         }
     }
@@ -31,7 +28,6 @@ enum LibraryListItem: Hashable {
     @ViewBuilder func destination() -> some View {
         switch self {
         case .chord: ChordLibraryScreen()
-        case .tempo: TempoLibraryScreen()
         case .setlist: SetlistLibraryScreen()
         }
     }

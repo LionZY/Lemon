@@ -8,21 +8,26 @@
 import SwiftUI
 import ComposableArchitecture
 
+enum TempoPlayAction: Equatable {
+    case run
+    case stop
+}
+
 enum RunButtonStyle {
-    case normal
-    case large
+    case row
+    case global
     
     func countDownFont() -> Font {
         switch self {
-        case .normal: return Font.system(size: 32)
-        case .large: return Font.custom("Arial-BoldMT", size: 84)
+        case .row: return Font.system(size: 32)
+        case .global: return Font.system(size: 24.0)
         }
     }
     
     func normalFont() -> Font {
         switch self {
-        case .normal: return Font.system(size: 14)
-        case .large: return Font.system(size: 40)
+        case .row: return Font.system(size: 14)
+        case .global: return Font.system(size: 14)
         }
     }
     
@@ -33,8 +38,8 @@ enum RunButtonStyle {
 
 struct TempoRunButton: View {
     @Binding var manager: TempoRunManager
-    var tempo: TempoModel
-    var style: RunButtonStyle = .normal
+    @State var tempo: TempoModel
+    var style: RunButtonStyle = .row
     
     @State private var countDownIndex: Int = -4
     @State private var isCountingDown: Bool = false
@@ -67,19 +72,24 @@ struct TempoRunButton: View {
         .background(color)
         .foregroundColor(Theme.whiteColor)
         .font(style.font(isCountingDown: isCountingDown))
-        .onAppear { register() }
-    }
-    
-    private func updateKey() -> String {
-        "\(tempo.uid)"
-    }
-    
-    func register() {
-        manager.register(key: updateKey()) {
-            if manager.tempoItem.uid == tempo.uid {
+        .onAppear {
+            let rowCallback = {
+                guard manager.tempoItem.uid == tempo.uid else { return }
                 countDownIndex = manager.countDownIndex
                 isCountingDown = manager.isCountDown
             }
+            
+            let globalCallback = {
+                tempo = manager.tempoItem
+                countDownIndex = manager.countDownIndex
+                isCountingDown = manager.isCountDown
+            }
+            let callback = style == .global ? globalCallback : rowCallback
+            manager.register(key: updateKey(), callback: callback)
         }
+    }
+    
+    private func updateKey() -> String {
+        "\(style)_\(tempo.uid)"
     }
 }

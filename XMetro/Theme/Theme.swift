@@ -15,6 +15,7 @@ class Theme {
     static let whiteColor = Color.white
     static let grayColor = Color(hex: 0xAAAAAA, alpha: 1.0)
     static let lightGrayColor = Color(hex: 0xBBBBBB, alpha: 1.0)
+    static let thinGrayColor = Color(hex: 0xF1F1F2, alpha: 1.0)
     static let shadowColor = Color(hex: 0xAAAAAA, alpha: 1.0)
     
     static func navigationBarColors(background : UIColor?, titleColor : UIColor? = nil, tintColor : UIColor? = nil ){

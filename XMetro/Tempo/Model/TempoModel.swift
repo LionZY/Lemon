@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 import GRDB
 
-enum TempoItemSource: Int {
-case temp
-case db
-}
+let meterSet = ["1/4", "2/4", "3/4", "4/4", "5/4", "7/4", "5/8", "6/8", "7/8", "9/8", "12/8"]
+let bpmSet = Array(20...280).compactMap { "\($0)" }
+let subdivisionSet = ["♩", "♪", "♫", "♬", "♭", "♮", "♯", "𝄡"]
+let soundSet = ["Default", "Drum"]
 
 struct TempoModel: Equatable, Hashable, Codable, FetchableRecord, PersistableRecord {
     static func == (lhs: TempoModel, rhs: TempoModel) -> Bool {
@@ -25,11 +25,11 @@ struct TempoModel: Equatable, Hashable, Codable, FetchableRecord, PersistableRec
     }
     
     var uid: String = "\(Date.now.timeIntervalSince1970)"
-    var meter: Int = TempoModel.meter
-    var devide: Int = TempoModel.devide
-    var bpm: Int = TempoModel.bpm
-    var subDivision: String = TempoModel.subdivision
-    var soundEffect: String = TempoModel.soundEffect
+    var meter: Int = 4
+    var devide: Int = 4
+    var bpm: Int = 60
+    var subDivision: String = ""
+    var soundEffect: String = "Default"
     var soundEffectStong: String {
         soundEffect.appending("_strong")
     }
@@ -57,76 +57,6 @@ struct TempoModel: Equatable, Hashable, Codable, FetchableRecord, PersistableRec
         self.bpm = try container.decode(Int.self, forKey: .bpm)
         self.subDivision = try container.decode(String.self, forKey: .subDivision)
         self.soundEffect = try container.decode(String.self, forKey: .soundEffect)
-    }
-}
-
-extension TempoModel {
-    static let KSaved_BPM = "KSaved_BPM"
-    static let KSaved_Meter = "KSaved_Meter"
-    static let KSaved_Devide = "KSaved_Devide"
-    static let KSaved_Subdivision = "KSaved_Subdivision"
-    static let KSaved_SoundEffect = "KSaved_SoundEffect"
-    
-    static var meter: Int {
-        let meter = UserDefaults.standard.integer(forKey: KSaved_Meter)
-        return meter == 0 ? 4 : meter
-    }
-    
-    static var devide: Int {
-        let devide = UserDefaults.standard.integer(forKey: KSaved_Devide)
-        return devide == 0 ? 4 : devide
-    }
-    
-    static var bpm: Int {
-        let bpm = UserDefaults.standard.integer(forKey: KSaved_BPM)
-        return bpm == 0 ? 60 : bpm
-    }
-    
-    static var subdivision: String {
-        guard let subdivision = UserDefaults.standard.string(forKey: KSaved_Subdivision) else { return "♩" }
-        return subdivision
-    }
-    
-    static var soundEffect: String {
-        guard let soundEffect = UserDefaults.standard.string(forKey: KSaved_SoundEffect) else { return "Default" }
-        return soundEffect
-    }
-    
-    static var soundEffectStrong: String {
-        soundEffect.appending("_strong")
-    }
-    
-    static func save(_ value: Any, forKey: String) {
-        let ud = UserDefaults.standard
-        ud.set(value, forKey: forKey)
-        ud.synchronize()
-    }
-    
-    static func saveTimeSignature(_ value: String) {
-        let components = value.components(separatedBy: "/")
-        let newMeter = Int(components.first ?? "4") ?? 4
-        let newDevide = Int(components.last ?? "4") ?? 4
-        save(newMeter, forKey: KSaved_Meter)
-        save(newDevide, forKey: KSaved_Devide)
-    }
-    
-    static func saveBPM(_ value: Int) {
-        save(value, forKey: KSaved_BPM)
-    }
-    
-    static func saveSubdivision(_ value: String) {
-        save(value, forKey: KSaved_Subdivision)
-    }
-    
-    static func saveSoundEffect(_ value: String) {
-        save(value, forKey: KSaved_SoundEffect)
-    }
-    
-    func saveToUserDefaults() {
-        TempoModel.saveTimeSignature("\(meter)/\(devide)")
-        TempoModel.saveBPM(bpm)
-        TempoModel.saveSubdivision(subDivision)
-        TempoModel.saveSoundEffect(soundEffect)
     }
 }
 
@@ -185,11 +115,18 @@ extension TempoModel {
         XGCDGroup.notify(group)
     }
     
-    static func AllItems() -> [TempoModel]? {
-        return try? dbQueue?.read { db in
+    static func AllItems(sortByBPM: Bool? = nil) -> [TempoModel]? {
+        try? dbQueue?.read { db in
             try TempoModel.fetchAll(db).sorted(by: { t1, t2 in
-                t1.uid > t2.uid
+                if sortByBPM == true { return t1.bpm < t2.bpm }
+                else { return t1.uid > t2.uid }
             })
+        }
+    }
+    
+    static func one(uid: String) -> TempoModel? {
+        return try? dbQueue?.read { db in
+            try TempoModel.fetchOne(db, sql: "SELECT * from TempoModel WHERE uid=?", arguments: [uid])
         }
     }
     

@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/groue/GRDB.swift.git",
         "state": {
           "branch": "master",
-          "revision": "9e3eebf4c276efb8690bdeb13158bff321ae5fcf",
+          "revision": "13e1f4d7c2896a6a9293102f664e5311e017ffb2",
           "version": null
         }
       },
@@ -47,6 +47,15 @@
         }
       },
       {
+        "package": "swift-clocks",
+        "repositoryURL": "https://github.com/pointfreeco/swift-clocks",
+        "state": {
+          "branch": null,
+          "revision": "692ec4f5429a667bdd968c7260dfa2b23adfeffc",
+          "version": "0.1.4"
+        }
+      },
+      {
         "package": "swift-collections",
         "repositoryURL": "https://github.com/apple/swift-collections",
         "state": {
@@ -60,8 +69,8 @@
         "repositoryURL": "https://github.com/pointfreeco/swift-composable-architecture",
         "state": {
           "branch": null,
-          "revision": "5bd450a8ac6a802f82d485bac219cbfacffa69fb",
-          "version": "0.43.0"
+          "revision": "ed3a380f09a81e72636d7b0699bf2dd2e6313780",
+          "version": "0.44.1"
         }
       },
       {
