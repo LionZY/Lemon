@@ -10,7 +10,7 @@
 @implementation UMOC
 + (void)config {
     [UMCommonLogManager setUpUMCommonLogManager];
-    [UMConfigure setLogEnabled:NO];
+    [UMConfigure setLogEnabled:YES];
     [UMConfigure initWithAppkey:@"6343ddf288ccdf4b7e4574be" channel:@"App Store"];
 }
 

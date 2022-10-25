@@ -140,9 +140,9 @@ struct ToastTempoItemSaved: View {
                 .frame(width: 48, height: 48)
                 .cornerRadius(24)
             VStack(alignment: .leading, spacing: 4) {
-                Text("Tempo Saved!")
+                Text("Success")
                     .font(.system(size: 16, weight: .bold))
-                Text("You can retrive it back in: Library > Tempo Library.")
+                Text("You can check it on the list.")
                     .font(.system(size: 16, weight: .light))
                     .opacity(0.8)
             }
@@ -163,9 +163,9 @@ struct ToastTempoItemUsedInTempo: View {
                 .frame(width: 48, height: 48)
                 .cornerRadius(24)
             VStack(alignment: .leading, spacing: 4) {
-                Text("Tempo Loaded!")
+                Text("Tempo Loaded")
                     .font(.system(size: 16, weight: .bold))
-                Text("Tempo already load on Tempo Screen.")
+                Text("Tempo already load success.")
                     .font(.system(size: 16, weight: .light))
                     .opacity(0.8)
             }

@@ -10,18 +10,39 @@ import SwiftUI
 struct TemposListRow: View {
     @Binding var manager: TempoRunManager
     @State private var selected: Bool = false
+    private var timeStampStr: String {
+        StringFromTimeStamp(timeStamp: Double(item.uid) ?? 0)
+    }
     var item: TempoModel
     var body: some View {
         ZStack {
             HStack {
-                VStack(alignment: .leading, spacing: 8.0) {
-                    TempoDotsView(manager: $manager, tempo: item, style: .row)
-                    Spacer().frame(height: 4.0)
-                    Text("Time signature: \(item.meter)/\(item.devide)")
-                    Text("BPM: \(item.bpm)")
-                    Text(StringFromTimeStamp(timeStamp: Double(item.uid) ?? 0))
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Time signature:").foregroundColor(Theme.darkGrayColor)
+                        Text("\(item.meter)/\(item.devide)").foregroundColor(Theme.lightGrayColor)
+                    }
+                    .font(Font.system(size: 16))
+                    Spacer().frame(height: 2.0)
+                    HStack {
+                        Text("BPM:").foregroundColor(Theme.darkGrayColor)
+                        Text("\(item.bpm)").foregroundColor(Theme.lightGrayColor)
+                    }
+                    .font(Font.system(size: 16))
+                    Spacer().frame(height: 2.0)
+                    HStack {
+                        Text("Sound effect:").foregroundColor(Theme.darkGrayColor)
+                        Text(item.soundEffect).foregroundColor(Theme.lightGrayColor)
+                    }
+                    .font(Font.system(size: 16))
+                    Spacer()
+                    Text(timeStampStr)
+                        .foregroundColor(Theme.lightGrayColor)
                         .font(Font.system(size: 12))
+                    Spacer().frame(height: 2.0)
                 }
+                Spacer()
+                TempoDotsView(manager: $manager, tempo: item, style: .row)
                 Spacer()
                 VStack {
                     TempoRunButton(manager: $manager, tempo: item)
@@ -40,10 +61,11 @@ struct TemposListRow: View {
                             .foregroundColor(Theme.lightColor)
                     }
                 }
+                .frame(width: 64.0, height: 88.0)
             }
         }
         .foregroundColor(Theme.grayColor)
-        .padding(EdgeInsets(top: 8.0, leading: 8.0, bottom: 4.0, trailing: 8.0))
+        .padding(EdgeInsets(top: 8.0, leading: 0.0, bottom: 8.0, trailing: 0.0))
         .onAppear {
             selected = manager.tempoItem.uid == item.uid
             manager.register(key: "\(TemposListRow.self)_\(item.uid)") {

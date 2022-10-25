@@ -27,7 +27,7 @@ enum SettingListItem: Hashable {
         case .metronome: return "Tempo settings"
         case .tuner: return "Tuner settings"
         case .about: return "About Ticker"
-        case .update: return "Upgrade to new version"
+        case .update: return "Update"
         }
     }
     

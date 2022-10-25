@@ -27,27 +27,22 @@ struct TempoSettingsScreen: View {
                             switchView(item: item)
                         }
                         .onChange(of: isCountDownEnable) { newValue in
-                            item.save(newValue: newValue)
+                            TempoSettingsListItem.saveCountDownEnable(newValue: newValue)
                         }
                         .onChange(of: sortByBPM) { newValue in
-                            item.save(newValue: newValue)
+                            TempoSettingsListItem.saveSortByBPM(newValue: newValue)
                         }
                     }
                 }
             }
         }
-        .onAppear {
-            isCountDownEnable = TempoSettingsListItem.countDownEnable()
-            sortByBPM = TempoSettingsListItem.sortByBPM()
-        }
         .navigationTitle("Tempo Settings")
     }
     
     @ViewBuilder private func switchView(item: TempoSettingsListItem) -> some View {
-        switch item {
-        case .sortByBMP:
+        if item == .sortByBMP {
             Toggle("", isOn: $sortByBPM)
-        case .countDownEnable:
+        } else {
             Toggle("", isOn: $isCountDownEnable)
         }
     }

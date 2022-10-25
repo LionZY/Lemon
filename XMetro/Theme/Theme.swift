@@ -13,6 +13,7 @@ class Theme {
     static let middleLightColor = Color.yellow
     static let specialLightColor = Color.green
     static let whiteColor = Color.white
+    static let darkGrayColor = Color(hex: 0x999999, alpha: 1.0)
     static let grayColor = Color(hex: 0xAAAAAA, alpha: 1.0)
     static let lightGrayColor = Color(hex: 0xBBBBBB, alpha: 1.0)
     static let thinGrayColor = Color(hex: 0xF1F1F2, alpha: 1.0)

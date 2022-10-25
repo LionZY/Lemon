@@ -40,13 +40,17 @@ struct SettingsScreen: View {
                 Spacer()
                 HStack {
                     Spacer().frame(width: 16.0)
-                    Button("Share Ticker with friends") {
+                    
+                    Button {
                         isSharePresented = true
+                    } label: {
+                        Text("Share Ticker with friends")
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(Theme.mainColor)
+                            .foregroundColor(Theme.whiteColor)
+                            .cornerRadius(8.0)
                     }
                     .frame(maxWidth: .infinity, maxHeight: 44.0)
-                    .background(Theme.mainColor)
-                    .foregroundColor(Theme.whiteColor)
-                    .cornerRadius(8.0)
                     .sheet(isPresented: $isSharePresented, onDismiss: {
                         print("Dismiss")
                     }, content: {

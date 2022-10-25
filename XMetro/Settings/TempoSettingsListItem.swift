@@ -12,6 +12,13 @@ enum TempoSettingsListItem: String, Hashable {
     case sortByBMP
     case countDownEnable
     
+    var rawValue: String {
+        switch self {
+        case .sortByBMP: return "K_Settings_SortByBMP"
+        case .countDownEnable: return "K_Settings_CountDownEnable"
+        }
+    }
+    
     func icon() -> String {
         switch self {
         case .sortByBMP: return "dot.squareshape"
@@ -28,12 +35,15 @@ enum TempoSettingsListItem: String, Hashable {
     
     func value() -> Bool {
         let ud = UserDefaults.standard
-        return ud.bool(forKey: self.rawValue)
+        let key = self.rawValue
+        let value = ud.bool(forKey: key)
+        return value
     }
     
     func save(newValue: Bool) {
         let ud = UserDefaults.standard
-        ud.set(newValue, forKey: self.rawValue)
+        let key = self.rawValue
+        ud.set(newValue, forKey: key)
         ud.synchronize()
     }
     
@@ -45,16 +55,24 @@ enum TempoSettingsListItem: String, Hashable {
         TempoSettingsListItem.sortByBMP.value()
     }
     
+    static func saveSortByBPM(newValue: Bool) {
+        TempoSettingsListItem.sortByBMP.save(newValue: newValue)
+    }
+    
+    static func saveCountDownEnable(newValue: Bool) {
+        TempoSettingsListItem.countDownEnable.save(newValue: newValue)
+    }
+    
     static func createDefaultConfigs() {
         let ud = UserDefaults.standard
-        
+        let key = "K_FirstLaunch_Tempo"
+        let firstLaunchFlag = ud.string(forKey: key)
         var item = TempoSettingsListItem.sortByBMP
-        var exists = ud.object(forKey: item.rawValue)
-        if exists == nil { item.save(newValue: true) }
-        
+        if firstLaunchFlag == nil { item.save(newValue: true) }
         item = TempoSettingsListItem.countDownEnable
-        exists = ud.object(forKey: item.rawValue)
-        if exists == nil { item.save(newValue: true) }
+        if firstLaunchFlag == nil { item.save(newValue: true) }
+        if firstLaunchFlag == nil { ud.set("1", forKey: key) }
+        ud.synchronize()
     }
 }
 

@@ -181,6 +181,7 @@ extension TempoScreen {
             }
             .background(Theme.whiteColor)
             .cornerRadius(8.0)
+            .shadow(color: Theme.lightGrayColor, radius: 12.0)
             .padding()
         }
     }
@@ -188,25 +189,34 @@ extension TempoScreen {
     @ViewBuilder private func playButton() -> some View {
         HStack {
             if tempoComesFromDB {
-                Button("Cancel") {
+                Button {
                     manager.stop()
                     manager.tempoItem = .init()
                     manager.notifyListeners()
+                } label: {
+                    Text("Cancel")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Theme.lightColor)
+                        .foregroundColor(Theme.whiteColor)
+                        .cornerRadius(8.0)
                 }
-                .frame(maxWidth: .infinity, maxHeight: 44.0)
-                .background(Theme.lightColor)
-                .foregroundColor(Theme.whiteColor)
-                .cornerRadius(8.0)
+                .frame(maxWidth: .infinity, maxHeight: 48.0)
             }
-            Button(tempoComesFromDB ? "Update" : "Save to list") {
+            
+            Button {
+                manager.stop()
                 manager.tempoItem.replace()
                 manager.tempoItem = .init()
                 manager.notifyListeners()
+                isSaveSucessPresented = true
+            } label: {
+                Text(tempoComesFromDB ? "Update" : "Save to list")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Theme.mainColor)
+                    .foregroundColor(Theme.whiteColor)
+                    .cornerRadius(8.0)
             }
             .frame(maxWidth: .infinity, maxHeight: 48.0)
-            .background(Theme.mainColor)
-            .foregroundColor(Theme.whiteColor)
-            .cornerRadius(8.0)
         }
         .font(Font.system(size: 16))
         .padding(EdgeInsets(top: 4, leading: 16, bottom: 16, trailing: 16))

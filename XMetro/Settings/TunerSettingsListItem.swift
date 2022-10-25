@@ -42,9 +42,11 @@ enum TunerSettingsListItem: String, Hashable {
     
     static func createDefaultConfigs() {
         let ud = UserDefaults.standard
-        var item = TunerSettingsListItem.autoTuning
-        var exists = ud.object(forKey: item.rawValue)
-        if exists == nil { item.save(newValue: true) }
+        let item = TunerSettingsListItem.autoTuning
+        let firstLaunchFlag = ud.string(forKey: "K_FirstLaunch_Tuner")
+        if firstLaunchFlag == nil { item.save(newValue: true) }
+        ud.set("1", forKey: "K_FirstLaunch_Tuner")
+        ud.synchronize()
     }
 }
 

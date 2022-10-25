@@ -14,14 +14,14 @@ enum TempoDotsStyle {
     
     func rows() -> Int {
         switch self {
-        case .row: return 2
+        case .row: return 3
         case .global: return 3
         }
     }
     
     func colums() -> Int {
         switch self {
-        case .row: return 6
+        case .row: return 4
         case .global: return 4
         }
     }
@@ -51,7 +51,7 @@ struct TempoDotsView: View {
     @State var tempo: TempoModel
     var style: TempoDotsStyle = .global
     var body: some View {
-        VStack {
+        VStack(spacing: 5.0) {
             dots()
         }
         .onAppear {
@@ -82,7 +82,7 @@ struct TempoDotsView: View {
         let size = style.size()
         let radius = style.radius()
         ForEach(0..<rows, id: \.self) { row in
-            HStack() {
+            HStack(spacing: 5.0) {
                 ForEach(0..<colums, id: \.self) { colum in
                     let index = Int(row * colums + colum)
                     Text("")

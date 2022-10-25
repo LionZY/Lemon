@@ -13,6 +13,11 @@ struct TemposList: View {
     @State private var isLoadedPresented: Bool = false
     @State private var selectedItem: TempoModel?
     @State private var isEmpty: Bool = true
+    
+    private var sortByBPM: Bool {
+        TempoSettingsListItem.sortByBPM()
+    }
+    
     var didSelectItem:((TempoModel) -> Void)?
     var didDeleteItem:((TempoModel) -> Void)?
     
@@ -25,10 +30,10 @@ struct TemposList: View {
             }
         }
         .onAppear {
-            datas = TempoModel.AllItems(sortByBPM: TempoSettingsListItem.sortByBPM()) ?? []
+            datas = TempoModel.AllItems(sortByBPM: sortByBPM) ?? []
             isEmpty = datas.isEmpty
             manager.register(key: "\(TemposList.self)") {
-                datas = TempoModel.AllItems(sortByBPM: TempoSettingsListItem.sortByBPM()) ?? []
+                datas = TempoModel.AllItems(sortByBPM: sortByBPM) ?? []
                 isEmpty = datas.isEmpty
             }
         }
