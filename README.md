@@ -1,7 +1,6 @@
-# Ticker
-When I bored，I write a SwiftUI + Combine + TCA metronome & tuner, called "Ticker"
-<br>
-无聊的时候，使用swiftUI+Combine+TCA写的一个节拍器和调音器
+# Ting
+Ting is a easy to use metronome and tuner tools
+
 
 # Download
 <a href="https://apps.apple.com/app/6443442078"><image src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"/></a>
