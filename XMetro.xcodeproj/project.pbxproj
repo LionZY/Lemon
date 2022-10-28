@@ -67,6 +67,7 @@
 		05B41AA5288538AC00151D70 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AA2288538AC00151D70 /* Alignment.swift */; };
 		05B41AA6288538AC00151D70 /* ColorAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AA3288538AC00151D70 /* ColorAnimation.swift */; };
 		05B41AA7288538AC00151D70 /* Color+MusicalDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B41AA4288538AC00151D70 /* Color+MusicalDistance.swift */; };
+		05CEC0172908C4C60061526B /* PopPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CEC0162908C4C60061526B /* PopPickerView.swift */; };
 		05D39C122876904200CCE136 /* XMetroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C112876904200CCE136 /* XMetroApp.swift */; };
 		05D39C142876904200CCE136 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D39C132876904200CCE136 /* MainView.swift */; };
 		05D39C192876904300CCE136 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D39C182876904300CCE136 /* Preview Assets.xcassets */; };
@@ -179,6 +180,7 @@
 		05B41AA2288538AC00151D70 /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
 		05B41AA3288538AC00151D70 /* ColorAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorAnimation.swift; sourceTree = "<group>"; };
 		05B41AA4288538AC00151D70 /* Color+MusicalDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+MusicalDistance.swift"; sourceTree = "<group>"; };
+		05CEC0162908C4C60061526B /* PopPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopPickerView.swift; sourceTree = "<group>"; };
 		05D39C0E2876904200CCE136 /* XMetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D39C112876904200CCE136 /* XMetroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMetroApp.swift; sourceTree = "<group>"; };
 		05D39C132876904200CCE136 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 		0585133B2887F4A700F7B3AF /* Tempo */ = {
 			isa = PBXGroup;
 			children = (
+				05CEC0152908C47C0061526B /* Pops */,
 				0555D6882907BA6C00FA00B1 /* List */,
 				0555D68B2907BA6C00FA00B1 /* Manager */,
 				0555D6822907BA6C00FA00B1 /* Model */,
@@ -437,8 +440,8 @@
 			isa = PBXGroup;
 			children = (
 				059D995828DA03DD00741591 /* CurrentNoteMarker.swift */,
-				059D995928DA03DD00741591 /* MatchedNoteView.swift */,
 				059D995A28DA03DD00741591 /* NoteDistanceMarkers.swift */,
+				059D995928DA03DD00741591 /* MatchedNoteView.swift */,
 				059D995B28DA03DD00741591 /* NoteTicks.swift */,
 				059D995C28DA03DD00741591 /* MicrophoneAccessAlert.swift */,
 				059D995D28DA03DD00741591 /* TranspositionMenu.swift */,
@@ -466,6 +469,14 @@
 				0555D67A29076A8400FA00B1 /* MicrophonePitchDetector */,
 			);
 			name = Packages;
+			sourceTree = "<group>";
+		};
+		05CEC0152908C47C0061526B /* Pops */ = {
+			isa = PBXGroup;
+			children = (
+				05CEC0162908C4C60061526B /* PopPickerView.swift */,
+			);
+			path = Pops;
 			sourceTree = "<group>";
 		};
 		05D39C052876904200CCE136 = {
@@ -853,6 +864,7 @@
 				053C560528DD957500390B5B /* ActivityVC.swift in Sources */,
 				0555D68F2907BA6C00FA00B1 /* TempoDotsView.swift in Sources */,
 				05520FC728F8EEF9001814B0 /* Utils.swift in Sources */,
+				05CEC0172908C4C60061526B /* PopPickerView.swift in Sources */,
 				058C1C3428F6B3B00021C376 /* UMOC.m in Sources */,
 				059D996B28DA03DD00741591 /* TranspositionMenu.swift in Sources */,
 				05D39C122876904200CCE136 /* XMetroApp.swift in Sources */,
@@ -1038,7 +1050,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202210251652;
+				CURRENT_PROJECT_VERSION = 202210281755;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D4PFYTTGXR;
@@ -1049,9 +1061,9 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XMetro/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Ticker;
+				INFOPLIST_KEY_CFBundleDisplayName = Ting;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Tempomaster will use microphone for tuner.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Ting will use microphone for tuner.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1065,7 +1077,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1090,7 +1102,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202210251652;
+				CURRENT_PROJECT_VERSION = 202210281755;
 				DEVELOPMENT_ASSET_PATHS = "\"XMetro/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D4PFYTTGXR;
@@ -1101,9 +1113,9 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XMetro/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Ticker;
+				INFOPLIST_KEY_CFBundleDisplayName = Ting;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Tempomaster will use microphone for tuner.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Ting will use microphone for tuner.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1117,7 +1129,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.leoking.XMetro;
 				PRODUCT_NAME = XMetro;
 				PROVISIONING_PROFILE_SPECIFIER = "";

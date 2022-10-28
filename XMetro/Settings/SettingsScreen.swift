@@ -44,9 +44,9 @@ struct SettingsScreen: View {
                     Button {
                         isSharePresented = true
                     } label: {
-                        Text("Share Ticker with friends")
+                        Text("Share Ting with friends")
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(Theme.mainColor)
+                            .background(Theme.blackColor)
                             .foregroundColor(Theme.whiteColor)
                             .cornerRadius(8.0)
                     }
@@ -54,7 +54,7 @@ struct SettingsScreen: View {
                     .sheet(isPresented: $isSharePresented, onDismiss: {
                         print("Dismiss")
                     }, content: {
-                        ActivityVC(activityItems: ["Ticker", shareURL])
+                        ActivityVC(activityItems: ["Ting", shareURL])
                     })
                     Spacer().frame(width: 16.0)
                 }
@@ -63,7 +63,7 @@ struct SettingsScreen: View {
                 Text(versionInfo)
                     .multilineTextAlignment(.center)
                     .font(Font.system(size: 12))
-                    .foregroundColor(Theme.grayColor)
+                    .foregroundColor(Theme.grayColorA)
                 Spacer().frame(height: 20.0)
             }
         }

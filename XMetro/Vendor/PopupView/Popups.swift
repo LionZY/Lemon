@@ -50,70 +50,6 @@ struct PopupMiddle: View {
     }
 }
 
-
-protocol PopupBottomPickerDelegate {
-    var picker: PopupBottomPicker? { get set }
-}
-
-struct PopupBottomPicker: View {
-    @Binding var isPresented: Bool
-    @State var isTouchDownButton = false
-    
-    var type: PickerContentType = .text
-    var title: String
-    var datas: [String]
-    var defaultValue: String
-    @State var selectedValue: String
-    var didValueChange: ((String, Bool) -> Void)?
-
-    var body: some View {
-        VStack(spacing: 12) {
-            Text(title)
-                .foregroundColor(.black)
-                .font(.system(size: 24))
-            PickerView(datas: datas, selectedValue: defaultValue) { newValue, complete in
-                selectedValue = newValue
-                didValueChange?(newValue, complete)
-            }
-            HStack {
-                Button("Cancel") {
-                    isTouchDownButton = true
-                    isPresented = false
-                    didValueChange?(defaultValue, false)
-                }
-                .buttonStyle(.plain)
-                .font(.system(size: 18))
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 12.0)
-                .foregroundColor(.white)
-                .background(Theme.lightColor)
-                .cornerRadius(12)
-                Button("Done") {
-                    isTouchDownButton = true
-                    isPresented = false
-                    didValueChange?(selectedValue, true)
-                }
-                .buttonStyle(.plain)
-                .font(.system(size: 18))
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 12.0)
-                .foregroundColor(.white)
-                .background(Theme.mainColor)
-                .cornerRadius(12)
-            }
-        }
-        .onChange(of: isPresented, perform: { newValue in
-            if isPresented == false && !isTouchDownButton {
-                didValueChange?(defaultValue, false)
-            }
-        })
-        .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
-        .background(Color.white.cornerRadius(20))
-        .shadowedStyle()
-        .padding(.horizontal, 16)
-    }
-}
-
 struct PopupBottomSecond: View {
 
     var body: some View {
@@ -166,7 +102,7 @@ struct Popups_Previews: PreviewProvider {
         ZStack {
             Rectangle()
                 .ignoresSafeArea()
-            PopupBottomPicker(isPresented: .constant(false), title: "123", datas: ["123"], defaultValue: "123", selectedValue: "123")
+            PopupPicker(isPresented: .constant(false), title: "123", datas: ["123"], defaultValue: "123", selectedValue: "123")
         }
         
         ZStack {

@@ -3,12 +3,7 @@ import SwiftUI
 struct MainNoteView: View {
     let note: String
     var body: some View {
-        Text(note)
-            .font(.system(size: 68))
-            .bold()
-            .alignmentGuide(.noteCenter) { dimensions in
-                dimensions[HorizontalAlignment.center]
-            }
+        Text(note).font(.custom("Arial-BoldMT", size: 88))
     }
 }
 

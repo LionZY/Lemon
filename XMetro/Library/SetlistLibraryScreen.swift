@@ -13,7 +13,7 @@ struct SetlistLibraryScreen: View {
             VStack {
                 Spacer()
                 Text("No setlist yet.")
-                    .foregroundColor(Theme.grayColor)
+                    .foregroundColor(Theme.grayColorA)
                 Spacer()
             }
             VStack {
@@ -24,7 +24,7 @@ struct SetlistLibraryScreen: View {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: 44.0)
-                    .background(Theme.mainColor)
+                    .background(Theme.blackColor)
                     .foregroundColor(Theme.whiteColor)
                     .cornerRadius(8.0)
                     Spacer().frame(width: 16.0)

@@ -22,21 +22,21 @@ struct AboutScreen: View {
                             .cornerRadius(14.0)
                             .shadow(color: Theme.shadowColor, radius: 38.0, x: 0, y: 0)
                         Spacer().frame(height: 30)
-                        Text("Ticker is developed for musicians.\n---\nEasy for beginner!\nRock-solid precision!\nyour super tempo master!")
+                        Text("Ting is developed for musicians.\n---\nEasy for beginner!\nRock-solid precision!\nYour super tempo master!")
                             .multilineTextAlignment(.center)
                             .lineSpacing(6.0)
                     }
                     Spacer().frame(width: 8.0)
                 }
-                .foregroundColor(Theme.grayColor)
+                .foregroundColor(Theme.grayColorA)
                 Spacer()
                 HStack {
-                    Text("My Github:").foregroundColor(Theme.grayColor)
+                    Text("My Github:").foregroundColor(Theme.grayColorA)
                     Link("@LionZY", destination: URL(string: "https://github.com/LionZY")!)
                 }
                 Spacer().frame(height: 6.0)
                 HStack {
-                    Text("Contact me:").foregroundColor(Theme.grayColor)
+                    Text("Contact me:").foregroundColor(Theme.grayColorA)
                     Link("yue_zhang_lion@163.com", destination: URL(string: "mailto://yue_zhang_lion@163.com")!)
                 }
                 Spacer().frame(height: 20.0)

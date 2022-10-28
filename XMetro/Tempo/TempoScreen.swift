@@ -19,36 +19,39 @@ struct TempoScreen: View {
     
     @State private var isTimeSignaturePresented: Bool = false
     @State private var isBPMPresented: Bool = false
-    @State private var isSubdivisionPresented: Bool = false
+    @State private var isRevertedToDefault: Bool = false
     @State private var isSoundEffectPresented: Bool = false
     @State private var isSaveSucessPresented: Bool = false
     
+    @State private var showBottomButtons: Bool = false
     @State private var tempoComesFromDB: Bool = false
     
     var body: some View {
         mainView()
-        .navigationTitle("Tempo")
-        .popups(
-            manager,
-            $isTimeSignaturePresented,
-            $isBPMPresented,
-            $isSubdivisionPresented,
-            $isSoundEffectPresented,
-            $isSaveSucessPresented
-        )
-        .onWillDisappear {
-            manager.stop()
-        }
-        .onWillAppear {
-            manager.register(key: "\(TempoScreen.self)") {
-                timeSignature = "\(manager.tempoItem.meter)/\(manager.tempoItem.devide)"
-                bpm = "\(manager.tempoItem.bpm)"
-                subdivision = manager.tempoItem.subDivision
-                soundEffect = manager.tempoItem.soundEffect
-                tempoComesFromDB = TempoModel.one(uid: manager.tempoItem.uid) != nil
+            .navigationTitle("Tempo")
+            .popups(
+                manager,
+                $isTimeSignaturePresented,
+                $isBPMPresented,
+                $isRevertedToDefault,
+                $isSoundEffectPresented,
+                $isSaveSucessPresented
+            )
+            .onWillDisappear {
+                manager.stop()
             }
-        }
-        .animation(.easeInOut, value: tempoComesFromDB)
+            .onWillAppear {
+                manager.register(key: "\(TempoScreen.self)") {
+                    timeSignature = "\(manager.tempoItem.meter)/\(manager.tempoItem.devide)"
+                    bpm = "\(manager.tempoItem.bpm)"
+                    subdivision = manager.tempoItem.subDivision
+                    soundEffect = manager.tempoItem.soundEffect
+                    tempoComesFromDB = TempoModel.one(uid: manager.tempoItem.uid) != nil
+                }
+            }
+            .animation(.easeInOut, value: tempoComesFromDB)
+            .animation(.easeInOut, value: manager.tempoItem)
+            .animation(.easeInOut, value: showBottomButtons)
     }
 }
 
@@ -63,7 +66,7 @@ extension View {
         _ manager: TempoRunManager,
         _ isTimeSignaturePresented: Binding<Bool>,
         _ isBPMPresented: Binding<Bool>,
-        _ isSubdivisionPresented: Binding<Bool>,
+        _ isRevertedToDefault: Binding<Bool>,
         _ isSoundEffectPresented: Binding<Bool>,
         _ isSaveSucessPresented: Binding<Bool>
     ) -> some View {
@@ -76,10 +79,11 @@ extension View {
                 manager.tempoItem.devide = newDevide
                 manager.notifyListeners()
             }
-            PopupBottomPicker(
+            PopupTwoPickers(
                 isPresented: isTimeSignaturePresented,
                 title: "Time Signature",
-                datas: meterSet,
+                leftDatas: meterSet,
+                rightDatas: devideSet,
                 defaultValue: "\(manager.tempoItem.meter)/\(manager.tempoItem.devide)",
                 selectedValue: "\(manager.tempoItem.meter)/\(manager.tempoItem.devide)",
                 didValueChange: action
@@ -92,26 +96,12 @@ extension View {
                 manager.notifyListeners()
                 if manager.isCountDownStoped { manager.run() }
             }
-            PopupBottomPicker(
+            PopupPicker(
                 isPresented: isBPMPresented,
                 title: "BPM",
                 datas: bpmSet,
                 defaultValue: "\(manager.tempoItem.bpm)",
                 selectedValue: "\(manager.tempoItem.bpm)",
-                didValueChange: action
-            )
-        }
-        .popup(isPresented: isSubdivisionPresented, type: .floater(), position: .bottom, dragToDismiss: false, closeOnTap: true, closeOnTapOutside: true, backgroundColor: .clear) {
-            let action: ((String, Bool) -> Void) = { newValue, complete in
-                manager.tempoItem.subDivision = newValue
-                manager.notifyListeners()
-            }
-            PopupBottomPicker(
-                isPresented: isSubdivisionPresented,
-                title: "Subdivision",
-                datas: subdivisionSet,
-                defaultValue: manager.tempoItem.subDivision,
-                selectedValue: manager.tempoItem.subDivision,
                 didValueChange: action
             )
         }
@@ -121,7 +111,7 @@ extension View {
                 PlayerManager.recreatePlayers(manager: manager)
                 manager.notifyListeners()
             }
-            PopupBottomPicker(
+            PopupPicker(
                 isPresented: isSoundEffectPresented,
                 title: "Sound Effect",
                 datas: soundSet,
@@ -130,8 +120,11 @@ extension View {
                 didValueChange: action
             )
         }
-        .popup(isPresented: isSaveSucessPresented, type: .toast, position: .top, autohideIn: 2.5) {
+        .popup(isPresented: isSaveSucessPresented, type: .toast, position: .top, autohideIn: 1.5) {
             ToastTempoItemSaved()
+        }
+        .popup(isPresented: isRevertedToDefault, type: .toast, position: .top, autohideIn: 1.5) {
+            ToastTempoResumeToDefault()
         }
     }
 }
@@ -147,12 +140,20 @@ extension TempoScreen {
     
     @ViewBuilder private func listView() -> some View {
         let didDeleteItem: ((TempoModel) -> Void)  = { deletedTempo in
+            isRevertedToDefault = true
             manager.tempoItem = .init()
             manager.notifyListeners()
         }
 
         let didSelectItem: ((TempoModel) -> Void) = { selectedTempo in
-            manager.tempoItem = selectedTempo
+            if manager.isRunning || manager.isCountDown { manager.stop() }
+            if manager.tempoItem == selectedTempo {
+                isRevertedToDefault = true
+                manager.tempoItem = .init()
+            } else {
+                manager.tempoItem = selectedTempo
+                manager.nextAction()
+            }
             manager.notifyListeners()
         }
 
@@ -166,60 +167,96 @@ extension TempoScreen {
     @ViewBuilder private func tempoPlayView() -> some View {
         VStack {
             Spacer()
-            VStack {
+            VStack(spacing: 0) {
                 HStack {
-                    meterButton()
-                    bpmButton()
-                    soundButton()
-                    Spacer()
-                    dotsView()
-                    Spacer()
                     actionButton()
+                    VStack(alignment: .leading, spacing: 0) {
+                        HStack {
+                            dotsView()
+                            Spacer()
+                            let iconName = tempoComesFromDB ? "list.dash.header.rectangle" : "pencil.circle"
+                            Image(systemName: iconName).foregroundColor(Theme.whiteColor)
+                        }
+                        Spacer().frame(height: 12.0)
+                        HStack() {
+                            bpmButton()
+                            Spacer()
+                            meterButton()
+                            Spacer()
+                            soundButton()
+                        }
+                    }
+                    Spacer()
                 }
-                .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
-                playButton()
+                .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+                Divider()
+                bottomButtons()
             }
-            .background(Theme.whiteColor)
-            .cornerRadius(8.0)
-            .shadow(color: Theme.lightGrayColor, radius: 12.0)
+            .background(
+                Theme.redColor
+                    .cornerRadius(12.0)
+                    .shadow(color: Theme.grayColorA, radius: 4.0)
+            )
             .padding()
         }
     }
     
-    @ViewBuilder private func playButton() -> some View {
+    @ViewBuilder private func bottomButtons() -> some View {
         HStack {
-            if tempoComesFromDB {
+            if showBottomButtons {
+                if tempoComesFromDB {
+                    Button {
+                        manager.stop()
+                        manager.tempoItem = .init()
+                        manager.notifyListeners()
+                        showBottomButtons = false
+                        isRevertedToDefault = true
+                    } label: {
+                        Text("Reset")
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(Theme.whiteColorA2)
+                            .foregroundColor(Theme.whiteColor)
+                            .cornerRadius(8.0)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: 44.0)
+                }
                 Button {
-                    manager.stop()
-                    manager.tempoItem = .init()
-                    manager.notifyListeners()
+                    showBottomButtons = false
                 } label: {
                     Text("Cancel")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Theme.lightColor)
+                        .background(Theme.whiteColorA2)
                         .foregroundColor(Theme.whiteColor)
                         .cornerRadius(8.0)
                 }
-                .frame(maxWidth: .infinity, maxHeight: 48.0)
+                .frame(maxWidth: .infinity, maxHeight: 44.0)
+                Button {
+                    manager.stop()
+                    manager.tempoItem.replace()
+                    manager.tempoItem = .init()
+                    manager.notifyListeners()
+                    isSaveSucessPresented = true
+                    showBottomButtons = false
+                } label: {
+                    Text(tempoComesFromDB ? "Update" : "Save to list")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Theme.blackColor)
+                        .foregroundColor(Theme.whiteColor)
+                        .cornerRadius(8.0)
+                }
+                .frame(maxWidth: .infinity, maxHeight: 44.0)
+            } else {
+                Button {
+                    showBottomButtons = true
+                } label: {
+                    Image(systemName: "line.3.horizontal")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .foregroundColor(Theme.whiteColor)
+                }
+                .frame(maxWidth: .infinity, maxHeight: 44.0)
             }
-            
-            Button {
-                manager.stop()
-                manager.tempoItem.replace()
-                manager.tempoItem = .init()
-                manager.notifyListeners()
-                isSaveSucessPresented = true
-            } label: {
-                Text(tempoComesFromDB ? "Update" : "Save to list")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Theme.mainColor)
-                    .foregroundColor(Theme.whiteColor)
-                    .cornerRadius(8.0)
-            }
-            .frame(maxWidth: .infinity, maxHeight: 48.0)
         }
-        .font(Font.system(size: 16))
-        .padding(EdgeInsets(top: 4, leading: 16, bottom: 16, trailing: 16))
+        .padding(EdgeInsets(top: showBottomButtons ? 12.0 : 4, leading: 16, bottom: showBottomButtons ? 12.0 : 4, trailing: 16))
     }
     
     @ViewBuilder private func actionButton() -> some View {
@@ -228,8 +265,8 @@ extension TempoScreen {
             tempo: manager.tempoItem,
             style: .global
         )
-        .frame(maxWidth: 50.0, maxHeight: 50, alignment: .center)
-        .cornerRadius(25.0)
+        .frame(maxWidth: 68, maxHeight: 68, alignment: .center)
+        .cornerRadius(8.0)
         .onTapGesture {
             manager.nextAction()
         }
@@ -247,35 +284,29 @@ extension TempoScreen {
         Button(timeSignature) {
             isTimeSignaturePresented = true
         }
-        .tint(Theme.mainColor)
+        .tint(Theme.grayColorF1)
+        .foregroundColor(Theme.whiteColor)
         .controlSize(.regular)
-        .buttonStyle(.borderedProminent)
+        .buttonStyle(.bordered)
     }
 
     @ViewBuilder private func bpmButton() -> some View {
         Button(bpm) {
             isBPMPresented = true
         }
-        .tint(Theme.mainColor)
+        .tint(Theme.grayColorF1)
+        .foregroundColor(Theme.whiteColor)
         .controlSize(.regular)
-        .buttonStyle(.borderedProminent)
-    }
-    
-    @ViewBuilder private func subDivisionButton() -> some View {
-        Button(subdivision) {
-            isSubdivisionPresented = true
-        }
-        .tint(Theme.mainColor)
-        .controlSize(.regular)
-        .buttonStyle(.borderedProminent)
+        .buttonStyle(.bordered)
     }
     
     @ViewBuilder private func soundButton() -> some View {
         Button(soundEffect) {
             isSoundEffectPresented = true
         }
-        .tint(Theme.mainColor)
+        .tint(Theme.grayColorF1)
+        .foregroundColor(Theme.whiteColor)
         .controlSize(.regular)
-        .buttonStyle(.borderedProminent)
+        .buttonStyle(.bordered)
     }
 }

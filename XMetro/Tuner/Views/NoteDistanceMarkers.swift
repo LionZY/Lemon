@@ -2,51 +2,30 @@ import SwiftUI
 
 struct NoteDistanceMarkers: View {
     var body: some View {
+        createMarkers()
+    }
+    
+    @ViewBuilder func createMarkers() -> some View {
         HStack {
-            ForEach(0..<25) { index in
+            ForEach(0...40, id: \.self) { i in
                 Rectangle()
-                    .frame(width: 1, height: tickSize(forIndex: index).height)
-                    .foregroundColor(Color(hex: 0x000000, alpha: 0.2))
-                    .inExpandingRectangle()
-                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(width: 1, height: heightCal(i: i))
+                    .foregroundColor(frontColor(i: i))
             }
         }
-        .alignmentGuide(.noteTickCenter) { dimensions in
-            dimensions[VerticalAlignment.center]
-        }
+        .frame(maxWidth: .infinity)
     }
-
-    private func tickSize(forIndex index: Int) -> NoteTickSize {
-        if index == 12 {
-            return .large
-        } else if [2, 7, 17, 22].contains(index) {
-            return .medium
-        } else {
-            return .small
-        }
+    
+    private func frontColor(i: Int) -> Color {
+        if i == 20 { return Theme.greenColor }
+        if i % 5 == 0 { return Theme.grayColorCD }
+        return Theme.grayColorE
     }
-}
-
-enum NoteTickSize {
-    case small, medium, large
-    var height: CGFloat {
-        switch self {
-        case .small:
-            return 20
-        case .medium:
-            return 45
-        case .large:
-            return 68
-        }
-    }
-}
-
-extension View {
-    func inExpandingRectangle() -> some View {
-        ZStack {
-            Rectangle().foregroundColor(.clear)
-            self
-        }
+    
+    private func heightCal(i: Int) -> CGFloat {
+        if i == 20 { return 68 }
+        if i % 5 == 0 { return 42 }
+        return 18
     }
 }
 

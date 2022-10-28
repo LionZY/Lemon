@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+struct TemposListBackgroundModifier: ViewModifier {
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        if #available(iOS 16.0, *) {
+            content
+                .scrollContentBackground(.hidden)
+        } else {
+            content
+        }
+    }
+}
+
 struct TemposList: View {
     @Binding var manager: TempoRunManager
     @State private var datas: [TempoModel] = []
@@ -41,13 +53,14 @@ struct TemposList: View {
 
     @ViewBuilder func listView() -> some View {
         List(selection: $selectedItem) {
-            Section(footer: Spacer().frame(height: 148.0) ) {
+            Section(footer: Spacer().frame(height: 156.0)) {
                 ForEach(datas, id: \.self) { item in
                     TemposListRow(manager: $manager, item: item)
                         .listRowBackground(Theme.whiteColor)
                 }
                 .onDelete(perform: delete(at:))
             }
+            .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
         }
         .onChange(of: selectedItem) { newValue in
             guard let newItem = newValue else { return }
@@ -59,8 +72,8 @@ struct TemposList: View {
     @ViewBuilder func empyView() -> some View {
         Text("No tempo yet.")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Theme.thinGrayColor)
-            .foregroundColor(Theme.grayColor)
+            .background(Theme.grayColorF1)
+            .foregroundColor(Theme.grayColorA)
     }
     
     func delete(at offsets: IndexSet) {

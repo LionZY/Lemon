@@ -156,16 +156,14 @@ struct ToastTempoItemSaved: View {
     }
 }
 
-struct ToastTempoItemUsedInTempo: View {
+struct ToastTempoResumeToDefault: View {
     var body: some View {
         HStack(alignment: .top, spacing: 16.0) {
-            Image("checkmark")
-                .frame(width: 48, height: 48)
-                .cornerRadius(24)
+            Image("avatar1")
             VStack(alignment: .leading, spacing: 4) {
-                Text("Tempo Loaded")
+                Text("Reverted")
                     .font(.system(size: 16, weight: .bold))
-                Text("Tempo already load success.")
+                Text("The tempo was reverted to default")
                     .font(.system(size: 16, weight: .light))
                     .opacity(0.8)
             }

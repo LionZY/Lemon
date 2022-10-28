@@ -8,6 +8,12 @@
 import SwiftUI
 import ComposableArchitecture
 
+extension UIPickerView {
+    open override var intrinsicContentSize: CGSize {
+        return CGSize(width: UIView.noIntrinsicMetric, height: super.intrinsicContentSize.height)
+    }
+}
+
 enum PickerContentType {
 case text
 case image
@@ -24,18 +30,83 @@ struct PickerView: View {
     }
 
     var body: some View {
-        VStack {
-            HStack {
-                Picker("", selection: $selectedValue) {
-                    ForEach(datas, id: \.self) {
-                        Text($0)
+        HStack {
+            Picker("", selection: $selectedValue) {
+                ForEach(datas, id: \.self) {
+                    Text($0).foregroundColor(Theme.grayColor8)
+                }
+            }
+            .pickerStyle(.wheel)
+            .labelsHidden()
+            .frame(maxWidth: .infinity, maxHeight: 120.0)
+            .clipped()
+            .onChange(of: selectedValue) { newValue in
+                didValueChanged?(newValue, false)
+            }
+        }
+    }
+}
+
+struct TwoPickerView: View {
+    
+    @State private var leftSelectedValue: String
+    @State private var rightSelectedValue: String
+    
+    private var innerSelectedValue: String {
+        "\(leftSelectedValue)/\(rightSelectedValue)"
+    }
+
+    var didValueChanged: ((String, Bool) -> Void)?
+    var leftDatas: [String] = []
+    var rightDatas: [String] = []
+    var splitText: String = "/"
+    
+    init(
+        leftDatas: [String] = [],
+        rightDatas: [String] = [],
+        splitText: String = "/",
+        selectedValue: String,
+        didValueChanged: ((String, Bool) -> Void)? = nil
+    ) {
+        self.leftDatas = leftDatas
+        self.rightDatas = rightDatas
+        self.splitText = splitText
+        self.leftSelectedValue = selectedValue.components(separatedBy: splitText).first ?? "--"
+        self.rightSelectedValue = selectedValue.components(separatedBy: splitText).last ?? "--"
+        self.didValueChanged = didValueChanged
+    }
+    
+    var body: some View {
+        HStack {
+            VStack {
+                Picker("", selection: $leftSelectedValue) {
+                    ForEach(leftDatas, id: \.self) {
+                        Text($0).foregroundColor(Theme.grayColor8)
                     }
                 }
                 .pickerStyle(.wheel)
-                .onChange(of: selectedValue) { newValue in
-                    didValueChanged?(newValue, false)
-                }
+                .labelsHidden()
+                .frame(width: 130, height: 120.0)
+                .clipped()
             }
+            Text(splitText)
+            VStack {
+                Picker("", selection: $rightSelectedValue) {
+                    ForEach(rightDatas, id: \.self) {
+                        Text($0).foregroundColor(Theme.grayColor8)
+                    }
+                }
+                .pickerStyle(.wheel)
+                .labelsHidden()
+                .frame(width: 130, height: 120.0)
+                .clipped()
+            }
+        }
+        .onChange(of: leftSelectedValue) { newValue in
+            didValueChanged?(innerSelectedValue, false)
+        }
+        .onChange(of: rightSelectedValue) { newValue in
+            didValueChanged?(innerSelectedValue, false)
         }
     }
 }

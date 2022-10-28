@@ -5,31 +5,34 @@ struct MatchedNoteView: View {
     @State var modifierPreference: ModifierPreference
 
     var body: some View {
-        ZStack(alignment: .noteModifier) {
-            HStack(alignment: .lastTextBaseline) {
-                MainNoteView(note: note)
-                    .animation(nil, value: note)
-                    .animatingPerceptibleForegroundColor(isPerceptible: match.distance.isPerceptible)
+        HStack {
+            // 主调
+            MainNoteView(note: note)
+                .frame(maxHeight: 68)
+                .matchFrontColor(isPerceptible: match.distance.isPerceptible)
+            VStack {
+                // #
+                if let modifier = modifier {
+                    Text(modifier)
+                        .font(.system(size: 40.0))
+                        .frame(maxHeight: 30)
+                        .matchFrontColor(isPerceptible: match.distance.isPerceptible)
+                }
+                Spacer()
+                // 数字
                 Text(String(describing: match.octave))
-                    .alignmentGuide(.octaveCenter) { dimensions in
-                        dimensions[HorizontalAlignment.center]
-                    }
+                    .frame(maxHeight: 30)
                     .font(.system(size: 28.0))
                     .foregroundColor(Color(hex: 0x000000, alpha: 0.2))
             }
-            if let modifier = modifier {
-                Text(modifier)
-                    .font(.system(size: 40.0))
-                    .animatingPerceptibleForegroundColor(isPerceptible: match.distance.isPerceptible)
-                    .alignmentGuide(.octaveCenter) { dimensions in
-                        dimensions[HorizontalAlignment.center]
-                    }
-            }
         }
+        .frame(maxHeight: 68)
         .animation(.easeInOut, value: match.distance.isPerceptible)
+        /*
         .onTapGesture {
             modifierPreference = modifierPreference.toggled
         }
+        */
     }
 
     private var preferredName: String {
@@ -52,7 +55,7 @@ struct MatchedNoteView: View {
 
 private extension View {
     @ViewBuilder
-    func animatingPerceptibleForegroundColor(isPerceptible: Bool) -> some View {
+    func matchFrontColor(isPerceptible: Bool) -> some View {
         if #available(iOS 16, macOS 13, watchOS 9, *) {
             self.foregroundColor(
                 isPerceptible ? .perceptibleMusicalDistance : .imperceptibleMusicalDistance

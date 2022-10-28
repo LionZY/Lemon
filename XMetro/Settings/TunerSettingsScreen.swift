@@ -22,6 +22,8 @@ struct TunerSettingsScreen: View {
                             Text(item.title())
                             Spacer()
                             Toggle("", isOn: $isAutoTunerEnable)
+                                .toggleStyle(SwitchToggleStyle())
+                                .tint(Theme.blackColor)
                         }
                         .onChange(of: isAutoTunerEnable) { newValue in
                             item.save(newValue: newValue)

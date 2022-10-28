@@ -19,20 +19,48 @@ enum RunButtonStyle {
     
     func countDownFont() -> Font {
         switch self {
-        case .row: return Font.system(size: 32)
-        case .global: return Font.system(size: 24.0)
+        case .row: return .custom("Charter-BoldItalic", size: 32)
+        case .global: return .custom("Charter-BoldItalic", size: 32)
         }
     }
     
     func normalFont() -> Font {
         switch self {
-        case .row: return Font.system(size: 14)
-        case .global: return Font.system(size: 14)
+        case .row: return Font.system(size: 18)
+        case .global: return Font.system(size: 18)
         }
     }
     
     func font(isCountingDown: Bool) -> Font {
         isCountingDown ? countDownFont() : normalFont()
+    }
+    
+    func runColor() -> Color {
+        switch self {
+        case .row: return Theme.redColor
+        case .global: return Theme.whiteColorA95
+        }
+    }
+    
+    func stopedColor() -> Color {
+        switch self {
+        case .row: return Theme.blackColor
+        case .global: return Theme.whiteColorA95
+        }
+    }
+    
+    func countDownColor() -> Color {
+        switch self {
+        case .row: return Theme.yellowColor
+        case .global: return Theme.whiteColorA95
+        }
+    }
+    
+    func frontColor() -> Color {
+        switch self {
+        case .row: return Theme.whiteColor
+        case .global: return Theme.redColor
+        }
     }
 }
 
@@ -57,10 +85,10 @@ struct TempoRunButton: View {
         return "\(abs(countDownIndex))"
     }
     private var color: Color {
-        if isRunning { return Theme.lightColor }
-        if isStoped { return Theme.mainColor }
-        if manager.isCountDownEnable { return Theme.middleLightColor }
-        return Theme.mainColor
+        if isRunning { return style.runColor() }
+        if isStoped { return style.stopedColor() }
+        if manager.isCountDownEnable { return style.countDownColor() }
+        return Theme.blackColor
     }
 
     var body: some View {
@@ -69,8 +97,8 @@ struct TempoRunButton: View {
             if (title.count > 0) { Text(title) }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(color)
-        .foregroundColor(Theme.whiteColor)
+        .background(color.cornerRadius(8.0))
+        .foregroundColor(style.frontColor())
         .font(style.font(isCountingDown: isCountingDown))
         .onAppear {
             let rowCallback = {
@@ -87,6 +115,7 @@ struct TempoRunButton: View {
             let callback = style == .global ? globalCallback : rowCallback
             manager.register(key: updateKey(), callback: callback)
         }
+        .animation(.easeInOut, value: countDownIndex)
     }
     
     private func updateKey() -> String {

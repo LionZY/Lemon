@@ -13,59 +13,58 @@ struct TemposListRow: View {
     private var timeStampStr: String {
         StringFromTimeStamp(timeStamp: Double(item.uid) ?? 0)
     }
-    var item: TempoModel
+    @State var item: TempoModel
     var body: some View {
-        ZStack {
-            HStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Time signature:").foregroundColor(Theme.darkGrayColor)
-                        Text("\(item.meter)/\(item.devide)").foregroundColor(Theme.lightGrayColor)
-                    }
-                    .font(Font.system(size: 16))
-                    Spacer().frame(height: 2.0)
-                    HStack {
-                        Text("BPM:").foregroundColor(Theme.darkGrayColor)
-                        Text("\(item.bpm)").foregroundColor(Theme.lightGrayColor)
-                    }
-                    .font(Font.system(size: 16))
-                    Spacer().frame(height: 2.0)
-                    HStack {
-                        Text("Sound effect:").foregroundColor(Theme.darkGrayColor)
-                        Text(item.soundEffect).foregroundColor(Theme.lightGrayColor)
-                    }
-                    .font(Font.system(size: 16))
-                    Spacer()
-                    Text(timeStampStr)
-                        .foregroundColor(Theme.lightGrayColor)
-                        .font(Font.system(size: 12))
-                    Spacer().frame(height: 2.0)
-                }
-                Spacer()
-                TempoDotsView(manager: $manager, tempo: item, style: .row)
-                Spacer()
-                VStack {
+        HStack(spacing: 0) {
+            VStack {
+                if selected {
                     TempoRunButton(manager: $manager, tempo: item)
                         .onTapGesture {
                             if !selected { manager.stop() }
                             manager.tempoItem = item
                             manager.nextAction()
                         }
-                        .frame(width: 64.0, height: 64.0)
-                        .background(Theme.mainColor)
+                        .frame(width: 68.0, height: 68.0)
                         .foregroundColor(Theme.whiteColor)
-                        .cornerRadius(8.0)
-                    if selected {
-                        Spacer().frame(height: 8.0)
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(Theme.lightColor)
+                } else {
+                    VStack {
+                        Text("BPM")
+                            .font(.system(size: 12))
+                            .italic()
+                        Text("\(item.bpm)")
+                            .font(.custom("Charter-BoldItalic", size: 22))
                     }
+                    .frame(width: 68, height: 68)
+                    .background(Theme.grayColorF5.cornerRadius(8))
+                    .foregroundColor(Theme.blackColor)
                 }
-                .frame(width: 64.0, height: 88.0)
             }
+            Spacer().frame(width: 12.0)
+            VStack(alignment: .leading) {
+                HStack(spacing: 0) {
+                    Image(systemName: "speaker.circle").foregroundColor(Theme.grayColor8).font(.system(size: 14))
+                    Spacer().frame(width: 8.0)
+                    Text("Sound effect:").foregroundColor(Theme.grayColor8).font(.system(size: 14))
+                    Spacer()
+                    Text(item.soundEffect).foregroundColor(Theme.grayColorB).font(.custom("Charter-BoldItalic", size: 14))
+                }
+                Spacer().frame(height: 5.0)
+                HStack(spacing: 0) {
+                    Image(systemName: "timer.circle").foregroundColor(Theme.grayColor8).font(.system(size: 14))
+                    Spacer().frame(width: 8.0)
+                    Text("Time signature:").foregroundColor(Theme.grayColor8).font(.system(size: 14))
+                    Spacer()
+                    Text("\(item.meter)/\(item.devide)").foregroundColor(Theme.grayColorB).font(.custom("Charter-BoldItalic", size: 14))
+                }
+                Spacer().frame(height: 5.0)
+                HStack {
+                    Image(systemName: "smallcircle.filled.circle").foregroundColor(Theme.grayColor8).font(.system(size: 14))
+                    Spacer().frame(width: 8.0)
+                    TempoDotsView(manager: $manager, tempo: item, style: .row)
+                }
+            }
+            Spacer()
         }
-        .foregroundColor(Theme.grayColor)
-        .padding(EdgeInsets(top: 8.0, leading: 0.0, bottom: 8.0, trailing: 0.0))
         .onAppear {
             selected = manager.tempoItem.uid == item.uid
             manager.register(key: "\(TemposListRow.self)_\(item.uid)") {

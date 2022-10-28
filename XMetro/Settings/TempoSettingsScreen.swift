@@ -25,6 +25,8 @@ struct TempoSettingsScreen: View {
                             Text(item.title())
                             Spacer()
                             switchView(item: item)
+                                .toggleStyle(SwitchToggleStyle())
+                                .tint(Theme.blackColor)
                         }
                         .onChange(of: isCountDownEnable) { newValue in
                             TempoSettingsListItem.saveCountDownEnable(newValue: newValue)

@@ -18,7 +18,7 @@ enum SettingListItem: Hashable {
         case .metronome: return "metronome"
         case .tuner: return "tuningfork"
         case .about: return "info.circle"
-        case .update: return "arrow.triangle.2.circlepath.circle"
+        case .update: return "star.circle"
         }
     }
     
@@ -26,8 +26,8 @@ enum SettingListItem: Hashable {
         switch self {
         case .metronome: return "Tempo settings"
         case .tuner: return "Tuner settings"
-        case .about: return "About Ticker"
-        case .update: return "Update"
+        case .about: return "About Ting"
+        case .update: return "Rate us"
         }
     }
     
@@ -46,17 +46,17 @@ enum SettingListItem: Hashable {
                 Image(systemName: icon())
                 Text(title())
                 Spacer()
-                Button("App Store") {
+                Button(" App Store ") {
                     if let url = URL(string: "https://apps.apple.com/app/6443442078") {
                         UIApplication.shared.open(url)
                     }
                 }
-                .font(.system(size: 14.0))
                 .buttonStyle(.borderedProminent)
-                .foregroundColor(Theme.whiteColor)
-                .tint(Theme.mainColor)
+                .controlSize(.small)
+                .font(.system(size: 14.0))
+                .tint(Theme.grayColorF1)
+                .foregroundColor(Theme.blackColor)
             }
-            .frame(height: 44.0)
         } else {
             NavigationLink(destination: destination()) {
                 HStack{

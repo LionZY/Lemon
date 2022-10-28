@@ -13,14 +13,13 @@ struct TabbarView: View {
     var body: some View {
         NavigationView {
             WithViewStore(store) { viewStore in
-                VStack {
+                VStack(spacing: 0) {
                     viewStore.state.current.content()
                     HStack {
                         ForEach(viewStore.state.items, id: \.self) {
                             TabItemView(viewStore: viewStore, item: $0)
                         }
                     }
-                    .frame(height: 44.0)
                     .background(Theme.whiteColor)
                 }
             }

@@ -13,7 +13,7 @@ struct ChordLibraryScreen: View {
             VStack {
                 Spacer()
                 Text("No chord yet.")
-                    .foregroundColor(Theme.grayColor)
+                    .foregroundColor(Theme.grayColorA)
                 Spacer()
             }
             VStack {
@@ -24,7 +24,7 @@ struct ChordLibraryScreen: View {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: 44.0)
-                    .background(Theme.mainColor)
+                    .background(Theme.blackColor)
                     .foregroundColor(Theme.whiteColor)
                     .cornerRadius(8.0)
                     Spacer().frame(width: 16.0)

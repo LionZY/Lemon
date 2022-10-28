@@ -58,6 +58,56 @@ struct WillAppearHandler: UIViewControllerRepresentable {
     }
 }
 
+struct didAppearHandler: UIViewControllerRepresentable {
+    typealias UIViewControllerType = UIViewController
+    let onDidAppear: () -> Void
+    func makeCoordinator() -> didAppearHandler.Coordinator { Coordinator(onDidAppear: onDidAppear) }
+    func makeUIViewController(context: UIViewControllerRepresentableContext<didAppearHandler>) -> UIViewController { context.coordinator }
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<didAppearHandler>) { }
+
+    class Coordinator: UIViewController {
+        let onDidAppear: () -> Void
+        init(onDidAppear: @escaping () -> Void) {
+            self.onDidAppear = onDidAppear
+            super.init(nibName: nil, bundle: nil)
+        }
+
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+    
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            onDidAppear()
+        }
+    }
+}
+
+struct didDisappearHandler: UIViewControllerRepresentable {
+    typealias UIViewControllerType = UIViewController
+    let onDidDisappear: () -> Void
+    func makeCoordinator() -> didDisappearHandler.Coordinator { Coordinator(onDidDisappear: onDidDisappear) }
+    func makeUIViewController(context: UIViewControllerRepresentableContext<didDisappearHandler>) -> UIViewController { context.coordinator }
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<didDisappearHandler>) { }
+
+    class Coordinator: UIViewController {
+        let onDidDisappear: () -> Void
+        init(onDidDisappear: @escaping () -> Void) {
+            self.onDidDisappear = onDidDisappear
+            super.init(nibName: nil, bundle: nil)
+        }
+
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+    
+        override func viewDidDisappear(_ animated: Bool) {
+            super.viewDidDisappear(animated)
+            onDidDisappear()
+        }
+    }
+}
+
 struct WillDisappearModifier: ViewModifier {
     let callback: () -> Void
 
@@ -75,6 +125,22 @@ struct WillAppearModifier: ViewModifier {
     }
 }
 
+struct didAppearModifier: ViewModifier {
+    let callback: () -> Void
+    func body(content: Content) -> some View {
+        content
+            .background(didAppearHandler(onDidAppear: callback))
+    }
+}
+
+struct didDisappearModifier: ViewModifier {
+    let callback: () -> Void
+    func body(content: Content) -> some View {
+        content
+            .background(didDisappearHandler(onDidDisappear: callback))
+    }
+}
+
 extension View {
     func onWillDisappear(_ perform: @escaping () -> Void) -> some View {
         self.modifier(WillDisappearModifier(callback: perform))
@@ -82,5 +148,13 @@ extension View {
     
     func onWillAppear(_ perform: @escaping () -> Void) -> some View {
         self.modifier(WillAppearModifier(callback: perform))
+    }
+    
+    func onDidAppear(_ perform: @escaping () -> Void) -> some View {
+        self.modifier(didAppearModifier(callback: perform))
+    }
+
+    func onDidDisappear(_ perform: @escaping () -> Void) -> some View {
+        self.modifier(didDisappearModifier(callback: perform))
     }
 }

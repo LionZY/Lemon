@@ -45,13 +45,14 @@ struct TunerView: View {
     var body: some View {
         VStack {
             Spacer()
-            VStack() {
+            VStack {
                 MatchedNoteView(
                     match: match,
                     modifierPreference: modifierPreference
                 )
+                Spacer().frame(height: 30.0)
                 MatchedNoteFrequency(frequency: tunerData.closestNote.frequency)
-                NoteTicks(tunerData: tunerData, showFrequencyText: true)
+                NoteTicks(tunerData: tunerData)
             }
             Spacer()
             HStack {
@@ -60,18 +61,24 @@ struct TunerView: View {
                     let subItems = notes[m]
                     VStack {
                         ForEach(Array(subItems.enumerated()), id: \.offset) { n, md in
-                            let title = md + octaves[m][n]
+                            let noteTitle = md
+                            let octiveTitle = octaves[m][n]
                             let indexPath = IndexPath(item: n, section: m)
-                            Button(title) {
-                                autoTuning = false
-                                selected = indexPath
+                            HStack(alignment: .firstTextBaseline, spacing: 0) {
+                                Text(noteTitle).font(.system(size: 24)).frame(height: 24)
+                                Text(octiveTitle).font(.system(size: 14)).frame(height: 14)
                             }
                             .frame(maxWidth: 60, maxHeight: 60)
                             .background(checkPerceptible(first: md, last: octaves[m][n], indexPath: indexPath))
                             .foregroundColor(Theme.whiteColor)
                             .cornerRadius(30.0)
+                            .onTapGesture {
+                                autoTuning = false
+                                selected = indexPath
+                            }
                         }
-                    }.rotationEffect(.degrees((m + 1) % 2 == 0 ? 6.0 : -6.0))
+                    }
+                    .rotationEffect(.degrees((m + 1) % 2 == 0 ? 6.5 : -6.5))
                     Spacer()
                 }
             }
@@ -83,7 +90,7 @@ struct TunerView: View {
             leading: HStack {
                 Picker("", selection: $selectedValue) {
                     ForEach(segments, id: \.self) { t in
-                        Text(t).foregroundColor(selectedValue == t ? Theme.lightColor : Color(UIColor(white: 0.0, alpha: 0.3)))
+                        Text(t).foregroundColor(selectedValue == t ? Theme.redColor : Color(UIColor(white: 0.0, alpha: 0.3)))
                     }
                 }
                 .frame(width: 140.0)
@@ -93,30 +100,30 @@ struct TunerView: View {
                 }
             },
             trailing: Toggle("Auto", isOn: $autoTuning)
-                .toggleStyle(SwitchToggleStyle(tint: Theme.lightColor))
+                .toggleStyle(SwitchToggleStyle())
                 .frame(maxWidth: 98.0)
                 .onChange(of: autoTuning) { isAuto in
                     if isAuto { selected = nil }
                 }
         )
-        .tint(Theme.mainColor)
+        .tint(Theme.blackColor)
         .animation(.easeInOut, value: selectedValue)
     }
     
     func checkPerceptible(first: String, last: String, indexPath: IndexPath) -> Color {
         let isSelected = indexPath.section == selected?.section && indexPath.item == selected?.item
         if autoTuning && note == first && last == octave {
-            return isPerceptible ? Theme.mainColor : Theme.specialLightColor
+            return isPerceptible ? Theme.blackColor : Theme.greenColor
         } else if isSelected {
             if isPerceptible {
-                return Theme.lightColor
+                return Theme.redColor
             }
             if note == first && last == octave {
-                return Theme.specialLightColor
+                return Theme.greenColor
             }
-            return Theme.lightColor
+            return Theme.redColor
         } else {
-            return Theme.mainColor
+            return Theme.blackColor
         }
     }
 }

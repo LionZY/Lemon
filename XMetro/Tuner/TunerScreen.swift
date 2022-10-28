@@ -20,18 +20,18 @@ struct TunerScreen: View {
                 switch phase {
                 case .active:
                     startAudio()
-                case .inactive, .background:
+                case .background:
                     stopAudio()
-                @unknown default:
-                    stopAudio()
+                default:
+                    break
                 }
             }
-            .onAppear(perform: {
+            .onDidAppear {
                 startAudio()
-            })
-            .onDisappear(perform: {
+            }
+            .onDidDisappear {
                 stopAudio()
-            })
+            }
             .alert(isPresented: $pitchDetector.showMicrophoneAccessAlert) {
                 MicrophoneAccessAlert()
             }
@@ -40,28 +40,16 @@ struct TunerScreen: View {
                 type: .scalingDots(count: 3, inset: 6)
             )
             .frame(width: 44.0, height: 44.0)
-            .foregroundColor(Theme.lightColor)
+            .foregroundColor(Theme.redColor)
         }
     }
     
     private func startAudio() {
-        showLoadingIndicator = true
-        DispatchQueue.main.async {
-            pitchDetector.start()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: DispatchWorkItem(block: {
-                showLoadingIndicator = false
-            }))
-        }
+        pitchDetector.start()
     }
     
     private func stopAudio() {
-        showLoadingIndicator = true
-        DispatchQueue.main.async {
-            pitchDetector.stop()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: DispatchWorkItem(block: {
-                showLoadingIndicator = false
-            }))
-        }
+        pitchDetector.stop()
     }
 }
 

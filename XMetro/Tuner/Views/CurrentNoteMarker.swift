@@ -3,25 +3,32 @@ import SwiftUI
 struct CurrentNoteMarker: View {
     let frequency: Frequency
     let distance: Frequency.MusicalDistance
-    let showFrequencyText: Bool
+    var matchFrontColor: Color {
+        distance.isPerceptible ? .perceptibleMusicalDistance : .imperceptibleMusicalDistance
+    }
+    
+    var freqTitle: String {
+        frequency.localizedString()
+    }
+    
+    func offsetX(_ geometry: GeometryProxy) -> CGFloat {
+        (geometry.size.width / 2) * CGFloat(distance.cents / 50)
+    }
+    
+    let offsetY = (68.0 - 16.0) / 2.0
     var body: some View {
         GeometryReader { geometry in
-            VStack(alignment: .center) {
+            VStack {
                 Rectangle()
-                    .frame(width: 1.0, height: 68.0)
-                    .foregroundColor(
-                        distance.isPerceptible ? .perceptibleMusicalDistance : .imperceptibleMusicalDistance
-                    )
-                if showFrequencyText {
-                    Text(frequency.localizedString())
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
+                    .frame(width: 16.0, height: 16.0)
+                    .foregroundColor(matchFrontColor)
+                    .cornerRadius(8.0)
+                Text(freqTitle)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
             }
             .frame(width: geometry.size.width)
-            .offset(
-                x: (geometry.size.width / 2) * CGFloat(distance.cents / 50)
-            )
+            .offset(x: offsetX(geometry), y: offsetY)
             .animation(.easeInOut, value: distance.cents)
         }
     }
@@ -29,7 +36,7 @@ struct CurrentNoteMarker: View {
 
 struct CurrentNoteMarker_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentNoteMarker(frequency: 440.0, distance: 0, showFrequencyText: true)
+        CurrentNoteMarker(frequency: 440.0, distance: 0)
             .previewLayout(.fixed(width: 300, height: 200))
     }
 }
