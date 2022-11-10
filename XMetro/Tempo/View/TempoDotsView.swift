@@ -77,33 +77,31 @@ enum TempoDotsStyle {
 }
 
 struct TempoDotsView: View {
-    @Binding var manager: TempoRunManager
+    @ObservedObject var manager: TempoRunManager
     @State private var updateKey = "\(TempoDotsView.self)"
-    @State private var countDownIndex = -4
+    @State private var countDownIndex = -(TempoSettingsListItem.countDownTime() + 1)
     @State private var runningIndex = -1
     @State private var total = 4
-    @State var tempo: TempoModel
+    @State var tempoId: String
     var style: TempoDotsStyle = .global
     var body: some View {
         VStack(spacing: style.vSpacing()) {
             dots()
         }
         .onAppear {
-            updateKey = "\(TempoDotsView.self)_\(style)_\(tempo.uid)"
-            total = tempo.meter
-            
+            updateKey = "\(TempoDotsView.self)_\(style)_\(tempoId)"            
             let rowCallback = {
-                guard manager.tempoItem.uid == tempo.uid else { return }
+                guard manager.state.tempoItem.uid == tempoId else { return }
                 countDownIndex = manager.countDownIndex
                 runningIndex = manager.runingIndex
-                total = manager.tempoItem.meter
+                total = manager.state.tempoItem.meter
             }
             
             let globalCallback = {
-                tempo = manager.tempoItem
+                tempoId = manager.state.tempoItem.uid
                 countDownIndex = manager.countDownIndex
                 runningIndex = manager.runingIndex
-                total = manager.tempoItem.meter
+                total = manager.state.tempoItem.meter
             }
             let callback = style == .global ? globalCallback : rowCallback
             manager.register(key: updateKey, callback: callback)

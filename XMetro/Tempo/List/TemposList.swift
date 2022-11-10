@@ -20,9 +20,8 @@ struct TemposListBackgroundModifier: ViewModifier {
 }
 
 struct TemposList: View {
-    @Binding var manager: TempoRunManager
+    @ObservedObject var manager: TempoRunManager
     @State private var datas: [TempoModel] = []
-    @State private var isLoadedPresented: Bool = false
     @State private var selectedItem: TempoModel?
     @State private var isEmpty: Bool = true
     
@@ -55,8 +54,11 @@ struct TemposList: View {
         List(selection: $selectedItem) {
             Section(footer: Spacer().frame(height: 156.0)) {
                 ForEach(datas, id: \.self) { item in
-                    TemposListRow(manager: $manager, item: item)
+                    TemposListRow(manager: manager, item: item)
                         .listRowBackground(Theme.whiteColor)
+                        .onTapGesture {
+                            selectedItem = item
+                        }
                 }
                 .onDelete(perform: delete(at:))
             }
@@ -67,6 +69,7 @@ struct TemposList: View {
             didSelectItem?(newItem)
             selectedItem = nil
         }
+        .animation(.easeInOut, value: datas)
     }
     
     @ViewBuilder func empyView() -> some View {

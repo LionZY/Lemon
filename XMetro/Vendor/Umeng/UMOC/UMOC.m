@@ -10,8 +10,19 @@
 @implementation UMOC
 + (void)config {
     [UMCommonLogManager setUpUMCommonLogManager];
+#ifdef DEBUG
+    NSString *channel = @"DEBUG";
+    if (TARGET_IPHONE_SIMULATOR == 1 && TARGET_OS_IPHONE == 1) {
+        channel = @"DEBUG_SIMULATOR";
+    } else {
+        channel = @"DEBUG_DEVICE";
+    }
     [UMConfigure setLogEnabled:YES];
+    [UMConfigure initWithAppkey:@"6343ddf288ccdf4b7e4574be" channel:channel];
+#else
+    [UMConfigure setLogEnabled:NO];
     [UMConfigure initWithAppkey:@"6343ddf288ccdf4b7e4574be" channel:@"App Store"];
+#endif
 }
 
 + (void)registerPush:(UIApplication *)application launchOptions:(NSDictionary * __nullable)launchOptions delegate:(id<UNUserNotificationCenterDelegate>) delegate {

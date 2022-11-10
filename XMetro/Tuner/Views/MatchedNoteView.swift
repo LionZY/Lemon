@@ -8,7 +8,7 @@ struct MatchedNoteView: View {
         HStack {
             // 主调
             MainNoteView(note: note)
-                .frame(maxHeight: 68)
+                .frame(maxHeight: Theme.largeButtonHeight)
                 .matchFrontColor(isPerceptible: match.distance.isPerceptible)
             VStack {
                 // #
@@ -26,7 +26,7 @@ struct MatchedNoteView: View {
                     .foregroundColor(Color(hex: 0x000000, alpha: 0.2))
             }
         }
-        .frame(maxHeight: 68)
+        .frame(maxHeight: Theme.largeButtonHeight)
         .animation(.easeInOut, value: match.distance.isPerceptible)
         /*
         .onTapGesture {

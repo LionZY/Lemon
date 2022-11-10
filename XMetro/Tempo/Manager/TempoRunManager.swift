@@ -7,26 +7,30 @@
 
 import SwiftUI
 
-class TempoRunManager {
-    
-    // Data Model
-    var tempoItem: TempoModel = .init()
+class TempoRunManager: ObservableObject {
     
     // Timer
-    private var timer: TGCDTimer?
-    private var countDownTimer: TGCDTimer?
+    private var timer: TGCDTimer? = nil
+    private var countDownTimer: TGCDTimer? = nil
+    private var countDownTime: Int {
+        TempoSettingsListItem.countDownTime() + 1
+    }
+    
+    // State
+    var state: TempoScreenState = .init()
+    var tabbar: TabbarView?
     
     // Index
     var runingIndex: Int = -1
-    var countDownIndex: Int = -4
+    var countDownIndex: Int = -(TempoSettingsListItem.countDownTime() + 1)
     
-    // Status
-    var isCountDown: Bool { countDownIndex < 0 && countDownIndex > -4 }
-    var isReadyCountDown: Bool { countDownIndex == -4 }
+    // Run status
+    var isCountDown: Bool { countDownIndex < 0 && countDownIndex > -countDownTime }
+    var isReadyCountDown: Bool { countDownIndex == -countDownTime }
     var isCountDownStoped: Bool { countDownIndex == 0 }
-    var isRunning: Bool { countDownIndex > -4 }
+    var isRunning: Bool { countDownIndex > -countDownTime }
     var action: TempoPlayAction { isReadyCountDown ? .run : .stop }
-    var timerEvery: CGFloat { countDownIndex == -4 ? 1.0 : (60.0 / CGFloat(tempoItem.bpm)) }
+    var timerEvery: CGFloat { countDownIndex == -countDownTime ? 1.0 : (60.0 / CGFloat(state.tempoItem.bpm)) }
     var shouldPlayStrong: Bool { runingIndex == 0 }
     var isCountDownEnable: Bool { TempoSettingsListItem.countDownEnable() }
     
@@ -43,7 +47,7 @@ class TempoRunManager {
     func stop() {
         XTimer.shared.cancelTimer()
         PlayerManager.stopPlayers()
-        countDownIndex = -4
+        countDownIndex = -countDownTime
         runingIndex = -1
         notifyListeners()
     }
@@ -51,7 +55,7 @@ class TempoRunManager {
     func run() {
         XTimer.shared.cancelTimer()
         PlayerManager.CreateAndPlayStrong(manager: self)
-        runingIndex = (runingIndex + 1) % tempoItem.meter
+        runingIndex = (runingIndex + 1) % state.tempoItem.meter
         notifyListeners()
         XTimer.shared.createNewTimer(timerEvery: timerEvery) {
             self.runHandler()
@@ -65,7 +69,7 @@ class TempoRunManager {
     }
     
     func runHandler() {
-        runingIndex = (runingIndex + 1) % tempoItem.meter
+        runingIndex = (runingIndex + 1) % state.tempoItem.meter
         PlayerManager.Play(strong: shouldPlayStrong)
         notifyListeners()
     }

@@ -34,13 +34,13 @@ struct SettingsScreen: View {
                     ForEach(listData, id: \.self) { item in
                         item.itemView()
                     }
+                    .listRowBackground(Theme.whiteColor)
                 }
             }
             VStack {
                 Spacer()
                 HStack {
                     Spacer().frame(width: 16.0)
-                    
                     Button {
                         isSharePresented = true
                     } label: {
@@ -50,7 +50,7 @@ struct SettingsScreen: View {
                             .foregroundColor(Theme.whiteColor)
                             .cornerRadius(8.0)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: 44.0)
+                    .frame(maxWidth: .infinity, maxHeight: Theme.normalButtonHeight)
                     .sheet(isPresented: $isSharePresented, onDismiss: {
                         print("Dismiss")
                     }, content: {

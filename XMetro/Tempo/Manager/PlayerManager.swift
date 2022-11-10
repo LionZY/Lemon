@@ -12,7 +12,7 @@ struct PlayerManager {
     static var lightPlayer:AVAudioPlayer?
     static func createLightPlayerIfNeeded(manager: TempoRunManager? = nil) {
         if lightPlayer == nil {
-            let resource = manager?.tempoItem.soundEffect ?? "Default"
+            let resource = manager?.state.tempoItem.soundEffect ?? "Default"
             guard let path = Bundle.main.path(forResource: resource, ofType: "m4a") else { return }
             let url = URL(fileURLWithPath: path)
             do {
@@ -27,7 +27,7 @@ struct PlayerManager {
     static var strongPlayer:AVAudioPlayer?
     static func createStrongPlayerIfNeeded(manager: TempoRunManager? = nil) {
         if strongPlayer == nil {
-            let resource = manager?.tempoItem.soundEffectStong ?? "Default_strong"
+            let resource = manager?.state.tempoItem.soundEffectStong ?? "Default_strong"
             guard let path = Bundle.main.path(forResource: resource, ofType: "m4a") else { return }
             let url = URL(fileURLWithPath: path)
             do {

@@ -33,12 +33,12 @@ struct PickerView: View {
         HStack {
             Picker("", selection: $selectedValue) {
                 ForEach(datas, id: \.self) {
-                    Text($0).foregroundColor(Theme.grayColor8)
+                    Text($0).foregroundColor(Theme.whiteColor)
                 }
             }
             .pickerStyle(.wheel)
             .labelsHidden()
-            .frame(maxWidth: .infinity, maxHeight: 120.0)
+            .frame(maxWidth: .infinity, maxHeight: Theme.pickerHeight)
             .clipped()
             .onChange(of: selectedValue) { newValue in
                 didValueChanged?(newValue, false)
@@ -81,24 +81,24 @@ struct TwoPickerView: View {
             VStack {
                 Picker("", selection: $leftSelectedValue) {
                     ForEach(leftDatas, id: \.self) {
-                        Text($0).foregroundColor(Theme.grayColor8)
+                        Text($0).foregroundColor(Theme.whiteColor)
                     }
                 }
                 .pickerStyle(.wheel)
                 .labelsHidden()
-                .frame(width: 130, height: 120.0)
+                .frame(width: 130, height: Theme.pickerHeight)
                 .clipped()
             }
-            Text(splitText)
+            Text(splitText).foregroundColor(Theme.whiteColor)
             VStack {
                 Picker("", selection: $rightSelectedValue) {
                     ForEach(rightDatas, id: \.self) {
-                        Text($0).foregroundColor(Theme.grayColor8)
+                        Text($0).foregroundColor(Theme.whiteColor)
                     }
                 }
                 .pickerStyle(.wheel)
                 .labelsHidden()
-                .frame(width: 130, height: 120.0)
+                .frame(width: 130, height: Theme.pickerHeight)
                 .clipped()
             }
         }

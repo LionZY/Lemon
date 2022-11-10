@@ -36,9 +36,9 @@ enum TabbarItemType: Int {
         }
     }
     
-    @ViewBuilder func content() -> some View {
+    @ViewBuilder func content(manager: TempoRunManager) -> some View {
         switch self {
-        case .tempo: TempoScreen()
+        case .tempo: TempoScreen(manager: manager)
         case .tuner: TunerScreen()
         case .settings: SettingsScreen()
         }

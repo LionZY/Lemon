@@ -25,10 +25,12 @@ struct PopupPicker: View {
     var body: some View {
         VStack {
             titleView()
+            Divider().background(Theme.whiteColorA2)
             pickerView()
+            Divider().background(Theme.whiteColorA2)
             buttons()
         }
-        .background(Color.white.cornerRadius(10.0))
+        .background(Theme.blackColor.opacity(0.99).cornerRadius(16.0))
         .shadowedStyle()
         .padding()
         .onChange(of: isPresented, perform: { newValue in
@@ -46,41 +48,32 @@ struct PopupPicker: View {
     }
     
     @ViewBuilder private func titleView() -> some View {
-        VStack {
-            Text(title)
-                .foregroundColor(.black)
-                .font(.system(size: 24))
-                .padding(EdgeInsets(top: 20, leading: 16, bottom: 8, trailing: 16))
-            Divider()
-        }
+        Text(title)
+            .foregroundColor(Theme.whiteColor)
+            .font(.system(size: 24))
+            .padding(EdgeInsets(top: 16, leading: 16, bottom: 8, trailing: 16))
     }
     
     @ViewBuilder private func buttons() -> some View {
         HStack {
-            Button("Cancel") {
+            Button {
                 isTouchDownButton = true
                 isPresented = false
-                didValueChange?(defaultValue, false)
+                didValueChange?(defaultValue, true)
+            } label: {
+                Text("Cancel").frame(maxWidth: .infinity, maxHeight: Theme.normalButtonHeight).font(.system(size: 18)).background(Theme.whiteColorA2.cornerRadius(8.0))
             }
             .buttonStyle(.plain)
-            .font(.system(size: 18))
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 12.0)
             .foregroundColor(Theme.grayColor8)
-            .background(Theme.grayColorF1)
-            .cornerRadius(8.0)
-            Button("Done") {
+            Button {
                 isTouchDownButton = true
                 isPresented = false
                 didValueChange?(selectedValue, true)
+            } label: {
+                Text("Done").frame(maxWidth: .infinity, maxHeight: Theme.normalButtonHeight).font(.system(size: 18)).background(Theme.whiteColorA9.cornerRadius(8.0))
             }
             .buttonStyle(.plain)
-            .font(.system(size: 18))
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 12.0)
-            .foregroundColor(.white)
-            .background(Theme.blackColor)
-            .cornerRadius(8.0)
+            .foregroundColor(Theme.blackColor)
         }
         .padding(EdgeInsets(top: 8, leading: 16, bottom: 16, trailing: 16))
     }
@@ -101,10 +94,12 @@ struct PopupTwoPickers: View {
     var body: some View {
         VStack {
             titleView()
+            Divider().background(Theme.whiteColorA2)
             pickerView()
+            Divider().background(Theme.whiteColorA2)
             buttons()
         }
-        .background(Color.white.cornerRadius(10.0))
+        .background(Theme.blackColor.opacity(0.99).cornerRadius(16.0))
         .shadowedStyle()
         .padding()
         .onChange(of: isPresented, perform: { newValue in
@@ -122,41 +117,32 @@ struct PopupTwoPickers: View {
     }
     
     @ViewBuilder private func titleView() -> some View {
-        VStack {
-            Text(title)
-                .foregroundColor(.black)
-                .font(.system(size: 24))
-                .padding(EdgeInsets(top: 20, leading: 16, bottom: 8, trailing: 16))
-            Divider()
-        }
+        Text(title)
+            .foregroundColor(Theme.whiteColor)
+            .font(.system(size: 24))
+            .padding(EdgeInsets(top: 20, leading: 16, bottom: 8, trailing: 16))
     }
     
     @ViewBuilder private func buttons() -> some View {
         HStack {
-            Button("Cancel") {
+            Button {
                 isTouchDownButton = true
                 isPresented = false
-                didValueChange?(defaultValue, false)
+                didValueChange?(defaultValue, true)
+            } label: {
+                Text("Cancel").frame(maxWidth: .infinity, maxHeight: Theme.normalButtonHeight).font(.system(size: 18)).background(Theme.whiteColorA2.cornerRadius(8.0))
             }
             .buttonStyle(.plain)
-            .font(.system(size: 18))
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 12.0)
             .foregroundColor(Theme.grayColor8)
-            .background(Theme.grayColorF1)
-            .cornerRadius(8.0)
-            Button("Done") {
+            Button {
                 isTouchDownButton = true
                 isPresented = false
                 didValueChange?(selectedValue, true)
+            } label: {
+                Text("Done").frame(maxWidth: .infinity, maxHeight: Theme.normalButtonHeight).font(.system(size: 18)).background(Theme.whiteColorA9.cornerRadius(8.0))
             }
             .buttonStyle(.plain)
-            .font(.system(size: 18))
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 12.0)
-            .foregroundColor(.white)
-            .background(Theme.blackColor)
-            .cornerRadius(8.0)
+            .foregroundColor(Theme.blackColor)
         }
         .padding(EdgeInsets(top: 8, leading: 16, bottom: 16, trailing: 16))
     }

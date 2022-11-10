@@ -12,8 +12,12 @@ import GRDB
 let meterSet = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
 let devideSet = ["1", "2", "3", "4", "5", "6", "7", "8"]
 let bpmSet = Array(20...280).compactMap { "\($0)" }
-let subdivisionSet = ["♩", "♪", "♫", "♬", "♭", "♮", "♯", "𝄡"]
 let soundSet = ["Default", "Drum"]
+let countDownSet = ["3", "4", "5", "6", "7", "8"]
+var durationSet: [String] {
+    let sets = Array(5...240).compactMap { "\($0)" }
+    return ["Inf"] + sets
+}
 
 struct TempoModel: Equatable, Hashable, Codable, FetchableRecord, PersistableRecord {
     static func == (lhs: TempoModel, rhs: TempoModel) -> Bool {
@@ -23,6 +27,7 @@ struct TempoModel: Equatable, Hashable, Codable, FetchableRecord, PersistableRec
         && lhs.bpm == rhs.bpm
         && lhs.subDivision == rhs.subDivision
         && lhs.soundEffect == rhs.soundEffect
+        && lhs.duration == rhs.duration
     }
     
     var uid: String = "\(Date.now.timeIntervalSince1970)"
@@ -31,23 +36,15 @@ struct TempoModel: Equatable, Hashable, Codable, FetchableRecord, PersistableRec
     var bpm: Int = 60
     var subDivision: String = ""
     var soundEffect: String = "Default"
+    var duration: String = "Inf"
     var soundEffectStong: String {
         soundEffect.appending("_strong")
     }
 
     init() {}
     
-    init(meter: Int, devide: Int, bpm: Int, subDivision: String, soundEffect: String) {
-        self.meter = meter
-        self.devide = devide
-        self.bpm = bpm
-        self.subDivision = subDivision
-        self.soundEffect = soundEffect
-        self.uid = "\(Date.now.timeIntervalSince1970)"
-    }
-    
     enum CodingKeys: String, CodingKey {
-        case uid, meter, devide, bpm, subDivision, soundEffect
+        case uid, meter, devide, bpm, subDivision, soundEffect, duration
     }
     
     init(from decoder: Decoder) throws {
@@ -58,62 +55,94 @@ struct TempoModel: Equatable, Hashable, Codable, FetchableRecord, PersistableRec
         self.bpm = try container.decode(Int.self, forKey: .bpm)
         self.subDivision = try container.decode(String.self, forKey: .subDivision)
         self.soundEffect = try container.decode(String.self, forKey: .soundEffect)
+        self.duration = try container.decode(String.self, forKey: .duration)
     }
 }
 
 extension TempoModel {
     static func createTable() {
-        var existsOldTable = true
         let group = XGCDGroup.create()
-        XGCDGroup.enter(group)
-        try? dbQueue?.read({ db in
-            existsOldTable = try db.tableExists("TempoItem")
-            XGCDGroup.leave(group)
-        })
-        
-        if existsOldTable {
-            try? dbQueue?.inDatabase({ db in
-                try db.beginTransaction()
-                try db.execute(sql:
-                    """
-                    CREATE TEMPORARY TABLE t1_backup(uid,meter,devide,bpm,subDivision,soundEffect);
-                    INSERT INTO t1_backup(uid,meter,devide,bpm,subDivision,soundEffect) SELECT DISTINCT id,meter,devide,bpm,subDivision,soundEffect FROM TempoItem;
-                    DROP TABLE TempoItem;
-                    CREATE TABLE TempoModel(
-                        uid TEXT PRIMARY KEY,
-                        meter INTEGER NOT NULL,
-                        devide INTEGER NOT NULL,
-                        bpm INTEGER NOT NULL,
-                        subDivision TEXT,
-                        soundEffect TEXT
-                    );
-                    INSERT INTO TempoModel SELECT uid,meter,devide,bpm,subDivision,soundEffect FROM t1_backup;
-                    DROP TABLE t1_backup;
-                    """
-                )
-                try db.commit()
-            })
+        if tableExists(name: "TempoItem", group: group) {
+            dropTempoItemAndTempoModel()
         }
-        
-        var existsNewTable = true
-        XGCDGroup.enter(group)
-        try? dbQueue?.read({ db in
-            existsNewTable = try db.tableExists("TempoModel")
-            XGCDGroup.leave(group)
-        })
-        if !existsNewTable {
-            try? dbQueue?.write { db in
-                try db.create(table: "TempoModel") { t in
-                    t.column("uid", .text).primaryKey()
-                    t.column("meter", .integer).notNull()
-                    t.column("devide", .integer).notNull()
-                    t.column("bpm", .integer).notNull()
-                    t.column("subDivision", .text)
-                    t.column("soundEffect", .text)
-                }
+        if tableExists(name: "TempoModel", group: group) {
+            if columExists(name: "duration", inTable: "TempoModel", group: group) != true {
+                AddDurationColumToTempoModel(group: group)
             }
+        } else {
+            createTempoModel()
         }
         XGCDGroup.notify(group)
+    }
+    
+    static private func dropTempoItemAndTempoModel() {
+        try? dbQueue?.inDatabase({ db in
+            try db.beginTransaction()
+            try db.execute(sql:
+                """
+                CREATE TEMPORARY TABLE t1_backup(uid,meter,devide,bpm,subDivision,soundEffect);
+                INSERT INTO t1_backup(uid,meter,devide,bpm,subDivision,soundEffect) SELECT DISTINCT id,meter,devide,bpm,subDivision,soundEffect FROM TempoItem;
+                DROP TABLE TempoItem;
+                CREATE TABLE TempoModel(
+                    uid TEXT PRIMARY KEY,
+                    meter INTEGER NOT NULL,
+                    devide INTEGER NOT NULL,
+                    bpm INTEGER NOT NULL,
+                    subDivision TEXT,
+                    soundEffect TEXT,
+                    duration TEXT
+                );
+                INSERT INTO TempoModel SELECT uid,meter,devide,bpm,subDivision,soundEffect FROM t1_backup;
+                DROP TABLE t1_backup;
+                """
+            )
+            try db.commit()
+        })
+    }
+    
+    static private func AddDurationColumToTempoModel(group: DispatchGroup) {
+        try? dbQueue?.write { db in
+            try db.alter(table: "TempoModel", body: { t in
+                t.add(column: "duration", .text).notNull().defaults(to: "Inf")
+            })
+        }
+    }
+    
+    static private func tableExists(name: String, group: DispatchGroup) -> Bool {
+        var exists: Bool?
+        XGCDGroup.enter(group)
+        try? dbQueue?.read { db in
+            exists = try db.tableExists(name)
+            XGCDGroup.leave(group)
+        }
+        return exists == true
+    }
+    
+    static private func columExists(name: String, inTable: String, group: DispatchGroup) -> Bool? {
+        var colums: [ColumnInfo]?
+        XGCDGroup.enter(group)
+        try? dbQueue?.read { db in
+            colums = try db.columns(in: inTable)
+            XGCDGroup.leave(group)
+        }
+        let exists = colums?.contains(where: { info in
+            return info.name == name
+        })
+        return exists
+    }
+
+    static private func createTempoModel() {
+        try? dbQueue?.write { db in
+            try db.create(table: "TempoModel") { t in
+                t.column("uid", .text).primaryKey()
+                t.column("meter", .integer).notNull()
+                t.column("devide", .integer).notNull()
+                t.column("bpm", .integer).notNull()
+                t.column("subDivision", .text)
+                t.column("soundEffect", .text)
+                t.column("duration", .text)
+            }
+        }
     }
     
     static func AllItems(sortByBPM: Bool? = nil) -> [TempoModel]? {
@@ -134,8 +163,8 @@ extension TempoModel {
     func replace() {
         try? dbQueue?.write { db in
             try db.execute(
-                sql: "REPLACE INTO TempoModel(uid,meter,devide,bpm,subDivision,soundEffect) VALUES(?,?,?,?,?,?)",
-                arguments: [uid,meter,devide,bpm,subDivision,soundEffect]
+                sql: "REPLACE INTO TempoModel(uid,meter,devide,bpm,subDivision,soundEffect,duration) VALUES(?,?,?,?,?,?,?)",
+                arguments: [uid,meter,devide,bpm,subDivision,soundEffect,duration]
             )
         }
     }

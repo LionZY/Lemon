@@ -65,12 +65,17 @@ enum RunButtonStyle {
 }
 
 struct TempoRunButton: View {
-    @Binding var manager: TempoRunManager
-    @State var tempo: TempoModel
-    var style: RunButtonStyle = .row
+    @ObservedObject var manager: TempoRunManager
+    @State var tempoId: String
     
-    @State private var countDownIndex: Int = -4
+    private var countDownTime: Int {
+        TempoSettingsListItem.countDownTime() + 1
+    }
+    
+    @State private var countDownIndex: Int = -(TempoSettingsListItem.countDownTime() + 1)
     @State private var isCountingDown: Bool = false
+    
+    var style: RunButtonStyle = .row
     private let startIcon: String = "play.fill"
     private let stopIcon: String = "stop.fill"
     private var icon: String {
@@ -78,7 +83,8 @@ struct TempoRunButton: View {
         if isStoped { return startIcon }
         return ""
     }
-    private var isStoped: Bool { countDownIndex == -4 }
+    
+    private var isStoped: Bool { countDownIndex == -countDownTime }
     private var isRunning: Bool { countDownIndex == 0 }
     private var title: String {
         if isRunning || isStoped || !manager.isCountDownEnable { return "" }
@@ -102,13 +108,13 @@ struct TempoRunButton: View {
         .font(style.font(isCountingDown: isCountingDown))
         .onAppear {
             let rowCallback = {
-                guard manager.tempoItem.uid == tempo.uid else { return }
+                guard manager.state.tempoItem.uid == tempoId else { return }
                 countDownIndex = manager.countDownIndex
                 isCountingDown = manager.isCountDown
             }
             
             let globalCallback = {
-                tempo = manager.tempoItem
+                tempoId = manager.state.tempoItem.uid
                 countDownIndex = manager.countDownIndex
                 isCountingDown = manager.isCountDown
             }
@@ -119,6 +125,6 @@ struct TempoRunButton: View {
     }
     
     private func updateKey() -> String {
-        "\(style)_\(tempo.uid)"
+        "\(style)_\(tempoId)"
     }
 }

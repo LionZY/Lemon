@@ -50,8 +50,9 @@ struct TunerView: View {
                     match: match,
                     modifierPreference: modifierPreference
                 )
-                Spacer().frame(height: 30.0)
+                Spacer().frame(height: 10.0)
                 MatchedNoteFrequency(frequency: tunerData.closestNote.frequency)
+                Spacer().frame(height: 10.0)
                 NoteTicks(tunerData: tunerData)
             }
             Spacer()
@@ -68,10 +69,10 @@ struct TunerView: View {
                                 Text(noteTitle).font(.system(size: 24)).frame(height: 24)
                                 Text(octiveTitle).font(.system(size: 14)).frame(height: 14)
                             }
-                            .frame(maxWidth: 60, maxHeight: 60)
+                            .frame(maxWidth: Theme.largeButtonHeight2, maxHeight: Theme.largeButtonHeight2)
                             .background(checkPerceptible(first: md, last: octaves[m][n], indexPath: indexPath))
                             .foregroundColor(Theme.whiteColor)
-                            .cornerRadius(30.0)
+                            .cornerRadius(Theme.largeButtonHeight2/2.0)
                             .onTapGesture {
                                 autoTuning = false
                                 selected = indexPath

@@ -27,6 +27,13 @@ class Theme {
     static let blackColorA2 = Color(hex: 0x000000, alpha: 0.2)
     static let shadowColor = Color(hex: 0xAAAAAA, alpha: 1.0)
     
+    static let miniButtonHeight = UIDevice.isPhone() ? 38 : 68.0
+    static let miniButtonWidth = UIDevice.isPhone() ? 38 : 48.0
+    static let normalButtonHeight = UIDevice.isPhone() ? 44.0 : 68.0
+    static let largeButtonHeight = UIDevice.isPhone() ? 68 : 100.0
+    static let largeButtonHeight2 = UIDevice.isPhone() ? 60 : 100.0
+    static let pickerHeight = UIDevice.isPhone() ? 120 : 200.0
+    
     static func navigationBarColors(background : UIColor?, titleColor : UIColor? = nil, tintColor : UIColor? = nil ){
         let navBar = UINavigationBarAppearance()
         navBar.configureWithOpaqueBackground()

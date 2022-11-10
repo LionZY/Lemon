@@ -8,6 +8,7 @@
 import SwiftUI
 
 class XTimer {
+    private var durationTimer: TGCDTimer?
     private var timer: TGCDTimer?
     static let shared = XTimer()
     var timerEvery: Double = 1.0
@@ -19,5 +20,14 @@ class XTimer {
     func cancelTimer() {
         timer?.invalidate()
         timer = nil
+    }
+    
+    func createDurationTimer(timerEvery: Double, block: @escaping () -> Void)  {
+        durationTimer = TGCDTimer(timeInterval: timerEvery, repeat: false, block: block)
+    }
+    
+    func cancelDurationTimer() {
+        durationTimer?.invalidate()
+        durationTimer = nil
     }
 }

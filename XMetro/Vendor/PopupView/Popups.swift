@@ -102,12 +102,6 @@ struct Popups_Previews: PreviewProvider {
         ZStack {
             Rectangle()
                 .ignoresSafeArea()
-            PopupPicker(isPresented: .constant(false), title: "123", datas: ["123"], defaultValue: "123", selectedValue: "123")
-        }
-        
-        ZStack {
-            Rectangle()
-                .ignoresSafeArea()
             PopupBottomSecond()
         }
     }

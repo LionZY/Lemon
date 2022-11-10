@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TemposListRow: View {
-    @Binding var manager: TempoRunManager
+    @ObservedObject var manager: TempoRunManager
     @State private var selected: Bool = false
     private var timeStampStr: String {
         StringFromTimeStamp(timeStamp: Double(item.uid) ?? 0)
@@ -18,13 +18,13 @@ struct TemposListRow: View {
         HStack(spacing: 0) {
             VStack {
                 if selected {
-                    TempoRunButton(manager: $manager, tempo: item)
+                    TempoRunButton(manager: manager, tempoId: item.uid)
                         .onTapGesture {
                             if !selected { manager.stop() }
-                            manager.tempoItem = item
+                            manager.state.tempoItem = item
                             manager.nextAction()
                         }
-                        .frame(width: 68.0, height: 68.0)
+                        .frame(width: Theme.largeButtonHeight, height: Theme.largeButtonHeight)
                         .foregroundColor(Theme.whiteColor)
                 } else {
                     VStack {
@@ -34,21 +34,24 @@ struct TemposListRow: View {
                         Text("\(item.bpm)")
                             .font(.custom("Charter-BoldItalic", size: 22))
                     }
-                    .frame(width: 68, height: 68)
+                    .frame(width: Theme.largeButtonHeight, height: Theme.largeButtonHeight)
                     .background(Theme.grayColorF5.cornerRadius(8))
                     .foregroundColor(Theme.blackColor)
                 }
             }
             Spacer().frame(width: 12.0)
             VStack(alignment: .leading) {
-                HStack(spacing: 0) {
-                    Image(systemName: "speaker.circle").foregroundColor(Theme.grayColor8).font(.system(size: 14))
-                    Spacer().frame(width: 8.0)
-                    Text("Sound effect:").foregroundColor(Theme.grayColor8).font(.system(size: 14))
-                    Spacer()
-                    Text(item.soundEffect).foregroundColor(Theme.grayColorB).font(.custom("Charter-BoldItalic", size: 14))
-                }
+                /*
                 Spacer().frame(height: 5.0)
+                HStack {
+                    Image(systemName: "clock").foregroundColor(Theme.grayColor8).font(.system(size: 14))
+                    Spacer().frame(width: 8.0)
+                    Text("Duration(minutes):").foregroundColor(Theme.grayColor8).font(.system(size: 14))
+                    Spacer()
+                    Text("\(item.duration)").foregroundColor(Theme.grayColorB).font(.custom("Charter-BoldItalic", size: 14))
+                }
+                */
+                Spacer()
                 HStack(spacing: 0) {
                     Image(systemName: "timer.circle").foregroundColor(Theme.grayColor8).font(.system(size: 14))
                     Spacer().frame(width: 8.0)
@@ -57,18 +60,27 @@ struct TemposListRow: View {
                     Text("\(item.meter)/\(item.devide)").foregroundColor(Theme.grayColorB).font(.custom("Charter-BoldItalic", size: 14))
                 }
                 Spacer().frame(height: 5.0)
+                HStack(spacing: 0) {
+                    Image(systemName: "speaker.circle").foregroundColor(Theme.grayColor8).font(.system(size: 14))
+                    Spacer().frame(width: 8.0)
+                    Text("Sound effect:").foregroundColor(Theme.grayColor8).font(.system(size: 14))
+                    Spacer()
+                    Text(item.soundEffect).foregroundColor(Theme.grayColorB).font(.custom("Charter-BoldItalic", size: 14))
+                }
+                Spacer().frame(height: 5.0)
                 HStack {
                     Image(systemName: "smallcircle.filled.circle").foregroundColor(Theme.grayColor8).font(.system(size: 14))
                     Spacer().frame(width: 8.0)
-                    TempoDotsView(manager: $manager, tempo: item, style: .row)
+                    TempoDotsView(manager: manager, tempoId: item.uid, style: .row)
                 }
+                Spacer()
             }
             Spacer()
         }
         .onAppear {
-            selected = manager.tempoItem.uid == item.uid
+            selected = manager.state.tempoItem.uid == item.uid
             manager.register(key: "\(TemposListRow.self)_\(item.uid)") {
-                selected = manager.tempoItem.uid == item.uid
+                selected = manager.state.tempoItem.uid == item.uid
             }
         }
     }

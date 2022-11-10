@@ -44,24 +44,26 @@ enum SettingListItem: Hashable {
         if self == .update {
             HStack{
                 Image(systemName: icon())
-                Text(title())
+                Text(title()).font(.system(size: 16))
                 Spacer()
-                Button(" App Store ") {
+                Button {
                     if let url = URL(string: "https://apps.apple.com/app/6443442078") {
                         UIApplication.shared.open(url)
                     }
+                } label: {
+                    Text("App Store")
+                        .frame(maxWidth: 94.0, maxHeight: 30.0)
+                        .font(.system(size: 14))
+                        .background(Theme.grayColorF1.cornerRadius(15.0))
+                        .foregroundColor(Theme.blackColor)
                 }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.small)
-                .font(.system(size: 14.0))
-                .tint(Theme.grayColorF1)
-                .foregroundColor(Theme.blackColor)
+                .buttonStyle(.plain)
             }
         } else {
             NavigationLink(destination: destination()) {
                 HStack{
                     Image(systemName: icon())
-                    Text(title())
+                    Text(title()).font(.system(size: 16))
                 }
             }
         }
